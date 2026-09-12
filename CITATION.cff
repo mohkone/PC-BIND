@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use PC-BIND, please cite the associated article and this software release."
+title: "PC-BIND: sparse partner-conditioned protein interface prediction"
+type: software
+authors:
+  - family-names: "KONE"
+    given-names: "Mohamed"
+repository-code: "https://github.com/mohkone/PC-BIND"
+url: "https://github.com/mohkone/PC-BIND"
+license: MIT
+version: 0.1.0
+date-released: 2026-09-13
