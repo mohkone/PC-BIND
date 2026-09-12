@@ -1,5 +1,7 @@
 # PC-BIND
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22729836.svg)](https://doi.org/10.5281/zenodo.22729836)
+
 PC-BIND is a sparse partner-conditioned framework for residue-level
 protein-protein interface prediction. For each target residue, the frozen model
 attends to the top 16 candidate residues in the supplied partner and fuses the
@@ -95,8 +97,13 @@ substantial Train335 overlap.
 
 ## Availability Status
 
-This repository is a code release rather than a data bundle. Trained
-checkpoints, prediction arrays, and processed datasets are not included.
+The `v0.1.0` code snapshot at commit `b3bbb55` is archived on Zenodo under
+[DOI 10.5281/zenodo.22729836](https://doi.org/10.5281/zenodo.22729836). The
+version-independent concept DOI is
+[10.5281/zenodo.22729835](https://doi.org/10.5281/zenodo.22729835).
+
+The archive is a code release rather than a data bundle. Trained checkpoints,
+prediction arrays, and processed datasets are not included.
 
 ## License and Citation
 

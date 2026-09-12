@@ -7,6 +7,11 @@ authors:
     given-names: "Mohamed"
 repository-code: "https://github.com/mohkone/PC-BIND"
 url: "https://github.com/mohkone/PC-BIND"
+doi: "10.5281/zenodo.22729836"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.22729835"
+    description: "Concept DOI for all Zenodo versions"
 license: MIT
 version: 0.1.0
 date-released: 2026-09-13
