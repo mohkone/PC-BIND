@@ -17,13 +17,12 @@ if ([string]::IsNullOrWhiteSpace($OutputDir)) {
 
 $TestSets = "Test60.pkl,Test287.pkl,TestB25.pkl,TestUB25.pkl"
 
-# Ablation: pair-affinity MLP with Sinkhorn disabled (identity transport)
-# This isolates the contribution of the transport plan from the richer
-# pair-affinity scoring MLP.
+# Ablation: same sparse pair-affinity MLP and dustbin, without transport
+# column-cap iterations. This isolates the cross-target competition.
 $env:PPI_PARTNER_TRANSPORT = "1"
 $env:PPI_TRANSPORT_SINKHORN_ITERS = "0"
 $env:PPI_TRANSPORT_TAU = "1.0"
-$env:PPI_TRANSPORT_DUSTBIN = "0"
+$env:PPI_TRANSPORT_DUSTBIN = "1"
 $env:PPI_TRANSPORT_TOP_K = "32"
 $env:PPI_TRANSPORT_ENTROPY_WEIGHT = "0.0"
 $env:PPI_TRANSPORT_SPARSITY_WEIGHT = "0.0"

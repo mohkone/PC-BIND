@@ -918,17 +918,6 @@ def sparse_pair_contact_loss(pair_output):
     pair_logits, pair_targets = pair_output[:2]
     if pair_logits is None or pair_logits.numel() == 0:
         return None
-    # Deduplicate: when a true contact appears both as a top-k candidate
-    # (label 1) and as an explicitly appended positive, it is double-counted.
-    # Keep only the explicit positive copy and drop the candidate copy.
-    if len(pair_output) >= 4:
-        explicit_positive = pair_output[3]
-        if explicit_positive is not None and explicit_positive.any():
-            keep_mask = ~explicit_positive | (pair_targets > 0.5)
-            pair_logits = pair_logits[keep_mask]
-            pair_targets = pair_targets[keep_mask]
-            if pair_logits.numel() == 0:
-                return None
     return F.binary_cross_entropy_with_logits(
         pair_logits,
         pair_targets.to(pair_logits.dtype),
@@ -1314,9 +1303,9 @@ class SparseTransportLayer(nn.Module):
     yields a partner-conditioned interface probability.  A learnable per-residue
     dustbin logit allows non-interface residues to route their mass to "no match."
 
-    The layer replaces the Q/K/V dot-product attention in partner_condition
-    with an explicit transport plan that enforces global marginal consistency
-    across the partner.
+    The layer replaces Q/K/V attention with a relaxed, capacity-capped
+    bipartite transport plan. Partner columns have an upper bound, not a
+    prescribed marginal; the no-match column is unconstrained.
     """
 
     def __init__(
@@ -1353,82 +1342,39 @@ class SparseTransportLayer(nn.Module):
                 nn.ReLU(),
                 nn.Linear(hidden_dim // 2, 1),
             )
-            # Partner-side dustbin logit (single learnable parameter, SuperGlue-style)
-            self.dustbin_row_logit = nn.Parameter(torch.tensor(0.0))
+    def pair_logits(self, target_h, partner_h):
+        """Score aligned sparse candidate pairs, without dense MLP expansion."""
+        return self.pair_scorer(torch.cat((
+            target_h, partner_h, target_h * partner_h,
+            torch.abs(target_h - partner_h),
+        ), dim=-1)).squeeze(-1)
 
-    def compute_pair_affinities(self, target_h, partner_h):
-        """Compute dense pair affinity matrix [n_target, n_partner]."""
-        n_t = target_h.size(0)
-        n_p = partner_h.size(0)
-        # Expand for pairwise computation
-        t = target_h.unsqueeze(1).expand(n_t, n_p, self.hidden_dim)
-        p = partner_h.unsqueeze(0).expand(n_t, n_p, self.hidden_dim)
-        pair_features = torch.cat(
-            (t, p, t * p, torch.abs(t - p)),
-            dim=-1,
-        )  # [n_t, n_p, 4*D]
-        affinities = self.pair_scorer(pair_features).squeeze(-1)  # [n_t, n_p]
-        return affinities
+    def sparse_sinkhorn(self, log_affinity, dustbin_logits=None):
+        """Relaxed log-domain transport with a row dustbin and upper column cap.
 
-    def sparse_sinkhorn(
-        self,
-        log_affinity,
-        dustbin_logits=None,
-    ):
-        """
-        Run log-domain Sinkhorn iterations on the augmented affinity matrix.
-
-        Uses the SuperGlue-style dustbin approach: both a dustbin column
-        (per-target "no match") and a dustbin row (per-partner "no match")
-        are added so that balanced Sinkhorn on the augmented matrix naturally
-        handles unequal target/partner sizes.
-
-        log_affinity: [n_target, n_partner]
-        dustbin_logits: [n_target] or None
-
-        Returns transport plan [n_target, n_partner + 1] (last col = target dustbin).
-        The dustbin row is discarded (we only need target-side mass).
+        Real partner columns are capped but not required to receive mass.
+        The dustbin has no column constraint. Final rows sum to one.
         """
         n_t, n_p = log_affinity.shape
-        device = log_affinity.device
-
+        if self.tau <= 0:
+            raise ValueError("Transport temperature must be positive")
         if dustbin_logits is not None:
-            # Build augmented matrix [n_t + 1, n_p + 1]
-            # Last column = target dustbin (per-residue)
-            # Last row = partner dustbin (single learnable logit, stored as self.dustbin_row_logit)
-            dustbin_col = dustbin_logits.unsqueeze(1) / self.tau  # [n_t, 1]
-            partner_dustbin = torch.full(
-                (1, n_p + 1),
-                float(self.dustbin_row_logit) / self.tau,
-                device=device,
-            )
-            # Top-left: real affinities
-            # Top-right: target dustbin column
-            # Bottom-left: partner dustbin row
-            # Bottom-right: intersection (set to partner_dustbin value)
-            top = torch.cat((log_affinity / self.tau, dustbin_col), dim=1)  # [n_t, n_p+1]
-            full_log = torch.cat((top, partner_dustbin), dim=0)  # [n_t+1, n_p+1]
+            log_t = torch.cat((
+                log_affinity / self.tau, dustbin_logits[:, None] / self.tau
+            ), dim=1)
         else:
-            full_log = log_affinity / self.tau  # [n_t, n_p]
-
-        log_T = full_log
-
-        if self.sinkhorn_iters <= 0:
-            # No Sinkhorn iterations: just row-normalise (softmax per target)
-            log_T = log_T - torch.logsumexp(log_T, dim=1, keepdim=True)
-            return torch.exp(log_T[:n_t, :])  # return without dustbin row
-
+            log_t = log_affinity / self.tau
+        # Capacity is proportional to relative sequence lengths; this is an
+        # upper bound, not a prescribed column marginal.
+        log_capacity = math.log(max(1.0, float(n_t) / max(n_p, 1)))
         for _ in range(self.sinkhorn_iters):
-            # Column normalisation (each column, including dustbin col, sums to 1)
-            log_T = log_T - torch.logsumexp(log_T, dim=0, keepdim=True)
-            # Row normalisation (each row, including dustbin row, sums to 1)
-            log_T = log_T - torch.logsumexp(log_T, dim=1, keepdim=True)
-        # Final row normalisation ensures each target row sums to 1
-        log_T = log_T - torch.logsumexp(log_T, dim=1, keepdim=True)
-
-        plan = torch.exp(log_T)
-        # Return target rows only (drop partner dustbin row), keep target dustbin column
-        return plan[:n_t, :]
+            log_t = log_t - torch.logsumexp(log_t, dim=1, keepdim=True)
+            real = log_t[:, :n_p]
+            col_mass = torch.logsumexp(real, dim=0, keepdim=True)
+            scale = (log_capacity - col_mass).clamp(max=0.0)
+            scale = torch.where(torch.isfinite(scale), scale, torch.zeros_like(scale))
+            log_t = torch.cat((real + scale, log_t[:, n_p:]), dim=1)
+        return torch.softmax(log_t, dim=1)
 
     def forward(self, target_h, partner_h, top_k=None):
         """
@@ -1445,7 +1391,7 @@ class SparseTransportLayer(nn.Module):
             partner_weights: [n_target, n_partner]  transport weights for message
             selected_indices: [n_target, top_k]  top-k partner indices per target
         """
-        k = int(top_k or self.top_k)
+        k = int(self.top_k if top_k is None else top_k)
         n_t = target_h.size(0)
         n_p = partner_h.size(0)
         device = target_h.device
@@ -1463,21 +1409,22 @@ class SparseTransportLayer(nn.Module):
         k = min(k, n_p)
         _, top_idx = torch.topk(scores, k=k, dim=1)  # [n_t, k]
 
-        # Step 2: compute dense pair affinities (re-score with MLP)
-        affinities = self.compute_pair_affinities(target_h, partner_h)  # [n_t, n_p]
-
-        # Step 3: build masked log-affinity (only top-k entries are non-inf)
-        mask = torch.full((n_t, n_p), float("-inf"), device=device)
+        # Score only selected pairs; the dense matrix is a compact transport
+        # workspace, not an O(n_target*n_partner*hidden_dim) feature tensor.
+        selected = partner_h[top_idx]
+        selected_logits = self.pair_logits(
+            target_h[:, None, :].expand(-1, k, -1), selected
+        )
+        log_affinity = target_h.new_full((n_t, n_p), float("-inf"))
         row_idx = torch.arange(n_t, device=device).unsqueeze(1).expand(n_t, k)
-        mask[row_idx, top_idx] = 0.0
-        log_affinity = affinities + mask  # masked, unselected entries are -inf
+        log_affinity[row_idx, top_idx] = selected_logits
 
         # Step 4: dustbin logits (per-target-residue "no match" evidence)
         dustbin_logits = None
         if self.use_dustbin:
             dustbin_logits = self.dustbin_proj(target_h).squeeze(-1)  # [n_t]
 
-        # Step 5: run Sinkhorn
+        # Step 5: iterative relaxed transport projection
         transport_plan = self.sparse_sinkhorn(log_affinity, dustbin_logits)
 
         # Step 6: extract outputs
@@ -1504,10 +1451,10 @@ class SparseTransportLayer(nn.Module):
         else:
             real_plan = transport_plan
 
-        col_sum = real_plan.sum(dim=0, keepdim=True).clamp_min(1e-8)
-        col_norm = real_plan / col_sum  # column-normalised distribution
-        entropy = -(col_norm * torch.log(col_norm.clamp_min(1e-12))).sum()
-        return entropy  # minimise to sharpen
+        row_mass = real_plan.sum(dim=1, keepdim=True)
+        conditional = real_plan / row_mass.clamp_min(1e-8)
+        entropy = -(conditional * torch.log(conditional.clamp_min(1e-12))).sum(dim=1)
+        return (entropy * row_mass.squeeze(1)).mean()
 
     def transport_sparsity_loss(self, transport_plan):
         """Concentration loss: encourage mass to focus on few partner residues.
@@ -1518,9 +1465,9 @@ class SparseTransportLayer(nn.Module):
             real_plan = transport_plan[:, :-1]
         else:
             real_plan = transport_plan
-        # Negative sum of squared row masses — minimising concentrates mass
-        row_l2 = real_plan.pow(2).sum(dim=1)
-        return -row_l2.mean()
+        # Negative conditional squared mass: minimising concentrates a row.
+        conditional = real_plan / real_plan.sum(dim=1, keepdim=True).clamp_min(1e-8)
+        return -conditional.pow(2).sum(dim=1).mean()
 
 
 # ===================== Graph & Substructure Modules =====================
@@ -2079,6 +2026,10 @@ class TriViewAtomResidueNet(nn.Module):
         self.transport_layer = None
         self.use_transport = bool(PARTNER_TRANSPORT) and self.partner_conditioning
         if self.use_transport:
+            if self.partner_logit_mode != "standard":
+                raise ValueError("OT currently supports only standard partner logit mode")
+            if not TRANSPORT_DUSTBIN:
+                raise ValueError("OT requires a dustbin for interface row-mass prediction")
             self.transport_layer = SparseTransportLayer(
                 hidden_dim=hidden_dim,
                 sinkhorn_iters=TRANSPORT_SINKHORN_ITERS,
@@ -2091,7 +2042,6 @@ class TriViewAtomResidueNet(nn.Module):
                 nn.Linear(hidden_dim * 2, hidden_dim),
                 nn.Sigmoid(),
             )
-            self.transport_logit_proj = nn.Linear(hidden_dim, 1)
             self._transport_logits = None  # set during forward, used for logit fusion
 
     def drop_edges(self, edge_index):
@@ -2211,14 +2161,14 @@ class TriViewAtomResidueNet(nn.Module):
 
         Replaces the Q/K/V dot-product attention with an explicit transport
         plan.  For each graph, encodes partner residues, computes pair
-        affinities, runs Sinkhorn, and uses the transport weights to produce
+        affinities, runs relaxed transport iterations, and uses the weights to produce
         a partner message and a transport-derived interface logit.
         """
         logit_matrix_cols = max(int(self.transport_layer.top_k), 1)
         conditioned = fused.clone()
         transport_plans = []
         transport_logits = fused.new_zeros((fused.size(0),))
-        self._transport_logits = transport_logits  # expose for forward logit fusion
+        self._transport_logits = None
         self._transport_plans = None  # expose for training-loop regularisation
         pair_marginal = (
             fused.new_zeros((fused.size(0),)) if return_pair_marginal else None
@@ -2293,23 +2243,15 @@ class TriViewAtomResidueNet(nn.Module):
             conditioned[idx] = self.partner_norm(target_h + gate * message)
 
             # Transport-derived interface logit
-            transport_logits[idx] = self.transport_logit_proj(target_h).squeeze(-1) + torch.log(
-                row_mass.clamp_min(1e-8)
-            )
+            transport_logits[idx] = torch.logit(row_mass.clamp(1e-6, 1 - 1e-6))
 
             # Pair-contact supervision (where labels exist)
             if return_pair and labelled_graphs is not None and gid in labelled_graphs:
-                selected_res = idx.unsqueeze(1).expand(-1, transport_plan.size(1) - 1).reshape(-1)
+                selected_res = idx.unsqueeze(1).expand_as(top_idx).reshape(-1)
                 selected_partner = pidx[top_idx].reshape(-1)
-                # Use pair scorer if available, otherwise use transport affinities
-                if self.pair_scorer is not None:
-                    sel_logits = self.pair_logits_from_embeddings(
-                        fused[selected_res], partner_h_all[selected_partner]
-                    )
-                else:
-                    # Extract affinities from transport plan (log domain)
-                    log_plan = torch.log(transport_plan[:, :-1].clamp_min(1e-12))
-                    sel_logits = log_plan.reshape(-1)
+                sel_logits = self.transport_layer.pair_logits(
+                    fused[selected_res], partner_h_all[selected_partner]
+                )
 
                 selected_labels = sel_logits.new_zeros(sel_logits.shape)
                 pos_edges = None
@@ -2330,39 +2272,35 @@ class TriViewAtomResidueNet(nn.Module):
                         positive_key = pos_edges[0] * max_partner + pos_edges[1]
                         selected_labels = torch.isin(selected_key, positive_key).to(sel_logits.dtype)
 
-                pair_logits.append(sel_logits)
-                pair_targets.append(selected_labels)
-                pair_target_indices.append(selected_res)
-                pair_explicit_positive.append(torch.zeros_like(selected_labels, dtype=torch.bool))
+                # Explicit positives are appended once below, even when also
+                # selected in top-k. Candidate rows contain negatives only.
+                negative = selected_labels < 0.5
+                pair_logits.append(sel_logits[negative])
+                pair_targets.append(selected_labels[negative])
+                pair_target_indices.append(selected_res[negative])
+                pair_explicit_positive.append(
+                    torch.zeros_like(selected_labels[negative], dtype=torch.bool)
+                )
 
                 if pos_edges is not None and pos_edges.numel() > 0:
-                    if self.pair_scorer is not None:
-                        positive_logits = self.pair_logits_from_embeddings(
-                            fused[pos_edges[0]], partner_h_all[pos_edges[1]]
-                        )
-                    else:
-                        positive_logits = transport_plan[
-                            torch.arange(idx.numel(), device=fused.device)[
-                                torch.searchsorted(
-                                    idx, pos_edges[0] - idx[0]
-                                )
-                            ],
-                            torch.searchsorted(pidx, pos_edges[1] - pidx[0]),
-                        ].clamp_min(1e-12).log()
+                    pos_edges = torch.unique(pos_edges, dim=1)
+                    positive_logits = self.transport_layer.pair_logits(
+                        fused[pos_edges[0]], partner_h_all[pos_edges[1]]
+                    )
                     pair_logits.append(positive_logits)
                     pair_targets.append(torch.ones_like(positive_logits))
                     pair_target_indices.append(pos_edges[0])
                     pair_explicit_positive.append(torch.ones_like(positive_logits, dtype=torch.bool))
 
             if return_pair_marginal:
-                real_plan = transport_plan[:, :-1] if self.transport_layer.use_dustbin else transport_plan
-                log_no_contact = torch.log(1.0 - real_plan.clamp(max=1.0 - 1e-8)).sum(dim=1)
-                pair_marginal[idx] = -torch.expm1(log_no_contact)
+                pair_marginal[idx] = row_mass
 
             if return_pair_logit_matrix:
-                real_plan = transport_plan[:, :-1] if self.transport_layer.use_dustbin else transport_plan
-                k = min(logit_matrix_cols, real_plan.size(1))
-                pair_logit_matrix[idx, :k] = real_plan[:, :k]
+                k = top_idx.size(1)
+                pair_logit_matrix[idx, :k] = self.transport_layer.pair_logits(
+                    target_h[:, None, :].expand(-1, k, -1),
+                    partner_h[top_idx],
+                )
 
         # Assemble pair output
         if return_pair:
@@ -2391,6 +2329,7 @@ class TriViewAtomResidueNet(nn.Module):
         if return_transport:
             result.append(transport_plans if transport_plans else None)
         self._transport_plans = transport_plans if transport_plans else None
+        self._transport_logits = transport_logits if transport_plans else None
         return result[0] if len(result) == 1 else tuple(result)
 
     def partner_message(
@@ -2666,6 +2605,9 @@ class TriViewAtomResidueNet(nn.Module):
         return_pair_marginal=False,
         return_pair_logit_matrix=False,
     ):
+        if self.use_transport:
+            self._transport_logits = None
+            self._transport_plans = None
         res_edge = self.drop_edges(res_edge)
         atom_edge = self.drop_edges(atom_edge)
 
@@ -2890,12 +2832,14 @@ class TriViewAtomResidueNet(nn.Module):
             scale = float(getattr(self, "partner_delta_scale", PARTNER_DELTA_SCALE))
             cls_logits = cls_logits + scale * residual_gate * cls_delta
             rank_logits = rank_logits + scale * residual_gate * rank_delta
-        logits = (1.0 - TWO_HEAD_RANK_FUSION) * cls_logits + TWO_HEAD_RANK_FUSION * rank_logits
-        # Fuse transport-derived interface logits when OT partner matching is active
+        # Apply OT evidence to both supervised heads, not just the returned
+        # combined logit; otherwise two-head training never sees this branch.
         if self.use_transport and self._transport_logits is not None:
-            transport_fusion = float(getattr(self, "_transport_fusion_weight", TRANSPORT_LOGIT_FUSION))
-            logits = logits + transport_fusion * self._transport_logits
+            evidence = TRANSPORT_LOGIT_FUSION * self._transport_logits
+            cls_logits = cls_logits + evidence
+            rank_logits = rank_logits + evidence
             self._transport_logits = None  # consume to avoid stale reuse
+        logits = (1.0 - TWO_HEAD_RANK_FUSION) * cls_logits + TWO_HEAD_RANK_FUSION * rank_logits
         partner_logits = self.partner_cls(final_h).squeeze(-1) if return_aux and self.partner_cls is not None else None
         if return_heads:
             if return_aux:

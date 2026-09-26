@@ -60,7 +60,7 @@ if ($SmokeOnly -ne 0) {
 # PC-BIND-OT: sparse unbalanced optimal transport partner matching
 # Key differences from v5:
 #   - PartnerTransport 1: enables the SparseTransportLayer
-#   - TransportSinkhornIters 5: log-domain Sinkhorn iterations
+#   - TransportSinkhornIters 5: relaxed capacity-projection iterations
 #   - TransportTau 0.1: temperature controlling plan sharpness
 #   - TransportDustbin 1: per-residue "no match" dustbin column
 #   - TransportTopK 32: wider candidate set than v5's 16
@@ -75,6 +75,9 @@ $env:PPI_TRANSPORT_TOP_K = "32"
 $env:PPI_TRANSPORT_ENTROPY_WEIGHT = "0.01"
 $env:PPI_TRANSPORT_SPARSITY_WEIGHT = "0.005"
 $env:PPI_TRANSPORT_LOGIT_FUSION = "0.3"
+
+& $VenvPython (Join-Path $ProjectRoot "smoke_test_pcbind_ot.py")
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
 & (Join-Path $ProjectRoot "run_seed.ps1") `
     -Seed $Seed `
@@ -108,3 +111,4 @@ $env:PPI_TRANSPORT_LOGIT_FUSION = "0.3"
     -PatchLabels 0 `
     -SelectionMetric "mcc" `
     -SelectionAuprWeight "0.35"
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
