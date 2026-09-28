@@ -1,0 +1,743 @@
+{
+  "generated_utc": "2026-09-28T02:29:57.419049+00:00",
+  "scope": "Read-only original-sample and pre-existing PDB-cache forensics. No network, downloads, chain inference, regeneration, or input writes.",
+  "decision": "No admissible exact repair is supported by the available metadata. Use an explicitly labelled filtered sensitivity cohort unless upstream target chain and original residue/atom identity order are recovered.",
+  "parser": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\augment_with_pdb_coordinates.py",
+    "sha256": "746dcfa2995a9f49d842cd35b21b76fa9cfa3ef053e14f4aac0698b33adacdd5",
+    "policy": "Project first-model, amino-acid HETATM, residue-conformer-aware parser; chain counts are descriptive only and never select a target."
+  },
+  "datasets": {
+    "Train335.pkl": {
+      "workspace_path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo\\Train335.pkl",
+      "resolved_path": "C:\\Users\\Mohamed KONE\\Desktop\\article\\data\\geo\\Train335.pkl",
+      "bytes": 1471014435,
+      "sha256": "3b61ba47c66796ac9dfe326561fc917e78c9ec2ca6ef8c3f4ca5df9eb71e8a0a",
+      "samples": 335,
+      "matches_prior_input_audit_sha256": true,
+      "unchanged_size_and_mtime_during_read": true
+    },
+    "Test287.pkl": {
+      "workspace_path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo\\Test287.pkl",
+      "resolved_path": "C:\\Users\\Mohamed KONE\\Desktop\\article\\data\\geo\\Test287.pkl",
+      "bytes": 1098202693,
+      "sha256": "6dec36a7e198a95fefe11b02999038919376c40cc01364acedd7d9236b7852de",
+      "samples": 287,
+      "matches_prior_input_audit_sha256": true,
+      "unchanged_size_and_mtime_during_read": true
+    }
+  },
+  "samples": [
+    {
+      "dataset": "Train335.pkl",
+      "index_zero_based": 106,
+      "complex_code": "2J3R",
+      "declared_target_chain": null,
+      "complex_code_has_chain_suffix": false,
+      "available_fields": [
+        "complex_code",
+        "residue_graph_node",
+        "residue_graph_edge",
+        "atom_graph_node",
+        "atom_graph_edge",
+        "a2r_map",
+        "label",
+        "residue_plm_embedding",
+        "residue_plm_model",
+        "residue_plm_embedding_8m",
+        "residue_plm_model_8m",
+        "partner_residue_plm_embedding",
+        "partner_residue_plm_model",
+        "partner_residue_plm_embedding_8m",
+        "partner_residue_plm_model_8m"
+      ],
+      "missing_identity_geometry_fields": [
+        "pdb_chain",
+        "residue_sequence",
+        "residue_ids",
+        "residue_keys",
+        "atom_ids",
+        "atom_names",
+        "residue_coords",
+        "atom_coords",
+        "residue_frames",
+        "residue_surface_features",
+        "residue_sequence_features"
+      ],
+      "target_residues": 158,
+      "target_atoms": 1214,
+      "label_counts": {
+        "0": 120,
+        "1": 38
+      },
+      "array_evidence": {
+        "residue_graph_node": {
+          "shape": [
+            158,
+            1024
+          ],
+          "dtype": "float64",
+          "sha256_contiguous_array_bytes": "c7508506f9e9969f400c794619d747c95d02e9957df057c35b2241c7a82a1c08",
+          "finite": true,
+          "all_zero": false
+        },
+        "residue_graph_edge": {
+          "shape": [
+            2,
+            892
+          ],
+          "dtype": "int32",
+          "sha256_contiguous_array_bytes": "b0971c2ec00e11136ed404e10a35b0f7da0bdcf2342512ec82dc3b3acbc2a02d",
+          "finite": true,
+          "all_zero": false
+        },
+        "atom_graph_node": {
+          "shape": [
+            1214,
+            37
+          ],
+          "dtype": "float64",
+          "sha256_contiguous_array_bytes": "21115a14078a551d3bfbf5399a2f9cf032f782c5d75c8e429fa7dd7787154236",
+          "finite": true,
+          "all_zero": false
+        },
+        "atom_graph_edge": {
+          "shape": [
+            2,
+            1442
+          ],
+          "dtype": "int32",
+          "sha256_contiguous_array_bytes": "b6044595a27c22ed44a61864407423459b91c7a16e08f391259ecffe8a8518ce",
+          "finite": true,
+          "all_zero": false
+        },
+        "label": {
+          "shape": [
+            158
+          ],
+          "dtype": "int32",
+          "sha256_contiguous_array_bytes": "bc5fea2f9a3a9dd24b7609b0d3f74e7891a505a5ee9ba6c805b29acfa01e17bc",
+          "finite": true,
+          "all_zero": false
+        },
+        "residue_plm_embedding": {
+          "shape": [
+            158,
+            480
+          ],
+          "dtype": "float32",
+          "sha256_contiguous_array_bytes": "0bf8a60cad707414c5e169dbc345f90a1abbf8410a45e4b5689022042051f266",
+          "finite": true,
+          "all_zero": true
+        },
+        "residue_plm_embedding_8m": {
+          "shape": [
+            158,
+            320
+          ],
+          "dtype": "float32",
+          "sha256_contiguous_array_bytes": "2246b52a34a02988d1dcbac38a1942a178b305c494b125096d447d9201943f9c",
+          "finite": true,
+          "all_zero": true
+        },
+        "partner_residue_plm_embedding": {
+          "shape": [
+            0,
+            480
+          ],
+          "dtype": "float32",
+          "sha256_contiguous_array_bytes": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "finite": true,
+          "all_zero": true
+        },
+        "partner_residue_plm_embedding_8m": {
+          "shape": [
+            0,
+            320
+          ],
+          "dtype": "float32",
+          "sha256_contiguous_array_bytes": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "finite": true,
+          "all_zero": true
+        }
+      },
+      "atom_to_residue_mapping": {
+        "shape": [
+          1214
+        ],
+        "minimum": 0,
+        "maximum": 157,
+        "distinct_indices": 158,
+        "sha256_int64_bytes": "92d7d58f2bbf3197951152074155b3fd3dc4bed8a7c8092ba14b5296ef55075c",
+        "interpretation": "Internal integer node indices only; no PDB residue/atom identities or declared target chain."
+      },
+      "target_plm_model": "missing_sequence",
+      "target_aux_plm_model": "missing_sequence",
+      "repair_admissible": false,
+      "blocking_reasons": [
+        "No declared target chain exists in the record or bare complex_code.",
+        "No original residue sequence/IDs, atom identities, or coordinate arrays exist for exact alignment against a PDB chain.",
+        "Existing labels align to opaque graph-feature rows by internal index only; PDB feature/label row correspondence cannot be verified.",
+        "Selecting any PDB chain by residue count, atom count, or apparent similarity would violate the required declared-chain rule."
+      ]
+    },
+    {
+      "dataset": "Test287.pkl",
+      "index_zero_based": 55,
+      "complex_code": "4M0W",
+      "declared_target_chain": null,
+      "complex_code_has_chain_suffix": false,
+      "available_fields": [
+        "complex_code",
+        "residue_graph_node",
+        "residue_graph_edge",
+        "atom_graph_node",
+        "atom_graph_edge",
+        "a2r_map",
+        "label",
+        "residue_plm_embedding",
+        "residue_plm_model",
+        "residue_plm_embedding_8m",
+        "residue_plm_model_8m",
+        "partner_residue_plm_embedding",
+        "partner_residue_plm_model",
+        "partner_residue_plm_embedding_8m",
+        "partner_residue_plm_model_8m"
+      ],
+      "missing_identity_geometry_fields": [
+        "pdb_chain",
+        "residue_sequence",
+        "residue_ids",
+        "residue_keys",
+        "atom_ids",
+        "atom_names",
+        "residue_coords",
+        "atom_coords",
+        "residue_frames",
+        "residue_surface_features",
+        "residue_sequence_features"
+      ],
+      "target_residues": 317,
+      "target_atoms": 2493,
+      "label_counts": {
+        "0": 285,
+        "1": 32
+      },
+      "array_evidence": {
+        "residue_graph_node": {
+          "shape": [
+            317,
+            1024
+          ],
+          "dtype": "float64",
+          "sha256_contiguous_array_bytes": "090025381871cb0ae45f4dba49143fd108c0816eedacf6b37e1873c9e0775ad0",
+          "finite": true,
+          "all_zero": false
+        },
+        "residue_graph_edge": {
+          "shape": [
+            2,
+            1872
+          ],
+          "dtype": "int32",
+          "sha256_contiguous_array_bytes": "dc594270983ccec34fe6e611d790cecc2f0988c0ca706e19417fea8eb3a99340",
+          "finite": true,
+          "all_zero": false
+        },
+        "atom_graph_node": {
+          "shape": [
+            2493,
+            37
+          ],
+          "dtype": "float64",
+          "sha256_contiguous_array_bytes": "0bd5eb141203061243b67c66f0574428c137102337dd683865c9fe1fe786ef76",
+          "finite": true,
+          "all_zero": false
+        },
+        "atom_graph_edge": {
+          "shape": [
+            2,
+            2997
+          ],
+          "dtype": "int32",
+          "sha256_contiguous_array_bytes": "0edf082fb037060fc6572035167ee746150f32652ff9ac731af06e70222317d1",
+          "finite": true,
+          "all_zero": false
+        },
+        "label": {
+          "shape": [
+            317
+          ],
+          "dtype": "int32",
+          "sha256_contiguous_array_bytes": "0e22859e7f01d47ecd6c7866b3b851ac5158decddc9d0c0cea40efc46f81c196",
+          "finite": true,
+          "all_zero": false
+        },
+        "residue_plm_embedding": {
+          "shape": [
+            317,
+            480
+          ],
+          "dtype": "float32",
+          "sha256_contiguous_array_bytes": "a6f95993887eb68cedf194667dae0ad8e73f5aa074cb81bd3a2d3ef73a51d115",
+          "finite": true,
+          "all_zero": true
+        },
+        "residue_plm_embedding_8m": {
+          "shape": [
+            317,
+            320
+          ],
+          "dtype": "float32",
+          "sha256_contiguous_array_bytes": "a7ee614d196f2d33b2c23a534a1f25719662c122faa987b34eab610873b0d6e8",
+          "finite": true,
+          "all_zero": true
+        },
+        "partner_residue_plm_embedding": {
+          "shape": [
+            0,
+            480
+          ],
+          "dtype": "float32",
+          "sha256_contiguous_array_bytes": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "finite": true,
+          "all_zero": true
+        },
+        "partner_residue_plm_embedding_8m": {
+          "shape": [
+            0,
+            320
+          ],
+          "dtype": "float32",
+          "sha256_contiguous_array_bytes": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "finite": true,
+          "all_zero": true
+        }
+      },
+      "atom_to_residue_mapping": {
+        "shape": [
+          2493
+        ],
+        "minimum": 0,
+        "maximum": 316,
+        "distinct_indices": 317,
+        "sha256_int64_bytes": "06147901e8d288763512439005221b7e9a9bd02761265a76ab6ad6d146c2c385",
+        "interpretation": "Internal integer node indices only; no PDB residue/atom identities or declared target chain."
+      },
+      "target_plm_model": "missing_sequence",
+      "target_aux_plm_model": "missing_sequence",
+      "repair_admissible": false,
+      "blocking_reasons": [
+        "No declared target chain exists in the record or bare complex_code.",
+        "No original residue sequence/IDs, atom identities, or coordinate arrays exist for exact alignment against a PDB chain.",
+        "Existing labels align to opaque graph-feature rows by internal index only; PDB feature/label row correspondence cannot be verified.",
+        "Selecting any PDB chain by residue count, atom count, or apparent similarity would violate the required declared-chain rule."
+      ]
+    },
+    {
+      "dataset": "Test287.pkl",
+      "index_zero_based": 161,
+      "complex_code": "6MAV",
+      "declared_target_chain": null,
+      "complex_code_has_chain_suffix": false,
+      "available_fields": [
+        "complex_code",
+        "residue_graph_node",
+        "residue_graph_edge",
+        "atom_graph_node",
+        "atom_graph_edge",
+        "a2r_map",
+        "label",
+        "residue_plm_embedding",
+        "residue_plm_model",
+        "residue_plm_embedding_8m",
+        "residue_plm_model_8m",
+        "partner_residue_plm_embedding",
+        "partner_residue_plm_model",
+        "partner_residue_plm_embedding_8m",
+        "partner_residue_plm_model_8m"
+      ],
+      "missing_identity_geometry_fields": [
+        "pdb_chain",
+        "residue_sequence",
+        "residue_ids",
+        "residue_keys",
+        "atom_ids",
+        "atom_names",
+        "residue_coords",
+        "atom_coords",
+        "residue_frames",
+        "residue_surface_features",
+        "residue_sequence_features"
+      ],
+      "target_residues": 161,
+      "target_atoms": 1277,
+      "label_counts": {
+        "0": 131,
+        "1": 30
+      },
+      "array_evidence": {
+        "residue_graph_node": {
+          "shape": [
+            161,
+            1024
+          ],
+          "dtype": "float64",
+          "sha256_contiguous_array_bytes": "ea39c38114e76acd5ddd52715fca5eac2c15ba0b34899bde2986c5ec5a1770a0",
+          "finite": true,
+          "all_zero": false
+        },
+        "residue_graph_edge": {
+          "shape": [
+            2,
+            902
+          ],
+          "dtype": "int32",
+          "sha256_contiguous_array_bytes": "f935f8abd9078c06c23c278ee899f517ddd741de8da6f2e928a401e8844279ab",
+          "finite": true,
+          "all_zero": false
+        },
+        "atom_graph_node": {
+          "shape": [
+            1277,
+            37
+          ],
+          "dtype": "float64",
+          "sha256_contiguous_array_bytes": "e50a80b989f46f76d7c0cae551bd3fd5c2a1f5fbf5ea05453777ec5859d07cca",
+          "finite": true,
+          "all_zero": false
+        },
+        "atom_graph_edge": {
+          "shape": [
+            2,
+            1573
+          ],
+          "dtype": "int32",
+          "sha256_contiguous_array_bytes": "17126c4f876043744969a404dab38ed4a2fe9d9cd1900da226615e3ac9cbbefe",
+          "finite": true,
+          "all_zero": false
+        },
+        "label": {
+          "shape": [
+            161
+          ],
+          "dtype": "int32",
+          "sha256_contiguous_array_bytes": "550d1b3291051e10aaf8038a85f70ae153a2d62a931c16b9f3bd3564abad449c",
+          "finite": true,
+          "all_zero": false
+        },
+        "residue_plm_embedding": {
+          "shape": [
+            161,
+            480
+          ],
+          "dtype": "float32",
+          "sha256_contiguous_array_bytes": "8c34aee43257b1e28e90de5f66ea69de66c96b99a60fe631d581a9faa3fe2521",
+          "finite": true,
+          "all_zero": true
+        },
+        "residue_plm_embedding_8m": {
+          "shape": [
+            161,
+            320
+          ],
+          "dtype": "float32",
+          "sha256_contiguous_array_bytes": "6b3e1f6e3a950af57429ffb088ec9f450533851b9a10cb0e74495809542e50b1",
+          "finite": true,
+          "all_zero": true
+        },
+        "partner_residue_plm_embedding": {
+          "shape": [
+            0,
+            480
+          ],
+          "dtype": "float32",
+          "sha256_contiguous_array_bytes": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "finite": true,
+          "all_zero": true
+        },
+        "partner_residue_plm_embedding_8m": {
+          "shape": [
+            0,
+            320
+          ],
+          "dtype": "float32",
+          "sha256_contiguous_array_bytes": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "finite": true,
+          "all_zero": true
+        }
+      },
+      "atom_to_residue_mapping": {
+        "shape": [
+          1277
+        ],
+        "minimum": 0,
+        "maximum": 160,
+        "distinct_indices": 161,
+        "sha256_int64_bytes": "1e4592ee0dcd2c62bb76f19cf870f7a01f3a1c1449e2c041edd4c9c3e0630dcb",
+        "interpretation": "Internal integer node indices only; no PDB residue/atom identities or declared target chain."
+      },
+      "target_plm_model": "missing_sequence",
+      "target_aux_plm_model": "missing_sequence",
+      "repair_admissible": false,
+      "blocking_reasons": [
+        "No declared target chain exists in the record or bare complex_code.",
+        "No original residue sequence/IDs, atom identities, or coordinate arrays exist for exact alignment against a PDB chain.",
+        "Existing labels align to opaque graph-feature rows by internal index only; PDB feature/label row correspondence cannot be verified.",
+        "Selecting any PDB chain by residue count, atom count, or apparent similarity would violate the required declared-chain rule."
+      ]
+    }
+  ],
+  "caches": [
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\pdb_cache",
+      "exists": false,
+      "matching_files": []
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\article\\pdb_cache",
+      "exists": true,
+      "matching_files": [
+        {
+          "pdb_id": "2J3R",
+          "path": "C:\\Users\\Mohamed KONE\\Desktop\\article\\pdb_cache\\2J3R.pdb",
+          "sha256": "e94e01179f2d665b4e81cd39bb78a5992a81d8883d3535b1466b5e423a603512",
+          "bytes": 239598,
+          "model_records": [],
+          "model_policy": "No explicit MODEL record; parser uses the single implicit model.",
+          "end_record_present": true,
+          "master_record_present": true,
+          "ends_with_newline": true,
+          "last_record_type": "END",
+          "last_line_length": 80,
+          "cache_completeness_assessment": "Terminal END record present; does not establish biological/residue completeness.",
+          "header_seqres_lengths": {
+            "A": 182,
+            "B": 157
+          },
+          "parsed_chains": {
+            "A": {
+              "residues": 159,
+              "atoms": 1220,
+              "sequence_sha256": "c16f39278b155560c46b7f68d1b64da4155a34329f16e347ce5638b5c553f14f",
+              "residue_name_counts": {
+                "GLU": 13,
+                "SER": 9,
+                "LYS": 8,
+                "MET": 6,
+                "LEU": 17,
+                "PHE": 8,
+                "THR": 8,
+                "TYR": 5,
+                "GLY": 9,
+                "ALA": 10,
+                "VAL": 12,
+                "GLN": 4,
+                "CYS": 3,
+                "ASP": 12,
+                "ASN": 9,
+                "ARG": 9,
+                "ILE": 10,
+                "HIS": 2,
+                "PRO": 4,
+                "TRP": 1
+              },
+              "first_residue_identity": [
+                "A",
+                "10",
+                "",
+                "GLU"
+              ],
+              "last_residue_identity": [
+                "A",
+                "172",
+                "",
+                "GLU"
+              ]
+            },
+            "B": {
+              "residues": 157,
+              "atoms": 1212,
+              "sequence_sha256": "ea04ee0fda095a50e51d073f98e8fd35c7d68f97dbebe716b07643b085e3e9ae",
+              "residue_name_counts": {
+                "PRO": 4,
+                "LYS": 14,
+                "THR": 9,
+                "GLU": 12,
+                "VAL": 15,
+                "SER": 10,
+                "ALA": 13,
+                "PHE": 7,
+                "LEU": 16,
+                "MET": 4,
+                "GLN": 5,
+                "TYR": 5,
+                "CYS": 2,
+                "ARG": 4,
+                "ASP": 7,
+                "GLY": 9,
+                "ASN": 7,
+                "ILE": 9,
+                "TRP": 2,
+                "HIS": 3
+              },
+              "first_residue_identity": [
+                "B",
+                "20",
+                "",
+                "PRO"
+              ],
+              "last_residue_identity": [
+                "B",
+                "176",
+                "",
+                "GLU"
+              ]
+            }
+          }
+        },
+        {
+          "pdb_id": "4M0W",
+          "path": "C:\\Users\\Mohamed KONE\\Desktop\\article\\pdb_cache\\4M0W.pdb",
+          "sha256": "211e69cfd43866fa7bd3d7b99ba62d2c5c2d92da70bffcd976b8e5caaf7731c7",
+          "bytes": 335872,
+          "model_records": [],
+          "model_policy": "No explicit MODEL record; parser uses the single implicit model.",
+          "end_record_present": false,
+          "master_record_present": false,
+          "ends_with_newline": false,
+          "last_record_type": "ANISOU",
+          "last_line_length": 46,
+          "cache_completeness_assessment": "Incomplete cached text: no terminal END or MASTER, no final newline, and final ANISOU record is cut off. Do not treat its parsed chain counts as complete structure counts.",
+          "header_seqres_lengths": {
+            "A": 327,
+            "B": 76
+          },
+          "parsed_chains": {
+            "A": {
+              "residues": 228,
+              "atoms": 1784,
+              "sequence_sha256": "0f87825e4845f0be1e0815a6d7fa940a12f9a518e530cd360d3baefd31757356",
+              "residue_name_counts": {
+                "VAL": 19,
+                "LYS": 15,
+                "THR": 22,
+                "ILE": 5,
+                "PHE": 9,
+                "ASP": 12,
+                "ASN": 12,
+                "LEU": 25,
+                "HIS": 8,
+                "GLN": 9,
+                "MET": 6,
+                "SER": 13,
+                "TYR": 11,
+                "GLY": 15,
+                "PRO": 6,
+                "ALA": 17,
+                "GLU": 10,
+                "ARG": 7,
+                "TRP": 2,
+                "CYS": 5
+              },
+              "first_residue_identity": [
+                "A",
+                "3",
+                "",
+                "VAL"
+              ],
+              "last_residue_identity": [
+                "A",
+                "230",
+                "",
+                "ASP"
+              ]
+            }
+          }
+        },
+        {
+          "pdb_id": "6MAV",
+          "path": "C:\\Users\\Mohamed KONE\\Desktop\\article\\pdb_cache\\6MAV.pdb",
+          "sha256": "9e65b31d1789045b5e69c232f0f7a4ea685fdf4c17d1993fcae7b5032b90886b",
+          "bytes": 155648,
+          "model_records": [],
+          "model_policy": "No explicit MODEL record; parser uses the single implicit model.",
+          "end_record_present": false,
+          "master_record_present": false,
+          "ends_with_newline": false,
+          "last_record_type": "ANISOU",
+          "last_line_length": 47,
+          "cache_completeness_assessment": "Incomplete cached text: no terminal END or MASTER, no final newline, and final ANISOU record is cut off. Do not treat its parsed chain counts as complete structure counts.",
+          "header_seqres_lengths": {
+            "A": 168,
+            "B": 184
+          },
+          "parsed_chains": {
+            "A": {
+              "residues": 66,
+              "atoms": 533,
+              "sequence_sha256": "0a519871f06da2c8cd3c19f975bc6061c1ff12922429c78d292233e8e40ea01c",
+              "residue_name_counts": {
+                "PRO": 5,
+                "GLY": 3,
+                "ILE": 4,
+                "LYS": 5,
+                "TRP": 2,
+                "ARG": 4,
+                "THR": 5,
+                "HIS": 2,
+                "LEU": 5,
+                "TYR": 3,
+                "VAL": 6,
+                "ASN": 1,
+                "ASP": 4,
+                "ALA": 5,
+                "SER": 3,
+                "GLU": 6,
+                "PHE": 2,
+                "MET": 1
+              },
+              "first_residue_identity": [
+                "A",
+                "87",
+                "",
+                "PRO"
+              ],
+              "last_residue_identity": [
+                "A",
+                "152",
+                "",
+                "GLY"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "recommended_sensitivity_exclusions": [
+    {
+      "dataset": "Train335.pkl",
+      "index_zero_based": 106,
+      "complex_code": "2J3R",
+      "reason": "Missing declared target chain and exact original residue/coordinate/feature/label mapping; zero PLM placeholders marked missing_sequence."
+    },
+    {
+      "dataset": "Test287.pkl",
+      "index_zero_based": 55,
+      "complex_code": "4M0W",
+      "reason": "Missing declared target chain and exact original residue/coordinate/feature/label mapping; zero PLM placeholders marked missing_sequence."
+    },
+    {
+      "dataset": "Test287.pkl",
+      "index_zero_based": 161,
+      "complex_code": "6MAV",
+      "reason": "Missing declared target chain and exact original residue/coordinate/feature/label mapping; zero PLM placeholders marked missing_sequence."
+    }
+  ],
+  "limitations": [
+    "This is a proof that the requested repair cannot be certified from the inspected records/caches, not a claim that upstream provenance can never resolve them.",
+    "A fresh PDB download could fix an incomplete cache but cannot supply the missing original chain declaration and original graph-row identity mapping.",
+    "No candidate chain was selected, no sequences were inferred from another chain, and no original labels/features/coordinates were modified."
+  ]
+}

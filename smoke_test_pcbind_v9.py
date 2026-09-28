@@ -1,5 +1,6 @@
 import os
 import pickle
+from pathlib import Path
 
 import torch
 
@@ -27,8 +28,8 @@ from check_pcbind_prereqs import valid_partner_encoder_sample
 from evaluate_mismatched_partner_control import make_mismatched_partner_list
 
 
-def load_samples():
-    with open(os.path.join("data", "geo", "Train335.pkl"), "rb") as handle:
+def load_samples(path=os.path.join("data", "geo", "Train335.pkl")):
+    with open(path, "rb") as handle:
         return pickle.load(handle)
 
 
@@ -94,9 +95,16 @@ def forward(
     return output, partner_feats
 
 
-def main():
+def main(data_dir=os.path.join("data", "geo")):
     torch.manual_seed(29)
-    samples = [sample for sample in load_samples() if valid_partner_encoder_sample(sample)]
+    if not str(data_dir).strip():
+        raise ValueError("data_dir must name a dataset directory")
+    train_path = Path(data_dir).expanduser().resolve(strict=True) / "Train335.pkl"
+    if not train_path.is_file():
+        raise FileNotFoundError(f"Selected smoke-test dataset is missing {train_path}; fallback is disabled")
+    train_path = train_path.resolve(strict=True)
+    print(f"Smoke-test training data: {train_path}")
+    samples = [sample for sample in load_samples(train_path) if valid_partner_encoder_sample(sample)]
     samples.sort(
         key=lambda sample: (
             int(sample["residue_graph_node"].shape[0])
@@ -202,4 +210,9 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Run the PC-BIND v9 smoke test on the selected dataset.")
+    parser.add_argument("--data-dir", default=os.path.join("data", "geo"),
+                        help="Directory containing Train335.pkl; explicit selection never falls back.")
+    main(parser.parse_args().data_dir)

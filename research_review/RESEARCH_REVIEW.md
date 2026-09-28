@@ -6,6 +6,13 @@ No manuscript was supplied. Original checkpoints, predictions and datasets
 were not rewritten. This is an implementation and evidence review, not a new
 accuracy experiment.
 
+Subsequent data preparation created an explicitly labelled
+[filtered sensitivity cohort](data_repair_v1/RESULT.md), with 334 training and
+285 Test287 samples, new hashes and shared grouped folds. Its strict coverage
+gate passes; the original full-cohort failures and unverified biological
+mappings remain recorded. No OT-versus-no-OT accuracy experiment has yet been
+run on this cohort.
+
 ## Assessment
 
 The central hypothesis is reasonable: a supplied interaction partner can help

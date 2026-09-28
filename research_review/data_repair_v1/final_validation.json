@@ -1,0 +1,347 @@
+{
+  "analysis_label": "filtered-cohort analysis",
+  "cwd": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT",
+  "environment": "Fresh child processes; inherited PPI_* removed; data smoke tests explicitly select filtered cohort",
+  "commands": [
+    {
+      "command": [
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "started_utc": "2026-09-28T11:04:51.237658+00:00",
+      "finished_utc": "2026-09-28T11:05:06.578855+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_cross_side_overlap_counts_samples_once_and_reports_missing_inputs (test_data_integrity.ExactOverlapTests.test_cross_side_overlap_counts_samples_once_and_reports_missing_inputs) ... ok\ntest_duplicate_training_sequences_do_not_double_count_test_samples (test_data_integrity.ExactOverlapTests.test_duplicate_training_sequences_do_not_double_count_test_samples) ... ok\ntest_suffixes_do_not_hide_shared_pdb_and_missing_sequences_are_not_matches (test_data_integrity.ExactOverlapTests.test_suffixes_do_not_hide_shared_pdb_and_missing_sequences_are_not_matches) ... ok\ntest_ambiguous_sizes_cannot_be_resolved_by_sample_order (test_data_integrity.PDBPreparationTests.test_ambiguous_sizes_cannot_be_resolved_by_sample_order) ... ok\ntest_chain_case_is_preserved (test_data_integrity.PDBPreparationTests.test_chain_case_is_preserved) ... ok\ntest_declared_chain_never_silently_switches_on_identity_mismatch (test_data_integrity.PDBPreparationTests.test_declared_chain_never_silently_switches_on_identity_mismatch) ... ok\ntest_first_model_only (test_data_integrity.PDBPreparationTests.test_first_model_only) ... ok\ntest_modified_amino_acids_are_included_but_water_is_not (test_data_integrity.PDBPreparationTests.test_modified_amino_acids_are_included_but_water_is_not) ... ok\ntest_one_residue_conformer_and_shared_atoms (test_data_integrity.PDBPreparationTests.test_one_residue_conformer_and_shared_atoms) ... ok\ntest_sequence_disambiguates_equal_length_chains (test_data_integrity.PDBPreparationTests.test_sequence_disambiguates_equal_length_chains) ... ok\ntest_unverified_mapping_stays_unverified_and_keeps_base_order (test_data_integrity.PDBPreparationTests.test_unverified_mapping_stays_unverified_and_keeps_base_order) ... ok\ntest_invalid_partner_values_fail_validation (test_data_integrity.PrerequisiteTests.test_invalid_partner_values_fail_validation) ... ok\ntest_pair_indices_require_integer_type_and_valid_bounds (test_data_integrity.PrerequisiteTests.test_pair_indices_require_integer_type_and_valid_bounds) ... ok\ntest_require_plm_rejects_partial_target_coverage (test_data_integrity.PrerequisiteTests.test_require_plm_rejects_partial_target_coverage) ... ok\ntest_target_plm_checks_width_finiteness_and_failure_marker (test_data_integrity.PrerequisiteTests.test_target_plm_checks_width_finiteness_and_failure_marker) ... ok\ntest_valid_record (test_data_integrity.PrerequisiteTests.test_valid_record) ... ok\ntest_explicit_training_file_cannot_fall_back_to_legacy (test_dataset_selection.DatasetSelectionTests.test_explicit_training_file_cannot_fall_back_to_legacy) ... ok\ntest_filenames_cannot_escape_the_selected_directory (test_dataset_selection.DatasetSelectionTests.test_filenames_cannot_escape_the_selected_directory) ... ok\ntest_manifest_label_and_content_identity_are_recorded (test_dataset_selection.DatasetSelectionTests.test_manifest_label_and_content_identity_are_recorded) ... ok\ntest_missing_requested_test_is_not_silently_skipped_or_borrowed (test_dataset_selection.DatasetSelectionTests.test_missing_requested_test_is_not_silently_skipped_or_borrowed) ... ok\ntest_only_explicitly_requested_tests_are_required (test_dataset_selection.DatasetSelectionTests.test_only_explicitly_requested_tests_are_required) ... ok\ntest_unconfigured_lookup_preserves_geo_and_raw_data_behavior (test_dataset_selection.DatasetSelectionTests.test_unconfigured_lookup_preserves_geo_and_raw_data_behavior) ... ok\ntest_runner_preflight_rejects_missing_requested_test (test_dataset_selection.RunnerDatasetSelectionTests.test_runner_preflight_rejects_missing_requested_test) ... ok\ntest_runner_resolves_caller_relative_cohort_and_restores_environment (test_dataset_selection.RunnerDatasetSelectionTests.test_runner_resolves_caller_relative_cohort_and_restores_environment) ... ok\ntest_bootstrap_uses_the_same_sample_for_both_models (test_evaluation_integrity.AlignmentAndBootstrapTests.test_bootstrap_uses_the_same_sample_for_both_models) ... ok\ntest_degenerate_resamples_are_counted (test_evaluation_integrity.AlignmentAndBootstrapTests.test_degenerate_resamples_are_counted) ... ok\ntest_fractional_labels_are_not_silently_cast_to_zero (test_evaluation_integrity.AlignmentAndBootstrapTests.test_fractional_labels_are_not_silently_cast_to_zero) ... ok\ntest_overlapping_or_incomplete_groups_are_rejected (test_evaluation_integrity.AlignmentAndBootstrapTests.test_overlapping_or_incomplete_groups_are_rejected) ... ok\ntest_same_length_wrong_dataset_order_is_rejected (test_evaluation_integrity.AlignmentAndBootstrapTests.test_same_length_wrong_dataset_order_is_rejected) ... ok\ntest_shared_complex_chains_are_one_resampling_unit (test_evaluation_integrity.AlignmentAndBootstrapTests.test_shared_complex_chains_are_one_resampling_unit) ... ok\ntest_unknown_complex_identifier_cannot_become_independent_chain (test_evaluation_integrity.AlignmentAndBootstrapTests.test_unknown_complex_identifier_cannot_become_independent_chain) ... ok\ntest_cli_reports_actual_scope_and_protocol_differences (test_evaluation_integrity.ComparisonReportTests.test_cli_reports_actual_scope_and_protocol_differences) ... ok\ntest_invalid_metric_inputs_are_rejected (test_evaluation_integrity.MetricDefinitionTests.test_invalid_metric_inputs_are_rejected) ... ok\ntest_macro_metrics_explicitly_include_both_binary_classes (test_evaluation_integrity.MetricDefinitionTests.test_macro_metrics_explicitly_include_both_binary_classes) ... ok\ntest_no_positive_auc_is_undefined (test_evaluation_integrity.MetricDefinitionTests.test_no_positive_auc_is_undefined) ... ok\ntest_trapezoidal_auc_is_preserved_for_tied_scores (test_evaluation_integrity.MetricDefinitionTests.test_trapezoidal_auc_is_preserved_for_tied_scores) ... ok\ntest_identical_labels_do_not_hide_permuted_residue_identity (test_evaluation_integrity.PredictionIdentityTests.test_identical_labels_do_not_hide_permuted_residue_identity) ... ok\ntest_independent_run_ids_bind_to_matching_manifests (test_evaluation_integrity.PredictionIdentityTests.test_independent_run_ids_bind_to_matching_manifests) ... ok\ntest_partial_identity_is_rejected_without_changing_prediction_api (test_evaluation_integrity.PredictionIdentityTests.test_partial_identity_is_rejected_without_changing_prediction_api) ... ok\ntest_recorded_training_hash_and_fold_mismatches_are_rejected (test_evaluation_integrity.PredictionIdentityTests.test_recorded_training_hash_and_fold_mismatches_are_rejected) ... ok\ntest_same_labels_and_ids_do_not_hide_changed_dataset_features (test_evaluation_integrity.PredictionIdentityTests.test_same_labels_and_ids_do_not_hide_changed_dataset_features) ... ok\ntest_duplicate_ensemble_metrics_are_rejected (test_evaluation_integrity.StatisticalEstimandTests.test_duplicate_ensemble_metrics_are_rejected) ... ok\ntest_empty_and_nonfinite_differences_are_rejected (test_evaluation_integrity.StatisticalEstimandTests.test_empty_and_nonfinite_differences_are_rejected) ... ok\ntest_fold_mean_is_not_substituted_for_ensemble_metric (test_evaluation_integrity.StatisticalEstimandTests.test_fold_mean_is_not_substituted_for_ensemble_metric) ... ok\ntest_four_benchmark_exact_test_cannot_reach_point_zero_five (test_evaluation_integrity.StatisticalEstimandTests.test_four_benchmark_exact_test_cannot_reach_point_zero_five) ... ok\ntest_holm_adjustment_is_monotone_and_preserves_original_order (test_evaluation_integrity.StatisticalEstimandTests.test_holm_adjustment_is_monotone_and_preserves_original_order) ... ok\ntest_changed_population_or_index_fails_before_filtering (test_filtered_cohort.FilteredCohortIntegrityTests.test_changed_population_or_index_fails_before_filtering) ... ok\ntest_empty_arrays_have_shape_sensitive_fingerprints (test_filtered_cohort.FilteredCohortIntegrityTests.test_empty_arrays_have_shape_sensitive_fingerprints) ... ok\ntest_exclusion_uses_original_index_and_preserves_valid_same_complex (test_filtered_cohort.FilteredCohortIntegrityTests.test_exclusion_uses_original_index_and_preserves_valid_same_complex) ... ok\ntest_folds_reject_complex_leakage_and_missing_or_duplicate_members (test_filtered_cohort.FilteredCohortIntegrityTests.test_folds_reject_complex_leakage_and_missing_or_duplicate_members) ... ok\ntest_missing_features_fail_instead_of_silent_fallback (test_filtered_cohort.FilteredCohortIntegrityTests.test_missing_features_fail_instead_of_silent_fallback) ... ok\ntest_sample_hash_detects_array_order_dtype_and_label_changes (test_filtered_cohort.FilteredCohortIntegrityTests.test_sample_hash_detects_array_order_dtype_and_label_changes) ... ok\ntest_versioned_provenance_is_not_overwritten (test_filtered_cohort.FilteredCohortIntegrityTests.test_versioned_provenance_is_not_overwritten) ... ok\ntest_attention_contacts_count_each_positive_pair_once (test_model_integrity.AuxiliaryTrainingTests.test_attention_contacts_count_each_positive_pair_once) ... ok\ntest_regularizer_keeps_true_partner_plan_after_a_contrastive_forward (test_model_integrity.AuxiliaryTrainingTests.test_regularizer_keeps_true_partner_plan_after_a_contrastive_forward) ... ok\ntest_groups_are_disjoint_and_all_samples_are_covered (test_model_integrity.GroupedCVTests.test_groups_are_disjoint_and_all_samples_are_covered) ... ok\ntest_insufficient_groups_fail_before_producing_an_empty_fold (test_model_integrity.GroupedCVTests.test_insufficient_groups_fail_before_producing_an_empty_fold) ... ok\ntest_missing_group_ids_fail_instead_of_silently_splitting_samples (test_model_integrity.GroupedCVTests.test_missing_group_ids_fail_instead_of_silently_splitting_samples) ... ok\ntest_capped_projection_requires_a_dustbin (test_model_integrity.SparseTransportTests.test_capped_projection_requires_a_dustbin) ... ok\ntest_final_rows_and_column_caps_both_hold_under_extreme_competition (test_model_integrity.SparseTransportTests.test_final_rows_and_column_caps_both_hold_under_extreme_competition) ... ok\ntest_invalid_transport_parameters_fail_early (test_model_integrity.SparseTransportTests.test_invalid_transport_parameters_fail_early) ... ok\ntest_unsupported_columns_and_rows_have_finite_gradients (test_model_integrity.SparseTransportTests.test_unsupported_columns_and_rows_have_finite_gradients) ... ok\ntest_zero_iterations_preserves_uncapped_row_softmax_ablation (test_model_integrity.SparseTransportTests.test_zero_iterations_preserves_uncapped_row_softmax_ablation) ... ok\ntest_selected_threshold_uses_the_deployed_boundary_rule (test_model_integrity.ThresholdTests.test_selected_threshold_uses_the_deployed_boundary_rule) ... ok\ntest_dataset_hash_describes_the_loaded_bytes_and_resolved_path (test_research_provenance.ResearchProvenanceTests.test_dataset_hash_describes_the_loaded_bytes_and_resolved_path) ... ok\ntest_fold_manifest_preserves_actual_order_and_duplicate_complex_ids (test_research_provenance.ResearchProvenanceTests.test_fold_manifest_preserves_actual_order_and_duplicate_complex_ids) ... ok\ntest_residue_identity_tracks_nonsequential_source_samples (test_research_provenance.ResearchProvenanceTests.test_residue_identity_tracks_nonsequential_source_samples) ... ok\ntest_runtime_and_identity_can_be_read_without_pickle (test_research_provenance.ResearchProvenanceTests.test_runtime_and_identity_can_be_read_without_pickle) ... ok\n\n----------------------------------------------------------------------\nRan 68 tests in 10.444s\n\nOK\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\Mohamed KONE\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.EXE",
+        "-NoProfile",
+        "-NonInteractive",
+        "-File",
+        "tests/test_launchers.ps1"
+      ],
+      "started_utc": "2026-09-28T11:05:06.579854+00:00",
+      "finished_utc": "2026-09-28T11:05:08.226119+00:00",
+      "exit_code": 0,
+      "stdout": "Launcher integrity checks passed.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\.venv\\Scripts\\python.exe",
+        "smoke_test_pcbind_ot.py"
+      ],
+      "started_utc": "2026-09-28T11:05:08.226119+00:00",
+      "finished_utc": "2026-09-28T11:05:12.746284+00:00",
+      "exit_code": 0,
+      "stdout": "PC-BIND-OT data-free smoke test passed.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\.venv\\Scripts\\python.exe",
+        "smoke_test_pcbind_v5.py",
+        "--data-dir",
+        "data/geo_filtered_v1"
+      ],
+      "started_utc": "2026-09-28T11:05:12.746284+00:00",
+      "finished_utc": "2026-09-28T11:05:24.209512+00:00",
+      "exit_code": 0,
+      "stdout": "Smoke-test training data: C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\Train335.pkl\nPC-BIND v5 smoke test passed.\nTarget: 3MCB | donor: 1Z0J\nTarget residues=58, true partner residues=54, mismatched partner residues=169\nLogit delta: mean_abs=0.01499527, max_abs=0.06973214\nGradient sums: partner_features=0.465760, shared_encoder=5.278475\nPair-contact candidates=997, positives=85, loss=1.123198, head_gradient=1.509578\nMarginal consistency loss=0.479028, marginal_gradient=0.020000\nMarginal partner contrast=0.030001, pair_head_gradient=0.027173\nContact hard-partner contrast=1.533553, eligible_residues=43, mean_D=-1.506984, pair_head_gradient=652.712952\nV8 one-step training loss=1.710847\n",
+      "stderr": "\nFold 1 Epoch 1:   0%|                                                         | 0/1 [00:00<?, ?it/s]\nFold 1 Epoch 1:   0%|                                              | 0/1 [00:01<?, ?it/s, loss=1.71]\nFold 1 Epoch 1: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 1/1 [00:01<00:00,  1.28s/it, loss=1.71]\nFold 1 Epoch 1: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 1/1 [00:01<00:00,  1.28s/it, loss=1.71]\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\.venv\\Scripts\\python.exe",
+        "smoke_test_pcbind_v9.py",
+        "--data-dir",
+        "data/geo_filtered_v1"
+      ],
+      "started_utc": "2026-09-28T11:05:24.209512+00:00",
+      "finished_utc": "2026-09-28T11:05:31.612149+00:00",
+      "exit_code": 0,
+      "stdout": "Smoke-test training data: C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\Train335.pkl\nPC-BIND v9 residual smoke test passed.\nmean|true-null|=0.01290606, mean|true-mismatch|=0.01238588\nresidual_gradient=13.009353, partner_feature_gradient=1.572387, pair_loss=1.029218\n",
+      "stderr": ""
+    }
+  ],
+  "all_six_original_hashes_match_before_after_and_prior_audit": true,
+  "derived_hashes_still_match_manifest": true,
+  "no_full_training_performed": true,
+  "source_files": [
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\audit_input_integrity.py",
+      "sha256": "2dc6be31c34b1f498198354b67134379c972286ad3f8d7b2f8802a597b6ac66e",
+      "size_bytes": 15433
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\audit_pcbind_pairing.py",
+      "sha256": "0af06179213347761c3cf0d6ec49e92bee0fb3d8d86fbd41fd8b831d8ec4315d",
+      "size_bytes": 9206
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\audit_saved_artifacts.py",
+      "sha256": "8409df814067fa7dabb33b7aece1d3bb04bc31970d8d8c38bb7ff4cce6489201",
+      "size_bytes": 8154
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\audit_sequence_homology.py",
+      "sha256": "89c52d3e77833a9d9345d6c61f4e259100c019bdddae209328f93dc878203bae",
+      "size_bytes": 8209
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\augment_with_pdb_coordinates.py",
+      "sha256": "746dcfa2995a9f49d842cd35b21b76fa9cfa3ef053e14f4aac0698b33adacdd5",
+      "size_bytes": 26586
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\build_filtered_cohort.py",
+      "sha256": "29580a1438e6639dcfc091e851348ae7d696424a2585274e56979467feac2df9",
+      "size_bytes": 13215
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\check_pcbind_prereqs.py",
+      "sha256": "afa552de8da2f2b8349736644c94e3941f5f143d4642980bab38987a52aa7737",
+      "size_bytes": 9266
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\compare_pcbind_primary.py",
+      "sha256": "4f3d52111151d7dfd5ec59fe7c87239cedc9220238a355375e4c4dfc5c4ce583",
+      "size_bytes": 24886
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\CROSS5FOLD_multi_test.py",
+      "sha256": "fd197d065a2574b30c877d74f65fad62944415724f1bbf80cb5ad656cf3f420f",
+      "size_bytes": 220849
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\evaluate_mismatched_partner_control.py",
+      "sha256": "449c1ab3e3d258df79820ffaff4e76c491cf90db11264af05d5a5cfbf21f4116",
+      "size_bytes": 18798
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\evaluate_multi_seed_ensembles.py",
+      "sha256": "5e16244521dda6ec7c10f113920d5de1065978fe1c2699a6681d3344d6b04055",
+      "size_bytes": 35304
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\evaluate_pcbind_marginal.py",
+      "sha256": "66eb08a4c60efc92773794f7bad118c9dfd0c792b7ddaebd7f39a73512adcbdd",
+      "size_bytes": 36290
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\evaluate_pcbind_marginal_mismatch.py",
+      "sha256": "3987e9f564e58c6afc360e9329b3f1f086ed904cd7613f7824399470787769ba",
+      "size_bytes": 14658
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\evaluate_pcbind_oof_mismatch.py",
+      "sha256": "aa7498d4fd1b138d3fbeed651a849fb3c2d5941f25d107dfeaa6fd0261f03237",
+      "size_bytes": 17338
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\evaluate_pcbind_pathway_utilization.py",
+      "sha256": "9d8610ccab3f60478165929c571281bb77631fa64346fdcab60a8fd5d957dcf4",
+      "size_bytes": 21839
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\evaluate_pcbind_v9_gate.py",
+      "sha256": "79487ce4d6a59a0746a68903945840e395e30a557640c2a3cdc6259ab1a9cc2c",
+      "size_bytes": 2708
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\evaluate_saved_ensembles.py",
+      "sha256": "aa4e63c3db9488b3518ddb5c81067a9bf7329ad9f4e3c1fa2adb4e08e24904d6",
+      "size_bytes": 22344
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\extract_plm_embeddings.py",
+      "sha256": "016cb17b636e69669d159f1346f0e6b31b7de478f9d227aa252f7a9760c94480",
+      "size_bytes": 8304
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\metrics.py",
+      "sha256": "9be8906c73b658039032ad720dfe91bcac4d3059f177f109eaa848b21bc91d23",
+      "size_bytes": 3128
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_provenance.py",
+      "sha256": "b2ade05798ce250cd08b6188ae1a20a8725bae5d6d890419a8c4c5b5b3c04ddd",
+      "size_bytes": 5566
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\smoke_test_pcbind_ot.py",
+      "sha256": "51ce927262fcefbe91a4a50746e71608d7e41fb5dd76549064d0794b7561480c",
+      "size_bytes": 3807
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\smoke_test_pcbind_v5.py",
+      "sha256": "56eb1d73fce04247cbd676311f3ce2d64053c336d07009d1fca94b35eda899ec",
+      "size_bytes": 15152
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\smoke_test_pcbind_v9.py",
+      "sha256": "ffff7d39e8acd3d8a9c04419e4d4ab9473498d8b3ac8f6f4c57f720bca570ddc",
+      "size_bytes": 8116
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\statistical_ablation_tests.py",
+      "sha256": "4797ad8188a8922302004e677f326e6bb32331b672d1b1fb84ea478eb12d7540",
+      "size_bytes": 10905
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\summarize_reviewer_ablations.py",
+      "sha256": "86b6001ab1cf25ba55ed3d5acd3595331e8d7ff93518be9a25a0c1df928221f7",
+      "size_bytes": 6398
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\summarize_saved_results.py",
+      "sha256": "e09f166a6e7e6d64e41b38a9eb751d709731f8bc00478c5a77a54c09e6eb58a4",
+      "size_bytes": 6963
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\prepare_pcbind_v5_data.ps1",
+      "sha256": "6c5bf14b1f1b482f2398ddb9103b677577c6b56aa148bb977976b5564ea2255a",
+      "size_bytes": 3021
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_grouped_baseline_pilot.ps1",
+      "sha256": "5153e37b8fa25db7780b2a860988459889f7c9d4f7f0cadaf23e554010b760d5",
+      "size_bytes": 1841
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_pcbind_marginal_mismatch.ps1",
+      "sha256": "d7c619879fc44b18b0020c6a5a8506aabf55937846d0c12185f4f5d1a5d84b17",
+      "size_bytes": 1260
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_pcbind_no_ot_control.ps1",
+      "sha256": "3336d60656cbd1593e0f261fd5318750f610719373f80bf0862660e6d7b6a6a5",
+      "size_bytes": 806
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_pcbind_oof_mismatch.ps1",
+      "sha256": "7df83207dae73127797191ec46f0a77bfa6a45c508ab7b242d9bc3e8206ce287",
+      "size_bytes": 1208
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_pcbind_ot_ablation.ps1",
+      "sha256": "2f2073063393ac360568bb196a71ef7ddc86707613a410aedef4d0b82c9d07ac",
+      "size_bytes": 953
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_pcbind_ot_pilot.ps1",
+      "sha256": "82d9e23279c34c55bb0186456dc59816df5f859ba735592675efe4c1acb0bcfb",
+      "size_bytes": 3653
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_pcbind_pathway_audit.ps1",
+      "sha256": "35c306b91648d10f8f16a198e0d1edf126b0739c4a0352ab3b50f4d632256f3d",
+      "size_bytes": 1068
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_pcbind_v5_marginal_raw.ps1",
+      "sha256": "bd7f86a7821870083ddf35c29c2fa7047468a9bc6244ac9ee5dd4102dcc218ca",
+      "size_bytes": 1311
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_pcbind_v5_pair_pilot.ps1",
+      "sha256": "4fd27162f2161226e9e734412165c69bd05a60ff516657b05a7530a38a563150",
+      "size_bytes": 2108
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_pcbind_v5_pilot.ps1",
+      "sha256": "79617a5754d1387eb4941057566e72be2aea63f4b271611176c6ad68b569464a",
+      "size_bytes": 2531
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_pcbind_v6_consistency_pilot.ps1",
+      "sha256": "c73efc95242b1d0c04b05049b7df921ac15d3e0e7f3a2fab1c206f2504dc227f",
+      "size_bytes": 2245
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_pcbind_v7_marginal_contrast_pilot.ps1",
+      "sha256": "1960aa3e2ce35345ebf01d537ad8577cfac149dfcadde671d49b094863016992",
+      "size_bytes": 2997
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_pcbind_v8_contact_discrimination_pilot.ps1",
+      "sha256": "5b74796cb78fd625b3da0872bb5de1b2732e4bc138a7ec99ebc8dd6869c1bc8e",
+      "size_bytes": 3203
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_pcbind_v9_gate.ps1",
+      "sha256": "d87168d585b4c252f1b2eb6571384bf65ca34b7b2ea05cc0ed72e0071bd4e7d2",
+      "size_bytes": 1550
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_pcbind_v9_residual_pilot.ps1",
+      "sha256": "a787d829691ac29d304fa5d882d1b00d6e70765a7ee8bb20d936a2b8b02a6aae",
+      "size_bytes": 2780
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_reviewer_ablations.ps1",
+      "sha256": "5d6f012e355000d89e7d07b0d239494b7979b074c88bf8f0636a00d79816c538",
+      "size_bytes": 3996
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_seed.ps1",
+      "sha256": "eca672fe50b33cc74958391eaaf006ca95a3cb8d362ecbe205cd1ac3d68c3419",
+      "size_bytes": 15601
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_seed_onefold.ps1",
+      "sha256": "728b93f2d14003bffffd30232754cf04a7c43bacf9d140d2f8650486275e13b5",
+      "size_bytes": 2788
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\setup_env.ps1",
+      "sha256": "cf41156a59c2479835cc797e4b09f54371d1c2243c9524d5ab84a86031ce31be",
+      "size_bytes": 1018
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_data_integrity.py",
+      "sha256": "e9cc98a1137ed34f4687e375cb272b3bb58217a712c4c10be4a02df41c44435a",
+      "size_bytes": 9842
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_dataset_selection.py",
+      "sha256": "a2d2b1ba0647efacf6f62ebf509a9985819021c9e8d62ef9fb905d4e76227544",
+      "size_bytes": 5996
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_evaluation_integrity.py",
+      "sha256": "cf5a2f05a27d8ac7769460c4eb43a38fb7cf4a93c78bd94cc98850cd1696c8ea",
+      "size_bytes": 14173
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_filtered_cohort.py",
+      "sha256": "77e7c06003399527dd281a85a41c4302a18777043742b7f27c9b0d67ce00af4e",
+      "size_bytes": 2996
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_launchers.ps1",
+      "sha256": "e14d5beb2cebb04dd2d19f1e6651cf7a2912cc8bc19c9f6537dd220e1d0b5de0",
+      "size_bytes": 2967
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_model_integrity.py",
+      "sha256": "700c7475b2de72f8d9666f140ca75ec70dfd7f7e5e9fa092a60294921013b604",
+      "size_bytes": 10443
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_research_provenance.py",
+      "sha256": "94691a6495b31042af430742fd2dfe691fb3bc32be24069761cce968967047ca",
+      "size_bytes": 3809
+    }
+  ],
+  "finished_utc": "2026-09-28T11:05:37.678212+00:00"
+}

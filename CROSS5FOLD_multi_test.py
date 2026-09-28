@@ -6,6 +6,7 @@ import copy
 import random
 import json
 import csv
+from pathlib import Path
 import numpy as np
 
 import torch
@@ -20,7 +21,7 @@ if ANOMALY_DETECT:
 
 from metrics import *   # compute_auc_roc, compute_auc_pr, compute_acc, compute_performance
 from research_provenance import (
-    build_run_provenance, cv_split_manifest, load_dataset_with_provenance,
+    build_run_provenance, cv_split_manifest, file_record, load_dataset_with_provenance,
     prediction_identity, prediction_source,
 )
 
@@ -37,7 +38,14 @@ EVAL_SMOOTH_STEPS = 2
 EVAL_SMOOTH_ALPHA = 0.75
 OUTPUT_DIR = os.environ.get("PPI_OUTPUT_DIR", "outputs")
 TOP_K_CHECKPOINTS = 3
-GEO_DATA_DIR = os.path.join("data", "geo")
+_requested_data_dir = os.environ.get("PPI_DATA_DIR")
+if _requested_data_dir is not None and not _requested_data_dir.strip():
+    raise ValueError("PPI_DATA_DIR must name a directory when explicitly configured")
+EXPLICIT_DATA_DIR = (
+    str(Path(_requested_data_dir).expanduser().resolve())
+    if _requested_data_dir is not None else None
+)
+GEO_DATA_DIR = EXPLICIT_DATA_DIR or os.path.join("data", "geo")
 TEST_PKL_FILES = [
     name.strip()
     for name in os.environ.get(
@@ -3072,6 +3080,16 @@ def find_existing_file(directory, filename):
 
 
 def dataset_path(filename):
+    if EXPLICIT_DATA_DIR is not None:
+        if not filename or Path(filename).name != filename or "/" in filename or "\\" in filename:
+            raise ValueError("Dataset names must be filenames within PPI_DATA_DIR")
+        path = find_existing_file(EXPLICIT_DATA_DIR, filename)
+        if path is None or not os.path.isfile(path):
+            raise FileNotFoundError(
+                f"Explicit PPI_DATA_DIR is missing {filename}: {EXPLICIT_DATA_DIR}; "
+                "fallback to other dataset directories is disabled"
+            )
+        return str(Path(path).resolve(strict=True))
     geo_path = find_existing_file(GEO_DATA_DIR, filename)
     geo_train_ready = find_existing_file(GEO_DATA_DIR, "Train335.pkl") is not None
     if geo_train_ready and geo_path is not None:
@@ -3080,6 +3098,32 @@ def dataset_path(filename):
     if data_path is not None:
         return data_path
     return os.path.join("data", filename)
+
+
+def dataset_selection_provenance(train_path):
+    """Identify the selected cohort without changing its manifest or datasets."""
+    directory = Path(EXPLICIT_DATA_DIR or Path(train_path).parent).resolve(strict=True)
+    selection = {
+        "selection_mode": "explicit" if EXPLICIT_DATA_DIR is not None else "legacy_lookup",
+        "resolved_data_dir": str(directory),
+        "analysis_label": None,
+        "cohort_manifest": None,
+    }
+    manifest_path = directory / "cohort_manifest.json"
+    if manifest_path.exists():
+        before = file_record(manifest_path)
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        after = file_record(manifest_path)
+        if before != after:
+            raise RuntimeError(f"Cohort manifest changed while loading: {manifest_path}")
+        if not isinstance(manifest, dict):
+            raise ValueError(f"Cohort manifest must be a JSON object: {manifest_path}")
+        label = manifest.get("analysis_label")
+        if label is not None and (not isinstance(label, str) or not label.strip()):
+            raise ValueError(f"Cohort analysis_label must be a nonempty string: {manifest_path}")
+        selection["analysis_label"] = label
+        selection["cohort_manifest"] = after
+    return selection
 
 
 def contact_contrast_dataset_coverage(data_list):
@@ -3115,6 +3159,10 @@ def contact_contrast_dataset_coverage(data_list):
 
 
 def available_test_datasets(require_geo=True):
+    if EXPLICIT_DATA_DIR is not None:
+        # Every explicitly requested test is required, including when a caller
+        # passes require_geo=False. Never silently change the evaluation cohort.
+        return [(os.path.splitext(filename)[0], dataset_path(filename)) for filename in TEST_PKL_FILES]
     paths = []
     geo_train_ready = find_existing_file(GEO_DATA_DIR, "Train335.pkl") is not None
     for filename in TEST_PKL_FILES:
@@ -4317,7 +4365,11 @@ if __name__ == "__main__":
 
     train_list, train_source = load_dataset_with_provenance(train_path)
     data_sources = {"Train335": train_source}
+    dataset_selection = dataset_selection_provenance(train_path)
     print("Train data:", train_path)
+    print("Dataset selection:", dataset_selection["selection_mode"], dataset_selection["resolved_data_dir"])
+    if dataset_selection["analysis_label"]:
+        print("Analysis label:", dataset_selection["analysis_label"])
     pair_contact_contrast_coverage = contact_contrast_dataset_coverage(train_list)
 
     # 逐个载入测试集，键名使用规范名（不受原始文件大小写影响）
@@ -4481,6 +4533,8 @@ if __name__ == "__main__":
         "transport_implementation": TRANSPORT_IMPLEMENTATION,
         "requested_test_sets": list(TEST_PKL_FILES),
         "loaded_test_sets": list(test_sets), "skip_test_eval": SKIP_TEST_EVAL,
+        "dataset_selection": dataset_selection,
+        "analysis_label": dataset_selection["analysis_label"],
     })
     provenance_path = os.path.join(OUTPUT_DIR, "run_provenance.json")
     save_json(provenance_path, run_provenance)

@@ -4,6 +4,12 @@ Completed 28 September 2026 in the existing Python 3.12.14 environment,
 NumPy 2.4.6, scikit-learn 1.8.0, PyTorch 2.12.0+cpu. CUDA is unavailable.
 No dependencies were changed and no full experiment was trained.
 
+The table below preserves the original correction-stage verification. The
+[filtered-cohort preparation report](data_repair_v1/RESULT.md) and its
+[final validation record](data_repair_v1/final_validation.json) document the
+subsequent data-directory changes, larger regression suite and strict gate on
+the new 334/285 sensitivity cohort. The original coverage failure is unchanged.
+
 | Check | Result |
 |---|---|
 | `python -m unittest discover -s tests -p 'test_*.py' -v` | **53 tests passed**, latest verification run 7.765 seconds. |

@@ -1,6 +1,7 @@
 param(
     [int]$Seed = 2101,
     [string]$OutputDir = "",
+    [string]$DataDir = "",
     [int]$TwoHead = 1,
     [string]$AuxPlmDim = "",
     [string]$RankLossWeight = "0.55",
@@ -81,6 +82,34 @@ if ([string]::IsNullOrWhiteSpace($OutputDir)) {
     $OutputDir = "outputs_seed$Seed"
 }
 
+# Resolve an explicit cohort against the caller's location before Push-Location.
+# Reject missing requested files here as well as in Python; never borrow them
+# from data/geo or data when the caller selected a particular cohort.
+$selectedDataDir = $null
+if ($PSBoundParameters.ContainsKey("DataDir")) {
+    if ([string]::IsNullOrWhiteSpace($DataDir)) { throw "-DataDir must name a directory." }
+    $resolvedDataDir = Get-Item -LiteralPath $DataDir -ErrorAction Stop
+    if (-not $resolvedDataDir.PSIsContainer) { throw "-DataDir must name a directory: $DataDir" }
+    $selectedDataDir = $resolvedDataDir.FullName
+    $requiredDatasets = @("Train335.pkl")
+    if ($SkipTestEval -eq 0) {
+        $selectedTestSets = $TestSets
+        if ([string]::IsNullOrWhiteSpace($selectedTestSets)) {
+            $selectedTestSets = "Test60.pkl,Test287.pkl,Test70.pkl,TestB25.pkl,TestUB25.pkl"
+        }
+        $requiredDatasets += @($selectedTestSets.Split(',') | ForEach-Object { $_.Trim() } | Where-Object { $_ })
+    }
+    foreach ($filename in $requiredDatasets) {
+        if ([System.IO.Path]::GetFileName($filename) -ne $filename -or $filename.Contains('/') -or $filename.Contains('\')) {
+            throw "Dataset names must be filenames within -DataDir: $filename"
+        }
+        $selectedDatasetPath = Join-Path $selectedDataDir $filename
+        if (-not (Test-Path -LiteralPath $selectedDatasetPath -PathType Leaf)) {
+            throw "Explicit -DataDir is missing $filename in $selectedDataDir; fallback to other dataset directories is disabled."
+        }
+    }
+}
+
 if ($NoPlm -ne 0) {
     $UsePlm = 0
     $UseAuxPlm = 0
@@ -100,6 +129,7 @@ Push-Location $ProjectRoot
 try {
     $env:PPI_SEED = "$Seed"
     $env:PPI_OUTPUT_DIR = $OutputDir
+    if ($null -ne $selectedDataDir) { $env:PPI_DATA_DIR = $selectedDataDir }
     $env:PPI_TWO_HEAD_BINDING = "$TwoHead"
     $env:PPI_TWO_HEAD_RANK_LOSS_WEIGHT = "$RankLossWeight"
     $env:PPI_TWO_HEAD_CONSISTENCY_WEIGHT = "$ConsistencyWeight"
@@ -184,6 +214,7 @@ try {
     }
 
     Write-Host "Running seed $Seed -> $OutputDir"
+    if ($null -ne $selectedDataDir) { Write-Host "PPI_DATA_DIR=$env:PPI_DATA_DIR" }
     Write-Host "PPI_TWO_HEAD_BINDING=$env:PPI_TWO_HEAD_BINDING"
     Write-Host "PPI_TWO_HEAD_RANK_LOSS_WEIGHT=$env:PPI_TWO_HEAD_RANK_LOSS_WEIGHT"
     Write-Host "PPI_TWO_HEAD_CONSISTENCY_WEIGHT=$env:PPI_TWO_HEAD_CONSISTENCY_WEIGHT"

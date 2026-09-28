@@ -1,0 +1,40 @@
+[
+  {
+    "command": [
+      "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\.venv\\Scripts\\python.exe",
+      "audit_input_integrity.py",
+      "--data-dir",
+      "data/geo_filtered_v1",
+      "--output-dir",
+      "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\data_repair_v1\\strict_audit",
+      "Train335.pkl",
+      "Test287.pkl"
+    ],
+    "started_utc": "2026-09-28T02:43:21.685208+00:00",
+    "finished_utc": "2026-09-28T02:43:25.877495+00:00",
+    "exit_code": 0,
+    "stdout": "Audited Train335.pkl\nAudited Test287.pkl\nWrote C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\data_repair_v1\\strict_audit\\input_audit.json and C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\data_repair_v1\\strict_audit\\input_audit.md\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\.venv\\Scripts\\python.exe",
+      "check_pcbind_prereqs.py",
+      "--data-dir",
+      "data/geo_filtered_v1",
+      "--require-plm",
+      "--require-partner",
+      "--require-pair",
+      "--require-partner-encoder",
+      "--min-partner-encoder-coverage",
+      "1.0",
+      "Train335.pkl",
+      "Test287.pkl"
+    ],
+    "started_utc": "2026-09-28T02:43:25.878495+00:00",
+    "finished_utc": "2026-09-28T02:43:28.342390+00:00",
+    "exit_code": 0,
+    "stdout": "Train335.pkl: main_plm=334/334 aux_plm=334/334 partner_surface=334/334 partner_sequence=334/334 pair_labels=334/334 positive_pairs=28778 partner_encoder=334/334\nTest287.pkl: main_plm=285/285 aux_plm=285/285 partner_surface=285/285 partner_sequence=285/285 pair_labels=285/285 positive_pairs=22520 partner_encoder=285/285\n\nPC-BIND prerequisites OK.\n",
+    "stderr": ""
+  }
+]

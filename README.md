@@ -13,6 +13,14 @@ matching, component ablations, and partner-intervention analyses.
 
 ## Research review and evidence status
 
+The [versioned data-preparation result](research_review/data_repair_v1/RESULT.md)
+documents a separate **filtered-cohort analysis**: 334 training and 285 external
+test samples with complete target PLM and partner-encoder coverage. Original
+pickles are unchanged. The three failed samples could not be mapped safely to
+declared PDB chains. This is not a full benchmark repair, and biological mapping
+verification remains unresolved. Use the explicit data-directory instructions
+in that report for this cohort.
+
 Read the [research review](research_review/RESEARCH_REVIEW.md) before interpreting
 the results. The [saved artifact audit](research_review/artifact_audit.md)
 recomputes the retained metrics and records the actual run settings.

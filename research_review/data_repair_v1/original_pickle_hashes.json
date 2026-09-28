@@ -1,0 +1,37 @@
+{
+  "created_utc": "2026-09-28T02:40:19.183015+00:00",
+  "resolved_source_dir": "C:\\Users\\Mohamed KONE\\Desktop\\article\\data\\geo",
+  "files": {
+    "Test287.pkl": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\article\\data\\geo\\Test287.pkl",
+      "sha256": "6dec36a7e198a95fefe11b02999038919376c40cc01364acedd7d9236b7852de",
+      "size_bytes": 1098202693
+    },
+    "Test60.pkl": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\article\\data\\geo\\Test60.pkl",
+      "sha256": "e16b1e9d3edb2b2d58cdfaae47c270de2229eaf7043b780b5a7900e62efd1fd0",
+      "size_bytes": 270134272
+    },
+    "Test70.pkl": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\article\\data\\geo\\Test70.pkl",
+      "sha256": "abae0b39c943a91c156928a048981262a644d017522ed936ad7fce2f8e8e663d",
+      "size_bytes": 177415009
+    },
+    "TestB25.pkl": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\article\\data\\geo\\TestB25.pkl",
+      "sha256": "9e2e3cf03993a5d2c91e3dd68d691be247d6add4af2602a7cd625e77d6c27121",
+      "size_bytes": 115372497
+    },
+    "TestUB25.pkl": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\article\\data\\geo\\TestUB25.pkl",
+      "sha256": "c0feccd1d4b1b03e1929f3979ac176030f9e159366ca70f0a03177ac7470f144",
+      "size_bytes": 106797396
+    },
+    "Train335.pkl": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\article\\data\\geo\\Train335.pkl",
+      "sha256": "3b61ba47c66796ac9dfe326561fc917e78c9ec2ca6ef8c3f4ca5df9eb71e8a0a",
+      "size_bytes": 1471014435
+    }
+  },
+  "policy": "All source pickles are read-only; hashes recorded before derived writes."
+}

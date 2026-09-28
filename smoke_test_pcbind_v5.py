@@ -1,6 +1,7 @@
 import copy
 import os
 import pickle
+from pathlib import Path
 
 import numpy as np
 import torch
@@ -163,9 +164,16 @@ def forward_batch(
     return output, partner_feats
 
 
-def main():
+def main(data_dir=os.path.join("data", "geo")):
     torch.manual_seed(17)
-    samples = load_samples(os.path.join("data", "geo", "Train335.pkl"))
+    if not str(data_dir).strip():
+        raise ValueError("data_dir must name a dataset directory")
+    train_path = Path(data_dir).expanduser().resolve(strict=True) / "Train335.pkl"
+    if not train_path.is_file():
+        raise FileNotFoundError(f"Selected smoke-test dataset is missing {train_path}; fallback is disabled")
+    train_path = train_path.resolve(strict=True)
+    print(f"Smoke-test training data: {train_path}")
+    samples = load_samples(train_path)
     target, donor = choose_target_and_donor(samples)
     mismatch = mismatched_copy(target, donor)
     true_batch = make_batch(target)
@@ -411,4 +419,9 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Run the PC-BIND v5 smoke test on the selected dataset.")
+    parser.add_argument("--data-dir", default=os.path.join("data", "geo"),
+                        help="Directory containing Train335.pkl; explicit selection never falls back.")
+    main(parser.parse_args().data_dir)

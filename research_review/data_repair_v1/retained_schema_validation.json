@@ -1,0 +1,1505 @@
+{
+  "generated_utc": "2026-09-28T10:54:40.633527+00:00",
+  "scope": "Read-only retained-record schema, label, finite-value and index-bound checks. No PDB mapping reconstruction or scientific independence claim.",
+  "cohort_manifest_sha256": "a9c19e57dde847406a078e24142c0ef6c310a482008b38f22d60b35539905fcd",
+  "mapping_verification": "No new PDB mappings verified; existing mapping metadata remains unverified.",
+  "datasets": {
+    "Train335.pkl": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\Train335.pkl",
+      "resolved_path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\Train335.pkl",
+      "source_file_sha256": "edc851f17baeba49efd937f6ab3bb4534abeeb64c43d1774c219726dd970cdfe",
+      "source_file_bytes": 1468833049,
+      "hash_matches_cohort_manifest": true,
+      "source_unchanged_size_mtime_during_check": true,
+      "sample_count": 334,
+      "checks": {
+        "original_graph_node_counts": {
+          "checked": 334,
+          "passed": 334,
+          "failed": 0
+        },
+        "residue_graph_node_shape_and_finite": {
+          "checked": 334,
+          "passed": 334,
+          "failed": 0
+        },
+        "atom_graph_node_shape_and_finite": {
+          "checked": 334,
+          "passed": 334,
+          "failed": 0
+        },
+        "residue_coords_shape_and_finite": {
+          "checked": 334,
+          "passed": 334,
+          "failed": 0
+        },
+        "residue_frames_shape_and_finite": {
+          "checked": 334,
+          "passed": 334,
+          "failed": 0
+        },
+        "residue_surface_features_shape_and_finite": {
+          "checked": 334,
+          "passed": 334,
+          "failed": 0
+        },
+        "residue_sequence_features_shape_and_finite": {
+          "checked": 334,
+          "passed": 334,
+          "failed": 0
+        },
+        "residue_plm_embedding_shape_and_finite": {
+          "checked": 334,
+          "passed": 334,
+          "failed": 0
+        },
+        "residue_plm_embedding_8m_shape_and_finite": {
+          "checked": 334,
+          "passed": 334,
+          "failed": 0
+        },
+        "labels_binary_finite_aligned": {
+          "checked": 334,
+          "passed": 334,
+          "failed": 0
+        },
+        "target_sequence_length": {
+          "checked": 334,
+          "passed": 334,
+          "failed": 0
+        },
+        "optional_atom_coords_shape_and_finite": {
+          "checked": 237,
+          "passed": 237,
+          "failed": 0
+        },
+        "atom_to_residue_mapping_present": {
+          "checked": 334,
+          "passed": 334,
+          "failed": 0
+        },
+        "a2r_map_shape_integer_bounds": {
+          "checked": 334,
+          "passed": 334,
+          "failed": 0
+        },
+        "residue_graph_edge_shape_integer_bounds": {
+          "checked": 334,
+          "passed": 334,
+          "failed": 0
+        },
+        "residue_geo_edge_shape_integer_bounds": {
+          "checked": 334,
+          "passed": 334,
+          "failed": 0
+        },
+        "atom_graph_edge_shape_integer_bounds": {
+          "checked": 334,
+          "passed": 334,
+          "failed": 0
+        }
+      },
+      "mapping_keys_used": {
+        "a2r_map": 334
+      },
+      "mapping_verified_true": 0,
+      "failures": [],
+      "optional_atom_coords_present": 237,
+      "optional_atom_coords_absent_count": 97,
+      "optional_atom_coords_absent_samples": [
+        {
+          "filtered_index": 1,
+          "original_index": 1,
+          "complex_code": "4IU2"
+        },
+        {
+          "filtered_index": 2,
+          "original_index": 2,
+          "complex_code": "3F6Q"
+        },
+        {
+          "filtered_index": 4,
+          "original_index": 4,
+          "complex_code": "2O3B"
+        },
+        {
+          "filtered_index": 9,
+          "original_index": 9,
+          "complex_code": "2R25"
+        },
+        {
+          "filtered_index": 17,
+          "original_index": 17,
+          "complex_code": "3ZEU"
+        },
+        {
+          "filtered_index": 22,
+          "original_index": 22,
+          "complex_code": "1KSH"
+        },
+        {
+          "filtered_index": 26,
+          "original_index": 26,
+          "complex_code": "2O2V"
+        },
+        {
+          "filtered_index": 27,
+          "original_index": 27,
+          "complex_code": "2FCW"
+        },
+        {
+          "filtered_index": 29,
+          "original_index": 29,
+          "complex_code": "3O3M"
+        },
+        {
+          "filtered_index": 31,
+          "original_index": 31,
+          "complex_code": "1XG2"
+        },
+        {
+          "filtered_index": 32,
+          "original_index": 32,
+          "complex_code": "4G7X"
+        },
+        {
+          "filtered_index": 34,
+          "original_index": 34,
+          "complex_code": "4BJJ"
+        },
+        {
+          "filtered_index": 35,
+          "original_index": 35,
+          "complex_code": "4E4W"
+        },
+        {
+          "filtered_index": 39,
+          "original_index": 39,
+          "complex_code": "1JTD"
+        },
+        {
+          "filtered_index": 42,
+          "original_index": 42,
+          "complex_code": "2O3B"
+        },
+        {
+          "filtered_index": 46,
+          "original_index": 46,
+          "complex_code": "2OMZ"
+        },
+        {
+          "filtered_index": 51,
+          "original_index": 51,
+          "complex_code": "4A5U"
+        },
+        {
+          "filtered_index": 53,
+          "original_index": 53,
+          "complex_code": "3BP6"
+        },
+        {
+          "filtered_index": 54,
+          "original_index": 54,
+          "complex_code": "4M69"
+        },
+        {
+          "filtered_index": 56,
+          "original_index": 56,
+          "complex_code": "3UVJ"
+        },
+        {
+          "filtered_index": 65,
+          "original_index": 65,
+          "complex_code": "4IU2"
+        },
+        {
+          "filtered_index": 67,
+          "original_index": 67,
+          "complex_code": "4BJJ"
+        },
+        {
+          "filtered_index": 69,
+          "original_index": 69,
+          "complex_code": "1U0S"
+        },
+        {
+          "filtered_index": 71,
+          "original_index": 71,
+          "complex_code": "3MMY"
+        },
+        {
+          "filtered_index": 75,
+          "original_index": 75,
+          "complex_code": "3BP6"
+        },
+        {
+          "filtered_index": 76,
+          "original_index": 76,
+          "complex_code": "1NRJ"
+        },
+        {
+          "filtered_index": 80,
+          "original_index": 80,
+          "complex_code": "2VOH"
+        },
+        {
+          "filtered_index": 83,
+          "original_index": 83,
+          "complex_code": "2HQS"
+        },
+        {
+          "filtered_index": 85,
+          "original_index": 85,
+          "complex_code": "4EUK"
+        },
+        {
+          "filtered_index": 93,
+          "original_index": 93,
+          "complex_code": "2APO"
+        },
+        {
+          "filtered_index": 95,
+          "original_index": 95,
+          "complex_code": "1KSH"
+        },
+        {
+          "filtered_index": 97,
+          "original_index": 97,
+          "complex_code": "2O2V"
+        },
+        {
+          "filtered_index": 102,
+          "original_index": 102,
+          "complex_code": "3ZEU"
+        },
+        {
+          "filtered_index": 106,
+          "original_index": 107,
+          "complex_code": "4FOU"
+        },
+        {
+          "filtered_index": 116,
+          "original_index": 117,
+          "complex_code": "4APX"
+        },
+        {
+          "filtered_index": 119,
+          "original_index": 120,
+          "complex_code": "2V8S"
+        },
+        {
+          "filtered_index": 124,
+          "original_index": 125,
+          "complex_code": "2V8S"
+        },
+        {
+          "filtered_index": 131,
+          "original_index": 132,
+          "complex_code": "4HFF"
+        },
+        {
+          "filtered_index": 140,
+          "original_index": 141,
+          "complex_code": "2C5K"
+        },
+        {
+          "filtered_index": 142,
+          "original_index": 143,
+          "complex_code": "2YAJ"
+        },
+        {
+          "filtered_index": 144,
+          "original_index": 145,
+          "complex_code": "1NRJ"
+        },
+        {
+          "filtered_index": 151,
+          "original_index": 152,
+          "complex_code": "3VU9"
+        },
+        {
+          "filtered_index": 155,
+          "original_index": 156,
+          "complex_code": "4FOU"
+        },
+        {
+          "filtered_index": 157,
+          "original_index": 158,
+          "complex_code": "2DOH"
+        },
+        {
+          "filtered_index": 161,
+          "original_index": 162,
+          "complex_code": "2HQS"
+        },
+        {
+          "filtered_index": 162,
+          "original_index": 163,
+          "complex_code": "4EUK"
+        },
+        {
+          "filtered_index": 169,
+          "original_index": 170,
+          "complex_code": "2YCL"
+        },
+        {
+          "filtered_index": 170,
+          "original_index": 171,
+          "complex_code": "3TU3"
+        },
+        {
+          "filtered_index": 171,
+          "original_index": 172,
+          "complex_code": "2CG5"
+        },
+        {
+          "filtered_index": 173,
+          "original_index": 174,
+          "complex_code": "4GED"
+        },
+        {
+          "filtered_index": 181,
+          "original_index": 182,
+          "complex_code": "3ZKQ"
+        },
+        {
+          "filtered_index": 187,
+          "original_index": 188,
+          "complex_code": "4GN4"
+        },
+        {
+          "filtered_index": 190,
+          "original_index": 191,
+          "complex_code": "3DLQ"
+        },
+        {
+          "filtered_index": 194,
+          "original_index": 195,
+          "complex_code": "1SVD"
+        },
+        {
+          "filtered_index": 203,
+          "original_index": 204,
+          "complex_code": "4APX"
+        },
+        {
+          "filtered_index": 205,
+          "original_index": 206,
+          "complex_code": "2Z0E"
+        },
+        {
+          "filtered_index": 207,
+          "original_index": 208,
+          "complex_code": "3VU9"
+        },
+        {
+          "filtered_index": 208,
+          "original_index": 209,
+          "complex_code": "4A5U"
+        },
+        {
+          "filtered_index": 210,
+          "original_index": 211,
+          "complex_code": "1ITB"
+        },
+        {
+          "filtered_index": 211,
+          "original_index": 212,
+          "complex_code": "4ETP"
+        },
+        {
+          "filtered_index": 213,
+          "original_index": 214,
+          "complex_code": "1C1Y"
+        },
+        {
+          "filtered_index": 215,
+          "original_index": 216,
+          "complex_code": "1Z5Y"
+        },
+        {
+          "filtered_index": 217,
+          "original_index": 218,
+          "complex_code": "3OG6"
+        },
+        {
+          "filtered_index": 226,
+          "original_index": 227,
+          "complex_code": "1TE1"
+        },
+        {
+          "filtered_index": 227,
+          "original_index": 228,
+          "complex_code": "4KT3"
+        },
+        {
+          "filtered_index": 233,
+          "original_index": 234,
+          "complex_code": "1XG2"
+        },
+        {
+          "filtered_index": 241,
+          "original_index": 242,
+          "complex_code": "2YCL"
+        },
+        {
+          "filtered_index": 243,
+          "original_index": 244,
+          "complex_code": "4F6U"
+        },
+        {
+          "filtered_index": 246,
+          "original_index": 247,
+          "complex_code": "2YAJ"
+        },
+        {
+          "filtered_index": 247,
+          "original_index": 248,
+          "complex_code": "1Z5Y"
+        },
+        {
+          "filtered_index": 253,
+          "original_index": 254,
+          "complex_code": "3Q87"
+        },
+        {
+          "filtered_index": 258,
+          "original_index": 259,
+          "complex_code": "4G7X"
+        },
+        {
+          "filtered_index": 260,
+          "original_index": 261,
+          "complex_code": "3SHG"
+        },
+        {
+          "filtered_index": 261,
+          "original_index": 262,
+          "complex_code": "4GN4"
+        },
+        {
+          "filtered_index": 263,
+          "original_index": 264,
+          "complex_code": "1U0S"
+        },
+        {
+          "filtered_index": 267,
+          "original_index": 268,
+          "complex_code": "3CBJ"
+        },
+        {
+          "filtered_index": 269,
+          "original_index": 270,
+          "complex_code": "4GED"
+        },
+        {
+          "filtered_index": 274,
+          "original_index": 275,
+          "complex_code": "2OMZ"
+        },
+        {
+          "filtered_index": 278,
+          "original_index": 279,
+          "complex_code": "1AY7"
+        },
+        {
+          "filtered_index": 281,
+          "original_index": 282,
+          "complex_code": "3CZU"
+        },
+        {
+          "filtered_index": 284,
+          "original_index": 285,
+          "complex_code": "2RD7"
+        },
+        {
+          "filtered_index": 288,
+          "original_index": 289,
+          "complex_code": "3VIQ"
+        },
+        {
+          "filtered_index": 289,
+          "original_index": 290,
+          "complex_code": "3R07"
+        },
+        {
+          "filtered_index": 290,
+          "original_index": 291,
+          "complex_code": "4NQW"
+        },
+        {
+          "filtered_index": 292,
+          "original_index": 293,
+          "complex_code": "2RD7"
+        },
+        {
+          "filtered_index": 293,
+          "original_index": 294,
+          "complex_code": "1ZBD"
+        },
+        {
+          "filtered_index": 298,
+          "original_index": 299,
+          "complex_code": "4BI8"
+        },
+        {
+          "filtered_index": 299,
+          "original_index": 300,
+          "complex_code": "3CZU"
+        },
+        {
+          "filtered_index": 300,
+          "original_index": 301,
+          "complex_code": "1AK4"
+        },
+        {
+          "filtered_index": 301,
+          "original_index": 302,
+          "complex_code": "3R07"
+        },
+        {
+          "filtered_index": 306,
+          "original_index": 307,
+          "complex_code": "3VIQ"
+        },
+        {
+          "filtered_index": 311,
+          "original_index": 312,
+          "complex_code": "4EMJ"
+        },
+        {
+          "filtered_index": 317,
+          "original_index": 318,
+          "complex_code": "2FCW"
+        },
+        {
+          "filtered_index": 323,
+          "original_index": 324,
+          "complex_code": "1SVD"
+        },
+        {
+          "filtered_index": 325,
+          "original_index": 326,
+          "complex_code": "3VRD"
+        },
+        {
+          "filtered_index": 327,
+          "original_index": 328,
+          "complex_code": "1ITB"
+        },
+        {
+          "filtered_index": 328,
+          "original_index": 329,
+          "complex_code": "1AK4"
+        }
+      ],
+      "optional_atom_coords_note": "Absent atom_coords is recorded as limited input coverage, not synthesized or silently excluded. Present atom_coords must align to original atom graph rows.",
+      "passed": true
+    },
+    "Test287.pkl": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\Test287.pkl",
+      "resolved_path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\Test287.pkl",
+      "source_file_sha256": "13d02398c730d1a4c90666807dc2c621ced0838d03affd93e0effeeeed4d8581",
+      "source_file_bytes": 1091571976,
+      "hash_matches_cohort_manifest": true,
+      "source_unchanged_size_mtime_during_check": true,
+      "sample_count": 285,
+      "checks": {
+        "original_graph_node_counts": {
+          "checked": 285,
+          "passed": 285,
+          "failed": 0
+        },
+        "residue_graph_node_shape_and_finite": {
+          "checked": 285,
+          "passed": 285,
+          "failed": 0
+        },
+        "atom_graph_node_shape_and_finite": {
+          "checked": 285,
+          "passed": 285,
+          "failed": 0
+        },
+        "residue_coords_shape_and_finite": {
+          "checked": 285,
+          "passed": 285,
+          "failed": 0
+        },
+        "residue_frames_shape_and_finite": {
+          "checked": 285,
+          "passed": 285,
+          "failed": 0
+        },
+        "residue_surface_features_shape_and_finite": {
+          "checked": 285,
+          "passed": 285,
+          "failed": 0
+        },
+        "residue_sequence_features_shape_and_finite": {
+          "checked": 285,
+          "passed": 285,
+          "failed": 0
+        },
+        "residue_plm_embedding_shape_and_finite": {
+          "checked": 285,
+          "passed": 285,
+          "failed": 0
+        },
+        "residue_plm_embedding_8m_shape_and_finite": {
+          "checked": 285,
+          "passed": 285,
+          "failed": 0
+        },
+        "labels_binary_finite_aligned": {
+          "checked": 285,
+          "passed": 285,
+          "failed": 0
+        },
+        "target_sequence_length": {
+          "checked": 285,
+          "passed": 285,
+          "failed": 0
+        },
+        "atom_to_residue_mapping_present": {
+          "checked": 285,
+          "passed": 285,
+          "failed": 0
+        },
+        "a2r_map_shape_integer_bounds": {
+          "checked": 285,
+          "passed": 285,
+          "failed": 0
+        },
+        "residue_graph_edge_shape_integer_bounds": {
+          "checked": 285,
+          "passed": 285,
+          "failed": 0
+        },
+        "residue_geo_edge_shape_integer_bounds": {
+          "checked": 285,
+          "passed": 285,
+          "failed": 0
+        },
+        "atom_graph_edge_shape_integer_bounds": {
+          "checked": 285,
+          "passed": 285,
+          "failed": 0
+        },
+        "optional_atom_coords_shape_and_finite": {
+          "checked": 153,
+          "passed": 153,
+          "failed": 0
+        }
+      },
+      "mapping_keys_used": {
+        "a2r_map": 285
+      },
+      "mapping_verified_true": 0,
+      "failures": [],
+      "optional_atom_coords_present": 153,
+      "optional_atom_coords_absent_count": 132,
+      "optional_atom_coords_absent_samples": [
+        {
+          "filtered_index": 0,
+          "original_index": 0,
+          "complex_code": "4YOC"
+        },
+        {
+          "filtered_index": 2,
+          "original_index": 2,
+          "complex_code": "5E6U"
+        },
+        {
+          "filtered_index": 6,
+          "original_index": 6,
+          "complex_code": "4L79"
+        },
+        {
+          "filtered_index": 7,
+          "original_index": 7,
+          "complex_code": "6C90"
+        },
+        {
+          "filtered_index": 9,
+          "original_index": 9,
+          "complex_code": "6X07"
+        },
+        {
+          "filtered_index": 11,
+          "original_index": 11,
+          "complex_code": "6I8G"
+        },
+        {
+          "filtered_index": 12,
+          "original_index": 12,
+          "complex_code": "4CJ0"
+        },
+        {
+          "filtered_index": 16,
+          "original_index": 16,
+          "complex_code": "5IMT"
+        },
+        {
+          "filtered_index": 19,
+          "original_index": 19,
+          "complex_code": "5XBF"
+        },
+        {
+          "filtered_index": 22,
+          "original_index": 22,
+          "complex_code": "4UAF"
+        },
+        {
+          "filtered_index": 23,
+          "original_index": 23,
+          "complex_code": "5CEC"
+        },
+        {
+          "filtered_index": 24,
+          "original_index": 24,
+          "complex_code": "5KP7"
+        },
+        {
+          "filtered_index": 30,
+          "original_index": 30,
+          "complex_code": "4QAM"
+        },
+        {
+          "filtered_index": 31,
+          "original_index": 31,
+          "complex_code": "4N80"
+        },
+        {
+          "filtered_index": 32,
+          "original_index": 32,
+          "complex_code": "4HT3"
+        },
+        {
+          "filtered_index": 34,
+          "original_index": 34,
+          "complex_code": "5WXK"
+        },
+        {
+          "filtered_index": 35,
+          "original_index": 35,
+          "complex_code": "4YC7"
+        },
+        {
+          "filtered_index": 36,
+          "original_index": 36,
+          "complex_code": "6I4E"
+        },
+        {
+          "filtered_index": 43,
+          "original_index": 43,
+          "complex_code": "5XVE"
+        },
+        {
+          "filtered_index": 44,
+          "original_index": 44,
+          "complex_code": "5KYC"
+        },
+        {
+          "filtered_index": 46,
+          "original_index": 46,
+          "complex_code": "6EI1"
+        },
+        {
+          "filtered_index": 47,
+          "original_index": 47,
+          "complex_code": "6JZY"
+        },
+        {
+          "filtered_index": 55,
+          "original_index": 56,
+          "complex_code": "4BMP"
+        },
+        {
+          "filtered_index": 56,
+          "original_index": 57,
+          "complex_code": "6G4J"
+        },
+        {
+          "filtered_index": 57,
+          "original_index": 58,
+          "complex_code": "4XLG"
+        },
+        {
+          "filtered_index": 58,
+          "original_index": 59,
+          "complex_code": "5FFN"
+        },
+        {
+          "filtered_index": 59,
+          "original_index": 60,
+          "complex_code": "5MAW"
+        },
+        {
+          "filtered_index": 67,
+          "original_index": 68,
+          "complex_code": "5IL2"
+        },
+        {
+          "filtered_index": 68,
+          "original_index": 69,
+          "complex_code": "6GHO"
+        },
+        {
+          "filtered_index": 69,
+          "original_index": 70,
+          "complex_code": "6RTW"
+        },
+        {
+          "filtered_index": 73,
+          "original_index": 74,
+          "complex_code": "4X6R"
+        },
+        {
+          "filtered_index": 74,
+          "original_index": 75,
+          "complex_code": "5JQS"
+        },
+        {
+          "filtered_index": 75,
+          "original_index": 76,
+          "complex_code": "5VXM"
+        },
+        {
+          "filtered_index": 76,
+          "original_index": 77,
+          "complex_code": "5XLY"
+        },
+        {
+          "filtered_index": 77,
+          "original_index": 78,
+          "complex_code": "5ZWL"
+        },
+        {
+          "filtered_index": 78,
+          "original_index": 79,
+          "complex_code": "6QTA"
+        },
+        {
+          "filtered_index": 80,
+          "original_index": 81,
+          "complex_code": "6Y4L"
+        },
+        {
+          "filtered_index": 82,
+          "original_index": 83,
+          "complex_code": "4WEM"
+        },
+        {
+          "filtered_index": 83,
+          "original_index": 84,
+          "complex_code": "4HT3"
+        },
+        {
+          "filtered_index": 84,
+          "original_index": 85,
+          "complex_code": "4RHZ"
+        },
+        {
+          "filtered_index": 85,
+          "original_index": 86,
+          "complex_code": "6INE"
+        },
+        {
+          "filtered_index": 87,
+          "original_index": 88,
+          "complex_code": "5TVQ"
+        },
+        {
+          "filtered_index": 89,
+          "original_index": 90,
+          "complex_code": "6JZY"
+        },
+        {
+          "filtered_index": 90,
+          "original_index": 91,
+          "complex_code": "6SWT"
+        },
+        {
+          "filtered_index": 93,
+          "original_index": 94,
+          "complex_code": "6M3I"
+        },
+        {
+          "filtered_index": 94,
+          "original_index": 95,
+          "complex_code": "5JWO"
+        },
+        {
+          "filtered_index": 98,
+          "original_index": 99,
+          "complex_code": "6HUL"
+        },
+        {
+          "filtered_index": 100,
+          "original_index": 101,
+          "complex_code": "5F4E"
+        },
+        {
+          "filtered_index": 104,
+          "original_index": 105,
+          "complex_code": "4CRW"
+        },
+        {
+          "filtered_index": 106,
+          "original_index": 107,
+          "complex_code": "6ISC"
+        },
+        {
+          "filtered_index": 107,
+          "original_index": 108,
+          "complex_code": "6IMF"
+        },
+        {
+          "filtered_index": 109,
+          "original_index": 110,
+          "complex_code": "5JP1"
+        },
+        {
+          "filtered_index": 111,
+          "original_index": 112,
+          "complex_code": "4BVX"
+        },
+        {
+          "filtered_index": 112,
+          "original_index": 113,
+          "complex_code": "4C2A"
+        },
+        {
+          "filtered_index": 113,
+          "original_index": 114,
+          "complex_code": "5F4E"
+        },
+        {
+          "filtered_index": 116,
+          "original_index": 117,
+          "complex_code": "5FR1"
+        },
+        {
+          "filtered_index": 117,
+          "original_index": 118,
+          "complex_code": "6MM8"
+        },
+        {
+          "filtered_index": 121,
+          "original_index": 122,
+          "complex_code": "6IF2"
+        },
+        {
+          "filtered_index": 122,
+          "original_index": 123,
+          "complex_code": "4QLP"
+        },
+        {
+          "filtered_index": 123,
+          "original_index": 124,
+          "complex_code": "6L4P"
+        },
+        {
+          "filtered_index": 124,
+          "original_index": 125,
+          "complex_code": "5C50"
+        },
+        {
+          "filtered_index": 129,
+          "original_index": 130,
+          "complex_code": "5C50"
+        },
+        {
+          "filtered_index": 130,
+          "original_index": 131,
+          "complex_code": "6PNP"
+        },
+        {
+          "filtered_index": 133,
+          "original_index": 134,
+          "complex_code": "6NDU"
+        },
+        {
+          "filtered_index": 134,
+          "original_index": 135,
+          "complex_code": "6WTG"
+        },
+        {
+          "filtered_index": 135,
+          "original_index": 136,
+          "complex_code": "4WKZ"
+        },
+        {
+          "filtered_index": 140,
+          "original_index": 141,
+          "complex_code": "4ZQU"
+        },
+        {
+          "filtered_index": 143,
+          "original_index": 144,
+          "complex_code": "4P3Y"
+        },
+        {
+          "filtered_index": 144,
+          "original_index": 145,
+          "complex_code": "7CN7"
+        },
+        {
+          "filtered_index": 146,
+          "original_index": 147,
+          "complex_code": "5O33"
+        },
+        {
+          "filtered_index": 150,
+          "original_index": 151,
+          "complex_code": "4QLP"
+        },
+        {
+          "filtered_index": 151,
+          "original_index": 152,
+          "complex_code": "5D5N"
+        },
+        {
+          "filtered_index": 152,
+          "original_index": 153,
+          "complex_code": "5OEN"
+        },
+        {
+          "filtered_index": 154,
+          "original_index": 155,
+          "complex_code": "6IF3"
+        },
+        {
+          "filtered_index": 156,
+          "original_index": 157,
+          "complex_code": "4BVX"
+        },
+        {
+          "filtered_index": 157,
+          "original_index": 158,
+          "complex_code": "5OEN"
+        },
+        {
+          "filtered_index": 159,
+          "original_index": 160,
+          "complex_code": "6MBA"
+        },
+        {
+          "filtered_index": 160,
+          "original_index": 162,
+          "complex_code": "6PNP"
+        },
+        {
+          "filtered_index": 161,
+          "original_index": 163,
+          "complex_code": "6ZDT"
+        },
+        {
+          "filtered_index": 163,
+          "original_index": 165,
+          "complex_code": "6FFA"
+        },
+        {
+          "filtered_index": 167,
+          "original_index": 169,
+          "complex_code": "6VCL"
+        },
+        {
+          "filtered_index": 168,
+          "original_index": 170,
+          "complex_code": "4ONM"
+        },
+        {
+          "filtered_index": 169,
+          "original_index": 171,
+          "complex_code": "4RLJ"
+        },
+        {
+          "filtered_index": 173,
+          "original_index": 175,
+          "complex_code": "5E0Q"
+        },
+        {
+          "filtered_index": 175,
+          "original_index": 177,
+          "complex_code": "4W6X"
+        },
+        {
+          "filtered_index": 177,
+          "original_index": 179,
+          "complex_code": "5M2O"
+        },
+        {
+          "filtered_index": 178,
+          "original_index": 180,
+          "complex_code": "5V03"
+        },
+        {
+          "filtered_index": 179,
+          "original_index": 181,
+          "complex_code": "6DEX"
+        },
+        {
+          "filtered_index": 180,
+          "original_index": 182,
+          "complex_code": "6G4J"
+        },
+        {
+          "filtered_index": 181,
+          "original_index": 183,
+          "complex_code": "4RLJ"
+        },
+        {
+          "filtered_index": 182,
+          "original_index": 184,
+          "complex_code": "6BCB"
+        },
+        {
+          "filtered_index": 183,
+          "original_index": 185,
+          "complex_code": "5C2U"
+        },
+        {
+          "filtered_index": 184,
+          "original_index": 186,
+          "complex_code": "6ZIE"
+        },
+        {
+          "filtered_index": 186,
+          "original_index": 188,
+          "complex_code": "5VGB"
+        },
+        {
+          "filtered_index": 193,
+          "original_index": 195,
+          "complex_code": "5D1M"
+        },
+        {
+          "filtered_index": 196,
+          "original_index": 198,
+          "complex_code": "5XLY"
+        },
+        {
+          "filtered_index": 197,
+          "original_index": 199,
+          "complex_code": "5IWB"
+        },
+        {
+          "filtered_index": 199,
+          "original_index": 201,
+          "complex_code": "4CMM"
+        },
+        {
+          "filtered_index": 201,
+          "original_index": 203,
+          "complex_code": "5IMM"
+        },
+        {
+          "filtered_index": 202,
+          "original_index": 204,
+          "complex_code": "4RHZ"
+        },
+        {
+          "filtered_index": 205,
+          "original_index": 207,
+          "complex_code": "5XBF"
+        },
+        {
+          "filtered_index": 208,
+          "original_index": 210,
+          "complex_code": "5ZZA"
+        },
+        {
+          "filtered_index": 210,
+          "original_index": 212,
+          "complex_code": "6H1F"
+        },
+        {
+          "filtered_index": 214,
+          "original_index": 216,
+          "complex_code": "5L8L"
+        },
+        {
+          "filtered_index": 220,
+          "original_index": 222,
+          "complex_code": "5KNH"
+        },
+        {
+          "filtered_index": 221,
+          "original_index": 223,
+          "complex_code": "6R6M"
+        },
+        {
+          "filtered_index": 229,
+          "original_index": 231,
+          "complex_code": "4C4K"
+        },
+        {
+          "filtered_index": 231,
+          "original_index": 233,
+          "complex_code": "6R6M"
+        },
+        {
+          "filtered_index": 232,
+          "original_index": 234,
+          "complex_code": "5JWO"
+        },
+        {
+          "filtered_index": 238,
+          "original_index": 240,
+          "complex_code": "5M2O"
+        },
+        {
+          "filtered_index": 241,
+          "original_index": 243,
+          "complex_code": "5KEV"
+        },
+        {
+          "filtered_index": 242,
+          "original_index": 244,
+          "complex_code": "6FUB"
+        },
+        {
+          "filtered_index": 245,
+          "original_index": 247,
+          "complex_code": "6SWT"
+        },
+        {
+          "filtered_index": 249,
+          "original_index": 251,
+          "complex_code": "4UAF"
+        },
+        {
+          "filtered_index": 250,
+          "original_index": 252,
+          "complex_code": "5SVH"
+        },
+        {
+          "filtered_index": 251,
+          "original_index": 253,
+          "complex_code": "5VGB"
+        },
+        {
+          "filtered_index": 252,
+          "original_index": 254,
+          "complex_code": "4UDM"
+        },
+        {
+          "filtered_index": 255,
+          "original_index": 257,
+          "complex_code": "6ODD"
+        },
+        {
+          "filtered_index": 256,
+          "original_index": 258,
+          "complex_code": "4K12"
+        },
+        {
+          "filtered_index": 261,
+          "original_index": 263,
+          "complex_code": "6FC0"
+        },
+        {
+          "filtered_index": 262,
+          "original_index": 264,
+          "complex_code": "6FUB"
+        },
+        {
+          "filtered_index": 263,
+          "original_index": 265,
+          "complex_code": "7D2S"
+        },
+        {
+          "filtered_index": 264,
+          "original_index": 266,
+          "complex_code": "4XLG"
+        },
+        {
+          "filtered_index": 265,
+          "original_index": 267,
+          "complex_code": "5IMT"
+        },
+        {
+          "filtered_index": 266,
+          "original_index": 268,
+          "complex_code": "7CN7"
+        },
+        {
+          "filtered_index": 268,
+          "original_index": 270,
+          "complex_code": "6ODD"
+        },
+        {
+          "filtered_index": 271,
+          "original_index": 273,
+          "complex_code": "5ABU"
+        },
+        {
+          "filtered_index": 272,
+          "original_index": 274,
+          "complex_code": "5WXK"
+        },
+        {
+          "filtered_index": 274,
+          "original_index": 276,
+          "complex_code": "6GR8"
+        },
+        {
+          "filtered_index": 277,
+          "original_index": 279,
+          "complex_code": "4K12"
+        },
+        {
+          "filtered_index": 278,
+          "original_index": 280,
+          "complex_code": "4X33"
+        },
+        {
+          "filtered_index": 284,
+          "original_index": 286,
+          "complex_code": "6FC3"
+        }
+      ],
+      "optional_atom_coords_note": "Absent atom_coords is recorded as limited input coverage, not synthesized or silently excluded. Present atom_coords must align to original atom graph rows.",
+      "passed": true
+    }
+  },
+  "overall_passed": true,
+  "fold_manifest_validation": {
+    "generated_utc": "2026-09-28T11:04:27.577348+00:00",
+    "method": "Current imported training.make_cv_folds(actual filtered Train335, seed=2101, num_folds=5, grouped=True, group_key=complex_code), then research_provenance.cv_split_manifest; compared all index/complex/group arrays in order.",
+    "training_code": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\CROSS5FOLD_multi_test.py",
+      "sha256": "fd197d065a2574b30c877d74f65fad62944415724f1bbf80cb5ad656cf3f420f",
+      "size_bytes": 220849
+    },
+    "provenance_code": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_provenance.py",
+      "sha256": "b2ade05798ce250cd08b6188ae1a20a8725bae5d6d890419a8c4c5b5b3c04ddd",
+      "size_bytes": 5566
+    },
+    "training_source_unchanged_during_check": true,
+    "saved_manifest": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\grouped_folds_seed2101.json",
+      "sha256": "5ce6af3a724de3b2b1b7cb08f2cc93452372d2ae01cb3a0aaefe5fe7cc18d1a0",
+      "size_bytes": 76421
+    },
+    "input": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\Train335.pkl",
+      "sha256": "edc851f17baeba49efd937f6ab3bb4534abeeb64c43d1774c219726dd970cdfe",
+      "size_bytes": 1468833049,
+      "sample_count": 334
+    },
+    "seed": 2101,
+    "grouped": true,
+    "group_key": "complex_code",
+    "sample_count": 334,
+    "complex_count": 209,
+    "manifest_metadata_matches": true,
+    "entire_fold_manifest_exact_match": true,
+    "each_sample_validated_once": true,
+    "fold_checks": [
+      {
+        "fold_index": 0,
+        "train_samples": 266,
+        "validation_samples": 68,
+        "train_groups": 166,
+        "validation_groups": 43,
+        "array_exact_matches": {
+          "train_indices": true,
+          "val_indices": true,
+          "train_complex_ids": true,
+          "val_complex_ids": true,
+          "train_group_ids": true,
+          "val_group_ids": true
+        },
+        "sample_sets_disjoint": true,
+        "group_sets_disjoint": true,
+        "complete_partition": true,
+        "no_duplicate_train_indices": true,
+        "no_duplicate_validation_indices": true
+      },
+      {
+        "fold_index": 1,
+        "train_samples": 267,
+        "validation_samples": 67,
+        "train_groups": 165,
+        "validation_groups": 44,
+        "array_exact_matches": {
+          "train_indices": true,
+          "val_indices": true,
+          "train_complex_ids": true,
+          "val_complex_ids": true,
+          "train_group_ids": true,
+          "val_group_ids": true
+        },
+        "sample_sets_disjoint": true,
+        "group_sets_disjoint": true,
+        "complete_partition": true,
+        "no_duplicate_train_indices": true,
+        "no_duplicate_validation_indices": true
+      },
+      {
+        "fold_index": 2,
+        "train_samples": 268,
+        "validation_samples": 66,
+        "train_groups": 170,
+        "validation_groups": 39,
+        "array_exact_matches": {
+          "train_indices": true,
+          "val_indices": true,
+          "train_complex_ids": true,
+          "val_complex_ids": true,
+          "train_group_ids": true,
+          "val_group_ids": true
+        },
+        "sample_sets_disjoint": true,
+        "group_sets_disjoint": true,
+        "complete_partition": true,
+        "no_duplicate_train_indices": true,
+        "no_duplicate_validation_indices": true
+      },
+      {
+        "fold_index": 3,
+        "train_samples": 268,
+        "validation_samples": 66,
+        "train_groups": 170,
+        "validation_groups": 39,
+        "array_exact_matches": {
+          "train_indices": true,
+          "val_indices": true,
+          "train_complex_ids": true,
+          "val_complex_ids": true,
+          "train_group_ids": true,
+          "val_group_ids": true
+        },
+        "sample_sets_disjoint": true,
+        "group_sets_disjoint": true,
+        "complete_partition": true,
+        "no_duplicate_train_indices": true,
+        "no_duplicate_validation_indices": true
+      },
+      {
+        "fold_index": 4,
+        "train_samples": 267,
+        "validation_samples": 67,
+        "train_groups": 165,
+        "validation_groups": 44,
+        "array_exact_matches": {
+          "train_indices": true,
+          "val_indices": true,
+          "train_complex_ids": true,
+          "val_complex_ids": true,
+          "train_group_ids": true,
+          "val_group_ids": true
+        },
+        "sample_sets_disjoint": true,
+        "group_sets_disjoint": true,
+        "complete_partition": true,
+        "no_duplicate_train_indices": true,
+        "no_duplicate_validation_indices": true
+      }
+    ],
+    "passed": true
+  }
+}
