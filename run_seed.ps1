@@ -2,6 +2,8 @@ param(
     [int]$Seed = 2101,
     [string]$OutputDir = "",
     [string]$DataDir = "",
+    [string]$CohortManifest = "",
+    [string]$FoldManifest = "",
     [int]$TwoHead = 1,
     [string]$AuxPlmDim = "",
     [string]$RankLossWeight = "0.55",
@@ -66,7 +68,8 @@ param(
     [string]$SelectionAuprWeight = "0.35",
     [ValidateRange(1, 5)][int]$MaxFolds = 5,
     [int]$SkipTestEval = 0,
-    [switch]$DryRun
+    [switch]$DryRun,
+    [switch]$ValidateOnly
 )
 
 $ErrorActionPreference = "Stop"
@@ -86,6 +89,25 @@ if ([string]::IsNullOrWhiteSpace($OutputDir)) {
 # Reject missing requested files here as well as in Python; never borrow them
 # from data/geo or data when the caller selected a particular cohort.
 $selectedDataDir = $null
+$selectedCohortManifest = $null
+$selectedFoldManifest = $null
+$hasCohortManifest = -not [string]::IsNullOrWhiteSpace($CohortManifest)
+$hasFoldManifest = -not [string]::IsNullOrWhiteSpace($FoldManifest)
+if ($hasCohortManifest -ne $hasFoldManifest) {
+    throw "-CohortManifest and -FoldManifest must be supplied together."
+}
+if ($hasCohortManifest -and -not $PSBoundParameters.ContainsKey("DataDir")) {
+    throw "Versioned manifests require an explicit -DataDir."
+}
+if ($hasCohortManifest) {
+    foreach ($manifestPath in @($CohortManifest, $FoldManifest)) {
+        if (-not (Test-Path -LiteralPath $manifestPath -PathType Leaf)) {
+            throw "Missing manifest: $manifestPath"
+        }
+    }
+    $selectedCohortManifest = (Get-Item -LiteralPath $CohortManifest).FullName
+    $selectedFoldManifest = (Get-Item -LiteralPath $FoldManifest).FullName
+}
 if ($PSBoundParameters.ContainsKey("DataDir")) {
     if ([string]::IsNullOrWhiteSpace($DataDir)) { throw "-DataDir must name a directory." }
     $resolvedDataDir = Get-Item -LiteralPath $DataDir -ErrorAction Stop
@@ -109,6 +131,13 @@ if ($PSBoundParameters.ContainsKey("DataDir")) {
         }
     }
 }
+
+$pythonArguments = @((Join-Path $ProjectRoot "CROSS5FOLD_multi_test.py"))
+if ($null -ne $selectedDataDir) { $pythonArguments += @("--data-dir", $selectedDataDir) }
+if ($hasCohortManifest) {
+    $pythonArguments += @("--cohort-manifest", $selectedCohortManifest, "--fold-manifest", $selectedFoldManifest)
+}
+if ($ValidateOnly) { $pythonArguments += "--validate-only" }
 
 if ($NoPlm -ne 0) {
     $UsePlm = 0
@@ -307,9 +336,11 @@ try {
         Get-ChildItem Env:PPI_* | Sort-Object Name | ForEach-Object {
             $effectiveConfig[$_.Name] = $_.Value
         }
+        $effectiveConfig["PythonExecutable"] = $VenvPython
+        $effectiveConfig["PythonArguments"] = ConvertTo-Json -InputObject @($pythonArguments) -Compress
         $effectiveConfig | ConvertTo-Json
     } else {
-        & $VenvPython (Join-Path $ProjectRoot "CROSS5FOLD_multi_test.py")
+        & $VenvPython @pythonArguments
         if ($LASTEXITCODE -ne 0) { throw "Training failed with exit code $LASTEXITCODE" }
     }
 

@@ -77,6 +77,12 @@ group IDs exactly. No full model experiment was trained.
 
 ## Select the cohort explicitly
 
+**Subsequent launcher correction:** use the dedicated OT/control wrappers in the
+[fixed-cohort launch protocol](../filtered_launch_v1/README.md). They perform the
+strict gate, hash verification and fixed-fold selection as one checked flow.
+The direct configuration below records the earlier recipe and now includes the
+required manifest arguments; it is not a substitute for the wrapper's gate.
+
 `run_seed.ps1 -DataDir` now forwards an absolute `PPI_DATA_DIR`. An explicitly
 selected directory must contain every requested file: no fallback to original
 data or silent skipping is allowed. Future run provenance and its embedded
@@ -92,6 +98,8 @@ comparison, not a parameter-count-matched capacity ablation.
 ```powershell
 $common = @{
     DataDir = '.\data\geo_filtered_v1'; TestSets = 'Test287.pkl'; Seed = 2101
+    CohortManifest = '.\data\geo_filtered_v1\cohort_manifest.json'
+    FoldManifest = '.\data\geo_filtered_v1\grouped_folds_seed2101.json'
     GroupedCV = 1; CVGroupKey = 'complex_code'; MaxFolds = 5; BatchSize = 1
     TwoHead = 1; RankLossWeight = '0.55'; RankFusion = '0.35'; RankWarmupEpochs = 3
     ModelDropout = '0.25'; EdgeDropout = '0.06'; WeightDecay = '3e-4'

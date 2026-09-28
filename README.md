@@ -21,11 +21,21 @@ declared PDB chains. This is not a full benchmark repair, and biological mapping
 verification remains unresolved. Use the explicit data-directory instructions
 in that report for this cohort.
 
+The [fixed-cohort launch protocol](research_review/filtered_launch_v1/README.md)
+provides dedicated OT/no-OT wrappers, an explicit Python data-directory argument,
+hash verification at each stage, and consumption of the saved grouped-fold
+manifest. Use these wrappers for the filtered sensitivity analysis.
+The requested OT Fold 1 has completed with external evaluation skipped; its
+[completion audit](research_review/filtered_launch_v1/fold1_completion_audit.json)
+checks the saved checkpoint, predictions and provenance. A matched no-OT result
+is still needed before estimating an OT effect.
+
 Read the [research review](research_review/RESEARCH_REVIEW.md) before interpreting
 the results. The [saved artifact audit](research_review/artifact_audit.md)
 recomputes the retained metrics and records the actual run settings.
 
-The three saved runs in this workspace each contain **one fold**, and all three
+The three pre-correction runs inspected in the original review each contain
+**one fold**, and all three
 record `partner_transport=false`. In particular,
 `outputs_ot_stable_seed2101` and `outputs_no_ot_matched_seed2101` differ in PLM
 features and auxiliary supervision. Their difference cannot estimate an OT

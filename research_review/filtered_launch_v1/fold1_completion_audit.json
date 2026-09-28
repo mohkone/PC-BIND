@@ -1,0 +1,104 @@
+{
+  "verified_utc": "2026-09-28T22:48:26.020860+00:00",
+  "analysis_label": "filtered-cohort analysis",
+  "status": "complete",
+  "process_exit_code": 0,
+  "started_utc": "2026-09-28T18:56:58.5215967Z",
+  "finished_utc": "2026-09-28T20:56:20.7167595Z",
+  "completed_fold_indices": [
+    0
+  ],
+  "epochs_completed": 11,
+  "stopping_reason": "early stopping after eight epochs without validation-selection improvement",
+  "training_samples": 266,
+  "validation_samples": 68,
+  "validation_residues": 13407,
+  "training_complex_groups": 166,
+  "validation_complex_groups": 43,
+  "partner_transport": true,
+  "external_evaluation_skipped": true,
+  "same_selection_across_launcher_prerequisite_training": true,
+  "fixed_manifest_consumed_verbatim": true,
+  "prediction_identity_and_labels_match_source": true,
+  "checkpoint_and_prediction_metrics_match": true,
+  "model_feature_dimensions": {
+    "target_main_plm": 480,
+    "target_aux_plm": 320
+  },
+  "development_metrics": {
+    "mcc": 0.3836525773110876,
+    "auc_pr_trapezoidal": 0.4502731995405344,
+    "auroc": 0.7951739745814965,
+    "accuracy": 0.7858581338106959,
+    "threshold": 0.5389999747276306
+  },
+  "metric_scope": "Single selected development fold; the same validation labels selected the checkpoint and threshold. Not unbiased external performance and not evidence of an OT advantage without a matched control.",
+  "artifacts": {
+    "ensemble_summary.json": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_pcbind_ot_filtered_seed2101_fold1\\ensemble_summary.json",
+      "sha256": "a10a3f02bba503a42f59020a128f89aaa73ecc5ab710c599a8ff5d0cd2322219",
+      "size_bytes": 99550
+    },
+    "fold1_best.pt": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_pcbind_ot_filtered_seed2101_fold1\\fold1_best.pt",
+      "sha256": "04c0fa34f1cc992374e5a433f9a7fe3d67cf03bb11ee40761642ec85b8dbd830",
+      "size_bytes": 22940614
+    },
+    "launcher_provenance.json": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_pcbind_ot_filtered_seed2101_fold1\\launcher_provenance.json",
+      "sha256": "2e69a5cdb8338dc31c8ac78c319463ab7e28c3a67040144e3c498dac9263a881",
+      "size_bytes": 1709
+    },
+    "oof_predictions.npz": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_pcbind_ot_filtered_seed2101_fold1\\oof_predictions.npz",
+      "sha256": "cf9a38a1c9a38d8dd4da0a1a501b8dfba05a9f27c8175559e144ab941f93945c",
+      "size_bytes": 55979
+    },
+    "prerequisite_provenance.json": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_pcbind_ot_filtered_seed2101_fold1\\prerequisite_provenance.json",
+      "sha256": "c444f58dec41c3d07aa56ba89038a531f6fceec28a146634545d15e033b6ae0c",
+      "size_bytes": 3033
+    },
+    "run_provenance.json": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_pcbind_ot_filtered_seed2101_fold1\\run_provenance.json",
+      "sha256": "988037ace8d3e7dd48c54b7b4e055145637f1c02f31f3505e41aa9e68e22cdd5",
+      "size_bytes": 85958
+    }
+  },
+  "dataset_selection": {
+    "resolved_data_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1",
+    "analysis_label": "filtered-cohort analysis",
+    "cohort_version": "geo_filtered_v1",
+    "cohort_manifest": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\cohort_manifest.json",
+      "sha256": "a9c19e57dde847406a078e24142c0ef6c310a482008b38f22d60b35539905fcd",
+      "size_bytes": 143920
+    },
+    "declared_files": [
+      "Train335.pkl",
+      "Test287.pkl"
+    ],
+    "datasets": {
+      "Train335.pkl": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\Train335.pkl",
+        "sha256": "edc851f17baeba49efd937f6ab3bb4534abeeb64c43d1774c219726dd970cdfe",
+        "size_bytes": 1468833049,
+        "sample_count": 334
+      },
+      "Test287.pkl": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\Test287.pkl",
+        "sha256": "13d02398c730d1a4c90666807dc2c621ced0838d03affd93e0effeeeed4d8581",
+        "size_bytes": 1091571976,
+        "sample_count": 285
+      }
+    },
+    "grouped_fold_manifest": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\grouped_folds_seed2101.json",
+      "sha256": "5ce6af3a724de3b2b1b7cb08f2cc93452372d2ae01cb3a0aaefe5fe7cc18d1a0",
+      "size_bytes": 76421
+    },
+    "seed": 2101,
+    "hashes_verified": true,
+    "selection_mode": "explicit"
+  }
+}

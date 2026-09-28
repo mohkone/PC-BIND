@@ -1,0 +1,61 @@
+{
+  "observed_utc": "2026-09-28T19:11:12.524308+00:00",
+  "status_at_observation": "running",
+  "launcher_pid": 36984,
+  "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_pcbind_ot_filtered_seed2101_fold1",
+  "resolved_data_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1",
+  "all_three_component_provenance_selections_match": true,
+  "fixed_folds_consumed_verbatim": true,
+  "training_samples": 266,
+  "validation_samples": 68,
+  "scheduled_fold_indices": [
+    0
+  ],
+  "external_evaluation_skipped": true,
+  "transport_enabled": true,
+  "dataset_selection": {
+    "resolved_data_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1",
+    "analysis_label": "filtered-cohort analysis",
+    "cohort_version": "geo_filtered_v1",
+    "cohort_manifest": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\cohort_manifest.json",
+      "sha256": "a9c19e57dde847406a078e24142c0ef6c310a482008b38f22d60b35539905fcd",
+      "size_bytes": 143920
+    },
+    "declared_files": [
+      "Train335.pkl",
+      "Test287.pkl"
+    ],
+    "datasets": {
+      "Train335.pkl": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\Train335.pkl",
+        "sha256": "edc851f17baeba49efd937f6ab3bb4534abeeb64c43d1774c219726dd970cdfe",
+        "size_bytes": 1468833049,
+        "sample_count": 334
+      },
+      "Test287.pkl": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\Test287.pkl",
+        "sha256": "13d02398c730d1a4c90666807dc2c621ced0838d03affd93e0effeeeed4d8581",
+        "size_bytes": 1091571976,
+        "sample_count": 285
+      }
+    },
+    "grouped_fold_manifest": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\grouped_folds_seed2101.json",
+      "sha256": "5ce6af3a724de3b2b1b7cb08f2cc93452372d2ae01cb3a0aaefe5fe7cc18d1a0",
+      "size_bytes": 76421
+    },
+    "seed": 2101,
+    "hashes_verified": true,
+    "selection_mode": "explicit"
+  },
+  "run_provenance_at_start": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_pcbind_ot_filtered_seed2101_fold1\\run_provenance.json",
+    "sha256": "42bc8f38bf9cb92a1a7a1e754e8e9a5851a4343d76269eb67c6660e4e4274d57",
+    "size_bytes": 85946
+  },
+  "status_file": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_pcbind_ot_filtered_seed2101_fold1_process_retry1\\process_status.json",
+  "stdout_log": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_pcbind_ot_filtered_seed2101_fold1_process_retry1\\stdout.log",
+  "stderr_log": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_pcbind_ot_filtered_seed2101_fold1_process_retry1\\stderr.log",
+  "scope": "Launch/provenance evidence only; no accuracy result or completed-fold claim."
+}

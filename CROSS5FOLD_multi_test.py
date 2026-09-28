@@ -38,7 +38,9 @@ EVAL_SMOOTH_STEPS = 2
 EVAL_SMOOTH_ALPHA = 0.75
 OUTPUT_DIR = os.environ.get("PPI_OUTPUT_DIR", "outputs")
 TOP_K_CHECKPOINTS = 3
-_requested_data_dir = os.environ.get("PPI_DATA_DIR")
+# Imported utility callers retain the historical environment interface. The
+# executable always obtains its dataset selection from explicit CLI arguments.
+_requested_data_dir = os.environ.get("PPI_DATA_DIR") if __name__ != "__main__" else None
 if _requested_data_dir is not None and not _requested_data_dir.strip():
     raise ValueError("PPI_DATA_DIR must name a directory when explicitly configured")
 EXPLICIT_DATA_DIR = (
@@ -3126,6 +3128,81 @@ def dataset_selection_provenance(train_path):
     return selection
 
 
+def configure_training_data(data_dir, cohort_manifest_path=None, fold_manifest_path=None):
+    """Resolve CLI selection and verify a filtered cohort before dataset loading."""
+    global EXPLICIT_DATA_DIR, GEO_DATA_DIR, GROUPED_CV
+    if not str(data_dir).strip():
+        raise ValueError("--data-dir must name a directory")
+    selected = Path(data_dir).expanduser().resolve(strict=True)
+    if not selected.is_dir():
+        raise NotADirectoryError(selected)
+    EXPLICIT_DATA_DIR = GEO_DATA_DIR = str(selected)
+    detected_manifest = selected / "cohort_manifest.json"
+    if cohort_manifest_path is None and detected_manifest.is_file():
+        cohort_manifest_path = detected_manifest
+    if cohort_manifest_path is not None or fold_manifest_path is not None:
+        if cohort_manifest_path is None or fold_manifest_path is None:
+            raise ValueError("Filtered-cohort training requires both --cohort-manifest and --fold-manifest")
+        from filtered_cohort_protocol import verify_filtered_cohort
+
+        selection, _cohort_json, folds_json = verify_filtered_cohort(
+            selected, cohort_manifest_path, fold_manifest_path, SEED,
+        )
+        selection = dict(selection, selection_mode="explicit")
+        # The saved grouped split is the effective protocol, even if a legacy
+        # environment default had sample-level CV disabled/enabled differently.
+        GROUPED_CV = True
+        return selection, folds_json
+    return dataset_selection_provenance(selected / "Train335.pkl"), None
+
+
+def verify_loaded_cohort_sources(data_sources, dataset_selection):
+    """Bind bytes actually loaded to the previously verified cohort registry."""
+    if not dataset_selection.get("hashes_verified"):
+        return
+    registry = dataset_selection["datasets"]
+    for name, source in data_sources.items():
+        declared = registry.get(f"{name}.pkl")
+        if declared is None:
+            raise ValueError(f"Loaded dataset {name} is not declared in the verified cohort")
+        identity_fields = ("path", "sha256", "size_bytes", "sample_count")
+        if any(key not in source or key not in declared or source[key] != declared[key]
+               for key in identity_fields):
+            raise ValueError(f"Loaded dataset {name} differs from the verified cohort path, hash, size, or sample count")
+
+
+def prepare_training_splits(proteins, train_source, fixed_folds_json=None):
+    """Use saved train/validation index order verbatim when a manifest exists."""
+    if fixed_folds_json is not None:
+        from filtered_cohort_protocol import validate_fixed_folds
+
+        return validate_fixed_folds(
+            proteins, fixed_folds_json, SEED, train_source["sha256"], CV_GROUP_KEY,
+        )
+    generated = make_cv_folds(proteins, seed=SEED, num_folds=5,
+                              grouped=GROUPED_CV, group_key=CV_GROUP_KEY)
+    return cv_split_manifest(proteins, generated, group_key=CV_GROUP_KEY)
+
+
+def training_split_indices(split):
+    """Return the recorded order; do not reconstruct train indices from other folds."""
+    return (np.asarray(split["train_indices"], dtype=np.int64),
+            np.asarray(split["val_indices"], dtype=np.int64))
+
+
+def training_provenance_code_paths(code_root, fixed_cohort=False):
+    """Hash the loader/validator and the available dedicated cohort launchers."""
+    root = Path(code_root)
+    paths = [root / filename for filename in (
+        "CROSS5FOLD_multi_test.py", "metrics.py", "research_provenance.py",
+        "run_seed.ps1", "requirements.txt",
+    )]
+    if fixed_cohort:
+        paths.append(root / "filtered_cohort_protocol.py")
+        paths.extend(sorted(root.glob("*filtered*.ps1")))
+    return [str(path) for path in paths]
+
+
 def contact_contrast_dataset_coverage(data_list):
     positive_sites = 0
     eligible_sites = 0
@@ -4320,8 +4397,19 @@ def predict_scores_with_heads(model, loader, device, rank_fusion=None):
 # ===================== Main: 5-fold CV on train, evaluated on multiple held-out test sets =====================
 
 if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Train PC-BIND using an explicit dataset directory.")
+    parser.add_argument("--data-dir", default=os.path.join("data", "geo"))
+    parser.add_argument("--cohort-manifest", help="Verified filtered-cohort manifest JSON.")
+    parser.add_argument("--fold-manifest", help="Fixed grouped-fold manifest JSON; never regenerated.")
+    parser.add_argument("--validate-only", action="store_true",
+                        help="Verify dataset bytes and fold identities, print JSON, then exit before training.")
+    cli_args = parser.parse_args()
+    dataset_selection, fixed_folds_json = configure_training_data(
+        cli_args.data_dir, cli_args.cohort_manifest, cli_args.fold_manifest,
+    )
     seed_everything()
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print("Device:", device)
     print("Model mode:", MODEL_MODE)
@@ -4365,7 +4453,6 @@ if __name__ == "__main__":
 
     train_list, train_source = load_dataset_with_provenance(train_path)
     data_sources = {"Train335": train_source}
-    dataset_selection = dataset_selection_provenance(train_path)
     print("Train data:", train_path)
     print("Dataset selection:", dataset_selection["selection_mode"], dataset_selection["resolved_data_dir"])
     if dataset_selection["analysis_label"]:
@@ -4376,6 +4463,17 @@ if __name__ == "__main__":
     test_sets = {}
     for name, p in test_paths:
         test_sets[name], data_sources[name] = load_dataset_with_provenance(p)
+
+    verify_loaded_cohort_sources(data_sources, dataset_selection)
+    training_splits = prepare_training_splits(train_list, train_source, fixed_folds_json)
+    if cli_args.validate_only:
+        print(json.dumps({"validation_only": True, "dataset_selection": dataset_selection,
+                          "datasets": data_sources, "cv_splits": training_splits,
+                          "seed": SEED, "grouped_cv": GROUPED_CV,
+                          "partner_transport": PARTNER_TRANSPORT,
+                          "skip_test_eval": SKIP_TEST_EVAL}, indent=2))
+        raise SystemExit(0)
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     N = len(train_list)
     print("Total train complexes:", N)
@@ -4484,19 +4582,12 @@ if __name__ == "__main__":
             )
 
     # ---- 2) 5-fold indices ----
-    num_folds = 5
-    cv_folds = make_cv_folds(
-        train_list,
-        seed=SEED,
-        num_folds=num_folds,
-        grouped=GROUPED_CV,
-        group_key=CV_GROUP_KEY,
-    )
+    num_folds = len(training_splits)
     print(
         "CV split: "
         + (f"grouped by {CV_GROUP_KEY}" if GROUPED_CV else "legacy sample-level")
     )
-    print("Validation fold sizes:", [int(len(indices)) for indices in cv_folds])
+    print("Validation fold sizes:", [len(split["val_indices"]) for split in training_splits])
 
     # ---- 3) DataLoader 配置 ----
     epochs = 30
@@ -4521,15 +4612,13 @@ if __name__ == "__main__":
     code_root = os.path.dirname(os.path.abspath(__file__))
     run_provenance = build_run_provenance(
         data_sources,
-        [os.path.join(code_root, filename) for filename in (
-            "CROSS5FOLD_multi_test.py", "metrics.py", "research_provenance.py",
-            "run_seed.ps1", "requirements.txt",
-        )],
-        cv_split_manifest(train_list, cv_folds, group_key=CV_GROUP_KEY),
+        training_provenance_code_paths(code_root, fixed_cohort=fixed_folds_json is not None),
+        training_splits,
         device, folds_to_run,
     )
     run_provenance.update({
         "seed": SEED, "grouped_cv": GROUPED_CV, "cv_group_key": CV_GROUP_KEY,
+        "partner_transport": PARTNER_TRANSPORT,
         "transport_implementation": TRANSPORT_IMPLEMENTATION,
         "requested_test_sets": list(TEST_PKL_FILES),
         "loaded_test_sets": list(test_sets), "skip_test_eval": SKIP_TEST_EVAL,
@@ -4544,10 +4633,7 @@ if __name__ == "__main__":
         print("\n" + "=" * 30)
         print(f"========== Fold {fold+1}/{num_folds} ==========")
 
-        val_idx = cv_folds[fold]
-        train_idx = np.concatenate(
-            [cv_folds[other_fold] for other_fold in range(num_folds) if other_fold != fold]
-        )
+        train_idx, val_idx = training_split_indices(training_splits[fold])
 
         train_prots = [train_list[i] for i in train_idx]
         val_prots = [train_list[i] for i in val_idx]

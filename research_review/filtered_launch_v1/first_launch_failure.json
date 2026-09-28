@@ -1,0 +1,16 @@
+{
+  "status": "failed",
+  "started_utc": "2026-09-28T18:41:15.2802972Z",
+  "launcher_pid": 30464,
+  "seed": 2101,
+  "max_folds": 1,
+  "skip_test_eval": true,
+  "partner_transport": true,
+  "analysis_label": "filtered-cohort analysis",
+  "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_pcbind_ot_filtered_seed2101_fold1",
+  "error": "Filtered-cohort prerequisite check failed: 1",
+  "finished_utc": "2026-09-28T18:41:30.4984037Z",
+  "exit_code": 1,
+  "stage": "prerequisite report serialization; no model training started",
+  "correction": "Convert NumPy coverage counts to builtin int and serialize completely before creating the output file."
+}

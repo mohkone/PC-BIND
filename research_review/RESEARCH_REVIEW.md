@@ -13,6 +13,12 @@ gate passes; the original full-cohort failures and unverified biological
 mappings remain recorded. No OT-versus-no-OT accuracy experiment has yet been
 run on this cohort.
 
+The subsequent [fixed-cohort OT Fold 1](filtered_launch_v1/README.md) completed
+after 11 epochs with external evaluation skipped. Its checkpoint and validation
+prediction identities passed the completion audit. This one selected
+development fold does not replace the required matched no-OT comparison or
+provide an independent external estimate.
+
 ## Assessment
 
 The central hypothesis is reasonable: a supplied interaction partner can help

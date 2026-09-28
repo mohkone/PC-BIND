@@ -1,9 +1,13 @@
 import argparse
-import pickle
+import json
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 import numpy as np
+
+from filtered_cohort_protocol import verify_filtered_cohort, validate_fixed_folds, resolve_cohort_file
+from research_provenance import file_record, load_dataset_with_provenance
 
 
 PKL_FILES = [
@@ -143,6 +147,10 @@ def valid_partner_encoder_sample(sample):
 def main():
     parser = argparse.ArgumentParser(description="Check PC-BIND input prerequisites.")
     parser.add_argument("--data-dir", default="data/geo", help="Directory containing geo pickle files.")
+    parser.add_argument("--cohort-manifest", help="Filtered cohort manifest to verify before loading data.")
+    parser.add_argument("--fold-manifest", help="Fixed grouped-fold manifest to verify and consume.")
+    parser.add_argument("--seed", type=int, default=2101)
+    parser.add_argument("--provenance-output", help="Write this gate's resolved paths, hashes and results to a new JSON file.")
     parser.add_argument("--require-plm", action="store_true", help="Require both ESM-2 PLM feature fields.")
     parser.add_argument("--require-partner", action="store_true", help="Require partner descriptor fields.")
     parser.add_argument("--require-pair", action="store_true", help="Require sparse residue-pair contact labels.")
@@ -157,17 +165,41 @@ def main():
     if not 0.0 <= args.min_partner_encoder_coverage <= 1.0:
         parser.error("--min-partner-encoder-coverage must be between 0 and 1")
 
-    data_dir = Path(args.data_dir)
+    data_dir = Path(args.data_dir).resolve(strict=True)
+    if bool(args.cohort_manifest) != bool(args.fold_manifest):
+        parser.error("--cohort-manifest and --fold-manifest must be supplied together")
+    selection = {"resolved_data_dir": str(data_dir)}
+    fixed_folds = None
+    if args.cohort_manifest:
+        selection, _, fixed_folds = verify_filtered_cohort(
+            data_dir, args.cohort_manifest, args.fold_manifest, args.seed,
+        )
+        if len(args.files) != 2 or set(args.files) != set(selection["declared_files"]):
+            parser.error("Filtered prerequisites require exactly Train335.pkl and Test287.pkl")
+        if not (args.require_plm and args.require_partner and args.require_pair
+                and args.require_partner_encoder and args.min_partner_encoder_coverage == 1.0):
+            parser.error("Filtered prerequisites require all feature flags and partner-encoder coverage 1.0")
+    print(f"Resolved data directory: {data_dir}", flush=True)
+    print("Declared files: " + ", ".join(args.files), flush=True)
     errors = []
     rows = []
+    loaded_records = {}
     for filename in args.files:
+        if (Path(filename).name != filename or any(char in filename for char in '/\\:')
+                or Path(filename).suffix.lower() != ".pkl"):
+            parser.error(f"Invalid cohort pickle name: {filename}")
         path = data_dir / filename
         if not path.exists():
             errors.append(f"{path}: missing")
             continue
-        with path.open("rb") as handle:
-            samples = pickle.load(handle)
+        path = resolve_cohort_file(data_dir, filename)
+        samples, loaded_records[filename] = load_dataset_with_provenance(path)
         total = len(samples)
+        if fixed_folds is not None:
+            if loaded_records[filename] != selection["datasets"][filename]:
+                raise RuntimeError(f"Dataset changed since cohort verification: {filename}")
+            if filename == "Train335.pkl":
+                validate_fixed_folds(samples, fixed_folds, args.seed, loaded_records[filename]["sha256"])
         main_plm = sum(valid_target_plm(sample, "residue_plm_embedding") for sample in samples)
         aux_plm = sum(valid_target_plm(sample, "residue_plm_embedding_8m") for sample in samples)
         partner_surface = count_nonempty_partner_key(
@@ -236,6 +268,26 @@ def main():
             f" partner_encoder={partner_encoder}/{total}"
         )
 
+    if args.provenance_output:
+        output = Path(args.provenance_output).resolve()
+        if data_dir == output or data_dir in output.parents:
+            parser.error("Prerequisite provenance must be written outside the data directory")
+        output.parent.mkdir(parents=True, exist_ok=True)
+        report = {
+            "component": "check_pcbind_prereqs.py", "created_utc": datetime.now(timezone.utc).isoformat(),
+            "status": "failed" if errors else "passed", "dataset_selection": selection,
+            "loaded_datasets": loaded_records, "require_plm": args.require_plm,
+            "require_partner": args.require_partner, "require_pair": args.require_pair,
+            "require_partner_encoder": args.require_partner_encoder,
+            "min_partner_encoder_coverage": args.min_partner_encoder_coverage,
+            "fixed_folds_validated": fixed_folds is not None,
+            "code_files": [file_record(__file__), file_record(Path(__file__).with_name("filtered_cohort_protocol.py"))],
+            "coverage_rows": [[row[0], *(int(value) for value in row[1:])] for row in rows],
+            "errors": errors,
+        }
+        serialized = json.dumps(report, indent=2) + "\n"
+        with output.open("x", encoding="utf-8", newline="\n") as handle:
+            handle.write(serialized)
     if errors:
         print("\nPC-BIND prerequisites are not satisfied:", file=sys.stderr)
         for error in errors:
