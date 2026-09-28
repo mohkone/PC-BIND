@@ -5,6 +5,9 @@ param(
 
 $ErrorActionPreference = "Stop"
 
+# Legacy exploratory backbone ablations. These use different seed sets and
+# are not architecture/split-matched component studies of the v5 recipe.
+
 $ProjectRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
 $VenvPython = Join-Path $ProjectRoot ".venv\Scripts\python.exe"
 

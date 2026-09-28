@@ -103,7 +103,9 @@ def write_markdown(report, aggregate, summary, path):
     best_hard_mcc = max(aggregate, key=lambda r: r["hard_mcc"])
 
     lines = []
-    lines.append("# Saved Ensemble Summary")
+    lines.append("# Exploratory Saved Ensemble Summary")
+    lines.append("")
+    lines.append("The rankings below use external test results. They are post hoc descriptions, not validation-selected choices or unbiased final performance estimates. Freeze a strategy using training-only development data before confirmatory evaluation. The legacy output filename does not make this table publication-ready.")
     lines.append("")
     lines.append("## OOF-Calibrated Signals")
     lines.append("")
@@ -120,7 +122,7 @@ def write_markdown(report, aggregate, summary, path):
         lines.append(f"- head_blend_rank_alpha: {summary['head_blend_rank_alpha']:.2f}")
 
     lines.append("")
-    lines.append("## Robust Picks")
+    lines.append("## Post Hoc Test-Set Rankings")
     lines.append("")
     lines.append(
         f"- Best average AUPRC: {best_avg_auc['strategy']} "
@@ -132,7 +134,7 @@ def write_markdown(report, aggregate, summary, path):
     )
 
     lines.append("")
-    lines.append("## Best Within Reported Strategies")
+    lines.append("## Per-Test Maxima Within Reported Strategies (Exploratory)")
     lines.append("")
     lines.append("| Test | Best AUPRC | AUPRC | Best MCC | MCC |")
     lines.append("| --- | --- | ---: | --- | ---: |")

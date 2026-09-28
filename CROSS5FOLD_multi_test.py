@@ -14,7 +14,15 @@ import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader
 from tqdm import tqdm
 
+ANOMALY_DETECT = os.getenv("PPI_DETECT_ANOMALY", "0") == "1"
+if ANOMALY_DETECT:
+    torch.autograd.set_detect_anomaly(True)
+
 from metrics import *   # compute_auc_roc, compute_auc_pr, compute_acc, compute_performance
+from research_provenance import (
+    build_run_provenance, cv_split_manifest, load_dataset_with_provenance,
+    prediction_identity, prediction_source,
+)
 
 
 def env_flag(name, default="1"):
@@ -135,6 +143,17 @@ PARTNER_FEATURE_DIM = SURFACE_FEATURE_DIM + SEQUENCE_FEATURE_DIM
 GROUPED_CV = env_flag("PPI_GROUPED_CV", "0")
 CV_GROUP_KEY = os.environ.get("PPI_CV_GROUP_KEY", "complex_code")
 
+# --- OT-inspired sparse capacity-constrained matching (PC-BIND-OT) ---
+PARTNER_TRANSPORT = env_flag("PPI_PARTNER_TRANSPORT", "0")
+TRANSPORT_SINKHORN_ITERS = int(os.environ.get("PPI_TRANSPORT_SINKHORN_ITERS", "5"))
+TRANSPORT_TAU = float(os.environ.get("PPI_TRANSPORT_TAU", "0.1"))
+TRANSPORT_DUSTBIN = env_flag("PPI_TRANSPORT_DUSTBIN", "1")
+TRANSPORT_ENTROPY_WEIGHT = float(os.environ.get("PPI_TRANSPORT_ENTROPY_WEIGHT", "0.01"))
+TRANSPORT_SPARSITY_WEIGHT = float(os.environ.get("PPI_TRANSPORT_SPARSITY_WEIGHT", "0.005"))
+TRANSPORT_LOGIT_FUSION = float(os.environ.get("PPI_TRANSPORT_LOGIT_FUSION", "0.3"))
+TRANSPORT_TOP_K = int(os.environ.get("PPI_TRANSPORT_TOP_K", "32"))
+TRANSPORT_IMPLEMENTATION = "capacity_capped_dustbin_v2"
+
 
 def seed_everything(seed=SEED):
     random.seed(seed)
@@ -148,6 +167,8 @@ def make_cv_folds(protein_list, seed, num_folds=5, grouped=False, group_key="com
     """Return validation indices while optionally keeping each complex in one fold."""
     rng = np.random.RandomState(seed)
     num_samples = len(protein_list)
+    if num_folds < 2 or num_folds > num_samples:
+        raise ValueError("CV requires at least two folds and one sample per fold")
     if not grouped:
         indices = rng.permutation(num_samples)
         fold_ids = np.arange(num_samples) % num_folds
@@ -155,9 +176,18 @@ def make_cv_folds(protein_list, seed, num_folds=5, grouped=False, group_key="com
 
     grouped_indices = {}
     for sample_idx, protein in enumerate(protein_list):
-        value = str(protein.get(group_key, "")).strip().upper()
-        group_id = value if value else f"__sample_{sample_idx}"
+        raw_group = protein.get(group_key)
+        value = "" if raw_group is None else str(raw_group).strip().upper()
+        if not value or value in {"NAN", "NONE", "NULL"}:
+            raise ValueError(
+                f"Grouped CV requires a nonmissing {group_key!r} for sample {sample_idx}; "
+                "a sample-level fallback would not guarantee complex separation"
+            )
+        group_id = value
         grouped_indices.setdefault(group_id, []).append(sample_idx)
+
+    if len(grouped_indices) < num_folds:
+        raise ValueError("Grouped CV requires at least one distinct group per fold")
 
     group_ids = np.asarray(list(grouped_indices), dtype=object)
     rng.shuffle(group_ids)
@@ -541,13 +571,15 @@ def geometry_patch_soft_targets(targets, edge_index):
 
 
 def best_mcc_threshold(y_true, y_score):
-    thresholds = np.arange(0.0, 1.0, 0.001)
+    # Search the exact values we return. Rounding only after selection can
+    # move a floating-point grid boundary across an observed score tie.
+    thresholds = np.round(np.arange(0.0, 1.0, 0.001), 3)
     mccs = np.zeros_like(thresholds)
     for i, t in enumerate(thresholds):
-        y_pred_bin = (y_score > t).astype("int")
+        y_pred_bin = (y_score >= t).astype("int")
         mccs[i] = matthews_corrcoef(y_true, y_pred_bin)
     best_idx = int(np.argmax(mccs))
-    return float(np.round(thresholds[best_idx], 4))
+    return float(thresholds[best_idx])
 
 
 def metrics_from_scores(y_true, y_score, split_name="Eval", threshold=None):
@@ -564,9 +596,9 @@ def metrics_from_scores(y_true, y_score, split_name="Eval", threshold=None):
     print(f"AUROC: {auc_roc:.4f}")
     print(f"AUPRC: {auc_pr:.4f}")
     print(f"ACC:   {acc:.4f}")
-    print(f"Precision: {precision:.4f}")
-    print(f"Recall:    {recall:.4f}")
-    print(f"F1:        {f1:.4f}")
+    print(f"Macro precision: {precision:.4f}")
+    print(f"Macro recall:    {recall:.4f}")
+    print(f"Macro F1:        {f1:.4f}")
     print(f"MCC:       {mcc:.4f}")
     print(f"Sensitivity: {sc:.4f}")
     print(f"Specificity: {sp:.4f}")
@@ -777,13 +809,14 @@ class WeightedFocalLoss(nn.Module):
         if self.label_smoothing > 0:
             targets = targets * (1.0 - self.label_smoothing) + 0.5 * self.label_smoothing
 
+        probs = torch.sigmoid(logits)
+        pt = torch.where(targets > 0.5, probs, 1.0 - probs)
         bce = F.binary_cross_entropy_with_logits(
             logits,
             targets,
             pos_weight=self.pos_weight,
             reduction="none",
         )
-        pt = torch.exp(-bce)
         focal = torch.pow(1.0 - pt, self.gamma)
         return (focal * bce).mean()
 
@@ -805,7 +838,7 @@ class CompositeBindingLoss(nn.Module):
         self.dice_weight = dice_weight
         self.max_pairs = max_pairs
 
-    def ranking_loss(self, logits, targets):
+    def ranking_loss(self, logits, targets, margin=0.5):
         pos = logits[targets > 0.5]
         neg = logits[targets <= 0.5]
         if pos.numel() == 0 or neg.numel() == 0:
@@ -816,9 +849,9 @@ class CompositeBindingLoss(nn.Module):
             neg_idx = torch.randint(neg.numel(), (self.max_pairs,), device=logits.device)
             pos = pos[pos_idx]
             neg = neg[neg_idx]
-            return F.softplus(neg - pos).mean()
+            return F.softplus(margin + neg - pos).mean()
 
-        return F.softplus(neg.unsqueeze(0) - pos.unsqueeze(1)).mean()
+        return F.softplus(margin + neg.unsqueeze(0) - pos.unsqueeze(1)).mean()
 
     def dice_loss(self, logits, targets):
         probs = torch.sigmoid(logits)
@@ -1210,6 +1243,39 @@ def partner_contrastive_loss(true_logits, mismatch_logits, targets, batch_vec):
     return F.relu(margin - true_score + mismatch_score)
 
 
+# ===================== Transport regularisation losses =====================
+
+def transport_regularization_loss(model, transport_plans=None):
+    """Entropy + sparsity regularisation for the transport plan.
+
+    Returns None when transport is disabled or no plans were produced.
+    """
+    if not PARTNER_TRANSPORT or transport_plans is None or not transport_plans:
+        return None
+    if not hasattr(model, "transport_layer") or model.transport_layer is None:
+        return None
+
+    total_entropy = 0.0
+    total_sparsity = 0.0
+    count = 0
+    for plan in transport_plans:
+        if plan is None or plan.numel() == 0:
+            continue
+        total_entropy = total_entropy + model.transport_layer.transport_entropy_loss(plan)
+        total_sparsity = total_sparsity + model.transport_layer.transport_sparsity_loss(plan)
+        count += 1
+
+    if count == 0:
+        return None
+
+    avg_entropy = total_entropy / count
+    avg_sparsity = total_sparsity / count
+    return (
+        TRANSPORT_ENTROPY_WEIGHT * avg_entropy
+        + TRANSPORT_SPARSITY_WEIGHT * avg_sparsity
+    )
+
+
 class ModelEMA:
     """Exponential moving average of model weights for steadier validation."""
     def __init__(self, model, decay=0.995):
@@ -1246,6 +1312,208 @@ class ModelEMA:
         for name, value in self.backup.items():
             state[name].copy_(value)
         self.backup = None
+
+
+# ===================== Sparse Capacity-Constrained Matching =====================
+
+class SparseTransportLayer(nn.Module):
+    """
+    OT-inspired capacity-constrained sparse partner matching.
+
+    For each target residue, learns a sparse bipartite transport plan to the
+    partner protein.  The row mass of the plan (excluding the dustbin column)
+    yields partner-conditioned interface evidence in [0, 1], not a calibrated
+    probability. A learnable per-residue
+    dustbin logit allows non-interface residues to route their mass to "no match."
+
+    The layer replaces Q/K/V attention with a relaxed, capacity-capped
+    bipartite transport plan. Partner columns have an upper bound, not a
+    prescribed marginal; the no-match column is unconstrained.
+    This finite projection heuristic is not a converged classical OT solver.
+    """
+
+    def __init__(
+        self,
+        hidden_dim=256,
+        sinkhorn_iters=TRANSPORT_SINKHORN_ITERS,
+        tau=TRANSPORT_TAU,
+        use_dustbin=TRANSPORT_DUSTBIN,
+        top_k=TRANSPORT_TOP_K,
+    ):
+        super().__init__()
+        self.hidden_dim = hidden_dim
+        self.sinkhorn_iters = int(sinkhorn_iters)
+        self.tau = float(tau)
+        self.use_dustbin = bool(use_dustbin)
+        self.top_k = int(top_k)
+        if self.sinkhorn_iters < 0:
+            raise ValueError("Transport projection iterations must be nonnegative")
+        if not math.isfinite(self.tau) or self.tau <= 0:
+            raise ValueError("Transport temperature must be finite and positive")
+        if self.top_k < 1:
+            raise ValueError("Transport top_k must be positive")
+
+        # Pair-affinity scorer: a_ij = MLP([h_i, g_j, h_i * g_j, |h_i - g_j|])
+        self.pair_scorer = nn.Sequential(
+            nn.Linear(hidden_dim * 4, hidden_dim * 2),
+            nn.LayerNorm(hidden_dim * 2),
+            nn.ReLU(),
+            nn.Dropout(0.1),
+            nn.Linear(hidden_dim * 2, hidden_dim),
+            nn.ReLU(),
+            nn.Dropout(0.1),
+            nn.Linear(hidden_dim, 1),
+        )
+
+        # Per-target-residue dustbin projection: learns "no match" evidence
+        if self.use_dustbin:
+            self.dustbin_proj = nn.Sequential(
+                nn.Linear(hidden_dim, hidden_dim // 2),
+                nn.ReLU(),
+                nn.Linear(hidden_dim // 2, 1),
+            )
+    def pair_logits(self, target_h, partner_h):
+        """Score aligned sparse candidate pairs, without dense MLP expansion."""
+        return self.pair_scorer(torch.cat((
+            target_h, partner_h, target_h * partner_h,
+            torch.abs(target_h - partner_h),
+        ), dim=-1)).squeeze(-1)
+
+    def sparse_sinkhorn(self, log_affinity, dustbin_logits=None):
+        """Finite log-domain projections with a row dustbin and upper column cap.
+
+        Real partner columns are capped but not required to receive mass.
+        The dustbin receives any final row deficit so both constraints hold.
+        Zero iterations intentionally gives uncapped row-softmax matching.
+        """
+        n_t, n_p = log_affinity.shape
+        if not math.isfinite(self.tau) or self.tau <= 0:
+            raise ValueError("Transport temperature must be finite and positive")
+        if self.sinkhorn_iters > 0 and dustbin_logits is None:
+            raise ValueError("Capacity-constrained sparse matching requires a dustbin")
+        if dustbin_logits is not None:
+            log_t = torch.cat((
+                log_affinity / self.tau, dustbin_logits[:, None] / self.tau
+            ), dim=1)
+        else:
+            log_t = log_affinity / self.tau
+        # Capacity is proportional to relative sequence lengths; this is an
+        # upper bound, not a prescribed column marginal.
+        log_capacity = math.log(max(1.0, float(n_t) / max(n_p, 1)))
+        supported_columns = torch.isfinite(log_affinity).any(dim=0, keepdim=True)
+        for _ in range(self.sinkhorn_iters):
+            log_t = log_t - torch.logsumexp(log_t, dim=1, keepdim=True)
+            real = log_t[:, :n_p]
+            # logsumexp([-inf, ...]) has undefined derivatives. Substitute a
+            # finite dummy column only for this reduction, retaining -inf in
+            # the actual sparse plan so unsupported pairs receive zero mass.
+            safe_real = torch.where(supported_columns, real, torch.zeros_like(real))
+            col_mass = torch.logsumexp(safe_real, dim=0, keepdim=True)
+            scale = (log_capacity - col_mass).clamp(max=0.0)
+            scale = torch.where(supported_columns, scale, torch.zeros_like(scale))
+            log_t = torch.cat((real + scale, log_t[:, n_p:]), dim=1)
+        if self.sinkhorn_iters == 0:
+            return torch.softmax(log_t, dim=1)
+        # Renormalizing these rows would raise the capped partner columns
+        # above capacity again. Put the removed mass into the free dustbin.
+        real_plan = log_t[:, :n_p].exp()
+        dustbin = (1.0 - real_plan.sum(dim=1, keepdim=True)).clamp_min(0.0)
+        return torch.cat((real_plan, dustbin), dim=1)
+
+    def forward(self, target_h, partner_h, top_k=None):
+        """
+        Compute transport plan and per-residue interface evidence.
+
+        Args:
+            target_h: [n_target, D]  target residue representations
+            partner_h: [n_partner, D]  partner residue representations
+            top_k: number of top partner candidates per target (default: self.top_k)
+
+        Returns:
+            transport_plan: [n_target, n_partner + 1]  (or [n_target, n_partner])
+            row_mass: [n_target]  sum of transport mass over real partner columns
+            partner_weights: [n_target, n_partner]  transport weights for message
+            selected_indices: [n_target, top_k]  top-k partner indices per target
+        """
+        k = int(self.top_k if top_k is None else top_k)
+        if k < 1:
+            raise ValueError("Transport top_k must be positive")
+        n_t = target_h.size(0)
+        n_p = partner_h.size(0)
+        device = target_h.device
+
+        if n_t == 0 or n_p == 0:
+            return (
+                target_h.new_zeros((n_t, n_p + (1 if self.use_dustbin else 0))),
+                target_h.new_zeros((n_t,)),
+                target_h.new_zeros((n_t, n_p)),
+                target_h.new_zeros((n_t, k), dtype=torch.long),
+            )
+
+        # Step 1: use dot-product to select top-k candidate partners
+        scores = torch.matmul(target_h, partner_h.transpose(0, 1))  # [n_t, n_p]
+        k = min(k, n_p)
+        _, top_idx = torch.topk(scores, k=k, dim=1)  # [n_t, k]
+
+        # Score only selected pairs; the dense matrix is a compact transport
+        # workspace, not an O(n_target*n_partner*hidden_dim) feature tensor.
+        selected = partner_h[top_idx]
+        selected_logits = self.pair_logits(
+            target_h[:, None, :].expand(-1, k, -1), selected
+        )
+        log_affinity = target_h.new_full((n_t, n_p), float("-inf"))
+        row_idx = torch.arange(n_t, device=device).unsqueeze(1).expand(n_t, k)
+        log_affinity[row_idx, top_idx] = selected_logits
+
+        # Step 4: dustbin logits (per-target-residue "no match" evidence)
+        dustbin_logits = None
+        if self.use_dustbin:
+            dustbin_logits = self.dustbin_proj(target_h).squeeze(-1)  # [n_t]
+
+        # Step 5: iterative relaxed transport projection
+        transport_plan = self.sparse_sinkhorn(log_affinity, dustbin_logits)
+
+        # Step 6: extract outputs
+        if self.use_dustbin:
+            real_plan = transport_plan[:, :-1]  # [n_t, n_p]
+            row_mass = real_plan.sum(dim=1)  # = 1 - dustbin mass
+        else:
+            real_plan = transport_plan
+            row_mass = transport_plan.sum(dim=1)
+
+        # Partner weights for message computation (normalised per target)
+        partner_weights = real_plan / real_plan.sum(dim=1, keepdim=True).clamp_min(1e-8)
+
+        return transport_plan, row_mass, partner_weights, top_idx
+
+    def transport_entropy_loss(self, transport_plan):
+        """Entropy of the real-partner transport (excluding dustbin).
+
+        Computed per-graph on the conditional distribution given non-dustbin mass.
+        Lower entropy = sharper, more confident transport plan.
+        """
+        if self.use_dustbin:
+            real_plan = transport_plan[:, :-1]
+        else:
+            real_plan = transport_plan
+
+        row_mass = real_plan.sum(dim=1, keepdim=True)
+        conditional = real_plan / row_mass.clamp_min(1e-8)
+        entropy = -(conditional * torch.log(conditional.clamp_min(1e-12))).sum(dim=1)
+        return (entropy * row_mass.squeeze(1)).mean()
+
+    def transport_sparsity_loss(self, transport_plan):
+        """Concentration loss: encourage mass to focus on few partner residues.
+
+        Uses negative L2 norm so minimisation drives concentration.
+        """
+        if self.use_dustbin:
+            real_plan = transport_plan[:, :-1]
+        else:
+            real_plan = transport_plan
+        # Negative conditional squared mass: minimising concentrates a row.
+        conditional = real_plan / real_plan.sum(dim=1, keepdim=True).clamp_min(1e-8)
+        return -conditional.pow(2).sum(dim=1).mean()
 
 
 # ===================== Graph & Substructure Modules =====================
@@ -1800,6 +2068,28 @@ class TriViewAtomResidueNet(nn.Module):
                 nn.Linear(hidden_dim, 1),
             )
 
+        # --- OT-inspired sparse capacity-constrained matching ---
+        self.transport_layer = None
+        self.use_transport = bool(PARTNER_TRANSPORT) and self.partner_conditioning
+        if self.use_transport:
+            if self.partner_logit_mode != "standard":
+                raise ValueError("OT currently supports only standard partner logit mode")
+            if not TRANSPORT_DUSTBIN:
+                raise ValueError("OT requires a dustbin for interface row-mass prediction")
+            self.transport_layer = SparseTransportLayer(
+                hidden_dim=hidden_dim,
+                sinkhorn_iters=TRANSPORT_SINKHORN_ITERS,
+                tau=TRANSPORT_TAU,
+                use_dustbin=TRANSPORT_DUSTBIN,
+                top_k=TRANSPORT_TOP_K,
+            )
+            # Fusion gate for combining transport mass with cls logits
+            self.transport_fusion_gate = nn.Sequential(
+                nn.Linear(hidden_dim * 2, hidden_dim),
+                nn.Sigmoid(),
+            )
+            self._transport_logits = None  # set during forward, used for logit fusion
+
     def drop_edges(self, edge_index):
         if (not self.training) or self.edge_dropout <= 0 or edge_index.numel() == 0:
             return edge_index
@@ -1896,6 +2186,198 @@ class TriViewAtomResidueNet(nn.Module):
         )
         return self.pair_scorer(pair_features).squeeze(-1)
 
+    def partner_transport_condition(
+        self,
+        fused,
+        batch,
+        partner_feats=None,
+        partner_batch=None,
+        partner_edge=None,
+        partner_coords=None,
+        partner_frames=None,
+        pair_contact_index=None,
+        pair_contact_graphs=None,
+        return_pair=False,
+        return_pair_marginal=False,
+        return_pair_logit_matrix=False,
+        return_transport=False,
+    ):
+        """
+        Partner conditioning via OT-inspired capacity-constrained matching.
+
+        Replaces the Q/K/V dot-product attention with an explicit transport
+        plan.  For each graph, encodes partner residues, computes pair
+        affinities, runs relaxed transport iterations, and uses the weights to produce
+        a partner message and a transport-derived interface logit.
+        """
+        logit_matrix_cols = max(int(self.transport_layer.top_k), 1)
+        conditioned = fused.clone()
+        transport_plans = []
+        transport_logits = fused.new_zeros((fused.size(0),))
+        self._transport_logits = None
+        self._transport_plans = None  # expose for training-loop regularisation
+        pair_marginal = (
+            fused.new_zeros((fused.size(0),)) if return_pair_marginal else None
+        )
+        pair_logit_matrix = (
+            fused.new_full((fused.size(0), logit_matrix_cols), float("nan"))
+            if return_pair_logit_matrix
+            else None
+        )
+        pair_output = None
+        pair_logits = []
+        pair_targets = []
+        pair_target_indices = []
+        pair_explicit_positive = []
+        labelled_graphs = None
+        if return_pair and pair_contact_graphs is not None and pair_contact_graphs.numel() > 0:
+            labelled_graphs = set(int(gid) for gid in pair_contact_graphs.detach().cpu().tolist())
+
+        if (
+            not self.partner_conditioning
+            or partner_feats is None
+            or partner_batch is None
+            or partner_feats.numel() == 0
+        ):
+            empty_pair = (
+                fused.new_empty((0,)),
+                fused.new_empty((0,)),
+                torch.empty((0,), dtype=torch.long, device=fused.device),
+                torch.empty((0,), dtype=torch.bool, device=fused.device),
+            )
+            result = [conditioned]
+            if return_pair:
+                result.append(empty_pair)
+            if return_pair_marginal:
+                result.append(pair_marginal)
+            if return_pair_logit_matrix:
+                result.append(pair_logit_matrix)
+            if return_transport:
+                result.append(None)  # no transport plan
+            return result[0] if len(result) == 1 else tuple(result)
+
+        partner_h_all = self.encode_partner_residues(
+            partner_feats,
+            partner_edge=partner_edge,
+            partner_coords=partner_coords,
+            partner_frames=partner_frames,
+        )
+        num_graphs = int(batch.max().item()) + 1
+
+        for gid in range(num_graphs):
+            idx = (batch == gid).nonzero(as_tuple=False).squeeze(-1)
+            pidx = (partner_batch == gid).nonzero(as_tuple=False).squeeze(-1)
+            if idx.numel() == 0 or pidx.numel() == 0:
+                continue
+
+            target_h = fused[idx]
+            partner_h = partner_h_all[pidx]
+
+            # Run the transport layer
+            transport_plan, row_mass, partner_weights, top_idx = (
+                self.transport_layer(target_h, partner_h)
+            )
+            transport_plans.append(transport_plan)
+
+            # Compute partner message using transport weights
+            message = torch.matmul(partner_weights, partner_h)  # [n_t, D]
+
+            # Gate the message into the target representation
+            gate = self.transport_fusion_gate(
+                torch.cat((target_h, message), dim=-1)
+            )
+            conditioned[idx] = self.partner_norm(target_h + gate * message)
+
+            # Transport-derived interface logit
+            transport_logits[idx] = torch.logit(row_mass.clamp(1e-6, 1 - 1e-6))
+
+            # Pair-contact supervision (where labels exist)
+            if return_pair and labelled_graphs is not None and gid in labelled_graphs:
+                selected_res = idx.unsqueeze(1).expand_as(top_idx).reshape(-1)
+                selected_partner = pidx[top_idx].reshape(-1)
+                sel_logits = self.transport_layer.pair_logits(
+                    fused[selected_res], partner_h_all[selected_partner]
+                )
+
+                selected_labels = sel_logits.new_zeros(sel_logits.shape)
+                pos_edges = None
+                if pair_contact_index is not None and pair_contact_index.numel() > 0:
+                    pos_mask = (
+                        (batch[pair_contact_index[0]] == gid)
+                        & (partner_batch[pair_contact_index[1]] == gid)
+                    )
+                    if pos_mask.any():
+                        pos_edges = pair_contact_index[:, pos_mask]
+                        max_partner = int(
+                            max(
+                                selected_partner.max().item() if selected_partner.numel() else 0,
+                                pos_edges[1].max().item() if pos_edges.numel() else 0,
+                            )
+                        ) + 1
+                        selected_key = selected_res * max_partner + selected_partner
+                        positive_key = pos_edges[0] * max_partner + pos_edges[1]
+                        selected_labels = torch.isin(selected_key, positive_key).to(sel_logits.dtype)
+
+                # Explicit positives are appended once below, even when also
+                # selected in top-k. Candidate rows contain negatives only.
+                negative = selected_labels < 0.5
+                pair_logits.append(sel_logits[negative])
+                pair_targets.append(selected_labels[negative])
+                pair_target_indices.append(selected_res[negative])
+                pair_explicit_positive.append(
+                    torch.zeros_like(selected_labels[negative], dtype=torch.bool)
+                )
+
+                if pos_edges is not None and pos_edges.numel() > 0:
+                    pos_edges = torch.unique(pos_edges, dim=1)
+                    positive_logits = self.transport_layer.pair_logits(
+                        fused[pos_edges[0]], partner_h_all[pos_edges[1]]
+                    )
+                    pair_logits.append(positive_logits)
+                    pair_targets.append(torch.ones_like(positive_logits))
+                    pair_target_indices.append(pos_edges[0])
+                    pair_explicit_positive.append(torch.ones_like(positive_logits, dtype=torch.bool))
+
+            if return_pair_marginal:
+                pair_marginal[idx] = row_mass
+
+            if return_pair_logit_matrix:
+                k = top_idx.size(1)
+                pair_logit_matrix[idx, :k] = self.transport_layer.pair_logits(
+                    target_h[:, None, :].expand(-1, k, -1),
+                    partner_h[top_idx],
+                )
+
+        # Assemble pair output
+        if return_pair:
+            if pair_logits:
+                pair_output = (
+                    torch.cat(pair_logits, dim=0),
+                    torch.cat(pair_targets, dim=0),
+                    torch.cat(pair_target_indices, dim=0),
+                    torch.cat(pair_explicit_positive, dim=0),
+                )
+            else:
+                pair_output = (
+                    fused.new_empty((0,)),
+                    fused.new_empty((0,)),
+                    torch.empty((0,), dtype=torch.long, device=fused.device),
+                    torch.empty((0,), dtype=torch.bool, device=fused.device),
+                )
+
+        result = [conditioned]
+        if return_pair:
+            result.append(pair_output)
+        if return_pair_marginal:
+            result.append(pair_marginal)
+        if return_pair_logit_matrix:
+            result.append(pair_logit_matrix)
+        if return_transport:
+            result.append(transport_plans if transport_plans else None)
+        self._transport_plans = transport_plans if transport_plans else None
+        self._transport_logits = transport_logits if transport_plans else None
+        return result[0] if len(result) == 1 else tuple(result)
+
     def partner_message(
         self,
         fused,
@@ -1958,6 +2440,25 @@ class TriViewAtomResidueNet(nn.Module):
         return_pair_logit_matrix=False,
         return_message=False,
     ):
+        # Route to capacity-constrained partner matching when enabled
+        if self.use_transport:
+            result = self.partner_transport_condition(
+                fused,
+                batch,
+                partner_feats=partner_feats,
+                partner_batch=partner_batch,
+                partner_edge=partner_edge,
+                partner_coords=partner_coords,
+                partner_frames=partner_frames,
+                pair_contact_index=pair_contact_index,
+                pair_contact_graphs=pair_contact_graphs,
+                return_pair=return_pair,
+                return_pair_marginal=return_pair_marginal,
+                return_pair_logit_matrix=return_pair_logit_matrix,
+                return_transport=return_message,  # reuse return_message slot for transport plans
+            )
+            return result
+
         logit_matrix_cols = max(int(self.partner_top_k), 1)
         message = fused.new_zeros(fused.shape)
 
@@ -2083,12 +2584,18 @@ class TriViewAtomResidueNet(nn.Module):
                         positive_key = pos_edges[0] * max_partner + pos_edges[1]
                         selected_labels = torch.isin(selected_key, positive_key).to(selected_logits.dtype)
 
-                pair_logits.append(selected_logits)
-                pair_targets.append(selected_labels)
-                pair_target_indices.append(selected_res)
-                pair_explicit_positive.append(torch.zeros_like(selected_labels, dtype=torch.bool))
+                # Explicit positives are added once below, including those
+                # outside top-k. Do not double-count selected positives.
+                negative = selected_labels < 0.5
+                pair_logits.append(selected_logits[negative])
+                pair_targets.append(selected_labels[negative])
+                pair_target_indices.append(selected_res[negative])
+                pair_explicit_positive.append(
+                    torch.zeros_like(selected_labels[negative], dtype=torch.bool)
+                )
 
                 if pos_edges is not None and pos_edges.numel() > 0:
+                    pos_edges = torch.unique(pos_edges, dim=1)
                     target_local = torch.empty((fused.size(0),), dtype=torch.long, device=fused.device)
                     partner_local = torch.empty((partner_h.size(0),), dtype=torch.long, device=fused.device)
                     target_local[idx] = torch.arange(idx.numel(), dtype=torch.long, device=fused.device)
@@ -2150,6 +2657,9 @@ class TriViewAtomResidueNet(nn.Module):
         return_pair_marginal=False,
         return_pair_logit_matrix=False,
     ):
+        if self.use_transport:
+            self._transport_logits = None
+            self._transport_plans = None
         res_edge = self.drop_edges(res_edge)
         atom_edge = self.drop_edges(atom_edge)
 
@@ -2374,6 +2884,13 @@ class TriViewAtomResidueNet(nn.Module):
             scale = float(getattr(self, "partner_delta_scale", PARTNER_DELTA_SCALE))
             cls_logits = cls_logits + scale * residual_gate * cls_delta
             rank_logits = rank_logits + scale * residual_gate * rank_delta
+        # Apply OT evidence to both supervised heads, not just the returned
+        # combined logit; otherwise two-head training never sees this branch.
+        if self.use_transport and self._transport_logits is not None:
+            evidence = TRANSPORT_LOGIT_FUSION * self._transport_logits
+            cls_logits = cls_logits + evidence
+            rank_logits = rank_logits + evidence
+            self._transport_logits = None  # consume to avoid stale reuse
         logits = (1.0 - TWO_HEAD_RANK_FUSION) * cls_logits + TWO_HEAD_RANK_FUSION * rank_logits
         partner_logits = self.partner_cls(final_h).squeeze(-1) if return_aux and self.partner_cls is not None else None
         if return_heads:
@@ -3225,6 +3742,9 @@ def train_one_epoch(model, loader, optimizer, criterion, device, epoch, fold_idx
                     return_aux=True,
                 )
             rank_logits = None
+        # Contrastive forwards replace this model attribute. Retain the true
+        # partner plans, with gradients intact, for the primary regularizer.
+        true_transport_plans = getattr(model, "_transport_plans", None)
         if (
             PARTNER_CONTRAST
             or PAIR_MARGINAL_CONTRAST
@@ -3310,7 +3830,6 @@ def train_one_epoch(model, loader, optimizer, criterion, device, epoch, fold_idx
                 aux_logits=partner_logits,
                 aux_targets=partner_contact,
                 aux_mask=partner_mask,
-                rank_loss_scale=rank_loss_scale,
             )
         else:
             loss = criterion(
@@ -3321,6 +3840,7 @@ def train_one_epoch(model, loader, optimizer, criterion, device, epoch, fold_idx
                 aux_logits=partner_logits,
                 aux_targets=partner_contact,
                 aux_mask=partner_mask,
+                rank_loss_scale=rank_loss_scale,
             )
         pair_loss = sparse_pair_contact_loss(pair_output)
         if pair_loss is not None:
@@ -3380,6 +3900,10 @@ def train_one_epoch(model, loader, optimizer, criterion, device, epoch, fold_idx
         )
         if contrast_loss is not None:
             loss = loss + PARTNER_CONTRAST_WEIGHT * contrast_loss_scale * contrast_loss
+        # Transport plan regularisation (entropy + sparsity)
+        transport_reg = transport_regularization_loss(model, true_transport_plans)
+        if transport_reg is not None:
+            loss = loss + transport_reg
         loss.backward()
         torch.nn.utils.clip_grad_norm_(model.parameters(), max_grad_norm)
         optimizer.step()
@@ -3791,16 +4315,15 @@ if __name__ == "__main__":
     # 多个测试集（按你的要求）；新增测试集只要放进 data/geo 即可自动纳入。
     test_paths = [] if SKIP_TEST_EVAL else available_test_datasets(require_geo=True)
 
-    with open(train_path, "rb") as f:
-        train_list = pickle.load(f)
+    train_list, train_source = load_dataset_with_provenance(train_path)
+    data_sources = {"Train335": train_source}
     print("Train data:", train_path)
     pair_contact_contrast_coverage = contact_contrast_dataset_coverage(train_list)
 
     # 逐个载入测试集，键名使用规范名（不受原始文件大小写影响）
     test_sets = {}
     for name, p in test_paths:
-        with open(p, "rb") as f:
-            test_sets[name] = pickle.load(f)
+        test_sets[name], data_sources[name] = load_dataset_with_provenance(p)
 
     N = len(train_list)
     print("Total train complexes:", N)
@@ -3832,6 +4355,18 @@ if __name__ == "__main__":
         if PARTNER_LOGIT_MODE in {"delta", "residual"}:
             label = "residual alpha" if PARTNER_LOGIT_MODE == "residual" else "delta scale"
             print(f"Partner {label}: {PARTNER_DELTA_SCALE:.3f}")
+    print("OT-inspired sparse partner matching:", PARTNER_TRANSPORT)
+    if PARTNER_TRANSPORT:
+        print(
+            "Transport settings: "
+            f"sinkhorn_iters={TRANSPORT_SINKHORN_ITERS}, "
+            f"tau={TRANSPORT_TAU:.3f}, "
+            f"dustbin={TRANSPORT_DUSTBIN}, "
+            f"top_k={TRANSPORT_TOP_K}, "
+            f"entropy_weight={TRANSPORT_ENTROPY_WEIGHT:.3f}, "
+            f"sparsity_weight={TRANSPORT_SPARSITY_WEIGHT:.3f}, "
+            f"logit_fusion={TRANSPORT_LOGIT_FUSION:.3f}"
+        )
     print("Partner-contrast training:", PARTNER_CONTRAST)
     if PARTNER_CONTRAST:
         print(
@@ -3922,6 +4457,7 @@ if __name__ == "__main__":
     fold_artifacts = []
     oof_labels = []
     oof_probs = []
+    oof_identity = []
     csv_rows = []
 
     # 为了初始化 in_dim：用任意一个样本
@@ -3930,6 +4466,24 @@ if __name__ == "__main__":
 
     # ---- 4) 逐折训练 / 验证 / 测试 ----
     folds_to_run = min(MAX_FOLDS, num_folds)
+    code_root = os.path.dirname(os.path.abspath(__file__))
+    run_provenance = build_run_provenance(
+        data_sources,
+        [os.path.join(code_root, filename) for filename in (
+            "CROSS5FOLD_multi_test.py", "metrics.py", "research_provenance.py",
+            "run_seed.ps1", "requirements.txt",
+        )],
+        cv_split_manifest(train_list, cv_folds, group_key=CV_GROUP_KEY),
+        device, folds_to_run,
+    )
+    run_provenance.update({
+        "seed": SEED, "grouped_cv": GROUPED_CV, "cv_group_key": CV_GROUP_KEY,
+        "transport_implementation": TRANSPORT_IMPLEMENTATION,
+        "requested_test_sets": list(TEST_PKL_FILES),
+        "loaded_test_sets": list(test_sets), "skip_test_eval": SKIP_TEST_EVAL,
+    })
+    provenance_path = os.path.join(OUTPUT_DIR, "run_provenance.json")
+    save_json(provenance_path, run_provenance)
     if folds_to_run < num_folds:
         print(f"Pilot fold limit: running {folds_to_run}/{num_folds} CV folds")
     for fold in range(folds_to_run):
@@ -4162,6 +4716,9 @@ if __name__ == "__main__":
         val_labels, val_probs = predict_scores(model, val_loader, device)
         oof_labels.append(val_labels)
         oof_probs.append(val_probs)
+        oof_identity.append(prediction_identity(
+            train_list, sample_indices=val_idx, fold_index=fold, expected_labels=val_labels,
+        ))
         fold_artifacts.append({
             "state": copy.deepcopy({k: v.cpu() for k, v in model.state_dict().items()}),
             "threshold": best_threshold,
@@ -4196,6 +4753,15 @@ if __name__ == "__main__":
             "partner_residue_encoder": PARTNER_RESIDUE_ENCODER,
             "partner_encoder_layers": PARTNER_ENCODER_LAYERS,
             "partner_target_fusion": PARTNER_TARGET_FUSION,
+            "partner_transport": PARTNER_TRANSPORT,
+            "transport_implementation": TRANSPORT_IMPLEMENTATION,
+            "transport_sinkhorn_iters": TRANSPORT_SINKHORN_ITERS,
+            "transport_tau": TRANSPORT_TAU,
+            "transport_dustbin": TRANSPORT_DUSTBIN,
+            "transport_top_k": TRANSPORT_TOP_K,
+            "transport_entropy_weight": TRANSPORT_ENTROPY_WEIGHT,
+            "transport_sparsity_weight": TRANSPORT_SPARSITY_WEIGHT,
+            "transport_logit_fusion": TRANSPORT_LOGIT_FUSION,
             "partner_contrast": PARTNER_CONTRAST,
             "partner_contrast_weight": PARTNER_CONTRAST_WEIGHT,
             "partner_contrast_margin": PARTNER_CONTRAST_MARGIN,
@@ -4227,7 +4793,11 @@ if __name__ == "__main__":
             "test_sets": list(TEST_PKL_FILES),
         })
         fold_path = os.path.join(OUTPUT_DIR, f"fold{fold+1}_best.pt")
+        run_provenance["completed_fold_indices"].append(fold)
         torch.save({
+            "run_provenance": run_provenance,
+            "fold_index": fold,
+            "cv_split": run_provenance["cv_splits"][fold],
             "model_state": {k: v.cpu() for k, v in model.state_dict().items()},
             "threshold": best_threshold,
             "val_selection_score": best_val_score,
@@ -4270,6 +4840,15 @@ if __name__ == "__main__":
             "partner_residue_encoder": PARTNER_RESIDUE_ENCODER,
             "partner_encoder_layers": PARTNER_ENCODER_LAYERS,
             "partner_target_fusion": PARTNER_TARGET_FUSION,
+            "partner_transport": PARTNER_TRANSPORT,
+            "transport_implementation": TRANSPORT_IMPLEMENTATION,
+            "transport_sinkhorn_iters": TRANSPORT_SINKHORN_ITERS,
+            "transport_tau": TRANSPORT_TAU,
+            "transport_dustbin": TRANSPORT_DUSTBIN,
+            "transport_top_k": TRANSPORT_TOP_K,
+            "transport_entropy_weight": TRANSPORT_ENTROPY_WEIGHT,
+            "transport_sparsity_weight": TRANSPORT_SPARSITY_WEIGHT,
+            "transport_logit_fusion": TRANSPORT_LOGIT_FUSION,
             "partner_contrast": PARTNER_CONTRAST,
             "partner_contrast_weight": PARTNER_CONTRAST_WEIGHT,
             "partner_contrast_margin": PARTNER_CONTRAST_MARGIN,
@@ -4311,6 +4890,7 @@ if __name__ == "__main__":
             "cv_group_key": CV_GROUP_KEY,
             "test_sets": list(TEST_PKL_FILES),
         }, fold_path)
+        save_json(provenance_path, run_provenance)
         print(f"Saved fold checkpoint: {fold_path}")
 
         for test_name, test_loader in test_loaders.items():
@@ -4338,7 +4918,7 @@ if __name__ == "__main__":
     # ---- 5) 汇总 5 折 test 结果（逐测试集）----
     print("\n" + "=" * 30)
     if test_sets:
-        print("====== CV on train, evaluated on independent test sets ======")
+        print("====== CV on train, evaluated on external benchmark sets ======")
     else:
         print("====== CV on train, external test evaluation skipped ======")
 
@@ -4351,7 +4931,7 @@ if __name__ == "__main__":
 
     # ---- 6) Cross-fold ensemble: average probabilities from all fold models ----
     print("\n" + "=" * 30)
-    print("====== CV probability ensemble with OOF-calibrated threshold ======")
+    print("====== CV probability ensemble with OOF-selected threshold ======")
 
     oof_y = np.concatenate(oof_labels, axis=0)
     oof_score = np.concatenate(oof_probs, axis=0)
@@ -4359,7 +4939,7 @@ if __name__ == "__main__":
     metrics_from_scores(
         oof_y,
         oof_score,
-        split_name="OOF-Validation-Calibration",
+        split_name="OOF-Development-Threshold-Selection",
         threshold=ensemble_threshold,
     )
     np.savez_compressed(
@@ -4367,6 +4947,8 @@ if __name__ == "__main__":
         labels=oof_y,
         probs=oof_score,
         threshold=np.array([ensemble_threshold], dtype=np.float32),
+        **{key: np.concatenate([identity[key] for identity in oof_identity]) for key in oof_identity[0]},
+        **prediction_source(run_provenance, "Train335"),
     )
 
     val_mcc_weights = normalized_positive_weights([artifact["val_mcc"] for artifact in fold_artifacts])
@@ -4455,6 +5037,8 @@ if __name__ == "__main__":
                 labels=y_true,
                 probs=ensemble_score,
                 threshold=np.array([strategy["threshold"]], dtype=np.float32),
+                **prediction_identity(test_list, expected_labels=y_true),
+                **prediction_source(run_provenance, test_name),
             )
             csv_rows.append({
                 "group": f"ensemble_{strategy_name}",
@@ -4485,7 +5069,10 @@ if __name__ == "__main__":
             )
 
     write_metrics_csv(os.path.join(OUTPUT_DIR, "metrics_summary.csv"), csv_rows)
+    run_provenance["status"] = "complete"
+    save_json(provenance_path, run_provenance)
     save_json(os.path.join(OUTPUT_DIR, "ensemble_summary.json"), {
+        "run_provenance": run_provenance,
         "model_mode": MODEL_MODE,
         "seed": SEED,
         "geometry_feature_mode": GEOMETRY_FEATURE_MODE,
@@ -4509,6 +5096,15 @@ if __name__ == "__main__":
         "partner_residue_encoder": PARTNER_RESIDUE_ENCODER,
         "partner_encoder_layers": PARTNER_ENCODER_LAYERS,
         "partner_target_fusion": PARTNER_TARGET_FUSION,
+            "partner_transport": PARTNER_TRANSPORT,
+            "transport_implementation": TRANSPORT_IMPLEMENTATION,
+            "transport_sinkhorn_iters": TRANSPORT_SINKHORN_ITERS,
+            "transport_tau": TRANSPORT_TAU,
+            "transport_dustbin": TRANSPORT_DUSTBIN,
+            "transport_top_k": TRANSPORT_TOP_K,
+            "transport_entropy_weight": TRANSPORT_ENTROPY_WEIGHT,
+            "transport_sparsity_weight": TRANSPORT_SPARSITY_WEIGHT,
+            "transport_logit_fusion": TRANSPORT_LOGIT_FUSION,
         "partner_contrast": PARTNER_CONTRAST,
         "partner_contrast_weight": PARTNER_CONTRAST_WEIGHT,
         "partner_contrast_margin": PARTNER_CONTRAST_MARGIN,

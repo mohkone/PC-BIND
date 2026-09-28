@@ -17,6 +17,13 @@ if (-not (Test-Path $VenvPython)) {
 
 Push-Location $ProjectRoot
 try {
+    # The backbone comparison uses the same complete target feature recipe.
+    & $VenvPython `
+        (Join-Path $ProjectRoot "check_pcbind_prereqs.py") `
+        --require-plm `
+        "Train335.pkl" "Test60.pkl" "Test287.pkl" "TestB25.pkl" "TestUB25.pkl"
+    if ($LASTEXITCODE -ne 0) { throw "Target-feature prerequisite check failed: $LASTEXITCODE" }
+
     & $VenvPython `
         (Join-Path $ProjectRoot "audit_pcbind_pairing.py") `
         --seed $Seed `

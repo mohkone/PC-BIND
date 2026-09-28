@@ -6,6 +6,11 @@ import numpy as np
 import torch
 
 
+# A previous pilot's environment must not change this smoke-test architecture.
+for name in list(os.environ):
+    if name.startswith("PPI_"):
+        del os.environ[name]
+
 os.environ.setdefault("PPI_PLM_DIM", "480")
 os.environ.setdefault("PPI_AUX_PLM_DIM", "320")
 os.environ["PPI_PARTNER_CONDITIONING"] = "1"

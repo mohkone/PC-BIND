@@ -1,0 +1,37 @@
+PC-BIND smoke-test validation
+Working directory: C:\Users\Mohamed KONE\Desktop\PC-BIND-OT
+All inherited PPI_* variables removed from each child process.
+
+UTC start: 2026-09-27T19:47:09.436885+00:00
+Command: "C:\Users\Mohamed KONE\Desktop\PC-BIND-OT\.venv\Scripts\python.exe" "C:\Users\Mohamed KONE\Desktop\PC-BIND-OT\smoke_test_pcbind_ot.py"
+PC-BIND-OT data-free smoke test passed.
+Exit code: 0
+UTC finish: 2026-09-27T19:47:14.412838+00:00
+
+UTC start: 2026-09-27T19:47:14.412838+00:00
+Command: "C:\Users\Mohamed KONE\Desktop\PC-BIND-OT\.venv\Scripts\python.exe" "C:\Users\Mohamed KONE\Desktop\PC-BIND-OT\smoke_test_pcbind_v5.py"
+PC-BIND v5 smoke test passed.
+Target: 3MCB | donor: 1Z0J
+Target residues=58, true partner residues=54, mismatched partner residues=169
+Logit delta: mean_abs=0.01499527, max_abs=0.06973214
+Gradient sums: partner_features=0.465760, shared_encoder=5.278475
+Pair-contact candidates=997, positives=85, loss=1.123198, head_gradient=1.509578
+Marginal consistency loss=0.479028, marginal_gradient=0.020000
+Marginal partner contrast=0.030001, pair_head_gradient=0.027173
+Contact hard-partner contrast=1.533553, eligible_residues=43, mean_D=-1.506984, pair_head_gradient=652.712952
+
+Fold 1 Epoch 1:   0%|                                                         | 0/1 [00:00<?, ?it/s]
+Fold 1 Epoch 1:   0%|                                              | 0/1 [00:01<?, ?it/s, loss=1.71]
+Fold 1 Epoch 1: 100%|██████████████████████████████████████| 1/1 [00:01<00:00,  1.42s/it, loss=1.71]
+Fold 1 Epoch 1: 100%|██████████████████████████████████████| 1/1 [00:01<00:00,  1.42s/it, loss=1.71]
+V8 one-step training loss=1.710847
+Exit code: 0
+UTC finish: 2026-09-27T19:47:29.674825+00:00
+
+UTC start: 2026-09-27T19:47:29.674825+00:00
+Command: "C:\Users\Mohamed KONE\Desktop\PC-BIND-OT\.venv\Scripts\python.exe" "C:\Users\Mohamed KONE\Desktop\PC-BIND-OT\smoke_test_pcbind_v9.py"
+PC-BIND v9 residual smoke test passed.
+mean|true-null|=0.01290606, mean|true-mismatch|=0.01238588
+residual_gradient=13.009353, partner_feature_gradient=1.572387, pair_loss=1.029218
+Exit code: 0
+UTC finish: 2026-09-27T19:47:39.742787+00:00

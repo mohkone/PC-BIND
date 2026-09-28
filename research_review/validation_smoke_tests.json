@@ -1,0 +1,44 @@
+{
+  "results": [
+    {
+      "script": "smoke_test_pcbind_ot.py",
+      "command": [
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\smoke_test_pcbind_ot.py"
+      ],
+      "cwd": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT",
+      "started_utc": "2026-09-27T19:47:09.436885+00:00",
+      "finished_utc": "2026-09-27T19:47:14.412838+00:00",
+      "exit_code": 0,
+      "output": "PC-BIND-OT data-free smoke test passed.\n",
+      "inherited_ppi_environment_removed": true
+    },
+    {
+      "script": "smoke_test_pcbind_v5.py",
+      "command": [
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\smoke_test_pcbind_v5.py"
+      ],
+      "cwd": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT",
+      "started_utc": "2026-09-27T19:47:14.412838+00:00",
+      "finished_utc": "2026-09-27T19:47:29.674825+00:00",
+      "exit_code": 0,
+      "output": "PC-BIND v5 smoke test passed.\nTarget: 3MCB | donor: 1Z0J\nTarget residues=58, true partner residues=54, mismatched partner residues=169\nLogit delta: mean_abs=0.01499527, max_abs=0.06973214\nGradient sums: partner_features=0.465760, shared_encoder=5.278475\nPair-contact candidates=997, positives=85, loss=1.123198, head_gradient=1.509578\nMarginal consistency loss=0.479028, marginal_gradient=0.020000\nMarginal partner contrast=0.030001, pair_head_gradient=0.027173\nContact hard-partner contrast=1.533553, eligible_residues=43, mean_D=-1.506984, pair_head_gradient=652.712952\n\nFold 1 Epoch 1:   0%|                                                         | 0/1 [00:00<?, ?it/s]\nFold 1 Epoch 1:   0%|                                              | 0/1 [00:01<?, ?it/s, loss=1.71]\nFold 1 Epoch 1: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 1/1 [00:01<00:00,  1.42s/it, loss=1.71]\nFold 1 Epoch 1: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 1/1 [00:01<00:00,  1.42s/it, loss=1.71]\nV8 one-step training loss=1.710847\n",
+      "inherited_ppi_environment_removed": true
+    },
+    {
+      "script": "smoke_test_pcbind_v9.py",
+      "command": [
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\smoke_test_pcbind_v9.py"
+      ],
+      "cwd": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT",
+      "started_utc": "2026-09-27T19:47:29.674825+00:00",
+      "finished_utc": "2026-09-27T19:47:39.742787+00:00",
+      "exit_code": 0,
+      "output": "PC-BIND v9 residual smoke test passed.\nmean|true-null|=0.01290606, mean|true-mismatch|=0.01238588\nresidual_gradient=13.009353, partner_feature_gradient=1.572387, pair_loss=1.029218\n",
+      "inherited_ppi_environment_removed": true
+    }
+  ],
+  "all_passed": true
+}

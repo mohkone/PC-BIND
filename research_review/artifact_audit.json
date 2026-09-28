@@ -1,0 +1,368 @@
+{
+  "scope": "Read-only audit of saved arrays and serialized metadata. Base datasets, chain identities, fold membership, and homology separation are not verified by this audit.",
+  "runs": {
+    "outputs": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs",
+      "summary_sha256": "5e1403846cca5bf6ed78fcb01416fdf2c155cdd56d8acdecf5713f54439479c0",
+      "config": {
+        "seed": 1234,
+        "max_folds": 1,
+        "grouped_cv": false,
+        "cv_group_key": "complex_code",
+        "partner_conditioning": false,
+        "partner_direct_fusion": false,
+        "partner_residue_encoder": false,
+        "partner_transport": false,
+        "transport_implementation": null,
+        "plm_feature_mode": "esm2_t12_35M_UR50D_v1",
+        "plm_feature_dim": 480,
+        "aux_plm_feature_mode": "esm2_t6_8M_UR50D_v1",
+        "aux_plm_feature_dim": 320,
+        "partner_contact_aux": true
+      },
+      "checkpoint_files": [
+        "fold1_best.pt"
+      ],
+      "tests": {
+        "Test60": {
+          "prediction_sha256": "0100fe4a298046e5ec12baffa520ee656d50b4139a0b05069daf38ec7ccb709c",
+          "residues": 13144,
+          "positives": 2075,
+          "prevalence": 0.15786670724284846,
+          "threshold": 0.5600000023841858,
+          "explicit_residue_identity_present": false,
+          "metrics": {
+            "auc_pr": 0.46876066148233075,
+            "average_precision": 0.46899885975074185,
+            "auc_roc": 0.797892845208642,
+            "mcc": 0.3520770117627721,
+            "interface_precision": 0.44224719101123594,
+            "interface_recall": 0.4742168674698795,
+            "interface_f1": 0.4576744186046512
+          },
+          "absolute_error_vs_summary": {
+            "auc_pr": 0.0,
+            "auc_roc": 0.0,
+            "mcc": 0.0
+          }
+        },
+        "Test287": {
+          "prediction_sha256": "649fe6f0b61e85ccbf82637c252af60aeec3633f952feae91ee1b81bd10d434d",
+          "residues": 60376,
+          "positives": 8566,
+          "prevalence": 0.14187756724526301,
+          "threshold": 0.5600000023841858,
+          "explicit_residue_identity_present": false,
+          "metrics": {
+            "auc_pr": 0.40152204048711754,
+            "average_precision": 0.4016218790321935,
+            "auc_roc": 0.7887652852790168,
+            "mcc": 0.32607397201149796,
+            "interface_precision": 0.3784045835169678,
+            "interface_recall": 0.501167406023815,
+            "interface_f1": 0.4312189242127467
+          },
+          "absolute_error_vs_summary": {
+            "auc_pr": 0.0,
+            "auc_roc": 0.0,
+            "mcc": 0.0
+          }
+        },
+        "TestB25": {
+          "prediction_sha256": "cebcecfa5cb3b7c82dde7614f21681fe38476ef17851fd2d81804697467ad91b",
+          "residues": 5864,
+          "positives": 739,
+          "prevalence": 0.1260231923601637,
+          "threshold": 0.5600000023841858,
+          "explicit_residue_identity_present": false,
+          "metrics": {
+            "auc_pr": 0.47722656297079347,
+            "average_precision": 0.47775133439756556,
+            "auc_roc": 0.8427220700353149,
+            "mcc": 0.37703995198175166,
+            "interface_precision": 0.44501278772378516,
+            "interface_recall": 0.4709066305818674,
+            "interface_f1": 0.45759368836291914
+          },
+          "absolute_error_vs_summary": {
+            "auc_pr": 0.0,
+            "auc_roc": 0.0,
+            "mcc": 0.0
+          }
+        },
+        "TestUB25": {
+          "prediction_sha256": "0c5b9c2df10f34a60f2e961e96135a158186a6cff14f11e4f498431f4028c1c8",
+          "residues": 5917,
+          "positives": 711,
+          "prevalence": 0.12016224438059828,
+          "threshold": 0.5600000023841858,
+          "explicit_residue_identity_present": false,
+          "metrics": {
+            "auc_pr": 0.42528487547461824,
+            "average_precision": 0.4264417680056586,
+            "auc_roc": 0.8348567837716191,
+            "mcc": 0.36167143071045804,
+            "interface_precision": 0.41502463054187194,
+            "interface_recall": 0.4739803094233474,
+            "interface_f1": 0.4425476034143139
+          },
+          "absolute_error_vs_summary": {
+            "auc_pr": 0.0,
+            "auc_roc": 0.0,
+            "mcc": 0.0
+          }
+        }
+      },
+      "warnings": [
+        "Incomplete five-fold evidence; treat as a pilot.",
+        "Run metadata does not establish complex-grouped cross-validation.",
+        "Test60: residue identity absent; dataset ordering cannot be certified from NPZ alone.",
+        "Test287: residue identity absent; dataset ordering cannot be certified from NPZ alone.",
+        "TestB25: residue identity absent; dataset ordering cannot be certified from NPZ alone.",
+        "TestUB25: residue identity absent; dataset ordering cannot be certified from NPZ alone."
+      ]
+    },
+    "outputs_no_ot_matched_seed2101": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_no_ot_matched_seed2101",
+      "summary_sha256": "0f6d7889710dccb9c63ef6552b8c03d1cf82184570429ac12a4c148cafbf8b90",
+      "config": {
+        "seed": 2101,
+        "max_folds": 1,
+        "grouped_cv": true,
+        "cv_group_key": "complex_code",
+        "partner_conditioning": true,
+        "partner_direct_fusion": false,
+        "partner_residue_encoder": true,
+        "partner_transport": false,
+        "transport_implementation": null,
+        "plm_feature_mode": "disabled",
+        "plm_feature_dim": 0,
+        "aux_plm_feature_mode": "disabled",
+        "aux_plm_feature_dim": 0,
+        "partner_contact_aux": false
+      },
+      "checkpoint_files": [
+        "fold1_best.pt"
+      ],
+      "tests": {
+        "Test60": {
+          "prediction_sha256": "2e6e7e800893dc17530af12477d9b2779edda7a94893665ba96e12f65b580621",
+          "residues": 13144,
+          "positives": 2075,
+          "prevalence": 0.15786670724284846,
+          "threshold": 0.5600000023841858,
+          "explicit_residue_identity_present": false,
+          "metrics": {
+            "auc_pr": 0.46121924777213485,
+            "average_precision": 0.46159475414328116,
+            "auc_roc": 0.8049955862840649,
+            "mcc": 0.3555504573026842,
+            "interface_precision": 0.45004625346901017,
+            "interface_recall": 0.4689156626506024,
+            "interface_f1": 0.45928723153174417
+          },
+          "absolute_error_vs_summary": {
+            "auc_pr": 0.0,
+            "auc_roc": 0.0,
+            "mcc": 0.0
+          }
+        },
+        "Test287": {
+          "prediction_sha256": "4ea52aecb6b1cac3bda632ee20c7fb42f926759f022e581c0368228884513928",
+          "residues": 60376,
+          "positives": 8566,
+          "prevalence": 0.14187756724526301,
+          "threshold": 0.5600000023841858,
+          "explicit_residue_identity_present": false,
+          "metrics": {
+            "auc_pr": 0.40998871506510737,
+            "average_precision": 0.4100845454548468,
+            "auc_roc": 0.7971110722952176,
+            "mcc": 0.3382605169421714,
+            "interface_precision": 0.37967152673035026,
+            "interface_recall": 0.5289516693906141,
+            "interface_f1": 0.4420487804878049
+          },
+          "absolute_error_vs_summary": {
+            "auc_pr": 0.0,
+            "auc_roc": 0.0,
+            "mcc": 0.0
+          }
+        },
+        "TestB25": {
+          "prediction_sha256": "770625583151ea8fbee19a8429ec3bd12bf7b0873c3756a050c7aadd12b1894e",
+          "residues": 5864,
+          "positives": 739,
+          "prevalence": 0.1260231923601637,
+          "threshold": 0.5600000023841858,
+          "explicit_residue_identity_present": false,
+          "metrics": {
+            "auc_pr": 0.46142267100852286,
+            "average_precision": 0.46208731231708244,
+            "auc_roc": 0.8460318822403379,
+            "mcc": 0.388554730931436,
+            "interface_precision": 0.4666666666666667,
+            "interface_recall": 0.46414073071718537,
+            "interface_f1": 0.4654002713704206
+          },
+          "absolute_error_vs_summary": {
+            "auc_pr": 0.0,
+            "auc_roc": 0.0,
+            "mcc": 0.0
+          }
+        },
+        "TestUB25": {
+          "prediction_sha256": "b4768916d718c317f80394382d7d1c48c8efd1d37bbb77524e8b88ddc2060496",
+          "residues": 5917,
+          "positives": 711,
+          "prevalence": 0.12016224438059828,
+          "threshold": 0.5600000023841858,
+          "explicit_residue_identity_present": false,
+          "metrics": {
+            "auc_pr": 0.416534881297786,
+            "average_precision": 0.4176753958649928,
+            "auc_roc": 0.8400155505953586,
+            "mcc": 0.3809046589247135,
+            "interface_precision": 0.44327176781002636,
+            "interface_recall": 0.47257383966244726,
+            "interface_f1": 0.45745405037440434
+          },
+          "absolute_error_vs_summary": {
+            "auc_pr": 0.0,
+            "auc_roc": 0.0,
+            "mcc": 0.0
+          }
+        }
+      },
+      "warnings": [
+        "Incomplete five-fold evidence; treat as a pilot.",
+        "Transport is disabled in serialized metadata; folder name is not treatment evidence.",
+        "Test60: residue identity absent; dataset ordering cannot be certified from NPZ alone.",
+        "Test287: residue identity absent; dataset ordering cannot be certified from NPZ alone.",
+        "TestB25: residue identity absent; dataset ordering cannot be certified from NPZ alone.",
+        "TestUB25: residue identity absent; dataset ordering cannot be certified from NPZ alone."
+      ]
+    },
+    "outputs_ot_stable_seed2101": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_ot_stable_seed2101",
+      "summary_sha256": "bb98e1cdeb9ce1ef6c64251391eb2ed346e6ca72f6fd682d83502c21769692f1",
+      "config": {
+        "seed": 2101,
+        "max_folds": 1,
+        "grouped_cv": true,
+        "cv_group_key": "complex_code",
+        "partner_conditioning": true,
+        "partner_direct_fusion": false,
+        "partner_residue_encoder": true,
+        "partner_transport": false,
+        "transport_implementation": null,
+        "plm_feature_mode": "esm2_t12_35M_UR50D_v1",
+        "plm_feature_dim": 480,
+        "aux_plm_feature_mode": "esm2_t6_8M_UR50D_v1",
+        "aux_plm_feature_dim": 320,
+        "partner_contact_aux": true
+      },
+      "checkpoint_files": [
+        "fold1_best.pt"
+      ],
+      "tests": {
+        "Test60": {
+          "prediction_sha256": "8dd38b2222b0c74635edb34c166a8bd4b8975d18afa83eef499db2fb7968a38a",
+          "residues": 13144,
+          "positives": 2075,
+          "prevalence": 0.15786670724284846,
+          "threshold": 0.5770000219345093,
+          "explicit_residue_identity_present": false,
+          "metrics": {
+            "auc_pr": 0.4613469568564002,
+            "average_precision": 0.4616115089328329,
+            "auc_roc": 0.7965361853956614,
+            "mcc": 0.3473196515856625,
+            "interface_precision": 0.45263671875,
+            "interface_recall": 0.44674698795180723,
+            "interface_f1": 0.44967256851806936
+          },
+          "absolute_error_vs_summary": {
+            "auc_pr": 0.0,
+            "auc_roc": 0.0,
+            "mcc": 0.0
+          }
+        },
+        "Test287": {
+          "prediction_sha256": "1f718dcd2cdb6d80a7f8f605fd1ac99a80130b8b75fd9ae382d50edc62f42a6e",
+          "residues": 60376,
+          "positives": 8566,
+          "prevalence": 0.14187756724526301,
+          "threshold": 0.5770000219345093,
+          "explicit_residue_identity_present": false,
+          "metrics": {
+            "auc_pr": 0.4153489926973949,
+            "average_precision": 0.41545058473320207,
+            "auc_roc": 0.7988617351885107,
+            "mcc": 0.34286971456548565,
+            "interface_precision": 0.40258998286040754,
+            "interface_recall": 0.49357926686901704,
+            "interface_f1": 0.4434654919236417
+          },
+          "absolute_error_vs_summary": {
+            "auc_pr": 0.0,
+            "auc_roc": 0.0,
+            "mcc": 0.0
+          }
+        },
+        "TestB25": {
+          "prediction_sha256": "8f3a73e0127e5fdc86f4d3a465086db70afbe51b04ce8f699ba1a8992b4f38c9",
+          "residues": 5864,
+          "positives": 739,
+          "prevalence": 0.1260231923601637,
+          "threshold": 0.5770000219345093,
+          "explicit_residue_identity_present": false,
+          "metrics": {
+            "auc_pr": 0.44887941786621244,
+            "average_precision": 0.44949596682609966,
+            "auc_roc": 0.8348444503118915,
+            "mcc": 0.3605959797270713,
+            "interface_precision": 0.45481049562682213,
+            "interface_recall": 0.42219215155615697,
+            "interface_f1": 0.4378947368421053
+          },
+          "absolute_error_vs_summary": {
+            "auc_pr": 0.0,
+            "auc_roc": 0.0,
+            "mcc": 0.0
+          }
+        },
+        "TestUB25": {
+          "prediction_sha256": "6959ad849f1b315463808162b63fc8c4e0b8e81662284aedeec3bf57fd7e6054",
+          "residues": 5917,
+          "positives": 711,
+          "prevalence": 0.12016224438059828,
+          "threshold": 0.5770000219345093,
+          "explicit_residue_identity_present": false,
+          "metrics": {
+            "auc_pr": 0.39508578476326695,
+            "average_precision": 0.39622731844302933,
+            "auc_roc": 0.8273511089930314,
+            "mcc": 0.3596813886915239,
+            "interface_precision": 0.43411927877947293,
+            "interface_recall": 0.44022503516174405,
+            "interface_f1": 0.4371508379888268
+          },
+          "absolute_error_vs_summary": {
+            "auc_pr": 0.0,
+            "auc_roc": 0.0,
+            "mcc": 0.0
+          }
+        }
+      },
+      "warnings": [
+        "Incomplete five-fold evidence; treat as a pilot.",
+        "Transport is disabled in serialized metadata; folder name is not treatment evidence.",
+        "Test60: residue identity absent; dataset ordering cannot be certified from NPZ alone.",
+        "Test287: residue identity absent; dataset ordering cannot be certified from NPZ alone.",
+        "TestB25: residue identity absent; dataset ordering cannot be certified from NPZ alone.",
+        "TestUB25: residue identity absent; dataset ordering cannot be certified from NPZ alone."
+      ]
+    }
+  }
+}

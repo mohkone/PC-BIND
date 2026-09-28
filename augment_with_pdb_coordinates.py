@@ -61,9 +61,9 @@ def find_existing_file(directory, filename):
 
 
 def parse_complex_code(code):
-    code = str(code).strip().upper()
+    code = str(code).strip()
     parts = code.replace(":", "_").split("_")
-    pdb_id = parts[0][:4]
+    pdb_id = parts[0][:4].upper()
     chain_hint = parts[1] if len(parts) > 1 else ""
     return pdb_id, chain_hint
 
@@ -80,41 +80,77 @@ def download_pdb(pdb_id):
 
 
 def parse_pdb_chains(path):
+    """Read the first model and one occupancy-selected conformer per residue.
+
+    Blank alternate locations are shared atoms. Ties between alternate
+    conformers prefer A, then lexical order; atoms from other conformers and
+    later MODEL records never enter geometry or contact labels.
+    """
     chains = {}
-    residue_order = {}
-    atom_order = {}
+    residue_atoms = {}
+    model_started = False
 
     with open(path, "r", encoding="utf-8", errors="ignore") as f:
         for line in f:
-            if not line.startswith("ATOM"):
+            record = line[:6].strip()
+            if record == "MODEL":
+                if model_started or residue_atoms:
+                    break
+                model_started = True
+                continue
+            if record == "ENDMDL":
+                break
+            res_name = line[17:20].strip()
+            if record != "ATOM" and not (record == "HETATM" and res_name in AA3_TO_1):
                 continue
             atom_name = line[12:16].strip()
             element = (line[76:78].strip() or atom_name[0]).upper()
-            if element == "H":
+            if element in {"H", "D"}:
                 continue
 
             chain = line[21].strip() or "_"
-            res_key = (
+            site = (
                 chain,
                 line[22:26].strip(),
                 line[26].strip(),
-                line[17:20].strip(),
             )
             xyz = np.array(
                 [float(line[30:38]), float(line[38:46]), float(line[46:54])],
                 dtype=np.float32,
             )
 
-            chains.setdefault(chain, {"residues": [], "atoms": [], "backbone": {}})
-            residue_order.setdefault(chain, set())
-            atom_order.setdefault(chain, [])
+            occupancy = float(line[54:60].strip() or "0")
+            altloc = line[16].strip()
+            residue_atoms.setdefault(site, []).append((atom_name, altloc, occupancy, res_name, xyz))
 
-            if res_key not in residue_order[chain]:
-                residue_order[chain].add(res_key)
-                chains[chain]["residues"].append(res_key)
-            chains[chain]["atoms"].append((res_key, atom_name, xyz))
+    for site, candidates in residue_atoms.items():
+        conformer_occupancy = {}
+        for _, altloc, occupancy, _, _ in candidates:
+            if altloc:
+                conformer_occupancy[altloc] = conformer_occupancy.get(altloc, 0.0) + occupancy
+        chosen = min(
+            conformer_occupancy,
+            key=lambda alt: (-conformer_occupancy[alt], alt != "A", alt),
+            default="",
+        )
+        selected = [atom for atom in candidates if atom[1] in {"", chosen}]
+        res_name = next((atom[3] for atom in selected if atom[1] == chosen), selected[0][3])
+        res_key = (*site, res_name)
+        chain = site[0]
+        chain_data = chains.setdefault(chain, {"residues": [], "atoms": [], "backbone": {}})
+        chain_data["residues"].append(res_key)
+        unique_atoms = {}
+        for atom in selected:
+            atom_name, altloc, occupancy, name, _ = atom
+            if name != res_name:
+                continue
+            current = unique_atoms.get(atom_name)
+            if current is None or (altloc == "", occupancy) > (current[1] == "", current[2]):
+                unique_atoms[atom_name] = atom
+        for atom_name, _, _, _, xyz in unique_atoms.values():
+            chain_data["atoms"].append((res_key, atom_name, xyz))
             if atom_name in {"N", "CA", "C"}:
-                chains[chain]["backbone"].setdefault(res_key, {})[atom_name] = xyz
+                chain_data["backbone"].setdefault(res_key, {})[atom_name] = xyz
 
     return chains
 
@@ -482,39 +518,33 @@ def residue_sequence(chain_data):
 
 
 def find_matching_chain(sample, chains, used_chains, preferred_chain=""):
+    """Match identity and residue order; sample ordering must not choose a chain."""
     n_res = sample["residue_graph_node"].shape[0]
     n_atom = sample["atom_graph_node"].shape[0]
-    preferred_candidates = []
-    if preferred_chain:
-        if preferred_chain in chains:
-            preferred_candidates.append(preferred_chain)
-        if len(preferred_chain) > 1:
-            preferred_candidates.extend([ch for ch in preferred_chain if ch in chains])
-    for chain_id in dict.fromkeys(preferred_candidates):
+    expected_sequence = str(sample.get("residue_sequence", "")).strip().upper()
+    if expected_sequence and len(expected_sequence) != n_res:
+        raise ValueError("Existing residue_sequence is not aligned with residue_graph_node")
+    declared_chain = str(sample.get("pdb_chain", "")).strip() or preferred_chain
+    if declared_chain:
+        if declared_chain not in chains:
+            raise ValueError(f"Declared target chain {declared_chain!r} is absent from the PDB")
+        candidates = [declared_chain]
+    else:
+        candidates = list(chains)
+
+    matches = []
+    for chain_id in candidates:
         chain_data = chains[chain_id]
         if len(chain_data["residues"]) == n_res:
-            return chain_id, len(chain_data["atoms"]) == n_atom
-
-    exact_candidates = []
-    residue_candidates = []
-    for chain_id, chain_data in chains.items():
-        if len(chain_data["residues"]) == n_res:
-            residue_candidates.append(chain_id)
-            if len(chain_data["atoms"]) == n_atom:
-                exact_candidates.append(chain_id)
-
-    unused = [chain for chain in exact_candidates if chain not in used_chains]
-    if unused:
-        return unused[0], True
-    if exact_candidates:
-        return exact_candidates[0], True
-
-    unused = [chain for chain in residue_candidates if chain not in used_chains]
-    if unused:
-        return unused[0], False
-    if residue_candidates:
-        return residue_candidates[0], False
-    return None, False
+            if expected_sequence and residue_sequence(chain_data) != expected_sequence:
+                continue
+            matches.append(chain_id)
+    if len(matches) > 1:
+        raise ValueError(f"Ambiguous target-chain mapping: {matches}; supply verified pdb_chain and residue_sequence")
+    if not matches:
+        return None, False
+    chain_id = matches[0]
+    return chain_id, len(chains[chain_id]["atoms"]) == n_atom
 
 
 def augment_file(filename):
@@ -529,6 +559,7 @@ def augment_file(filename):
     pdb_cache = {}
     used_by_pdb = {}
     matched = 0
+    unverified = 0
     failed = []
 
     for i, sample in enumerate(samples):
@@ -542,8 +573,17 @@ def augment_file(filename):
             chain_id, exact_atom_match = find_matching_chain(sample, chains, used, chain_hint)
             if chain_id is None:
                 failed.append((i, pdb_id, sample["residue_graph_node"].shape[0], sample["atom_graph_node"].shape[0]))
+                sample["pdb_augmentation_status"] = "failed"
                 continue
 
+            # Publish a sample only after all derived fields have been built.
+            # The base node arrays and labels keep their original ordering.
+            sample = sample.copy()
+            mapping_verified = bool(str(sample.get("residue_sequence", "")).strip()) and sample.get("pdb_mapping_verified", True)
+            sample["pdb_mapping_verified"] = mapping_verified
+            sample["pdb_mapping_method"] = "exact_sequence" if mapping_verified else "unique_length_unverified"
+            sample["pdb_augmentation_status"] = "ok"
+            unverified += int(not mapping_verified)
             used.add(chain_id)
             residue_coords, residue_frames, atom_coords = chain_coordinates(chains[chain_id])
             sample["pdb_chain"] = chain_id
@@ -573,9 +613,11 @@ def augment_file(filename):
             sample["residue_geo_edge"] = radius_edges(residue_coords, RESIDUE_CUTOFF)
             if exact_atom_match and COMPUTE_ATOM_GEO_EDGES:
                 sample["atom_geo_edge"] = radius_edges(atom_coords, ATOM_CUTOFF)
+            samples[i] = sample
             matched += 1
         except Exception as exc:
             failed.append((i, pdb_id, repr(exc)))
+            samples[i]["pdb_augmentation_status"] = "failed"
 
         if (i + 1) % 25 == 0 or i + 1 == len(samples):
             print(f"{filename}: {i + 1}/{len(samples)} processed, matched={matched}", flush=True)
@@ -587,6 +629,13 @@ def augment_file(filename):
 
     print(f"Saved {out_path}")
     print(f"Matched {matched}/{len(samples)}")
+    if unverified:
+        print(
+            f"WARNING: {unverified} target mappings used unique residue counts only. "
+            "Residue/label alignment is UNVERIFIED; provide an upstream residue_sequence "
+            "or residue identity mapping before treating these samples as validated.",
+            file=sys.stderr,
+        )
     if failed:
         fail_path = os.path.join(OUT_DIR, f"{os.path.splitext(filename)[0]}_unmatched.txt")
         with open(fail_path, "w", encoding="utf-8") as f:

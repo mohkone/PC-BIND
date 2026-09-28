@@ -10,11 +10,14 @@ if (Test-Path "$env:USERPROFILE\.cache\codex-runtimes\codex-primary-runtime\depe
 
 if (-not (Test-Path $VenvPath)) {
     & $Python -m venv $VenvPath
+    if ($LASTEXITCODE -ne 0) { throw "Could not create the Python environment: $LASTEXITCODE" }
 }
 
 $VenvPython = Join-Path $VenvPath "Scripts\python.exe"
 & $VenvPython -m pip install --upgrade pip
+if ($LASTEXITCODE -ne 0) { throw "pip upgrade failed: $LASTEXITCODE" }
 & $VenvPython -m pip install -r (Join-Path $ProjectRoot "requirements.txt")
+if ($LASTEXITCODE -ne 0) { throw "Dependency installation failed: $LASTEXITCODE" }
 
 Write-Host ""
 Write-Host "Environment ready."

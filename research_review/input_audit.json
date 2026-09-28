@@ -1,0 +1,5424 @@
+{
+  "generated_utc": "2026-09-27T09:11:40.556389+00:00",
+  "resolved_data_dir": "C:\\Users\\Mohamed KONE\\Desktop\\article\\data\\geo",
+  "scope": "Read-only schema/coverage and exact target sequence/PDB identity; not homology proof.",
+  "datasets": {
+    "Train335.pkl": {
+      "workspace_path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo\\Train335.pkl",
+      "resolved_path": "C:\\Users\\Mohamed KONE\\Desktop\\article\\data\\geo\\Train335.pkl",
+      "bytes": 1471014435,
+      "modified_utc": "2026-08-14T15:14:40.967958+00:00",
+      "samples": 335,
+      "unique_complex_codes": 209,
+      "unique_pdb_ids": 209,
+      "multi_sample_complex_codes": {
+        "1F60": 2,
+        "4IU2": 2,
+        "4BI8": 2,
+        "2O3B": 2,
+        "3H4S": 2,
+        "1MAH": 2,
+        "3P8B": 2,
+        "4KT6": 2,
+        "2QC1": 2,
+        "2D5R": 2,
+        "3W0L": 2,
+        "1NW9": 2,
+        "3ZEU": 2,
+        "3NYB": 2,
+        "3FQD": 2,
+        "3MJ7": 2,
+        "1KSH": 2,
+        "1DFJ": 2,
+        "1EUV": 2,
+        "2O2V": 2,
+        "2FCW": 2,
+        "1GCQ": 2,
+        "1XG2": 2,
+        "4G7X": 2,
+        "4BJJ": 2,
+        "4E4W": 2,
+        "2V1Y": 2,
+        "3DLQ": 2,
+        "2MTA": 3,
+        "4BH6": 2,
+        "2OMZ": 2,
+        "3W2W": 2,
+        "4ETP": 2,
+        "4A5U": 2,
+        "1PXV": 2,
+        "3BP6": 2,
+        "4DFC": 2,
+        "3MDB": 2,
+        "3AQB": 2,
+        "1HX1": 2,
+        "1KKL": 2,
+        "1Z3E": 2,
+        "1U0S": 2,
+        "3MMY": 2,
+        "1KTZ": 2,
+        "3AXJ": 2,
+        "1NRJ": 2,
+        "3ONA": 2,
+        "3OG6": 2,
+        "2AJF": 2,
+        "3ZYI": 2,
+        "2HQS": 2,
+        "4EUK": 2,
+        "1N2C": 3,
+        "4HFF": 2,
+        "2CG5": 2,
+        "2HRK": 2,
+        "1K5D": 3,
+        "3DI3": 2,
+        "2B59": 2,
+        "2J3R": 2,
+        "4FOU": 2,
+        "2OZN": 2,
+        "4AWX": 2,
+        "1IB1": 2,
+        "1EER": 2,
+        "3CKI": 2,
+        "4APX": 2,
+        "2V8S": 2,
+        "3TGX": 2,
+        "1E6E": 2,
+        "2WUS": 2,
+        "1EFN": 2,
+        "3GNI": 2,
+        "3ANW": 2,
+        "1K74": 2,
+        "2O8V": 2,
+        "3M7F": 2,
+        "3AYH": 2,
+        "1E4K": 2,
+        "1RLB": 2,
+        "2YAJ": 2,
+        "3B08": 2,
+        "4FQ0": 2,
+        "3VU9": 2,
+        "2Z0E": 2,
+        "1JIW": 2,
+        "3D48": 2,
+        "2P7V": 2,
+        "4F6U": 2,
+        "4HOP": 2,
+        "2YCL": 2,
+        "3PV6": 2,
+        "4GED": 2,
+        "3BS5": 2,
+        "1TNR": 2,
+        "3CX8": 2,
+        "2WD5": 2,
+        "3DGP": 2,
+        "4GN4": 2,
+        "3BEG": 2,
+        "1SVD": 2,
+        "2FP4": 2,
+        "2H0D": 2,
+        "5WY5": 2,
+        "1ITB": 2,
+        "1Z5Y": 2,
+        "1GHQ": 2,
+        "1UDI": 2,
+        "1TDQ": 2,
+        "1JMO": 2,
+        "1F34": 2,
+        "3MP7": 2,
+        "3PH0": 2,
+        "2C9X": 2,
+        "3CZU": 2,
+        "2RD7": 2,
+        "1ZBX": 2,
+        "3VIQ": 2,
+        "3R07": 2,
+        "1AK4": 2,
+        "1MG9": 2,
+        "3VRD": 2
+      },
+      "complex_code_styles": {
+        "bare_pdb": 335
+      },
+      "target_sequences_present": 334,
+      "samples_with_partner_chain_sequences": 334,
+      "valid_target_main_plm": 334,
+      "valid_target_aux_plm": 334,
+      "valid_partner_encoder": 334,
+      "nonempty_partner_samples": 334,
+      "valid_pair_label_samples": 334,
+      "positive_pair_labels": 28778,
+      "mapping_verification_metadata_present": 0,
+      "mapping_verified_true": 0,
+      "failed_or_fallback_samples": [
+        {
+          "index": 106,
+          "complex_code": "2J3R",
+          "pdb_id": "2J3R",
+          "pdb_chain": null,
+          "target_residues": 158,
+          "sequence_length": 0,
+          "sequence_sha256": null,
+          "partner_residues": 0,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [
+            "residue_plm_model: 'missing_sequence'",
+            "residue_plm_model_8m: 'missing_sequence'"
+          ],
+          "target_sequence_failure": "missing or wrong-length target sequence",
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_surface_features, partner_residue_sequence_features, partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices",
+            "zero partner residues (target-pathway fallback)"
+          ]
+        }
+      ],
+      "sha256": "3b61ba47c66796ac9dfe326561fc917e78c9ec2ca6ef8c3f4ca5df9eb71e8a0a"
+    },
+    "Test60.pkl": {
+      "workspace_path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo\\Test60.pkl",
+      "resolved_path": "C:\\Users\\Mohamed KONE\\Desktop\\article\\data\\geo\\Test60.pkl",
+      "bytes": 270134272,
+      "modified_utc": "2026-08-14T15:14:44.988708+00:00",
+      "samples": 60,
+      "unique_complex_codes": 58,
+      "unique_pdb_ids": 58,
+      "multi_sample_complex_codes": {
+        "1QA9": 2,
+        "2C0L": 2
+      },
+      "complex_code_styles": {
+        "bare_pdb": 60
+      },
+      "target_sequences_present": 60,
+      "samples_with_partner_chain_sequences": 60,
+      "valid_target_main_plm": 60,
+      "valid_target_aux_plm": 60,
+      "valid_partner_encoder": 60,
+      "nonempty_partner_samples": 60,
+      "valid_pair_label_samples": 60,
+      "positive_pair_labels": 5149,
+      "mapping_verification_metadata_present": 0,
+      "mapping_verified_true": 0,
+      "failed_or_fallback_samples": [],
+      "sha256": "e16b1e9d3edb2b2d58cdfaae47c270de2229eaf7043b780b5a7900e62efd1fd0"
+    },
+    "Test287.pkl": {
+      "workspace_path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo\\Test287.pkl",
+      "resolved_path": "C:\\Users\\Mohamed KONE\\Desktop\\article\\data\\geo\\Test287.pkl",
+      "bytes": 1098202693,
+      "modified_utc": "2026-08-14T15:14:56.225137+00:00",
+      "samples": 287,
+      "unique_complex_codes": 217,
+      "unique_pdb_ids": 217,
+      "multi_sample_complex_codes": {
+        "4YOC": 2,
+        "4CGY": 2,
+        "4CJ0": 2,
+        "5IMT": 2,
+        "5XBF": 2,
+        "4TX3": 2,
+        "4UAF": 2,
+        "6AW3": 2,
+        "4ZGY": 2,
+        "7BXF": 2,
+        "4N80": 2,
+        "4HT3": 2,
+        "6L1Y": 2,
+        "5WXK": 2,
+        "4XGA": 2,
+        "6KP3": 2,
+        "6JZY": 2,
+        "5CZD": 2,
+        "6KIP": 2,
+        "6W2L": 2,
+        "6G4J": 2,
+        "4XLG": 2,
+        "5MAW": 2,
+        "6U3W": 2,
+        "6ACI": 2,
+        "5YNM": 2,
+        "6LKI": 2,
+        "5H65": 2,
+        "5XLY": 2,
+        "5ZWL": 2,
+        "6QTA": 2,
+        "6VCL": 2,
+        "4RHZ": 2,
+        "6INE": 2,
+        "6SWT": 2,
+        "5JWO": 2,
+        "5NCM": 2,
+        "4YK8": 2,
+        "6THL": 2,
+        "5F4E": 2,
+        "4YN0": 2,
+        "5GPY": 2,
+        "4BVX": 2,
+        "4QLP": 2,
+        "5C50": 2,
+        "4U5Y": 2,
+        "6PNP": 2,
+        "5CHL": 2,
+        "6NDU": 2,
+        "5B64": 2,
+        "4ZQU": 2,
+        "5K22": 2,
+        "7CN7": 2,
+        "5OEN": 2,
+        "4RLJ": 2,
+        "5DMB": 2,
+        "5M2O": 2,
+        "5V03": 2,
+        "5VGB": 2,
+        "6KMQ": 2,
+        "5F22": 2,
+        "5IWB": 2,
+        "4CMM": 2,
+        "5JNO": 2,
+        "6R6M": 2,
+        "7BU5": 2,
+        "6FUB": 2,
+        "6ODD": 2,
+        "4K12": 2,
+        "6BN1": 2
+      },
+      "complex_code_styles": {
+        "bare_pdb": 287
+      },
+      "target_sequences_present": 285,
+      "samples_with_partner_chain_sequences": 285,
+      "valid_target_main_plm": 285,
+      "valid_target_aux_plm": 285,
+      "valid_partner_encoder": 285,
+      "nonempty_partner_samples": 285,
+      "valid_pair_label_samples": 285,
+      "positive_pair_labels": 22520,
+      "mapping_verification_metadata_present": 0,
+      "mapping_verified_true": 0,
+      "failed_or_fallback_samples": [
+        {
+          "index": 55,
+          "complex_code": "4M0W",
+          "pdb_id": "4M0W",
+          "pdb_chain": null,
+          "target_residues": 317,
+          "sequence_length": 0,
+          "sequence_sha256": null,
+          "partner_residues": 0,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [
+            "residue_plm_model: 'missing_sequence'",
+            "residue_plm_model_8m: 'missing_sequence'"
+          ],
+          "target_sequence_failure": "missing or wrong-length target sequence",
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_surface_features, partner_residue_sequence_features, partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices",
+            "zero partner residues (target-pathway fallback)"
+          ]
+        },
+        {
+          "index": 161,
+          "complex_code": "6MAV",
+          "pdb_id": "6MAV",
+          "pdb_chain": null,
+          "target_residues": 161,
+          "sequence_length": 0,
+          "sequence_sha256": null,
+          "partner_residues": 0,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [
+            "residue_plm_model: 'missing_sequence'",
+            "residue_plm_model_8m: 'missing_sequence'"
+          ],
+          "target_sequence_failure": "missing or wrong-length target sequence",
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_surface_features, partner_residue_sequence_features, partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices",
+            "zero partner residues (target-pathway fallback)"
+          ]
+        }
+      ],
+      "sha256": "6dec36a7e198a95fefe11b02999038919376c40cc01364acedd7d9236b7852de"
+    },
+    "TestB25.pkl": {
+      "workspace_path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo\\TestB25.pkl",
+      "resolved_path": "C:\\Users\\Mohamed KONE\\Desktop\\article\\data\\geo\\TestB25.pkl",
+      "bytes": 115372497,
+      "modified_utc": "2026-08-14T15:14:58.057879+00:00",
+      "samples": 25,
+      "unique_complex_codes": 23,
+      "unique_pdb_ids": 23,
+      "multi_sample_complex_codes": {
+        "1QA9": 2,
+        "2C0L": 2
+      },
+      "complex_code_styles": {
+        "bare_pdb": 25
+      },
+      "target_sequences_present": 25,
+      "samples_with_partner_chain_sequences": 25,
+      "valid_target_main_plm": 25,
+      "valid_target_aux_plm": 25,
+      "valid_partner_encoder": 25,
+      "nonempty_partner_samples": 25,
+      "valid_pair_label_samples": 25,
+      "positive_pair_labels": 1912,
+      "mapping_verification_metadata_present": 0,
+      "mapping_verified_true": 0,
+      "failed_or_fallback_samples": [],
+      "sha256": "9e2e3cf03993a5d2c91e3dd68d691be247d6add4af2602a7cd625e77d6c27121"
+    },
+    "TestUB25.pkl": {
+      "workspace_path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo\\TestUB25.pkl",
+      "resolved_path": "C:\\Users\\Mohamed KONE\\Desktop\\article\\data\\geo\\TestUB25.pkl",
+      "bytes": 106797396,
+      "modified_utc": "2026-08-14T15:14:59.111254+00:00",
+      "samples": 25,
+      "unique_complex_codes": 25,
+      "unique_pdb_ids": 25,
+      "multi_sample_complex_codes": {},
+      "complex_code_styles": {
+        "bare_pdb": 25
+      },
+      "target_sequences_present": 25,
+      "samples_with_partner_chain_sequences": 12,
+      "valid_target_main_plm": 25,
+      "valid_target_aux_plm": 25,
+      "valid_partner_encoder": 12,
+      "nonempty_partner_samples": 12,
+      "valid_pair_label_samples": 12,
+      "positive_pair_labels": 695,
+      "mapping_verification_metadata_present": 0,
+      "mapping_verified_true": 0,
+      "failed_or_fallback_samples": [
+        {
+          "index": 1,
+          "complex_code": "1CDB",
+          "pdb_id": "1CDB",
+          "pdb_chain": "A",
+          "target_residues": 105,
+          "sequence_length": 105,
+          "sequence_sha256": "4ae389fef84cfcf7dfb0266c276a8970c95fceeb3cf13160e4878c8fc6ef49d1",
+          "partner_residues": 0,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "zero partner residues (target-pathway fallback)"
+          ]
+        },
+        {
+          "index": 2,
+          "complex_code": "1SHU",
+          "pdb_id": "1SHU",
+          "pdb_chain": "X",
+          "target_residues": 181,
+          "sequence_length": 181,
+          "sequence_sha256": "7f4f8c1ff3ab1e76e78083f0ea4157f2b27c76238f444ec51ae4edb25fa8b487",
+          "partner_residues": 0,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "zero partner residues (target-pathway fallback)"
+          ]
+        },
+        {
+          "index": 3,
+          "complex_code": "1CI5",
+          "pdb_id": "1CI5",
+          "pdb_chain": "A",
+          "target_residues": 95,
+          "sequence_length": 95,
+          "sequence_sha256": "1129c3c8bd12eccdc14ab74f085d8691a530bc058d481e919381b8ded162162a",
+          "partner_residues": 0,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "zero partner residues (target-pathway fallback)"
+          ]
+        },
+        {
+          "index": 5,
+          "complex_code": "1H4U",
+          "pdb_id": "1H4U",
+          "pdb_chain": "A",
+          "target_residues": 245,
+          "sequence_length": 245,
+          "sequence_sha256": "81cb650e187d1664ba171ef62ad6860e3caffd7266b6f944f3bfcbac33446c3d",
+          "partner_residues": 0,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "zero partner residues (target-pathway fallback)"
+          ]
+        },
+        {
+          "index": 8,
+          "complex_code": "1YSC",
+          "pdb_id": "1YSC",
+          "pdb_chain": "A",
+          "target_residues": 421,
+          "sequence_length": 421,
+          "sequence_sha256": "9cca863cf38d748414bb870dc99b0db1f60d8e51048511bd1b46c310e0e57fc5",
+          "partner_residues": 0,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "zero partner residues (target-pathway fallback)"
+          ]
+        },
+        {
+          "index": 11,
+          "complex_code": "1QND",
+          "pdb_id": "1QND",
+          "pdb_chain": "A",
+          "target_residues": 123,
+          "sequence_length": 123,
+          "sequence_sha256": "e3a054670e282d6f177f095b548b589f40ee340b12f63e36cab5ae68285d8a38",
+          "partner_residues": 0,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "zero partner residues (target-pathway fallback)"
+          ]
+        },
+        {
+          "index": 13,
+          "complex_code": "4FH4",
+          "pdb_id": "4FH4",
+          "pdb_chain": "A",
+          "target_residues": 265,
+          "sequence_length": 265,
+          "sequence_sha256": "1050137ea1186552a1ab6fbe1415ac1c99257d7a0ee3c9891090880da628c87a",
+          "partner_residues": 0,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "zero partner residues (target-pathway fallback)"
+          ]
+        },
+        {
+          "index": 14,
+          "complex_code": "3PBH",
+          "pdb_id": "3PBH",
+          "pdb_chain": "A",
+          "target_residues": 317,
+          "sequence_length": 317,
+          "sequence_sha256": "181685960bf7c33236576516ab66828b4d8db9891c9781a944576e7a8e98f7e3",
+          "partner_residues": 0,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "zero partner residues (target-pathway fallback)"
+          ]
+        },
+        {
+          "index": 16,
+          "complex_code": "1OM0",
+          "pdb_id": "1OM0",
+          "pdb_chain": "A",
+          "target_residues": 274,
+          "sequence_length": 274,
+          "sequence_sha256": "66b9034c5bbef879f433a80692f409ed7877d40ad4287985269ce8f1ea3b5d31",
+          "partner_residues": 0,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "zero partner residues (target-pathway fallback)"
+          ]
+        },
+        {
+          "index": 17,
+          "complex_code": "1T6E",
+          "pdb_id": "1T6E",
+          "pdb_chain": "X",
+          "target_residues": 362,
+          "sequence_length": 362,
+          "sequence_sha256": "a014cc6845c08afdaaf745c16059e43779002f06f457f796c1e0754d4b19bc79",
+          "partner_residues": 0,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "zero partner residues (target-pathway fallback)"
+          ]
+        },
+        {
+          "index": 20,
+          "complex_code": "2AF0",
+          "pdb_id": "2AF0",
+          "pdb_chain": "A",
+          "target_residues": 146,
+          "sequence_length": 146,
+          "sequence_sha256": "70abe889d737e2b97281de74abf61d44ae38978fd7591b293d9ba2f8fb42b7a9",
+          "partner_residues": 0,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "zero partner residues (target-pathway fallback)"
+          ]
+        },
+        {
+          "index": 23,
+          "complex_code": "1R8M",
+          "pdb_id": "1R8M",
+          "pdb_chain": "E",
+          "target_residues": 195,
+          "sequence_length": 195,
+          "sequence_sha256": "a92a7762a7dd4ea63725038cb7bb16655ffdb5ced7c1dd6925c3f2654b229b9a",
+          "partner_residues": 0,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "zero partner residues (target-pathway fallback)"
+          ]
+        },
+        {
+          "index": 24,
+          "complex_code": "2OIT",
+          "pdb_id": "2OIT",
+          "pdb_chain": "A",
+          "target_residues": 434,
+          "sequence_length": 434,
+          "sequence_sha256": "94c48eb1f2fc2c713c5cbd1a1e14330d4fc4e3bb8df93edf4b3dda6ff43b4fdf",
+          "partner_residues": 0,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "zero partner residues (target-pathway fallback)"
+          ]
+        }
+      ],
+      "sha256": "c0feccd1d4b1b03e1929f3979ac176030f9e159366ca70f0a03177ac7470f144"
+    },
+    "Test70.pkl": {
+      "workspace_path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo\\Test70.pkl",
+      "resolved_path": "C:\\Users\\Mohamed KONE\\Desktop\\article\\data\\geo\\Test70.pkl",
+      "bytes": 177415009,
+      "modified_utc": "2026-07-30T03:36:38.754395+00:00",
+      "samples": 70,
+      "unique_complex_codes": 70,
+      "unique_pdb_ids": 66,
+      "multi_sample_complex_codes": {},
+      "complex_code_styles": {
+        "chain_suffix": 70
+      },
+      "target_sequences_present": 69,
+      "samples_with_partner_chain_sequences": 0,
+      "valid_target_main_plm": 69,
+      "valid_target_aux_plm": 69,
+      "valid_partner_encoder": 0,
+      "nonempty_partner_samples": 69,
+      "valid_pair_label_samples": 69,
+      "positive_pair_labels": 5834,
+      "mapping_verification_metadata_present": 0,
+      "mapping_verified_true": 0,
+      "failed_or_fallback_samples": [
+        {
+          "index": 0,
+          "complex_code": "1F60_B",
+          "pdb_id": "1F60",
+          "pdb_chain": "B",
+          "target_residues": 90,
+          "sequence_length": 90,
+          "sequence_sha256": "ce7e5ea788d60433240b1cfb9ef48aee465ad14b5f1afd7a35492ba799ff9ae4",
+          "partner_residues": 440,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 1,
+          "complex_code": "1JTD_B",
+          "pdb_id": "1JTD",
+          "pdb_chain": "B",
+          "target_residues": 273,
+          "sequence_length": 273,
+          "sequence_sha256": "9f02ae8de565c97d3ff79dac3720fb73974901a18685024f0ffad4d64d72bb71",
+          "partner_residues": 262,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 2,
+          "complex_code": "1NRJ_A",
+          "pdb_id": "1NRJ",
+          "pdb_chain": "A",
+          "target_residues": 147,
+          "sequence_length": 147,
+          "sequence_sha256": "2f63b85b7eb3673590fb3489ff97e2c5ec9a5b97dfc1b6cf05932b7bf5dc8cb7",
+          "partner_residues": 191,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 3,
+          "complex_code": "1NRJ_B",
+          "pdb_id": "1NRJ",
+          "pdb_chain": "B",
+          "target_residues": 191,
+          "sequence_length": 191,
+          "sequence_sha256": "d53c7d77bd47f516900e68c6fd5ce9c19a5a5cf31e092490a00c0e78feeb906d",
+          "partner_residues": 147,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 4,
+          "complex_code": "1SVD_M",
+          "pdb_id": "1SVD",
+          "pdb_chain": "M",
+          "target_residues": 108,
+          "sequence_length": 108,
+          "sequence_sha256": "0c576437b2bbce7e96b7373fa20df32a60a000e1bd757efa83c7ede14c973de7",
+          "partner_residues": 445,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 5,
+          "complex_code": "1U0S_A",
+          "pdb_id": "1U0S",
+          "pdb_chain": "A",
+          "target_residues": 86,
+          "sequence_length": 86,
+          "sequence_sha256": "4a9bf90f214608587bd175452a4414db2b318e5f763e8b89b7f13759a0a32cf1",
+          "partner_residues": 118,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 6,
+          "complex_code": "1Z0J_B",
+          "pdb_id": "1Z0J",
+          "pdb_chain": "B",
+          "target_residues": 51,
+          "sequence_length": 51,
+          "sequence_sha256": "3a3ef23546604a6751bc71da30020538c42c92a1f2facfe1cd3ededa7fa627e4",
+          "partner_residues": 169,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 7,
+          "complex_code": "1ZBD_B",
+          "pdb_id": "1ZBD",
+          "pdb_chain": "B",
+          "target_residues": 119,
+          "sequence_length": 119,
+          "sequence_sha256": "5bf00978f5fda37ab6f74be1205b04072c71df2fa4aee8d00b1efec3630d2c2d",
+          "partner_residues": 171,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 8,
+          "complex_code": "2A9K_A",
+          "pdb_id": "2A9K",
+          "pdb_chain": "A",
+          "target_residues": 170,
+          "sequence_length": 170,
+          "sequence_sha256": "019961cc47d3d213ccc4810b9fc59df78a737352500b6be0edfe917a4b5e3c7c",
+          "partner_residues": 207,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 9,
+          "complex_code": "2B42_A",
+          "pdb_id": "2B42",
+          "pdb_chain": "A",
+          "target_residues": 364,
+          "sequence_length": 364,
+          "sequence_sha256": "8402676799429c0a6ef6f7c8fc63581056d837f5e18488039fe2621cd53a91b4",
+          "partner_residues": 184,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 10,
+          "complex_code": "2D5R_A",
+          "pdb_id": "2D5R",
+          "pdb_chain": "A",
+          "target_residues": 252,
+          "sequence_length": 252,
+          "sequence_sha256": "b4d389757fb1ea5603b533b5817b625b24d5d48aaed87f2ab05e66fb1c704968",
+          "partner_residues": 116,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 11,
+          "complex_code": "2DOH_X",
+          "pdb_id": "2DOH",
+          "pdb_chain": "X",
+          "target_residues": 165,
+          "sequence_length": 165,
+          "sequence_sha256": "68d75fffe292347253a2cf2056e0c95848949d25224edfbc58b66a1653488f09",
+          "partner_residues": 24,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 12,
+          "complex_code": "2F91_A",
+          "pdb_id": "2F91",
+          "pdb_chain": "A",
+          "target_residues": 237,
+          "sequence_length": 237,
+          "sequence_sha256": "22beb6c21dbe1b5d1d82b570007c28791f415de7e6a17462f2f8648c00bbbcf4",
+          "partner_residues": 33,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 13,
+          "complex_code": "2FP4_A",
+          "pdb_id": "2FP4",
+          "pdb_chain": "A",
+          "target_residues": 304,
+          "sequence_length": 304,
+          "sequence_sha256": "465d9268c30c32b2a6509ab474b2bc22cf7e68bdaaa09c662c79128510b9a5e4",
+          "partner_residues": 393,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 14,
+          "complex_code": "2G2U_B",
+          "pdb_id": "2G2U",
+          "pdb_chain": "B",
+          "target_residues": 165,
+          "sequence_length": 165,
+          "sequence_sha256": "f26ea897d1c67fa6859299d6aa622e46bf716cb6ed1711562fdf738f66decb4b",
+          "partner_residues": 265,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 15,
+          "complex_code": "2H0D_B",
+          "pdb_id": "2H0D",
+          "pdb_chain": "B",
+          "target_residues": 100,
+          "sequence_length": 100,
+          "sequence_sha256": "54d3df0ca57bfa65b224a004fdecce72eef3d20cfacf226eea225898dc26239b",
+          "partner_residues": 97,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 16,
+          "complex_code": "2P7V_A",
+          "pdb_id": "2P7V",
+          "pdb_chain": "A",
+          "target_residues": 151,
+          "sequence_length": 151,
+          "sequence_sha256": "08d331f66e2351cb0a156a9690f42705fe8fceb8cbdc67bc7463d69a8b3305e0",
+          "partner_residues": 68,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 17,
+          "complex_code": "2V4Z_B",
+          "pdb_id": "2V4Z",
+          "pdb_chain": "B",
+          "target_residues": 122,
+          "sequence_length": 122,
+          "sequence_sha256": "9ff3426ee4f6eee13358bd85df8361f1272601dc9818cac7168a6316afd35343",
+          "partner_residues": 316,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 18,
+          "complex_code": "2V8S_V",
+          "pdb_id": "2V8S",
+          "pdb_chain": "V",
+          "target_residues": 93,
+          "sequence_length": 93,
+          "sequence_sha256": "6b299195c130dff4366953c4c3c255a3c07a7696c72d5ad7c3ca29b7b64e75d5",
+          "partner_residues": 137,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 19,
+          "complex_code": "2V9T_A",
+          "pdb_id": "2V9T",
+          "pdb_chain": "A",
+          "target_residues": 107,
+          "sequence_length": 107,
+          "sequence_sha256": "ce8ae55820737b6898320c39aa3629e5dbb2538846b9f67d9ec87f3fe4db90f9",
+          "partner_residues": 210,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 20,
+          "complex_code": "3BEG_B",
+          "pdb_id": "3BEG",
+          "pdb_chain": "B",
+          "target_residues": 86,
+          "sequence_length": 86,
+          "sequence_sha256": "545de24cf4f3220ae35625b391fdf95e0d8117716c2fbf9d233b2efbfc87e5ee",
+          "partner_residues": 348,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 21,
+          "complex_code": "3C5T_A",
+          "pdb_id": "3C5T",
+          "pdb_chain": "A",
+          "target_residues": 104,
+          "sequence_length": 104,
+          "sequence_sha256": "0a289286c81cce19e4317f475d508711a1f579d2f3308f1c0805b3fc6f6ee8c7",
+          "partner_residues": 25,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 22,
+          "complex_code": "3CF4_G",
+          "pdb_id": "3CF4",
+          "pdb_chain": "G",
+          "target_residues": 169,
+          "sequence_length": 169,
+          "sequence_sha256": "b95c4776808d2b0b9ce70ef05a723efd61bd0056fa9c050f0e84e9307516f1fa",
+          "partner_residues": 766,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 23,
+          "complex_code": "3CX8_B",
+          "pdb_id": "3CX8",
+          "pdb_chain": "B",
+          "target_residues": 193,
+          "sequence_length": 193,
+          "sequence_sha256": "51c7d7d5dfe1da3700af38a3abe7940b8c5b6367c1057b1c6567833a10137d9b",
+          "partner_residues": 319,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 24,
+          "complex_code": "3CZU_B",
+          "pdb_id": "3CZU",
+          "pdb_chain": "B",
+          "target_residues": 130,
+          "sequence_length": 130,
+          "sequence_sha256": "8f9e1b51bab01a814166df2d7b05e4b52fc7f8b4d0a99e5ab5fe7941d4982ebf",
+          "partner_residues": 175,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 25,
+          "complex_code": "3D7V_A",
+          "pdb_id": "3D7V",
+          "pdb_chain": "A",
+          "target_residues": 144,
+          "sequence_length": 144,
+          "sequence_sha256": "4aedcdf961e14628b5487903328b62071a95be300f34af8e09895a925122e324",
+          "partner_residues": 23,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 26,
+          "complex_code": "3DLQ_I",
+          "pdb_id": "3DLQ",
+          "pdb_chain": "I",
+          "target_residues": 131,
+          "sequence_length": 131,
+          "sequence_sha256": "bd9a7055f9a73590c9b19c41f74be2def9645af171f720e049f97ccc483ea17f",
+          "partner_residues": 201,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 27,
+          "complex_code": "3E1Z_B",
+          "pdb_id": "3E1Z",
+          "pdb_chain": "B",
+          "target_residues": 212,
+          "sequence_length": 212,
+          "sequence_sha256": "966ca4e8129c99807b25f82625188f4fc3b24b2528a47c778c77ec3d86fac67e",
+          "partner_residues": 109,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 28,
+          "complex_code": "3E5A_A",
+          "pdb_id": "3E5A",
+          "pdb_chain": "A",
+          "target_residues": 264,
+          "sequence_length": 264,
+          "sequence_sha256": "50d5b1a277bd4b67310768f925bc422c8b70b3d05eaee43c2ee1b5f8f4d3b15d",
+          "partner_residues": 33,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 29,
+          "complex_code": "3GNI_A",
+          "pdb_id": "3GNI",
+          "pdb_chain": "A",
+          "target_residues": 335,
+          "sequence_length": 335,
+          "sequence_sha256": "3e0bfaad283b63dc73aa7d48452598e645cd36e516edc113925a795acf11fca6",
+          "partner_residues": 304,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 30,
+          "complex_code": "3ANW_B",
+          "pdb_id": "3ANW",
+          "pdb_chain": "B",
+          "target_residues": 162,
+          "sequence_length": 162,
+          "sequence_sha256": "bf7e36ac76cc9730d105c06c45a04deec2825232068c7754759646daf2212693",
+          "partner_residues": 171,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 31,
+          "complex_code": "3AYH_B",
+          "pdb_id": "3AYH",
+          "pdb_chain": "B",
+          "target_residues": 183,
+          "sequence_length": 183,
+          "sequence_sha256": "123c1a31fbc93e99ee139ebba3b8a58e8632195aed4b71e6cd516a9ba157bbe4",
+          "partner_residues": 134,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 32,
+          "complex_code": "3B08_B",
+          "pdb_id": "3B08",
+          "pdb_chain": "B",
+          "target_residues": 58,
+          "sequence_length": 58,
+          "sequence_sha256": "401ad9e5b359c3c5a88eb79befe52a049f4069b3408a3e7d2941302fc0205b99",
+          "partner_residues": 778,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 33,
+          "complex_code": "3MDB_C",
+          "pdb_id": "3MDB",
+          "pdb_chain": "C",
+          "target_residues": 365,
+          "sequence_length": 365,
+          "sequence_sha256": "7750c672dc777ff6b55193eb2a77b207e252d3431a8b3bc39d88546863da48d4",
+          "partner_residues": 546,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 34,
+          "complex_code": "3MMY_A",
+          "pdb_id": "3MMY",
+          "pdb_chain": "A",
+          "target_residues": 354,
+          "sequence_length": 354,
+          "sequence_sha256": "a7f2b60a16f9c132b08e0defd44ec526873603ac3797177e9274d8fe66952aaf",
+          "partner_residues": 1267,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 35,
+          "complex_code": "3OUR_B",
+          "pdb_id": "3OUR",
+          "pdb_chain": "B",
+          "target_residues": 150,
+          "sequence_length": 150,
+          "sequence_sha256": "b495ea1a280147b32847d314fabf4cbf65b7aa562b0eecd6480d23b84ac20874",
+          "partner_residues": 2030,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 36,
+          "complex_code": "3PH0_A",
+          "pdb_id": "3PH0",
+          "pdb_chain": "A",
+          "target_residues": 60,
+          "sequence_length": 60,
+          "sequence_sha256": "e5c6dda741b1bff3f40d0f15a18029051c12f1281f17da1b2ef509c51abc5cf5",
+          "partner_residues": 166,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 37,
+          "complex_code": "3PV6_A",
+          "pdb_id": "3PV6",
+          "pdb_chain": "A",
+          "target_residues": 214,
+          "sequence_length": 214,
+          "sequence_sha256": "54d2df045b702ad6fd42a88c81678ba860bd817c586e8cad9037cd423f1622ca",
+          "partner_residues": 112,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 38,
+          "complex_code": "3SHG_A",
+          "pdb_id": "3SHG",
+          "pdb_chain": "A",
+          "target_residues": 198,
+          "sequence_length": 198,
+          "sequence_sha256": "0a924b68922162411911d84b2622e2c7ad0f0f8d4813d157d9bb65314ffd562c",
+          "partner_residues": 61,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 39,
+          "complex_code": "3UVJ_A",
+          "pdb_id": "3UVJ",
+          "pdb_chain": "A",
+          "target_residues": 191,
+          "sequence_length": 191,
+          "sequence_sha256": "8fee642681e5f0da3e20c5ab0631e88183d6ff6d5760a3a01cece042974f166a",
+          "partner_residues": 583,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 40,
+          "complex_code": "3VDO_B",
+          "pdb_id": "3VDO",
+          "pdb_chain": "B",
+          "target_residues": 73,
+          "sequence_length": 73,
+          "sequence_sha256": "6e428bc4b56462ecff003ecd0b2e02d542cc8a2ac0c13d4b96d8adb7cd8c070e",
+          "partner_residues": 148,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 41,
+          "complex_code": "3VU9_A",
+          "pdb_id": "3VU9",
+          "pdb_chain": "A",
+          "target_residues": 215,
+          "sequence_length": 215,
+          "sequence_sha256": "82ba7b7b7671dc6792c0a87073cba291729ed4b36cec0e970939c48954ca8527",
+          "partner_residues": 191,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 42,
+          "complex_code": "3VZ9_D",
+          "pdb_id": "3VZ9",
+          "pdb_chain": "D",
+          "target_residues": 60,
+          "sequence_length": 60,
+          "sequence_sha256": "7ef19e594efbd982d3e17dcb5b5a8f6987cade1214238c8deca8080828aefc81",
+          "partner_residues": 103,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 43,
+          "complex_code": "3W2W_B",
+          "pdb_id": "3W2W",
+          "pdb_chain": "B",
+          "target_residues": 308,
+          "sequence_length": 308,
+          "sequence_sha256": "c7eb61c263ec83e2695fa3273c4539cf560a9993fc05143dbb31f3ad739d157b",
+          "partner_residues": 618,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 44,
+          "complex_code": "3ZEU_D",
+          "pdb_id": "3ZEU",
+          "pdb_chain": "D",
+          "target_residues": 230,
+          "sequence_length": 230,
+          "sequence_sha256": "3674a79b5d632ec1cb1c618c4eb28408195b8d3be9ad89b729626da76d510b64",
+          "partner_residues": 904,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 45,
+          "complex_code": "3ZKQ_A",
+          "pdb_id": "3ZKQ",
+          "pdb_chain": "A",
+          "target_residues": 376,
+          "sequence_length": 376,
+          "sequence_sha256": "848bfcb3e79317c1d0625075e6237f6f9b9a88020c19130be650601f0151bfae",
+          "partner_residues": 113,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 46,
+          "complex_code": "4APX_A",
+          "pdb_id": "4APX",
+          "pdb_chain": "A",
+          "target_residues": 208,
+          "sequence_length": 208,
+          "sequence_sha256": "d5640c203ba2ab8b3ef6371605092695e95397725bbe0a89fa000ff40f2037ee",
+          "partner_residues": 238,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 47,
+          "complex_code": "4AWX_B",
+          "pdb_id": "4AWX",
+          "pdb_chain": "B",
+          "target_residues": 63,
+          "sequence_length": 63,
+          "sequence_sha256": "9a8607c0d80356ffa048cbdcafc73def57443236d26304f723aa9202f359243a",
+          "partner_residues": 252,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 48,
+          "complex_code": "4BH6_D",
+          "pdb_id": "4BH6",
+          "pdb_chain": "D",
+          "target_residues": 305,
+          "sequence_length": 305,
+          "sequence_sha256": "f2d29bbac3ff0057374f569e45efeb0f750339832ef84b0a373ff0afaedacd1e",
+          "partner_residues": 2444,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 49,
+          "complex_code": "4BH6_L",
+          "pdb_id": "4BH6",
+          "pdb_chain": "L",
+          "target_residues": 51,
+          "sequence_length": 51,
+          "sequence_sha256": "8159d1961223df1203f063fe503cd0afbf2f962ec3b15de83fb428807ae8bcd8",
+          "partner_residues": 2698,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 50,
+          "complex_code": "4BI8_A",
+          "pdb_id": "4BI8",
+          "pdb_chain": "A",
+          "target_residues": 94,
+          "sequence_length": 94,
+          "sequence_sha256": "e6403fe6a3d217cdb495100b56a435ea0a4f358ea885432d417d668e6fd1be4c",
+          "partner_residues": 163,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 51,
+          "complex_code": "4BI8_B",
+          "pdb_id": "4BI8",
+          "pdb_chain": "B",
+          "target_residues": 163,
+          "sequence_length": 163,
+          "sequence_sha256": "2e3386f21fc4fd36242ae11b2dac510ad294b44ce538f26064f6387088a53363",
+          "partner_residues": 94,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 52,
+          "complex_code": "4BJJ_B",
+          "pdb_id": "4BJJ",
+          "pdb_chain": "B",
+          "target_residues": 85,
+          "sequence_length": 85,
+          "sequence_sha256": "950adcbb0801acbc4b6fe1461a2f9a026e91682dd9837490b258ec4ffc4f69a4",
+          "partner_residues": 106,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 53,
+          "complex_code": "4DFC_B",
+          "pdb_id": "4DFC",
+          "pdb_chain": "B",
+          "target_residues": 121,
+          "sequence_length": 121,
+          "sequence_sha256": "023ad7f24e0f2426f4c7b9696c4f2e598b361a44426d201e21c256cbc8692d1f",
+          "partner_residues": 286,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 54,
+          "complex_code": "4FQ0_B",
+          "pdb_id": "4FQ0",
+          "pdb_chain": "B",
+          "target_residues": 182,
+          "sequence_length": 182,
+          "sequence_sha256": "51d91caf978c93c87cd43755acd8595c7288e27b65ed97e2f4259518c87fec69",
+          "partner_residues": 340,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 55,
+          "complex_code": "4H3K_A",
+          "pdb_id": "4H3K",
+          "pdb_chain": "A",
+          "target_residues": 317,
+          "sequence_length": 317,
+          "sequence_sha256": "b4dbd509de86c14721e912ae6b6584700831b63ed7c59b6404f7211c1775d986",
+          "partner_residues": 694,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 56,
+          "complex_code": "4H3K_B",
+          "pdb_id": "4H3K",
+          "pdb_chain": "B",
+          "target_residues": 189,
+          "sequence_length": 189,
+          "sequence_sha256": "39bcd76d625f5138f3d23cb59bfccd6e8680dd0f4e826ae638c07bdf920b857f",
+          "partner_residues": 822,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 57,
+          "complex_code": "4IU2_A",
+          "pdb_id": "4IU2",
+          "pdb_chain": "A",
+          "target_residues": 205,
+          "sequence_length": 205,
+          "sequence_sha256": "5ecfd96681de82daf722e0baa67d1bcab607ca5ea940f3e53c60a29047f90b88",
+          "partner_residues": 237,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 58,
+          "complex_code": "4JE3_B",
+          "pdb_id": "4JE3",
+          "pdb_chain": "B",
+          "target_residues": 77,
+          "sequence_length": 77,
+          "sequence_sha256": "6fb104d110f045236420513e512a18487fcf2e9391b661a652dcaa5359a6af40",
+          "partner_residues": 244,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 59,
+          "complex_code": "4KT3_B",
+          "pdb_id": "4KT3",
+          "pdb_chain": "B",
+          "target_residues": 127,
+          "sequence_length": 127,
+          "sequence_sha256": "f4da92700fc36c4578f6c7af3567033ddd15168dde55780044baa53d2744c96b",
+          "partner_residues": 138,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 60,
+          "complex_code": "4KT6_B",
+          "pdb_id": "4KT6",
+          "pdb_chain": "B",
+          "target_residues": 161,
+          "sequence_length": 161,
+          "sequence_sha256": "3070c4d1a7de8e463f469ef26684c522c54e704438d40ef9df0c20a99ed3ce34",
+          "partner_residues": 669,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 61,
+          "complex_code": "1AK4_D",
+          "pdb_id": "1AK4",
+          "pdb_chain": "D",
+          "target_residues": 145,
+          "sequence_length": 145,
+          "sequence_sha256": "af0457660b9685e6633043c5e99178907d23267e4b76c10774d145541df0682f",
+          "partner_residues": 473,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 62,
+          "complex_code": "1B6C_A",
+          "pdb_id": "1B6C",
+          "pdb_chain": "A",
+          "target_residues": 107,
+          "sequence_length": 107,
+          "sequence_sha256": "de9f93373c7a22b99699ccaa54e0525a0a5f2bfcc7f774f55377740fa14b3a3a",
+          "partner_residues": 1625,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 63,
+          "complex_code": "1K5D_AB",
+          "pdb_id": "1K5D",
+          "pdb_chain": null,
+          "target_residues": 352,
+          "sequence_length": 0,
+          "sequence_sha256": null,
+          "partner_residues": 0,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [
+            "residue_plm_model: 'missing_sequence'",
+            "residue_plm_model_8m: 'missing_sequence'"
+          ],
+          "target_sequence_failure": "missing or wrong-length target sequence",
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_surface_features, partner_residue_sequence_features, partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m",
+            "zero partner residues (target-pathway fallback)"
+          ]
+        },
+        {
+          "index": 64,
+          "complex_code": "1KTZ_A",
+          "pdb_id": "1KTZ",
+          "pdb_chain": "A",
+          "target_residues": 82,
+          "sequence_length": 82,
+          "sequence_sha256": "9e7913a956d86a6223ade1b8f7db841a06826ec966a9debba48e11381aeee78f",
+          "partner_residues": 106,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 65,
+          "complex_code": "1MAH_F",
+          "pdb_id": "1MAH",
+          "pdb_chain": "F",
+          "target_residues": 61,
+          "sequence_length": 61,
+          "sequence_sha256": "296edde93f77a291bb895a1a3e115a499175003086dedcdd663abb90344246f8",
+          "partner_residues": 533,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 66,
+          "complex_code": "1ML0_D",
+          "pdb_id": "1ML0",
+          "pdb_chain": "D",
+          "target_residues": 64,
+          "sequence_length": 64,
+          "sequence_sha256": "b0314f95f35f2c3d9a058e5f86db90d62824a357ae567e26f1243bb12d9ce169",
+          "partner_residues": 371,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 67,
+          "complex_code": "1PXV_A",
+          "pdb_id": "1PXV",
+          "pdb_chain": "A",
+          "target_residues": 183,
+          "sequence_length": 183,
+          "sequence_sha256": "2a7bb822e23c19a2be16754530f304bbd0abaa7b1cf7f2cf482e7f2a4abc66c1",
+          "partner_residues": 405,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 68,
+          "complex_code": "1QA9_A",
+          "pdb_id": "1QA9",
+          "pdb_chain": "A",
+          "target_residues": 102,
+          "sequence_length": 102,
+          "sequence_sha256": "5c81d682d2ffb1bc74f5f3e26b6cca13c45a70d1fc9690d45b6058e64120b307",
+          "partner_residues": 292,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        },
+        {
+          "index": 69,
+          "complex_code": "7CEI_A",
+          "pdb_id": "7CEI",
+          "pdb_chain": "A",
+          "target_residues": 87,
+          "sequence_length": 87,
+          "sequence_sha256": "a707b41439accaf25315e28be157c91cd31af3180c307b8776e0f6281948801a",
+          "partner_residues": 127,
+          "partner_sequence_sha256": [],
+          "target_plm_failures": [],
+          "target_sequence_failure": null,
+          "partner_encoder_failures": [
+            "missing fields: partner_residue_coords, partner_residue_frames, partner_residue_geo_edge, partner_residue_sequences, partner_chain_slices, partner_residue_plm_embedding, partner_residue_plm_embedding_8m"
+          ]
+        }
+      ],
+      "sha256": "abae0b39c943a91c156928a048981262a644d017522ed936ad7fce2f8e8e663d"
+    }
+  },
+  "train_test_exact_overlap": {
+    "Test60.pkl": {
+      "shared_exact_complex_codes": [
+        "1AY7",
+        "1B6C",
+        "1EWY",
+        "1GGP",
+        "1GL4",
+        "1GLA",
+        "1H32",
+        "1JMO",
+        "1T6B",
+        "1TA3",
+        "1V74",
+        "1WPX",
+        "2APO",
+        "2D74",
+        "2DVW",
+        "2EHB",
+        "2FHZ",
+        "2G2U",
+        "2QKL",
+        "2Y9W",
+        "2YC2",
+        "3CBJ",
+        "3CF4",
+        "3CQC",
+        "3F6Q",
+        "3FJU",
+        "3FMO",
+        "3MCB",
+        "3O3M",
+        "3Q87",
+        "3S97",
+        "3SHG",
+        "3TU3",
+        "3UVJ",
+        "3VZ9",
+        "3ZHE",
+        "4CDG",
+        "4E6N",
+        "4EMJ",
+        "4G6T",
+        "4H3K",
+        "4HLU",
+        "4JE3",
+        "4JOI",
+        "4KBM",
+        "4KT3",
+        "4M70",
+        "4NQW",
+        "7CEI"
+      ],
+      "shared_normalized_pdb_ids": [
+        "1AY7",
+        "1B6C",
+        "1EWY",
+        "1GGP",
+        "1GL4",
+        "1GLA",
+        "1H32",
+        "1JMO",
+        "1T6B",
+        "1TA3",
+        "1V74",
+        "1WPX",
+        "2APO",
+        "2D74",
+        "2DVW",
+        "2EHB",
+        "2FHZ",
+        "2G2U",
+        "2QKL",
+        "2Y9W",
+        "2YC2",
+        "3CBJ",
+        "3CF4",
+        "3CQC",
+        "3F6Q",
+        "3FJU",
+        "3FMO",
+        "3MCB",
+        "3O3M",
+        "3Q87",
+        "3S97",
+        "3SHG",
+        "3TU3",
+        "3UVJ",
+        "3VZ9",
+        "3ZHE",
+        "4CDG",
+        "4E6N",
+        "4EMJ",
+        "4G6T",
+        "4H3K",
+        "4HLU",
+        "4JE3",
+        "4JOI",
+        "4KBM",
+        "4KT3",
+        "4M70",
+        "4NQW",
+        "7CEI"
+      ],
+      "test_samples_with_exact_train_sequence": 0,
+      "shared_unique_exact_sequences": 0,
+      "exact_sequence_matches": []
+    },
+    "Test287.pkl": {
+      "shared_exact_complex_codes": [],
+      "shared_normalized_pdb_ids": [],
+      "test_samples_with_exact_train_sequence": 0,
+      "shared_unique_exact_sequences": 0,
+      "exact_sequence_matches": []
+    },
+    "TestB25.pkl": {
+      "shared_exact_complex_codes": [
+        "1AY7",
+        "1B6C",
+        "1EWY",
+        "1GL4",
+        "1GLA",
+        "1JMO",
+        "1T6B",
+        "1TA3",
+        "1WPX",
+        "2FHZ",
+        "2G2U",
+        "3CBJ",
+        "3FJU",
+        "3FMO",
+        "3MCB",
+        "4E6N",
+        "4HLU",
+        "7CEI"
+      ],
+      "shared_normalized_pdb_ids": [
+        "1AY7",
+        "1B6C",
+        "1EWY",
+        "1GL4",
+        "1GLA",
+        "1JMO",
+        "1T6B",
+        "1TA3",
+        "1WPX",
+        "2FHZ",
+        "2G2U",
+        "3CBJ",
+        "3FJU",
+        "3FMO",
+        "3MCB",
+        "4E6N",
+        "4HLU",
+        "7CEI"
+      ],
+      "test_samples_with_exact_train_sequence": 0,
+      "shared_unique_exact_sequences": 0,
+      "exact_sequence_matches": []
+    },
+    "TestUB25.pkl": {
+      "shared_exact_complex_codes": [],
+      "shared_normalized_pdb_ids": [],
+      "test_samples_with_exact_train_sequence": 0,
+      "shared_unique_exact_sequences": 0,
+      "exact_sequence_matches": []
+    },
+    "Test70.pkl": {
+      "shared_exact_complex_codes": [],
+      "shared_normalized_pdb_ids": [
+        "1AK4",
+        "1B6C",
+        "1F60",
+        "1JTD",
+        "1K5D",
+        "1KTZ",
+        "1MAH",
+        "1ML0",
+        "1NRJ",
+        "1PXV",
+        "1SVD",
+        "1U0S",
+        "1Z0J",
+        "1ZBD",
+        "2A9K",
+        "2D5R",
+        "2DOH",
+        "2FP4",
+        "2G2U",
+        "2H0D",
+        "2P7V",
+        "2V8S",
+        "3ANW",
+        "3AYH",
+        "3B08",
+        "3BEG",
+        "3C5T",
+        "3CF4",
+        "3CX8",
+        "3CZU",
+        "3D7V",
+        "3DLQ",
+        "3GNI",
+        "3MDB",
+        "3MMY",
+        "3OUR",
+        "3PH0",
+        "3PV6",
+        "3SHG",
+        "3UVJ",
+        "3VU9",
+        "3VZ9",
+        "3W2W",
+        "3ZEU",
+        "3ZKQ",
+        "4APX",
+        "4AWX",
+        "4BH6",
+        "4BI8",
+        "4BJJ",
+        "4DFC",
+        "4FQ0",
+        "4H3K",
+        "4IU2",
+        "4JE3",
+        "4KT3",
+        "4KT6",
+        "7CEI"
+      ],
+      "test_samples_with_exact_train_sequence": 53,
+      "shared_unique_exact_sequences": 53,
+      "exact_sequence_matches": [
+        {
+          "test": {
+            "index": 0,
+            "complex_code": "1F60_B",
+            "pdb_id": "1F60",
+            "pdb_chain": "B",
+            "target_residues": 90,
+            "sequence_length": 90,
+            "sequence_sha256": "ce7e5ea788d60433240b1cfb9ef48aee465ad14b5f1afd7a35492ba799ff9ae4",
+            "partner_residues": 440,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 0,
+              "complex_code": "1F60",
+              "pdb_id": "1F60",
+              "pdb_chain": "B",
+              "target_residues": 90,
+              "sequence_length": 90,
+              "sequence_sha256": "ce7e5ea788d60433240b1cfb9ef48aee465ad14b5f1afd7a35492ba799ff9ae4",
+              "partner_residues": 440,
+              "partner_sequence_sha256": [
+                "d626450c9a5768870641e4cda57e4c8d312ae1ab598508f9af5803bae838a5e2"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 1,
+            "complex_code": "1JTD_B",
+            "pdb_id": "1JTD",
+            "pdb_chain": "B",
+            "target_residues": 273,
+            "sequence_length": 273,
+            "sequence_sha256": "9f02ae8de565c97d3ff79dac3720fb73974901a18685024f0ffad4d64d72bb71",
+            "partner_residues": 262,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 39,
+              "complex_code": "1JTD",
+              "pdb_id": "1JTD",
+              "pdb_chain": "B",
+              "target_residues": 273,
+              "sequence_length": 273,
+              "sequence_sha256": "9f02ae8de565c97d3ff79dac3720fb73974901a18685024f0ffad4d64d72bb71",
+              "partner_residues": 262,
+              "partner_sequence_sha256": [
+                "9d324d11c8f6d60b99c83bf329bc0bd84fe560214b414899b9078721fdd8fe1a"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 2,
+            "complex_code": "1NRJ_A",
+            "pdb_id": "1NRJ",
+            "pdb_chain": "A",
+            "target_residues": 147,
+            "sequence_length": 147,
+            "sequence_sha256": "2f63b85b7eb3673590fb3489ff97e2c5ec9a5b97dfc1b6cf05932b7bf5dc8cb7",
+            "partner_residues": 191,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 76,
+              "complex_code": "1NRJ",
+              "pdb_id": "1NRJ",
+              "pdb_chain": "A",
+              "target_residues": 147,
+              "sequence_length": 147,
+              "sequence_sha256": "2f63b85b7eb3673590fb3489ff97e2c5ec9a5b97dfc1b6cf05932b7bf5dc8cb7",
+              "partner_residues": 191,
+              "partner_sequence_sha256": [
+                "d53c7d77bd47f516900e68c6fd5ce9c19a5a5cf31e092490a00c0e78feeb906d"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 3,
+            "complex_code": "1NRJ_B",
+            "pdb_id": "1NRJ",
+            "pdb_chain": "B",
+            "target_residues": 191,
+            "sequence_length": 191,
+            "sequence_sha256": "d53c7d77bd47f516900e68c6fd5ce9c19a5a5cf31e092490a00c0e78feeb906d",
+            "partner_residues": 147,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 145,
+              "complex_code": "1NRJ",
+              "pdb_id": "1NRJ",
+              "pdb_chain": "B",
+              "target_residues": 191,
+              "sequence_length": 191,
+              "sequence_sha256": "d53c7d77bd47f516900e68c6fd5ce9c19a5a5cf31e092490a00c0e78feeb906d",
+              "partner_residues": 147,
+              "partner_sequence_sha256": [
+                "2f63b85b7eb3673590fb3489ff97e2c5ec9a5b97dfc1b6cf05932b7bf5dc8cb7"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 4,
+            "complex_code": "1SVD_M",
+            "pdb_id": "1SVD",
+            "pdb_chain": "M",
+            "target_residues": 108,
+            "sequence_length": 108,
+            "sequence_sha256": "0c576437b2bbce7e96b7373fa20df32a60a000e1bd757efa83c7ede14c973de7",
+            "partner_residues": 445,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 195,
+              "complex_code": "1SVD",
+              "pdb_id": "1SVD",
+              "pdb_chain": "M",
+              "target_residues": 108,
+              "sequence_length": 108,
+              "sequence_sha256": "0c576437b2bbce7e96b7373fa20df32a60a000e1bd757efa83c7ede14c973de7",
+              "partner_residues": 445,
+              "partner_sequence_sha256": [
+                "db1fa478ed0dd5fa0140e70f0f57b689f641f81d3ea13316f6a72f14223b2bba"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 5,
+            "complex_code": "1U0S_A",
+            "pdb_id": "1U0S",
+            "pdb_chain": "A",
+            "target_residues": 86,
+            "sequence_length": 86,
+            "sequence_sha256": "4a9bf90f214608587bd175452a4414db2b318e5f763e8b89b7f13759a0a32cf1",
+            "partner_residues": 118,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 264,
+              "complex_code": "1U0S",
+              "pdb_id": "1U0S",
+              "pdb_chain": "A",
+              "target_residues": 86,
+              "sequence_length": 86,
+              "sequence_sha256": "4a9bf90f214608587bd175452a4414db2b318e5f763e8b89b7f13759a0a32cf1",
+              "partner_residues": 118,
+              "partner_sequence_sha256": [
+                "f6b2d6f3842433ac6ea52aba4e7ce343f7bfccb13f1778fbd0004726437d6e4c"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 6,
+            "complex_code": "1Z0J_B",
+            "pdb_id": "1Z0J",
+            "pdb_chain": "B",
+            "target_residues": 51,
+            "sequence_length": 51,
+            "sequence_sha256": "3a3ef23546604a6751bc71da30020538c42c92a1f2facfe1cd3ededa7fa627e4",
+            "partner_residues": 169,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 168,
+              "complex_code": "1Z0J",
+              "pdb_id": "1Z0J",
+              "pdb_chain": "B",
+              "target_residues": 51,
+              "sequence_length": 51,
+              "sequence_sha256": "3a3ef23546604a6751bc71da30020538c42c92a1f2facfe1cd3ededa7fa627e4",
+              "partner_residues": 169,
+              "partner_sequence_sha256": [
+                "18eaf73edc0913ab1259a2f05877abadea6fc2efc1e2620be6f7948d312f1bc6"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 7,
+            "complex_code": "1ZBD_B",
+            "pdb_id": "1ZBD",
+            "pdb_chain": "B",
+            "target_residues": 119,
+            "sequence_length": 119,
+            "sequence_sha256": "5bf00978f5fda37ab6f74be1205b04072c71df2fa4aee8d00b1efec3630d2c2d",
+            "partner_residues": 171,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 294,
+              "complex_code": "1ZBD",
+              "pdb_id": "1ZBD",
+              "pdb_chain": "B",
+              "target_residues": 119,
+              "sequence_length": 119,
+              "sequence_sha256": "5bf00978f5fda37ab6f74be1205b04072c71df2fa4aee8d00b1efec3630d2c2d",
+              "partner_residues": 171,
+              "partner_sequence_sha256": [
+                "ebf77c785e1df9a17b4483e0c19d1e3c11becf19ccbd8946b30e4038eeebab16"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 10,
+            "complex_code": "2D5R_A",
+            "pdb_id": "2D5R",
+            "pdb_chain": "A",
+            "target_residues": 252,
+            "sequence_length": 252,
+            "sequence_sha256": "b4d389757fb1ea5603b533b5817b625b24d5d48aaed87f2ab05e66fb1c704968",
+            "partner_residues": 116,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 11,
+              "complex_code": "2D5R",
+              "pdb_id": "2D5R",
+              "pdb_chain": "A",
+              "target_residues": 252,
+              "sequence_length": 252,
+              "sequence_sha256": "b4d389757fb1ea5603b533b5817b625b24d5d48aaed87f2ab05e66fb1c704968",
+              "partner_residues": 116,
+              "partner_sequence_sha256": [
+                "9e76efd63832b737fb94d3258694b7993b7a787bb4bfbf3de6735f45254bcf09"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 11,
+            "complex_code": "2DOH_X",
+            "pdb_id": "2DOH",
+            "pdb_chain": "X",
+            "target_residues": 165,
+            "sequence_length": 165,
+            "sequence_sha256": "68d75fffe292347253a2cf2056e0c95848949d25224edfbc58b66a1653488f09",
+            "partner_residues": 24,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 158,
+              "complex_code": "2DOH",
+              "pdb_id": "2DOH",
+              "pdb_chain": "X",
+              "target_residues": 165,
+              "sequence_length": 165,
+              "sequence_sha256": "68d75fffe292347253a2cf2056e0c95848949d25224edfbc58b66a1653488f09",
+              "partner_residues": 24,
+              "partner_sequence_sha256": [
+                "3ac2099e06482c96923f646e487585d03cdc4fe6a961a6aa98c757b466dc8efa"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 13,
+            "complex_code": "2FP4_A",
+            "pdb_id": "2FP4",
+            "pdb_chain": "A",
+            "target_residues": 304,
+            "sequence_length": 304,
+            "sequence_sha256": "465d9268c30c32b2a6509ab474b2bc22cf7e68bdaaa09c662c79128510b9a5e4",
+            "partner_residues": 393,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 197,
+              "complex_code": "2FP4",
+              "pdb_id": "2FP4",
+              "pdb_chain": "A",
+              "target_residues": 304,
+              "sequence_length": 304,
+              "sequence_sha256": "465d9268c30c32b2a6509ab474b2bc22cf7e68bdaaa09c662c79128510b9a5e4",
+              "partner_residues": 393,
+              "partner_sequence_sha256": [
+                "623b86d627e2c15ef73239ef1e47353fdf95e3923d761e34f5c0435e2e6aca3e"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 14,
+            "complex_code": "2G2U_B",
+            "pdb_id": "2G2U",
+            "pdb_chain": "B",
+            "target_residues": 165,
+            "sequence_length": 165,
+            "sequence_sha256": "f26ea897d1c67fa6859299d6aa622e46bf716cb6ed1711562fdf738f66decb4b",
+            "partner_residues": 265,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 263,
+              "complex_code": "2G2U",
+              "pdb_id": "2G2U",
+              "pdb_chain": "B",
+              "target_residues": 165,
+              "sequence_length": 165,
+              "sequence_sha256": "f26ea897d1c67fa6859299d6aa622e46bf716cb6ed1711562fdf738f66decb4b",
+              "partner_residues": 265,
+              "partner_sequence_sha256": [
+                "1050137ea1186552a1ab6fbe1415ac1c99257d7a0ee3c9891090880da628c87a"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 15,
+            "complex_code": "2H0D_B",
+            "pdb_id": "2H0D",
+            "pdb_chain": "B",
+            "target_residues": 100,
+            "sequence_length": 100,
+            "sequence_sha256": "54d3df0ca57bfa65b224a004fdecce72eef3d20cfacf226eea225898dc26239b",
+            "partner_residues": 97,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 201,
+              "complex_code": "2H0D",
+              "pdb_id": "2H0D",
+              "pdb_chain": "B",
+              "target_residues": 100,
+              "sequence_length": 100,
+              "sequence_sha256": "54d3df0ca57bfa65b224a004fdecce72eef3d20cfacf226eea225898dc26239b",
+              "partner_residues": 97,
+              "partner_sequence_sha256": [
+                "980bd88053a08e10265ec7ab7ea3bdad4af325fb3d8d0ea81ceefe57fc918971"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 16,
+            "complex_code": "2P7V_A",
+            "pdb_id": "2P7V",
+            "pdb_chain": "A",
+            "target_residues": 151,
+            "sequence_length": 151,
+            "sequence_sha256": "08d331f66e2351cb0a156a9690f42705fe8fceb8cbdc67bc7463d69a8b3305e0",
+            "partner_residues": 68,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 161,
+              "complex_code": "2P7V",
+              "pdb_id": "2P7V",
+              "pdb_chain": "A",
+              "target_residues": 151,
+              "sequence_length": 151,
+              "sequence_sha256": "08d331f66e2351cb0a156a9690f42705fe8fceb8cbdc67bc7463d69a8b3305e0",
+              "partner_residues": 68,
+              "partner_sequence_sha256": [
+                "1556a2acc9e64099714e0a66a269a8b139113001c66beff6a88d13b4a024b130"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 18,
+            "complex_code": "2V8S_V",
+            "pdb_id": "2V8S",
+            "pdb_chain": "V",
+            "target_residues": 93,
+            "sequence_length": 93,
+            "sequence_sha256": "6b299195c130dff4366953c4c3c255a3c07a7696c72d5ad7c3ca29b7b64e75d5",
+            "partner_residues": 137,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 125,
+              "complex_code": "2V8S",
+              "pdb_id": "2V8S",
+              "pdb_chain": "V",
+              "target_residues": 93,
+              "sequence_length": 93,
+              "sequence_sha256": "6b299195c130dff4366953c4c3c255a3c07a7696c72d5ad7c3ca29b7b64e75d5",
+              "partner_residues": 137,
+              "partner_sequence_sha256": [
+                "13704a9ad09f70cef5792814ce32c0bfc0b2428d290056510754fde26d60e4a5"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 20,
+            "complex_code": "3BEG_B",
+            "pdb_id": "3BEG",
+            "pdb_chain": "B",
+            "target_residues": 86,
+            "sequence_length": 86,
+            "sequence_sha256": "545de24cf4f3220ae35625b391fdf95e0d8117716c2fbf9d233b2efbfc87e5ee",
+            "partner_residues": 348,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 190,
+              "complex_code": "3BEG",
+              "pdb_id": "3BEG",
+              "pdb_chain": "B",
+              "target_residues": 86,
+              "sequence_length": 86,
+              "sequence_sha256": "545de24cf4f3220ae35625b391fdf95e0d8117716c2fbf9d233b2efbfc87e5ee",
+              "partner_residues": 348,
+              "partner_sequence_sha256": [
+                "b1552d86dd06aacf5d33a94d511d45c7206c033708a966cc067f8f12523b6d48"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 21,
+            "complex_code": "3C5T_A",
+            "pdb_id": "3C5T",
+            "pdb_chain": "A",
+            "target_residues": 104,
+            "sequence_length": 104,
+            "sequence_sha256": "0a289286c81cce19e4317f475d508711a1f579d2f3308f1c0805b3fc6f6ee8c7",
+            "partner_residues": 25,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 155,
+              "complex_code": "3C5T",
+              "pdb_id": "3C5T",
+              "pdb_chain": "A",
+              "target_residues": 104,
+              "sequence_length": 104,
+              "sequence_sha256": "0a289286c81cce19e4317f475d508711a1f579d2f3308f1c0805b3fc6f6ee8c7",
+              "partner_residues": 25,
+              "partner_sequence_sha256": [
+                "afe4a391f129848bd233b7fcb4b1883a8dd3ac261dac6809e9d94304733019ad"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 22,
+            "complex_code": "3CF4_G",
+            "pdb_id": "3CF4",
+            "pdb_chain": "G",
+            "target_residues": 169,
+            "sequence_length": 169,
+            "sequence_sha256": "b95c4776808d2b0b9ce70ef05a723efd61bd0056fa9c050f0e84e9307516f1fa",
+            "partner_residues": 766,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 129,
+              "complex_code": "3CF4",
+              "pdb_id": "3CF4",
+              "pdb_chain": "G",
+              "target_residues": 169,
+              "sequence_length": 169,
+              "sequence_sha256": "b95c4776808d2b0b9ce70ef05a723efd61bd0056fa9c050f0e84e9307516f1fa",
+              "partner_residues": 766,
+              "partner_sequence_sha256": [
+                "333af7b1021fb289c353ed4c7cb7d3aae05aee848835eecc43f7e7942e19158a"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 23,
+            "complex_code": "3CX8_B",
+            "pdb_id": "3CX8",
+            "pdb_chain": "B",
+            "target_residues": 193,
+            "sequence_length": 193,
+            "sequence_sha256": "51c7d7d5dfe1da3700af38a3abe7940b8c5b6367c1057b1c6567833a10137d9b",
+            "partner_residues": 319,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 179,
+              "complex_code": "3CX8",
+              "pdb_id": "3CX8",
+              "pdb_chain": "B",
+              "target_residues": 193,
+              "sequence_length": 193,
+              "sequence_sha256": "51c7d7d5dfe1da3700af38a3abe7940b8c5b6367c1057b1c6567833a10137d9b",
+              "partner_residues": 319,
+              "partner_sequence_sha256": [
+                "08699c21dcb5ab92587787f6e6a2c3c06d47fd5cd7921af7a6aaeef18d63bb89"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 24,
+            "complex_code": "3CZU_B",
+            "pdb_id": "3CZU",
+            "pdb_chain": "B",
+            "target_residues": 130,
+            "sequence_length": 130,
+            "sequence_sha256": "8f9e1b51bab01a814166df2d7b05e4b52fc7f8b4d0a99e5ab5fe7941d4982ebf",
+            "partner_residues": 175,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 282,
+              "complex_code": "3CZU",
+              "pdb_id": "3CZU",
+              "pdb_chain": "B",
+              "target_residues": 130,
+              "sequence_length": 130,
+              "sequence_sha256": "8f9e1b51bab01a814166df2d7b05e4b52fc7f8b4d0a99e5ab5fe7941d4982ebf",
+              "partner_residues": 175,
+              "partner_sequence_sha256": [
+                "8879d814e3f8a2afcdb21c4cf64f628d0ed397e352249d57d750c85965a6fba4"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 25,
+            "complex_code": "3D7V_A",
+            "pdb_id": "3D7V",
+            "pdb_chain": "A",
+            "target_residues": 144,
+            "sequence_length": 144,
+            "sequence_sha256": "4aedcdf961e14628b5487903328b62071a95be300f34af8e09895a925122e324",
+            "partner_residues": 23,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 55,
+              "complex_code": "3D7V",
+              "pdb_id": "3D7V",
+              "pdb_chain": "A",
+              "target_residues": 144,
+              "sequence_length": 144,
+              "sequence_sha256": "4aedcdf961e14628b5487903328b62071a95be300f34af8e09895a925122e324",
+              "partner_residues": 23,
+              "partner_sequence_sha256": [
+                "8d6597186c356366c10667c0d8425bf0d33a2e106a31045e81ebc343ba67e4bb"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 26,
+            "complex_code": "3DLQ_I",
+            "pdb_id": "3DLQ",
+            "pdb_chain": "I",
+            "target_residues": 131,
+            "sequence_length": 131,
+            "sequence_sha256": "bd9a7055f9a73590c9b19c41f74be2def9645af171f720e049f97ccc483ea17f",
+            "partner_residues": 201,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 40,
+              "complex_code": "3DLQ",
+              "pdb_id": "3DLQ",
+              "pdb_chain": "I",
+              "target_residues": 131,
+              "sequence_length": 131,
+              "sequence_sha256": "bd9a7055f9a73590c9b19c41f74be2def9645af171f720e049f97ccc483ea17f",
+              "partner_residues": 201,
+              "partner_sequence_sha256": [
+                "bf8f7e9c3df7b141f71960432ca6a756fbe9e1b869dd18f92d0a380f7a9509f7"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 29,
+            "complex_code": "3GNI_A",
+            "pdb_id": "3GNI",
+            "pdb_chain": "A",
+            "target_residues": 335,
+            "sequence_length": 335,
+            "sequence_sha256": "3e0bfaad283b63dc73aa7d48452598e645cd36e516edc113925a795acf11fca6",
+            "partner_residues": 304,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 130,
+              "complex_code": "3GNI",
+              "pdb_id": "3GNI",
+              "pdb_chain": "A",
+              "target_residues": 335,
+              "sequence_length": 335,
+              "sequence_sha256": "3e0bfaad283b63dc73aa7d48452598e645cd36e516edc113925a795acf11fca6",
+              "partner_residues": 304,
+              "partner_sequence_sha256": [
+                "cf21b3a148aa287f48e547ec940578d8eb14976524a93e8790ec07c4af82419c"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 30,
+            "complex_code": "3ANW_B",
+            "pdb_id": "3ANW",
+            "pdb_chain": "B",
+            "target_residues": 162,
+            "sequence_length": 162,
+            "sequence_sha256": "bf7e36ac76cc9730d105c06c45a04deec2825232068c7754759646daf2212693",
+            "partner_residues": 171,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 131,
+              "complex_code": "3ANW",
+              "pdb_id": "3ANW",
+              "pdb_chain": "B",
+              "target_residues": 162,
+              "sequence_length": 162,
+              "sequence_sha256": "bf7e36ac76cc9730d105c06c45a04deec2825232068c7754759646daf2212693",
+              "partner_residues": 171,
+              "partner_sequence_sha256": [
+                "4ebd549d956717b8018969b7c6bf05edc02ec435f491f978748483eb102d052b"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 31,
+            "complex_code": "3AYH_B",
+            "pdb_id": "3AYH",
+            "pdb_chain": "B",
+            "target_residues": 183,
+            "sequence_length": 183,
+            "sequence_sha256": "123c1a31fbc93e99ee139ebba3b8a58e8632195aed4b71e6cd516a9ba157bbe4",
+            "partner_residues": 134,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 136,
+              "complex_code": "3AYH",
+              "pdb_id": "3AYH",
+              "pdb_chain": "B",
+              "target_residues": 183,
+              "sequence_length": 183,
+              "sequence_sha256": "123c1a31fbc93e99ee139ebba3b8a58e8632195aed4b71e6cd516a9ba157bbe4",
+              "partner_residues": 134,
+              "partner_sequence_sha256": [
+                "13c00892d2df65bb07cd267f344d975ad27c100b3b1c04a650e1409e3e073653"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 32,
+            "complex_code": "3B08_B",
+            "pdb_id": "3B08",
+            "pdb_chain": "B",
+            "target_residues": 58,
+            "sequence_length": 58,
+            "sequence_sha256": "401ad9e5b359c3c5a88eb79befe52a049f4069b3408a3e7d2941302fc0205b99",
+            "partner_residues": 778,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 146,
+              "complex_code": "3B08",
+              "pdb_id": "3B08",
+              "pdb_chain": "B",
+              "target_residues": 58,
+              "sequence_length": 58,
+              "sequence_sha256": "401ad9e5b359c3c5a88eb79befe52a049f4069b3408a3e7d2941302fc0205b99",
+              "partner_residues": 778,
+              "partner_sequence_sha256": [
+                "76cf3a1e03bde84a34886a45985ae759da7781cf0ccf7a89e34090cd27b3c399",
+                "76cf3a1e03bde84a34886a45985ae759da7781cf0ccf7a89e34090cd27b3c399",
+                "c39726622fae2a82634235a62736bf1a12a0a0562753b00735cf755bde9f5266",
+                "71956ec57210a699de37420242478f1e11daf96c9723051e72d40379a13c22bf",
+                "c39726622fae2a82634235a62736bf1a12a0a0562753b00735cf755bde9f5266",
+                "bc97fbdc6486c49def4c5e1f94f6d826a8dcfa6ea48690fbc4f82fe9b51e0884",
+                "7c82c34d5918bde421db51c2c200b61f24242255416e2a3b47bd5ec49b1a8583"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 33,
+            "complex_code": "3MDB_C",
+            "pdb_id": "3MDB",
+            "pdb_chain": "C",
+            "target_residues": 365,
+            "sequence_length": 365,
+            "sequence_sha256": "7750c672dc777ff6b55193eb2a77b207e252d3431a8b3bc39d88546863da48d4",
+            "partner_residues": 546,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 60,
+              "complex_code": "3MDB",
+              "pdb_id": "3MDB",
+              "pdb_chain": "C",
+              "target_residues": 365,
+              "sequence_length": 365,
+              "sequence_sha256": "7750c672dc777ff6b55193eb2a77b207e252d3431a8b3bc39d88546863da48d4",
+              "partner_residues": 546,
+              "partner_sequence_sha256": [
+                "3606b8586320dc7fe0f82bf80bee91ed449067229ab62c36d2f9b4181184a119",
+                "b7138bedaf6354f99bd9d9481bdf7cf7db7f8ab090cac3658f670d05712daa6a",
+                "f51817867b4022df68675251e3c5709040908360c9e57b47ebca5858e08aa2cf"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 34,
+            "complex_code": "3MMY_A",
+            "pdb_id": "3MMY",
+            "pdb_chain": "A",
+            "target_residues": 354,
+            "sequence_length": 354,
+            "sequence_sha256": "a7f2b60a16f9c132b08e0defd44ec526873603ac3797177e9274d8fe66952aaf",
+            "partner_residues": 1267,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 71,
+              "complex_code": "3MMY",
+              "pdb_id": "3MMY",
+              "pdb_chain": "A",
+              "target_residues": 354,
+              "sequence_length": 354,
+              "sequence_sha256": "a7f2b60a16f9c132b08e0defd44ec526873603ac3797177e9274d8fe66952aaf",
+              "partner_residues": 1267,
+              "partner_sequence_sha256": [
+                "10221241e16448942cf366c854e590d269e47928190a28d024b2ba5431e53ceb",
+                "e49d3aea85a3379478e129ec1c2c52b60a2f6bc2337a88dbf38038cc4970db5e",
+                "10221241e16448942cf366c854e590d269e47928190a28d024b2ba5431e53ceb",
+                "a7f2b60a16f9c132b08e0defd44ec526873603ac3797177e9274d8fe66952aaf",
+                "10221241e16448942cf366c854e590d269e47928190a28d024b2ba5431e53ceb",
+                "e49d3aea85a3379478e129ec1c2c52b60a2f6bc2337a88dbf38038cc4970db5e",
+                "1851f542d5b8866c028c31b71856917a0db968c779c45702291ee560cbe7995c"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 36,
+            "complex_code": "3PH0_A",
+            "pdb_id": "3PH0",
+            "pdb_chain": "A",
+            "target_residues": 60,
+            "sequence_length": 60,
+            "sequence_sha256": "e5c6dda741b1bff3f40d0f15a18029051c12f1281f17da1b2ef509c51abc5cf5",
+            "partner_residues": 166,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 271,
+              "complex_code": "3PH0",
+              "pdb_id": "3PH0",
+              "pdb_chain": "A",
+              "target_residues": 60,
+              "sequence_length": 60,
+              "sequence_sha256": "e5c6dda741b1bff3f40d0f15a18029051c12f1281f17da1b2ef509c51abc5cf5",
+              "partner_residues": 166,
+              "partner_sequence_sha256": [
+                "a67c4d234567532285d6577b97146f28ba077ee5b4d75921d57e3f5a4e98e7b1",
+                "e5c6dda741b1bff3f40d0f15a18029051c12f1281f17da1b2ef509c51abc5cf5",
+                "a67c4d234567532285d6577b97146f28ba077ee5b4d75921d57e3f5a4e98e7b1"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 37,
+            "complex_code": "3PV6_A",
+            "pdb_id": "3PV6",
+            "pdb_chain": "A",
+            "target_residues": 214,
+            "sequence_length": 214,
+            "sequence_sha256": "54d2df045b702ad6fd42a88c81678ba860bd817c586e8cad9037cd423f1622ca",
+            "partner_residues": 112,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 173,
+              "complex_code": "3PV6",
+              "pdb_id": "3PV6",
+              "pdb_chain": "A",
+              "target_residues": 214,
+              "sequence_length": 214,
+              "sequence_sha256": "54d2df045b702ad6fd42a88c81678ba860bd817c586e8cad9037cd423f1622ca",
+              "partner_residues": 112,
+              "partner_sequence_sha256": [
+                "5c13995c64754abaaad01e602a32792b0770ca439cc77059524073ed0e3d9377"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 41,
+            "complex_code": "3VU9_A",
+            "pdb_id": "3VU9",
+            "pdb_chain": "A",
+            "target_residues": 215,
+            "sequence_length": 215,
+            "sequence_sha256": "82ba7b7b7671dc6792c0a87073cba291729ed4b36cec0e970939c48954ca8527",
+            "partner_residues": 191,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 152,
+              "complex_code": "3VU9",
+              "pdb_id": "3VU9",
+              "pdb_chain": "A",
+              "target_residues": 215,
+              "sequence_length": 215,
+              "sequence_sha256": "82ba7b7b7671dc6792c0a87073cba291729ed4b36cec0e970939c48954ca8527",
+              "partner_residues": 191,
+              "partner_sequence_sha256": [
+                "9b8360e0da2e402eaaab70d21e5723642be3e1429082f98efe8e35502019f4a3"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 43,
+            "complex_code": "3W2W_B",
+            "pdb_id": "3W2W",
+            "pdb_chain": "B",
+            "target_residues": 308,
+            "sequence_length": 308,
+            "sequence_sha256": "c7eb61c263ec83e2695fa3273c4539cf560a9993fc05143dbb31f3ad739d157b",
+            "partner_residues": 618,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 63,
+              "complex_code": "3W2W",
+              "pdb_id": "3W2W",
+              "pdb_chain": "B",
+              "target_residues": 308,
+              "sequence_length": 308,
+              "sequence_sha256": "c7eb61c263ec83e2695fa3273c4539cf560a9993fc05143dbb31f3ad739d157b",
+              "partner_residues": 618,
+              "partner_sequence_sha256": [
+                "a7b28cafa7cd45b01ed6c8fb2abd504b0abc743daf8aa25d3388d0de351385de"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 44,
+            "complex_code": "3ZEU_D",
+            "pdb_id": "3ZEU",
+            "pdb_chain": "D",
+            "target_residues": 230,
+            "sequence_length": 230,
+            "sequence_sha256": "3674a79b5d632ec1cb1c618c4eb28408195b8d3be9ad89b729626da76d510b64",
+            "partner_residues": 904,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 17,
+              "complex_code": "3ZEU",
+              "pdb_id": "3ZEU",
+              "pdb_chain": "A",
+              "target_residues": 230,
+              "sequence_length": 230,
+              "sequence_sha256": "3674a79b5d632ec1cb1c618c4eb28408195b8d3be9ad89b729626da76d510b64",
+              "partner_residues": 904,
+              "partner_sequence_sha256": [
+                "4506c95a33ec686c0f7938a1248f2d410d976455d4f8136170a614c59b21cec7",
+                "3674a79b5d632ec1cb1c618c4eb28408195b8d3be9ad89b729626da76d510b64",
+                "4506c95a33ec686c0f7938a1248f2d410d976455d4f8136170a614c59b21cec7"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 45,
+            "complex_code": "3ZKQ_A",
+            "pdb_id": "3ZKQ",
+            "pdb_chain": "A",
+            "target_residues": 376,
+            "sequence_length": 376,
+            "sequence_sha256": "848bfcb3e79317c1d0625075e6237f6f9b9a88020c19130be650601f0151bfae",
+            "partner_residues": 113,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 182,
+              "complex_code": "3ZKQ",
+              "pdb_id": "3ZKQ",
+              "pdb_chain": "A",
+              "target_residues": 376,
+              "sequence_length": 376,
+              "sequence_sha256": "848bfcb3e79317c1d0625075e6237f6f9b9a88020c19130be650601f0151bfae",
+              "partner_residues": 113,
+              "partner_sequence_sha256": [
+                "47361dece0b9174ecd49b81e2efd185077e3fd58094dcf1cc622d95261f384ef"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 46,
+            "complex_code": "4APX_A",
+            "pdb_id": "4APX",
+            "pdb_chain": "A",
+            "target_residues": 208,
+            "sequence_length": 208,
+            "sequence_sha256": "d5640c203ba2ab8b3ef6371605092695e95397725bbe0a89fa000ff40f2037ee",
+            "partner_residues": 238,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 117,
+              "complex_code": "4APX",
+              "pdb_id": "4APX",
+              "pdb_chain": "A",
+              "target_residues": 208,
+              "sequence_length": 208,
+              "sequence_sha256": "d5640c203ba2ab8b3ef6371605092695e95397725bbe0a89fa000ff40f2037ee",
+              "partner_residues": 238,
+              "partner_sequence_sha256": [
+                "128659b3d15caf513c97a76d0463860c90500827df2cfcccc38a14d905be9111"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 47,
+            "complex_code": "4AWX_B",
+            "pdb_id": "4AWX",
+            "pdb_chain": "B",
+            "target_residues": 63,
+            "sequence_length": 63,
+            "sequence_sha256": "9a8607c0d80356ffa048cbdcafc73def57443236d26304f723aa9202f359243a",
+            "partner_residues": 252,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 189,
+              "complex_code": "4AWX",
+              "pdb_id": "4AWX",
+              "pdb_chain": "B",
+              "target_residues": 63,
+              "sequence_length": 63,
+              "sequence_sha256": "9a8607c0d80356ffa048cbdcafc73def57443236d26304f723aa9202f359243a",
+              "partner_residues": 252,
+              "partner_sequence_sha256": [
+                "61ba8a7568f35a5b95c8a5742f886b99a7557dbc9bdee3761d6dbcc1e0c2385d"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 48,
+            "complex_code": "4BH6_D",
+            "pdb_id": "4BH6",
+            "pdb_chain": "D",
+            "target_residues": 305,
+            "sequence_length": 305,
+            "sequence_sha256": "f2d29bbac3ff0057374f569e45efeb0f750339832ef84b0a373ff0afaedacd1e",
+            "partner_residues": 2444,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 45,
+              "complex_code": "4BH6",
+              "pdb_id": "4BH6",
+              "pdb_chain": "D",
+              "target_residues": 305,
+              "sequence_length": 305,
+              "sequence_sha256": "f2d29bbac3ff0057374f569e45efeb0f750339832ef84b0a373ff0afaedacd1e",
+              "partner_residues": 2444,
+              "partner_sequence_sha256": [
+                "24a214de57ad994ba7771082b2b763dee934108658ea9cc70f567be739c9f603",
+                "24a214de57ad994ba7771082b2b763dee934108658ea9cc70f567be739c9f603",
+                "24a214de57ad994ba7771082b2b763dee934108658ea9cc70f567be739c9f603",
+                "0e8c122db6fd021d856197a7519a3649b273329b86de024793dffc8b95157fa0",
+                "24a214de57ad994ba7771082b2b763dee934108658ea9cc70f567be739c9f603",
+                "96157b9361c9122723b43af8adda694c8c4138e52d871510bba0505a4210f924",
+                "119b83d181e911e889a512d476876605176b00b8a98057058263ba756f4d7e0c",
+                "e555a986dfb7d470fc03660348bc2f841811a5741485bf77b9e1b92e16cf4725",
+                "b75900cd72e28ccc87d1162df9990b06d0c4c7d24fbbf2334771c64afc760be6",
+                "303546b4fb7e89949973a24d13032a88faebf9ae3f471a9b670983d3666ea589",
+                "8159d1961223df1203f063fe503cd0afbf2f962ec3b15de83fb428807ae8bcd8",
+                "4a253c8e41a38dec4f8553ac5ab1032649674fc70738d3a1dc839a4c77b0cf40",
+                "bcb4b8645b51e1334af9e0505a7c182290b2d72a8aee7ff99075dfd4cdbcd4b6",
+                "bcb4b8645b51e1334af9e0505a7c182290b2d72a8aee7ff99075dfd4cdbcd4b6",
+                "4a253c8e41a38dec4f8553ac5ab1032649674fc70738d3a1dc839a4c77b0cf40"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 49,
+            "complex_code": "4BH6_L",
+            "pdb_id": "4BH6",
+            "pdb_chain": "L",
+            "target_residues": 51,
+            "sequence_length": 51,
+            "sequence_sha256": "8159d1961223df1203f063fe503cd0afbf2f962ec3b15de83fb428807ae8bcd8",
+            "partner_residues": 2698,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 88,
+              "complex_code": "4BH6",
+              "pdb_id": "4BH6",
+              "pdb_chain": "L",
+              "target_residues": 51,
+              "sequence_length": 51,
+              "sequence_sha256": "8159d1961223df1203f063fe503cd0afbf2f962ec3b15de83fb428807ae8bcd8",
+              "partner_residues": 2698,
+              "partner_sequence_sha256": [
+                "24a214de57ad994ba7771082b2b763dee934108658ea9cc70f567be739c9f603",
+                "24a214de57ad994ba7771082b2b763dee934108658ea9cc70f567be739c9f603",
+                "24a214de57ad994ba7771082b2b763dee934108658ea9cc70f567be739c9f603",
+                "f2d29bbac3ff0057374f569e45efeb0f750339832ef84b0a373ff0afaedacd1e",
+                "0e8c122db6fd021d856197a7519a3649b273329b86de024793dffc8b95157fa0",
+                "24a214de57ad994ba7771082b2b763dee934108658ea9cc70f567be739c9f603",
+                "96157b9361c9122723b43af8adda694c8c4138e52d871510bba0505a4210f924",
+                "119b83d181e911e889a512d476876605176b00b8a98057058263ba756f4d7e0c",
+                "e555a986dfb7d470fc03660348bc2f841811a5741485bf77b9e1b92e16cf4725",
+                "b75900cd72e28ccc87d1162df9990b06d0c4c7d24fbbf2334771c64afc760be6",
+                "303546b4fb7e89949973a24d13032a88faebf9ae3f471a9b670983d3666ea589",
+                "4a253c8e41a38dec4f8553ac5ab1032649674fc70738d3a1dc839a4c77b0cf40",
+                "bcb4b8645b51e1334af9e0505a7c182290b2d72a8aee7ff99075dfd4cdbcd4b6",
+                "bcb4b8645b51e1334af9e0505a7c182290b2d72a8aee7ff99075dfd4cdbcd4b6",
+                "4a253c8e41a38dec4f8553ac5ab1032649674fc70738d3a1dc839a4c77b0cf40"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 50,
+            "complex_code": "4BI8_A",
+            "pdb_id": "4BI8",
+            "pdb_chain": "A",
+            "target_residues": 94,
+            "sequence_length": 94,
+            "sequence_sha256": "e6403fe6a3d217cdb495100b56a435ea0a4f358ea885432d417d668e6fd1be4c",
+            "partner_residues": 163,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 3,
+              "complex_code": "4BI8",
+              "pdb_id": "4BI8",
+              "pdb_chain": "A",
+              "target_residues": 94,
+              "sequence_length": 94,
+              "sequence_sha256": "e6403fe6a3d217cdb495100b56a435ea0a4f358ea885432d417d668e6fd1be4c",
+              "partner_residues": 163,
+              "partner_sequence_sha256": [
+                "2e3386f21fc4fd36242ae11b2dac510ad294b44ce538f26064f6387088a53363"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 51,
+            "complex_code": "4BI8_B",
+            "pdb_id": "4BI8",
+            "pdb_chain": "B",
+            "target_residues": 163,
+            "sequence_length": 163,
+            "sequence_sha256": "2e3386f21fc4fd36242ae11b2dac510ad294b44ce538f26064f6387088a53363",
+            "partner_residues": 94,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 299,
+              "complex_code": "4BI8",
+              "pdb_id": "4BI8",
+              "pdb_chain": "B",
+              "target_residues": 163,
+              "sequence_length": 163,
+              "sequence_sha256": "2e3386f21fc4fd36242ae11b2dac510ad294b44ce538f26064f6387088a53363",
+              "partner_residues": 94,
+              "partner_sequence_sha256": [
+                "e6403fe6a3d217cdb495100b56a435ea0a4f358ea885432d417d668e6fd1be4c"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 52,
+            "complex_code": "4BJJ_B",
+            "pdb_id": "4BJJ",
+            "pdb_chain": "B",
+            "target_residues": 85,
+            "sequence_length": 85,
+            "sequence_sha256": "950adcbb0801acbc4b6fe1461a2f9a026e91682dd9837490b258ec4ffc4f69a4",
+            "partner_residues": 106,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 34,
+              "complex_code": "4BJJ",
+              "pdb_id": "4BJJ",
+              "pdb_chain": "B",
+              "target_residues": 85,
+              "sequence_length": 85,
+              "sequence_sha256": "950adcbb0801acbc4b6fe1461a2f9a026e91682dd9837490b258ec4ffc4f69a4",
+              "partner_residues": 106,
+              "partner_sequence_sha256": [
+                "ac4aa6e933b271c66c4e244beaaddb4c48157181c4e15eba464f5dd6d32b63fa"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 53,
+            "complex_code": "4DFC_B",
+            "pdb_id": "4DFC",
+            "pdb_chain": "B",
+            "target_residues": 121,
+            "sequence_length": 121,
+            "sequence_sha256": "023ad7f24e0f2426f4c7b9696c4f2e598b361a44426d201e21c256cbc8692d1f",
+            "partner_residues": 286,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 59,
+              "complex_code": "4DFC",
+              "pdb_id": "4DFC",
+              "pdb_chain": "B",
+              "target_residues": 121,
+              "sequence_length": 121,
+              "sequence_sha256": "023ad7f24e0f2426f4c7b9696c4f2e598b361a44426d201e21c256cbc8692d1f",
+              "partner_residues": 286,
+              "partner_sequence_sha256": [
+                "6f0ee82064854ac6d056057825079ec4603694844259a719aa8e82321fef809a",
+                "03d42f037e9fdf7652d25fb67235241b1b7b86d273a5cd01a2bea12adcb893e7",
+                "421fe2b4e2300a9e096ca818e51be62578bd887f1a07faababcc8f7c3372184d"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 54,
+            "complex_code": "4FQ0_B",
+            "pdb_id": "4FQ0",
+            "pdb_chain": "B",
+            "target_residues": 182,
+            "sequence_length": 182,
+            "sequence_sha256": "51d91caf978c93c87cd43755acd8595c7288e27b65ed97e2f4259518c87fec69",
+            "partner_residues": 340,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 148,
+              "complex_code": "4FQ0",
+              "pdb_id": "4FQ0",
+              "pdb_chain": "B",
+              "target_residues": 182,
+              "sequence_length": 182,
+              "sequence_sha256": "51d91caf978c93c87cd43755acd8595c7288e27b65ed97e2f4259518c87fec69",
+              "partner_residues": 340,
+              "partner_sequence_sha256": [
+                "924132dc23dd3475a6c2bf02a2a1fe317e34d756b127780d84c23efa0bd4f4f0",
+                "8ee62f0520d8438882eed95267079a3ce4b8b0f71de64c99e3a6ede02c7a521a",
+                "8ee62f0520d8438882eed95267079a3ce4b8b0f71de64c99e3a6ede02c7a521a"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 55,
+            "complex_code": "4H3K_A",
+            "pdb_id": "4H3K",
+            "pdb_chain": "A",
+            "target_residues": 317,
+            "sequence_length": 317,
+            "sequence_sha256": "b4dbd509de86c14721e912ae6b6584700831b63ed7c59b6404f7211c1775d986",
+            "partner_residues": 694,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 184,
+              "complex_code": "4H3K",
+              "pdb_id": "4H3K",
+              "pdb_chain": "A",
+              "target_residues": 317,
+              "sequence_length": 317,
+              "sequence_sha256": "b4dbd509de86c14721e912ae6b6584700831b63ed7c59b6404f7211c1775d986",
+              "partner_residues": 694,
+              "partner_sequence_sha256": [
+                "39bcd76d625f5138f3d23cb59bfccd6e8680dd0f4e826ae638c07bdf920b857f",
+                "25fa4756639387a5b358391e3c95d430f7f56089fc829cad856654904651edd8",
+                "5515782081da464fca00486e1d69b56791185f3a205de4bb7c12b06f13bbb62c",
+                "11e06d15e1a967744e58c5d8e5710550969b46df42676a136107f8d7636c4d30"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 57,
+            "complex_code": "4IU2_A",
+            "pdb_id": "4IU2",
+            "pdb_chain": "A",
+            "target_residues": 205,
+            "sequence_length": 205,
+            "sequence_sha256": "5ecfd96681de82daf722e0baa67d1bcab607ca5ea940f3e53c60a29047f90b88",
+            "partner_residues": 237,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 65,
+              "complex_code": "4IU2",
+              "pdb_id": "4IU2",
+              "pdb_chain": "A",
+              "target_residues": 205,
+              "sequence_length": 205,
+              "sequence_sha256": "5ecfd96681de82daf722e0baa67d1bcab607ca5ea940f3e53c60a29047f90b88",
+              "partner_residues": 237,
+              "partner_sequence_sha256": [
+                "7f2f871e2f508b6f537e496da9e67ff1f1fae42825e3d7377fd76c4ca26509d8"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 59,
+            "complex_code": "4KT3_B",
+            "pdb_id": "4KT3",
+            "pdb_chain": "B",
+            "target_residues": 127,
+            "sequence_length": 127,
+            "sequence_sha256": "f4da92700fc36c4578f6c7af3567033ddd15168dde55780044baa53d2744c96b",
+            "partner_residues": 138,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 228,
+              "complex_code": "4KT3",
+              "pdb_id": "4KT3",
+              "pdb_chain": "B",
+              "target_residues": 127,
+              "sequence_length": 127,
+              "sequence_sha256": "f4da92700fc36c4578f6c7af3567033ddd15168dde55780044baa53d2744c96b",
+              "partner_residues": 138,
+              "partner_sequence_sha256": [
+                "20841723180d9437507a1a346257e9c32589b14afba51f0bc109651f9b59587a"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 60,
+            "complex_code": "4KT6_B",
+            "pdb_id": "4KT6",
+            "pdb_chain": "B",
+            "target_residues": 161,
+            "sequence_length": 161,
+            "sequence_sha256": "3070c4d1a7de8e463f469ef26684c522c54e704438d40ef9df0c20a99ed3ce34",
+            "partner_residues": 669,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 23,
+              "complex_code": "4KT6",
+              "pdb_id": "4KT6",
+              "pdb_chain": "B",
+              "target_residues": 161,
+              "sequence_length": 161,
+              "sequence_sha256": "3070c4d1a7de8e463f469ef26684c522c54e704438d40ef9df0c20a99ed3ce34",
+              "partner_residues": 669,
+              "partner_sequence_sha256": [
+                "98dc14ab399a90bc517686fe08d3de2ee6de46457ee13b3d0c8e735afeb785c4",
+                "98dc14ab399a90bc517686fe08d3de2ee6de46457ee13b3d0c8e735afeb785c4",
+                "3070c4d1a7de8e463f469ef26684c522c54e704438d40ef9df0c20a99ed3ce34"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 61,
+            "complex_code": "1AK4_D",
+            "pdb_id": "1AK4",
+            "pdb_chain": "D",
+            "target_residues": 145,
+            "sequence_length": 145,
+            "sequence_sha256": "af0457660b9685e6633043c5e99178907d23267e4b76c10774d145541df0682f",
+            "partner_residues": 473,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 301,
+              "complex_code": "1AK4",
+              "pdb_id": "1AK4",
+              "pdb_chain": "C",
+              "target_residues": 145,
+              "sequence_length": 145,
+              "sequence_sha256": "af0457660b9685e6633043c5e99178907d23267e4b76c10774d145541df0682f",
+              "partner_residues": 473,
+              "partner_sequence_sha256": [
+                "71376b3a50a1cc063e09d51d93e09c4aacc3b77edd60a922db188157a62b0de4",
+                "86695e54a8eefa2ea3fe95671ae2ec568bca41d0e31e5d941bb40f95ce97e215",
+                "af0457660b9685e6633043c5e99178907d23267e4b76c10774d145541df0682f"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 62,
+            "complex_code": "1B6C_A",
+            "pdb_id": "1B6C",
+            "pdb_chain": "A",
+            "target_residues": 107,
+            "sequence_length": 107,
+            "sequence_sha256": "de9f93373c7a22b99699ccaa54e0525a0a5f2bfcc7f774f55377740fa14b3a3a",
+            "partner_residues": 1625,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 96,
+              "complex_code": "1B6C",
+              "pdb_id": "1B6C",
+              "pdb_chain": "A",
+              "target_residues": 107,
+              "sequence_length": 107,
+              "sequence_sha256": "de9f93373c7a22b99699ccaa54e0525a0a5f2bfcc7f774f55377740fa14b3a3a",
+              "partner_residues": 1625,
+              "partner_sequence_sha256": [
+                "f7fcdd3bd9b5f75c7f53f5480cded3052d78444f6546fda7d2999e57d0564723",
+                "de9f93373c7a22b99699ccaa54e0525a0a5f2bfcc7f774f55377740fa14b3a3a",
+                "f7fcdd3bd9b5f75c7f53f5480cded3052d78444f6546fda7d2999e57d0564723",
+                "de9f93373c7a22b99699ccaa54e0525a0a5f2bfcc7f774f55377740fa14b3a3a",
+                "f7fcdd3bd9b5f75c7f53f5480cded3052d78444f6546fda7d2999e57d0564723",
+                "de9f93373c7a22b99699ccaa54e0525a0a5f2bfcc7f774f55377740fa14b3a3a",
+                "f7fcdd3bd9b5f75c7f53f5480cded3052d78444f6546fda7d2999e57d0564723"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 64,
+            "complex_code": "1KTZ_A",
+            "pdb_id": "1KTZ",
+            "pdb_chain": "A",
+            "target_residues": 82,
+            "sequence_length": 82,
+            "sequence_sha256": "9e7913a956d86a6223ade1b8f7db841a06826ec966a9debba48e11381aeee78f",
+            "partner_residues": 106,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 142,
+              "complex_code": "1KTZ",
+              "pdb_id": "1KTZ",
+              "pdb_chain": "A",
+              "target_residues": 82,
+              "sequence_length": 82,
+              "sequence_sha256": "9e7913a956d86a6223ade1b8f7db841a06826ec966a9debba48e11381aeee78f",
+              "partner_residues": 106,
+              "partner_sequence_sha256": [
+                "0fc7764b0709214882d1adc2b6e13a6442afc316ce99d3bb7efe651f4e04110c"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 65,
+            "complex_code": "1MAH_F",
+            "pdb_id": "1MAH",
+            "pdb_chain": "F",
+            "target_residues": 61,
+            "sequence_length": 61,
+            "sequence_sha256": "296edde93f77a291bb895a1a3e115a499175003086dedcdd663abb90344246f8",
+            "partner_residues": 533,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 121,
+              "complex_code": "1MAH",
+              "pdb_id": "1MAH",
+              "pdb_chain": "F",
+              "target_residues": 61,
+              "sequence_length": 61,
+              "sequence_sha256": "296edde93f77a291bb895a1a3e115a499175003086dedcdd663abb90344246f8",
+              "partner_residues": 533,
+              "partner_sequence_sha256": [
+                "a1074dd4211cd4d4c53c38c7a476b7db1ca17380125ae2dda21df546dab6f70b"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 67,
+            "complex_code": "1PXV_A",
+            "pdb_id": "1PXV",
+            "pdb_chain": "A",
+            "target_residues": 183,
+            "sequence_length": 183,
+            "sequence_sha256": "2a7bb822e23c19a2be16754530f304bbd0abaa7b1cf7f2cf482e7f2a4abc66c1",
+            "partner_residues": 405,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 52,
+              "complex_code": "1PXV",
+              "pdb_id": "1PXV",
+              "pdb_chain": "A",
+              "target_residues": 183,
+              "sequence_length": 183,
+              "sequence_sha256": "2a7bb822e23c19a2be16754530f304bbd0abaa7b1cf7f2cf482e7f2a4abc66c1",
+              "partner_residues": 405,
+              "partner_sequence_sha256": [
+                "2a7bb822e23c19a2be16754530f304bbd0abaa7b1cf7f2cf482e7f2a4abc66c1",
+                "398bf73de408a04def50dedf09e19c9f4f5897a4f7c73d337ef9b04f99e88c71",
+                "398bf73de408a04def50dedf09e19c9f4f5897a4f7c73d337ef9b04f99e88c71"
+              ]
+            }
+          ]
+        },
+        {
+          "test": {
+            "index": 69,
+            "complex_code": "7CEI_A",
+            "pdb_id": "7CEI",
+            "pdb_chain": "A",
+            "target_residues": 87,
+            "sequence_length": 87,
+            "sequence_sha256": "a707b41439accaf25315e28be157c91cd31af3180c307b8776e0f6281948801a",
+            "partner_residues": 127,
+            "partner_sequence_sha256": []
+          },
+          "train": [
+            {
+              "index": 21,
+              "complex_code": "7CEI",
+              "pdb_id": "7CEI",
+              "pdb_chain": "A",
+              "target_residues": 87,
+              "sequence_length": 87,
+              "sequence_sha256": "a707b41439accaf25315e28be157c91cd31af3180c307b8776e0f6281948801a",
+              "partner_residues": 127,
+              "partner_sequence_sha256": [
+                "74738d8a87de4c9d9900c808708b9b237a73d746aea9d6525b7fcc1d24274ce3"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "cross_side_exact_overlap": {
+    "Test60.pkl": {
+      "test_target_train_partner": {
+        "comparison": "test target versus Train335 partner",
+        "available_test_samples": 60,
+        "available_train_samples": 334,
+        "distinct_train_sequences": 433,
+        "affected_test_samples": 49,
+        "distinct_matched_sequences": 49,
+        "matching_test_chain_occurrences": 49,
+        "affected_samples": [
+          {
+            "index": 1,
+            "complex_code": "4H3K",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "39bcd76d625f5138f3d23cb59bfccd6e8680dd0f4e826ae638c07bdf920b857f"
+            ]
+          },
+          {
+            "index": 2,
+            "complex_code": "3UVJ",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "8fee642681e5f0da3e20c5ab0631e88183d6ff6d5760a3a01cece042974f166a"
+            ]
+          },
+          {
+            "index": 3,
+            "complex_code": "4EMJ",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "87a8a35f401b04eddf130477a530c8c07c27b67fa501db6b4d82bd3bb1053000"
+            ]
+          },
+          {
+            "index": 4,
+            "complex_code": "4JE3",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "6fb104d110f045236420513e512a18487fcf2e9391b661a652dcaa5359a6af40"
+            ]
+          },
+          {
+            "index": 5,
+            "complex_code": "3CF4",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "333af7b1021fb289c353ed4c7cb7d3aae05aee848835eecc43f7e7942e19158a"
+            ]
+          },
+          {
+            "index": 6,
+            "complex_code": "4G6T",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "ee9717840eff91b60cb2eb1c68f8e01306d23ac316a1e2ba74721f0d491497c7"
+            ]
+          },
+          {
+            "index": 7,
+            "complex_code": "4NQW",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "6e428bc4b56462ecff003ecd0b2e02d542cc8a2ac0c13d4b96d8adb7cd8c070e"
+            ]
+          },
+          {
+            "index": 8,
+            "complex_code": "3TU3",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "1172bbe7a0d125e4af65879d2ad9b458ce70ffd39f988b5bafcb197561817176"
+            ]
+          },
+          {
+            "index": 10,
+            "complex_code": "1V74",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "30fe90ba0051bfbc2e4f96e8709a7295615bdaacec93e1c536b2f394feaf3ccb"
+            ]
+          },
+          {
+            "index": 11,
+            "complex_code": "3MCB",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "a71c24000e89cac3a82eb6bab740bcb7de6fc53ea0127639836777c792fdb0b8"
+            ]
+          },
+          {
+            "index": 13,
+            "complex_code": "2QKL",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "f4945d2c70d9af2a68ca775ccb4ce4b6b3fb8c268c7fa6d16201149244ecac17"
+            ]
+          },
+          {
+            "index": 14,
+            "complex_code": "3ZHE",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "0c4ea8fd4a8887ef551a72c0404260ddc0f587ccbb5c6a390ff56b1bd1bdf9be"
+            ]
+          },
+          {
+            "index": 15,
+            "complex_code": "1T6B",
+            "pdb_chain": "Y",
+            "matching_sequence_sha256": [
+              "ece670c43457edf5a2e5a10b7760be38a8fc8e017d0d4d6f0824ac319a925609"
+            ]
+          },
+          {
+            "index": 16,
+            "complex_code": "3F6Q",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "9ea5c6a7eafb144d7fda971337ef6ad2b071402bacf1ff12e49bca9ebfb518d5"
+            ]
+          },
+          {
+            "index": 17,
+            "complex_code": "4M70",
+            "pdb_chain": "H",
+            "matching_sequence_sha256": [
+              "6a9baef2b813a8583c3230426b51750587d7615c0ef488a02c2a9c167d1ba0f1"
+            ]
+          },
+          {
+            "index": 18,
+            "complex_code": "2APO",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "804dcdcc77a158ce03c06a2c96fb24efe95602aea60c676d0af13a213cc3f414"
+            ]
+          },
+          {
+            "index": 19,
+            "complex_code": "3S97",
+            "pdb_chain": "C",
+            "matching_sequence_sha256": [
+              "238362f9b8b657b32fa28b2369e8f4540311b5591c8a1c9a4d0a54f5c723d4db"
+            ]
+          },
+          {
+            "index": 21,
+            "complex_code": "2Y9W",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "554b87544b4bfdbc4c0d044e35811d25553a292bbbc403edad53ebf145d0afab"
+            ]
+          },
+          {
+            "index": 22,
+            "complex_code": "3FJU",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "31d1774ce49608229a56ce9ac3cdf2a1ae39ce8298c66fb203b78e04601d8237"
+            ]
+          },
+          {
+            "index": 23,
+            "complex_code": "1GL4",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "f3c2c3e5e6f17ca9b48ea644c6563d87f2144be009fc6747d94bcedbe4dd599f"
+            ]
+          },
+          {
+            "index": 24,
+            "complex_code": "1AY7",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "a00bb1f028ba82555bdad2e3d6c96b2fd930db7588f192d076522258e4ea5269"
+            ]
+          },
+          {
+            "index": 26,
+            "complex_code": "1WPX",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "9cca863cf38d748414bb870dc99b0db1f60d8e51048511bd1b46c310e0e57fc5"
+            ]
+          },
+          {
+            "index": 27,
+            "complex_code": "3VZ9",
+            "pdb_chain": "D",
+            "matching_sequence_sha256": [
+              "7ef19e594efbd982d3e17dcb5b5a8f6987cade1214238c8deca8080828aefc81"
+            ]
+          },
+          {
+            "index": 28,
+            "complex_code": "4HLU",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "39e726bfb51428d7ad46bea3d9a59975cbd7fed699b78e94ab613e854d50ee5d"
+            ]
+          },
+          {
+            "index": 29,
+            "complex_code": "1H32",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "e645d1d9205e3bdad6dd7d5ef383084342438c4add58181e0f83b4c89ba964ba"
+            ]
+          },
+          {
+            "index": 30,
+            "complex_code": "4E6N",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "4e7fcd1b34dcfba5bcd1d77b283d368736354dd7b3dcb2a44bf6240edc401ac7"
+            ]
+          },
+          {
+            "index": 32,
+            "complex_code": "2FHZ",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "a730aab19d20df12b24f94f711bbb217f31bb1c4fe5ef8cd03ca22c9e810132a"
+            ]
+          },
+          {
+            "index": 33,
+            "complex_code": "2EHB",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "80e8907c344ef956e5de56a47e23b050f22c1cfac174bc279636f6d4bbd98491"
+            ]
+          },
+          {
+            "index": 34,
+            "complex_code": "2G2U",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "1050137ea1186552a1ab6fbe1415ac1c99257d7a0ee3c9891090880da628c87a"
+            ]
+          },
+          {
+            "index": 35,
+            "complex_code": "3CBJ",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "190415e8d8598c109d9e26c2dc2240acf4056cf8fcae081a12c93f6171865390"
+            ]
+          },
+          {
+            "index": 36,
+            "complex_code": "1GLA",
+            "pdb_chain": "G",
+            "matching_sequence_sha256": [
+              "73b0510ed40eece39ca03d23c7c7e5ba80c41d152c8e1a02d03cc76d2e6becaf"
+            ]
+          },
+          {
+            "index": 37,
+            "complex_code": "3SHG",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "0a924b68922162411911d84b2622e2c7ad0f0f8d4813d157d9bb65314ffd562c"
+            ]
+          },
+          {
+            "index": 38,
+            "complex_code": "1GGP",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "183adc34c80e7b1c9b1b3c20a3de3739ff12988ee77a7a3a7f96afceb1574419"
+            ]
+          },
+          {
+            "index": 39,
+            "complex_code": "4JOI",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "6a5556318235b25edc9ef85b0355bf5e1a8b5bfbcecd50e4493c7e498e0253e5"
+            ]
+          },
+          {
+            "index": 40,
+            "complex_code": "1TA3",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "66b9034c5bbef879f433a80692f409ed7877d40ad4287985269ce8f1ea3b5d31"
+            ]
+          },
+          {
+            "index": 42,
+            "complex_code": "4KT3",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "20841723180d9437507a1a346257e9c32589b14afba51f0bc109651f9b59587a"
+            ]
+          },
+          {
+            "index": 43,
+            "complex_code": "3Q87",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "c3253d4333593909e49ff39f210fd89765fd6d82bf119aa37abcac1f03eefb30"
+            ]
+          },
+          {
+            "index": 44,
+            "complex_code": "1JMO",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "d5529bd4dfffa0aa2f0189f2b710db3daee84e9b4cb3cab90d16bdec52765ab7"
+            ]
+          },
+          {
+            "index": 46,
+            "complex_code": "2D74",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "d675fdc706dfea0d39976cdabd1a82d5759df7ff4df5f2fd2353ead413665578"
+            ]
+          },
+          {
+            "index": 47,
+            "complex_code": "4CDG",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "7b53fec258db7b62a8a6e1ce077f656329470ede3942724183def610d66bc5f2"
+            ]
+          },
+          {
+            "index": 48,
+            "complex_code": "1B6C",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "f7fcdd3bd9b5f75c7f53f5480cded3052d78444f6546fda7d2999e57d0564723"
+            ]
+          },
+          {
+            "index": 49,
+            "complex_code": "2DVW",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "88e29d7a986c8909a588ee4082cfa492cd761b7006e1a38fc36c9e15ac7e53c9"
+            ]
+          },
+          {
+            "index": 51,
+            "complex_code": "2YC2",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "16e800eff0d0edeedbea49506baed38d847f1306a0979c99b3d4c13e7f0816b4"
+            ]
+          },
+          {
+            "index": 53,
+            "complex_code": "1EWY",
+            "pdb_chain": "C",
+            "matching_sequence_sha256": [
+              "d502164165126c960fbe8778195b8574dd8268b2b2124b1ca6fcce62ce07619f"
+            ]
+          },
+          {
+            "index": 54,
+            "complex_code": "7CEI",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "74738d8a87de4c9d9900c808708b9b237a73d746aea9d6525b7fcc1d24274ce3"
+            ]
+          },
+          {
+            "index": 56,
+            "complex_code": "3FMO",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "354b259bef1e91634f2a60404aaf57501f5773fe4414b6d74a02755922838717"
+            ]
+          },
+          {
+            "index": 57,
+            "complex_code": "3O3M",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "8f5cae78eb0f2d84578c60a7d52d2b80c591fbdf922b78b8fc4a92ec29c2e389"
+            ]
+          },
+          {
+            "index": 58,
+            "complex_code": "3CQC",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "762261656ad9560a213fbf86fde1c2d5e03a9a2476c0f466ec881cd2aa87dfdc"
+            ]
+          },
+          {
+            "index": 59,
+            "complex_code": "4KBM",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "40d2e98e8d50956f52a834971e638750751136e7b292b976d82d5398a3ece0ea"
+            ]
+          }
+        ]
+      },
+      "test_partner_train_target": {
+        "comparison": "test partner versus Train335 target",
+        "available_test_samples": 60,
+        "available_train_samples": 334,
+        "distinct_train_sequences": 334,
+        "affected_test_samples": 49,
+        "distinct_matched_sequences": 50,
+        "matching_test_chain_occurrences": 57,
+        "affected_samples": [
+          {
+            "index": 1,
+            "complex_code": "4H3K",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "b4dbd509de86c14721e912ae6b6584700831b63ed7c59b6404f7211c1775d986"
+            ]
+          },
+          {
+            "index": 2,
+            "complex_code": "3UVJ",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "2b6131702d97e6cbf48102ef94ff95068da034ec26f1d3ba96b4d3a39ca30d7f"
+            ]
+          },
+          {
+            "index": 3,
+            "complex_code": "4EMJ",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "f0e837fe92c00bae6cb3bd9e5012629dd2a3eec24afbc65aa69ada25d4dd46a8"
+            ]
+          },
+          {
+            "index": 4,
+            "complex_code": "4JE3",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "af1b45ac5ac536f4d72d8ff8bdaaf446e2d853a48ec54f6927f5b4dec473e450"
+            ]
+          },
+          {
+            "index": 5,
+            "complex_code": "3CF4",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "b95c4776808d2b0b9ce70ef05a723efd61bd0056fa9c050f0e84e9307516f1fa"
+            ]
+          },
+          {
+            "index": 6,
+            "complex_code": "4G6T",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "2da6188738748fcc6cd3225b85af6a68feee6d3dd90ba3df2d3b9a474fc00a16"
+            ]
+          },
+          {
+            "index": 7,
+            "complex_code": "4NQW",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "88c6a92c02f799515d0cae65b8fec514ef4e1ecaea03e44be71578b8ac2483c3"
+            ]
+          },
+          {
+            "index": 8,
+            "complex_code": "3TU3",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "6212f8545d1969fd10cbe59b11458627916551e3f8e36236a7d205b413f0121b"
+            ]
+          },
+          {
+            "index": 10,
+            "complex_code": "1V74",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "18209fbdd52b91c6b146e8f46eccd4f527cccec0958b773af934c01a2ca39138"
+            ]
+          },
+          {
+            "index": 11,
+            "complex_code": "3MCB",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "e541045ae9618ccc3e236d89c0e5da427841000ce947ffa58b7f0f14afe84639"
+            ]
+          },
+          {
+            "index": 13,
+            "complex_code": "2QKL",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "e5400c4bf7f865d03ef9f7ad9af99d9f6a1cad8cf706d650b4e956b180a3a5db"
+            ]
+          },
+          {
+            "index": 14,
+            "complex_code": "3ZHE",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "18e9aacd373ae85bb00e1a5a8473ae78ad02b3bde14cf47ed1fe832c2c9dace5"
+            ]
+          },
+          {
+            "index": 15,
+            "complex_code": "1T6B",
+            "pdb_chain": "Y",
+            "matching_sequence_sha256": [
+              "b5aa9fd1a4d9f0502b24d36b8451b4e65e20744bd3c51638afda7afd8272aa65"
+            ]
+          },
+          {
+            "index": 16,
+            "complex_code": "3F6Q",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "9fe6c0391adae8cfe9d5305c58cc252e8c4df8ce27c8a9c5ed6ab808dd28e2e3"
+            ]
+          },
+          {
+            "index": 17,
+            "complex_code": "4M70",
+            "pdb_chain": "H",
+            "matching_sequence_sha256": [
+              "7afe7927cf982870612dca520e43e691e17bce551c9fc59dae58e9426e8f81e4"
+            ]
+          },
+          {
+            "index": 18,
+            "complex_code": "2APO",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "8a3a6a9e06219a1a29f17b1363fc1ea22352e2a63e616acd9293cc225b510a37"
+            ]
+          },
+          {
+            "index": 19,
+            "complex_code": "3S97",
+            "pdb_chain": "C",
+            "matching_sequence_sha256": [
+              "90bf92aeed7e6f9d569ff60d60cf1dd5bcee3ef9cdda06bb43d36e1409721be2"
+            ]
+          },
+          {
+            "index": 21,
+            "complex_code": "2Y9W",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "07ec70ef7c72f36b636bc0ec38499e7d2c7a8e00e369318aea8059a756ef422e"
+            ]
+          },
+          {
+            "index": 22,
+            "complex_code": "3FJU",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "8164fc39d19e61baaada91e83142e7b6a8378d79084e82665a2dad5a7c49b409"
+            ]
+          },
+          {
+            "index": 23,
+            "complex_code": "1GL4",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "994321c05afa9c30ef54449a43c1c07b9fa3f9c01ed59ac414ac345e7d959ac6"
+            ]
+          },
+          {
+            "index": 24,
+            "complex_code": "1AY7",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "f0d632b01192d85f1d43e9be9869543380e1e2e64dfa67f287d8e23ad0227df9"
+            ]
+          },
+          {
+            "index": 26,
+            "complex_code": "1WPX",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "aae276164bbe50032900dcfd7260e57165f316f3a0bf71a73fa57d5e7f520a69"
+            ]
+          },
+          {
+            "index": 27,
+            "complex_code": "3VZ9",
+            "pdb_chain": "D",
+            "matching_sequence_sha256": [
+              "a7f889b5f68a1f8fd5aece4232b8f9b3f0d62b5dd03fed26c76cde417171b343"
+            ]
+          },
+          {
+            "index": 28,
+            "complex_code": "4HLU",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "9046ea1251bad21713fffe927149ac58c59485fb50598b08eacfea6bc13113f8"
+            ]
+          },
+          {
+            "index": 29,
+            "complex_code": "1H32",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "d882eddae59d72c5b616387ac246a264a9f4514d5c66f740728ec9be3f578267"
+            ]
+          },
+          {
+            "index": 30,
+            "complex_code": "4E6N",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "3aafd7cab7a23dfa862972c4a8a23040bee3094184c04ff23f0f774a80864780"
+            ]
+          },
+          {
+            "index": 32,
+            "complex_code": "2FHZ",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "ce16419e7f3415662fd3aa190d083c3f54dde43629e01912f8cb50368fafa0de"
+            ]
+          },
+          {
+            "index": 33,
+            "complex_code": "2EHB",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "43f262414da1b5fcf27d3000666ffd195370fa9636a71d37b1c1b204f1352705"
+            ]
+          },
+          {
+            "index": 34,
+            "complex_code": "2G2U",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "f26ea897d1c67fa6859299d6aa622e46bf716cb6ed1711562fdf738f66decb4b"
+            ]
+          },
+          {
+            "index": 35,
+            "complex_code": "3CBJ",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "c3bb89e5b6b2386f63320b99fcbd22f2d24dc47a5e35f8d3ac2879c2bbf72838"
+            ]
+          },
+          {
+            "index": 36,
+            "complex_code": "1GLA",
+            "pdb_chain": "G",
+            "matching_sequence_sha256": [
+              "3e267b0bbe49b6b0ed48d01dec769a8e7bbb759fb3d9cf7fc859b2d047837588"
+            ]
+          },
+          {
+            "index": 37,
+            "complex_code": "3SHG",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "e56d360d4f0666a545e50f83624cd7e91f49f4124dbaf4cab55b440b0b219052"
+            ]
+          },
+          {
+            "index": 38,
+            "complex_code": "1GGP",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "3d64e247484ce9a6ee0cbc53260a8e35aebf48029216a7ea6e48399a02927492"
+            ]
+          },
+          {
+            "index": 39,
+            "complex_code": "4JOI",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "6fdf4da2a40fd5f087edb71cc6db9ebe364f58d7cd9c54783cd11859cfb96822"
+            ]
+          },
+          {
+            "index": 40,
+            "complex_code": "1TA3",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "87568fa1d1350c1ff3b043582b00328bc8ffdff6d000148d892e777811dbb17a"
+            ]
+          },
+          {
+            "index": 42,
+            "complex_code": "4KT3",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "f4da92700fc36c4578f6c7af3567033ddd15168dde55780044baa53d2744c96b"
+            ]
+          },
+          {
+            "index": 43,
+            "complex_code": "3Q87",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "19868336d76fdd4bc8868e3fffe07d59b0a3ae5d1666eed92f440db7e915bd34"
+            ]
+          },
+          {
+            "index": 44,
+            "complex_code": "1JMO",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "0bdcc7d69b6a23dc7f5b53027a67c98291fffdab615b4bbc2eb05c5423f3f0bd",
+              "dd360b11c39fb70ea89d6d920c0be2fd78d3ffdace07593f6286130d7d845c87"
+            ]
+          },
+          {
+            "index": 46,
+            "complex_code": "2D74",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "f48241d20fd87f676a09dd6c88d666d6a130b0e1f458e8c2f64fe7b535cbc132"
+            ]
+          },
+          {
+            "index": 47,
+            "complex_code": "4CDG",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "c03a669d78b653abb207cab4cdebc7e51349745ec0b0d2f87ac086bf6df29c55"
+            ]
+          },
+          {
+            "index": 48,
+            "complex_code": "1B6C",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "de9f93373c7a22b99699ccaa54e0525a0a5f2bfcc7f774f55377740fa14b3a3a"
+            ]
+          },
+          {
+            "index": 49,
+            "complex_code": "2DVW",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "79af16a1806d2f0c1a03eb12a42a6dd994e714600adec227f51136827e5b38cc"
+            ]
+          },
+          {
+            "index": 51,
+            "complex_code": "2YC2",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "12a316bc360785bee08efea367b17380a0c5cf05059dfc9b6367218bb01813b2"
+            ]
+          },
+          {
+            "index": 53,
+            "complex_code": "1EWY",
+            "pdb_chain": "C",
+            "matching_sequence_sha256": [
+              "85bb8768362d8ac6bb36e7c1edcf06cf2c06e10e6e11e92dd9439dfab445f969"
+            ]
+          },
+          {
+            "index": 54,
+            "complex_code": "7CEI",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "a707b41439accaf25315e28be157c91cd31af3180c307b8776e0f6281948801a"
+            ]
+          },
+          {
+            "index": 56,
+            "complex_code": "3FMO",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "0bb3fa8d1686c6a470baa07499e9e86de3d182aa4ed3cfc8daa65629c4ebe469"
+            ]
+          },
+          {
+            "index": 57,
+            "complex_code": "3O3M",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "f95f674941ed8866c51de37e2ffde2ee8b5c6154bc3a19d3d4e757c8ec7640aa"
+            ]
+          },
+          {
+            "index": 58,
+            "complex_code": "3CQC",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "582b213a6893dcbab1dcb4dbf021e408f29fa05a3ba63a6b8f0de7c96b68ba6e"
+            ]
+          },
+          {
+            "index": 59,
+            "complex_code": "4KBM",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "15f8e64d137196d8affc548e18483d469321e6b165fe1ba0b41c63e855bee2a4"
+            ]
+          }
+        ]
+      },
+      "test_partner_train_partner": {
+        "comparison": "test partner versus Train335 partner",
+        "available_test_samples": 60,
+        "available_train_samples": 334,
+        "distinct_train_sequences": 433,
+        "affected_test_samples": 15,
+        "distinct_matched_sequences": 36,
+        "matching_test_chain_occurrences": 45,
+        "affected_samples": [
+          {
+            "index": 1,
+            "complex_code": "4H3K",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "11e06d15e1a967744e58c5d8e5710550969b46df42676a136107f8d7636c4d30",
+              "25fa4756639387a5b358391e3c95d430f7f56089fc829cad856654904651edd8",
+              "5515782081da464fca00486e1d69b56791185f3a205de4bb7c12b06f13bbb62c"
+            ]
+          },
+          {
+            "index": 2,
+            "complex_code": "3UVJ",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "c88043d094794f216eb65f9fa7a2739634be6bd12733b71aff49491d01a93e91",
+              "d44a6a629401d09e939b8b45dee6af605afc822e96b346094620028d93032f2e"
+            ]
+          },
+          {
+            "index": 14,
+            "complex_code": "3ZHE",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "512fab86cddcfd7b1fc118b55261579451007fff31e8e74ba1a85f15b41c0bc9",
+              "96ab9335869526429c3c6ea855ae0e799f4024de578a65d703a75e4b982a33b5"
+            ]
+          },
+          {
+            "index": 17,
+            "complex_code": "4M70",
+            "pdb_chain": "H",
+            "matching_sequence_sha256": [
+              "136b88845c41a5daf8da6d3446b948a2953348d88cdd8c357a4622d1b24532d8",
+              "31393c60dc7aae325c7cebb6166fb5246f00a7a500b34f01e4e75faa80dcbe89",
+              "314194a285bd6d7dec8a950d7e50726f87af04d81e70263b5bc72afe2eaa0594",
+              "ac0deb8f2ccfcd1db40b0a8375781737da1e1a7060a33e4f052bed7ddc32c888",
+              "ca05682b7bfc37320db812721bf07d877fb4e9e74b5873e76803d2b342f20de3",
+              "d871afc61c3445f98e298036780bd21dda49edfac1838f996dc45274465175eb",
+              "eb73fbeaebf1c640b98be1e249ca8646d989ad081df2b5d25330b23c906685fb",
+              "ebce95fa008a7768597ee59e2fb6aa94180d00e8e04c4f09afcfa0c532a636b0"
+            ]
+          },
+          {
+            "index": 19,
+            "complex_code": "3S97",
+            "pdb_chain": "C",
+            "matching_sequence_sha256": [
+              "238362f9b8b657b32fa28b2369e8f4540311b5591c8a1c9a4d0a54f5c723d4db",
+              "81fba20719a8da26c564e5035b9c4b99aef4da5240ae4c9b43df8293e8d8a97c"
+            ]
+          },
+          {
+            "index": 21,
+            "complex_code": "2Y9W",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "554b87544b4bfdbc4c0d044e35811d25553a292bbbc403edad53ebf145d0afab",
+              "6aebf602cc6227b861cb1e1862cc26623799c6a7033a3aac0049a76260db78de"
+            ]
+          },
+          {
+            "index": 28,
+            "complex_code": "4HLU",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "01ac2e4797d0632de7129aa2209475744febf75afa972e37b4cc84674547dcb0",
+              "39e726bfb51428d7ad46bea3d9a59975cbd7fed699b78e94ab613e854d50ee5d"
+            ]
+          },
+          {
+            "index": 30,
+            "complex_code": "4E6N",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "3aafd7cab7a23dfa862972c4a8a23040bee3094184c04ff23f0f774a80864780",
+              "4e7fcd1b34dcfba5bcd1d77b283d368736354dd7b3dcb2a44bf6240edc401ac7"
+            ]
+          },
+          {
+            "index": 39,
+            "complex_code": "4JOI",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "6fdf4da2a40fd5f087edb71cc6db9ebe364f58d7cd9c54783cd11859cfb96822",
+              "ef136bc361a62a666c4d4be99f13483f99d9a08f0eaa0309fad11004e81fb275"
+            ]
+          },
+          {
+            "index": 44,
+            "complex_code": "1JMO",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "0bdcc7d69b6a23dc7f5b53027a67c98291fffdab615b4bbc2eb05c5423f3f0bd",
+              "dd360b11c39fb70ea89d6d920c0be2fd78d3ffdace07593f6286130d7d845c87"
+            ]
+          },
+          {
+            "index": 47,
+            "complex_code": "4CDG",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "0dba398d2b0ac3e9655d88a511c8b246be56a85e7f50e10f6f81d83d9903076f",
+              "c03a669d78b653abb207cab4cdebc7e51349745ec0b0d2f87ac086bf6df29c55"
+            ]
+          },
+          {
+            "index": 48,
+            "complex_code": "1B6C",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "de9f93373c7a22b99699ccaa54e0525a0a5f2bfcc7f774f55377740fa14b3a3a",
+              "f7fcdd3bd9b5f75c7f53f5480cded3052d78444f6546fda7d2999e57d0564723"
+            ]
+          },
+          {
+            "index": 51,
+            "complex_code": "2YC2",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "16e800eff0d0edeedbea49506baed38d847f1306a0979c99b3d4c13e7f0816b4",
+              "422f49bc8050ea94dedbadf8b0fedcd09600b4cf39e1b01b7ef5b28f6946af16"
+            ]
+          },
+          {
+            "index": 53,
+            "complex_code": "1EWY",
+            "pdb_chain": "C",
+            "matching_sequence_sha256": [
+              "85bb8768362d8ac6bb36e7c1edcf06cf2c06e10e6e11e92dd9439dfab445f969"
+            ]
+          },
+          {
+            "index": 57,
+            "complex_code": "3O3M",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "26497c57a487752f2d35b162a0ca6dba1e6f603f25ee4fe3af7942f1aaabb010",
+              "4137a1668b9d1f4a8c0cb67b1ef368ecfcd45d8991277e551d8e26a7c683cbf3"
+            ]
+          }
+        ]
+      }
+    },
+    "Test287.pkl": {
+      "test_target_train_partner": {
+        "comparison": "test target versus Train335 partner",
+        "available_test_samples": 285,
+        "available_train_samples": 334,
+        "distinct_train_sequences": 433,
+        "affected_test_samples": 0,
+        "distinct_matched_sequences": 0,
+        "matching_test_chain_occurrences": 0,
+        "affected_samples": []
+      },
+      "test_partner_train_target": {
+        "comparison": "test partner versus Train335 target",
+        "available_test_samples": 285,
+        "available_train_samples": 334,
+        "distinct_train_sequences": 334,
+        "affected_test_samples": 0,
+        "distinct_matched_sequences": 0,
+        "matching_test_chain_occurrences": 0,
+        "affected_samples": []
+      },
+      "test_partner_train_partner": {
+        "comparison": "test partner versus Train335 partner",
+        "available_test_samples": 285,
+        "available_train_samples": 334,
+        "distinct_train_sequences": 433,
+        "affected_test_samples": 0,
+        "distinct_matched_sequences": 0,
+        "matching_test_chain_occurrences": 0,
+        "affected_samples": []
+      }
+    },
+    "TestB25.pkl": {
+      "test_target_train_partner": {
+        "comparison": "test target versus Train335 partner",
+        "available_test_samples": 25,
+        "available_train_samples": 334,
+        "distinct_train_sequences": 433,
+        "affected_test_samples": 18,
+        "distinct_matched_sequences": 18,
+        "matching_test_chain_occurrences": 18,
+        "affected_samples": [
+          {
+            "index": 0,
+            "complex_code": "3MCB",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "a71c24000e89cac3a82eb6bab740bcb7de6fc53ea0127639836777c792fdb0b8"
+            ]
+          },
+          {
+            "index": 2,
+            "complex_code": "1T6B",
+            "pdb_chain": "Y",
+            "matching_sequence_sha256": [
+              "ece670c43457edf5a2e5a10b7760be38a8fc8e017d0d4d6f0824ac319a925609"
+            ]
+          },
+          {
+            "index": 4,
+            "complex_code": "3FJU",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "31d1774ce49608229a56ce9ac3cdf2a1ae39ce8298c66fb203b78e04601d8237"
+            ]
+          },
+          {
+            "index": 5,
+            "complex_code": "1GL4",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "f3c2c3e5e6f17ca9b48ea644c6563d87f2144be009fc6747d94bcedbe4dd599f"
+            ]
+          },
+          {
+            "index": 6,
+            "complex_code": "1AY7",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "a00bb1f028ba82555bdad2e3d6c96b2fd930db7588f192d076522258e4ea5269"
+            ]
+          },
+          {
+            "index": 8,
+            "complex_code": "1WPX",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "9cca863cf38d748414bb870dc99b0db1f60d8e51048511bd1b46c310e0e57fc5"
+            ]
+          },
+          {
+            "index": 9,
+            "complex_code": "4HLU",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "39e726bfb51428d7ad46bea3d9a59975cbd7fed699b78e94ab613e854d50ee5d"
+            ]
+          },
+          {
+            "index": 10,
+            "complex_code": "4E6N",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "4e7fcd1b34dcfba5bcd1d77b283d368736354dd7b3dcb2a44bf6240edc401ac7"
+            ]
+          },
+          {
+            "index": 12,
+            "complex_code": "2FHZ",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "a730aab19d20df12b24f94f711bbb217f31bb1c4fe5ef8cd03ca22c9e810132a"
+            ]
+          },
+          {
+            "index": 13,
+            "complex_code": "2G2U",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "1050137ea1186552a1ab6fbe1415ac1c99257d7a0ee3c9891090880da628c87a"
+            ]
+          },
+          {
+            "index": 14,
+            "complex_code": "3CBJ",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "190415e8d8598c109d9e26c2dc2240acf4056cf8fcae081a12c93f6171865390"
+            ]
+          },
+          {
+            "index": 15,
+            "complex_code": "1GLA",
+            "pdb_chain": "G",
+            "matching_sequence_sha256": [
+              "73b0510ed40eece39ca03d23c7c7e5ba80c41d152c8e1a02d03cc76d2e6becaf"
+            ]
+          },
+          {
+            "index": 16,
+            "complex_code": "1TA3",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "66b9034c5bbef879f433a80692f409ed7877d40ad4287985269ce8f1ea3b5d31"
+            ]
+          },
+          {
+            "index": 18,
+            "complex_code": "1JMO",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "d5529bd4dfffa0aa2f0189f2b710db3daee84e9b4cb3cab90d16bdec52765ab7"
+            ]
+          },
+          {
+            "index": 19,
+            "complex_code": "1B6C",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "f7fcdd3bd9b5f75c7f53f5480cded3052d78444f6546fda7d2999e57d0564723"
+            ]
+          },
+          {
+            "index": 21,
+            "complex_code": "1EWY",
+            "pdb_chain": "C",
+            "matching_sequence_sha256": [
+              "d502164165126c960fbe8778195b8574dd8268b2b2124b1ca6fcce62ce07619f"
+            ]
+          },
+          {
+            "index": 22,
+            "complex_code": "7CEI",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "74738d8a87de4c9d9900c808708b9b237a73d746aea9d6525b7fcc1d24274ce3"
+            ]
+          },
+          {
+            "index": 24,
+            "complex_code": "3FMO",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "354b259bef1e91634f2a60404aaf57501f5773fe4414b6d74a02755922838717"
+            ]
+          }
+        ]
+      },
+      "test_partner_train_target": {
+        "comparison": "test partner versus Train335 target",
+        "available_test_samples": 25,
+        "available_train_samples": 334,
+        "distinct_train_sequences": 334,
+        "affected_test_samples": 18,
+        "distinct_matched_sequences": 19,
+        "matching_test_chain_occurrences": 24,
+        "affected_samples": [
+          {
+            "index": 0,
+            "complex_code": "3MCB",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "e541045ae9618ccc3e236d89c0e5da427841000ce947ffa58b7f0f14afe84639"
+            ]
+          },
+          {
+            "index": 2,
+            "complex_code": "1T6B",
+            "pdb_chain": "Y",
+            "matching_sequence_sha256": [
+              "b5aa9fd1a4d9f0502b24d36b8451b4e65e20744bd3c51638afda7afd8272aa65"
+            ]
+          },
+          {
+            "index": 4,
+            "complex_code": "3FJU",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "8164fc39d19e61baaada91e83142e7b6a8378d79084e82665a2dad5a7c49b409"
+            ]
+          },
+          {
+            "index": 5,
+            "complex_code": "1GL4",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "994321c05afa9c30ef54449a43c1c07b9fa3f9c01ed59ac414ac345e7d959ac6"
+            ]
+          },
+          {
+            "index": 6,
+            "complex_code": "1AY7",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "f0d632b01192d85f1d43e9be9869543380e1e2e64dfa67f287d8e23ad0227df9"
+            ]
+          },
+          {
+            "index": 8,
+            "complex_code": "1WPX",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "aae276164bbe50032900dcfd7260e57165f316f3a0bf71a73fa57d5e7f520a69"
+            ]
+          },
+          {
+            "index": 9,
+            "complex_code": "4HLU",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "9046ea1251bad21713fffe927149ac58c59485fb50598b08eacfea6bc13113f8"
+            ]
+          },
+          {
+            "index": 10,
+            "complex_code": "4E6N",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "3aafd7cab7a23dfa862972c4a8a23040bee3094184c04ff23f0f774a80864780"
+            ]
+          },
+          {
+            "index": 12,
+            "complex_code": "2FHZ",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "ce16419e7f3415662fd3aa190d083c3f54dde43629e01912f8cb50368fafa0de"
+            ]
+          },
+          {
+            "index": 13,
+            "complex_code": "2G2U",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "f26ea897d1c67fa6859299d6aa622e46bf716cb6ed1711562fdf738f66decb4b"
+            ]
+          },
+          {
+            "index": 14,
+            "complex_code": "3CBJ",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "c3bb89e5b6b2386f63320b99fcbd22f2d24dc47a5e35f8d3ac2879c2bbf72838"
+            ]
+          },
+          {
+            "index": 15,
+            "complex_code": "1GLA",
+            "pdb_chain": "G",
+            "matching_sequence_sha256": [
+              "3e267b0bbe49b6b0ed48d01dec769a8e7bbb759fb3d9cf7fc859b2d047837588"
+            ]
+          },
+          {
+            "index": 16,
+            "complex_code": "1TA3",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "87568fa1d1350c1ff3b043582b00328bc8ffdff6d000148d892e777811dbb17a"
+            ]
+          },
+          {
+            "index": 18,
+            "complex_code": "1JMO",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "0bdcc7d69b6a23dc7f5b53027a67c98291fffdab615b4bbc2eb05c5423f3f0bd",
+              "dd360b11c39fb70ea89d6d920c0be2fd78d3ffdace07593f6286130d7d845c87"
+            ]
+          },
+          {
+            "index": 19,
+            "complex_code": "1B6C",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "de9f93373c7a22b99699ccaa54e0525a0a5f2bfcc7f774f55377740fa14b3a3a"
+            ]
+          },
+          {
+            "index": 21,
+            "complex_code": "1EWY",
+            "pdb_chain": "C",
+            "matching_sequence_sha256": [
+              "85bb8768362d8ac6bb36e7c1edcf06cf2c06e10e6e11e92dd9439dfab445f969"
+            ]
+          },
+          {
+            "index": 22,
+            "complex_code": "7CEI",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "a707b41439accaf25315e28be157c91cd31af3180c307b8776e0f6281948801a"
+            ]
+          },
+          {
+            "index": 24,
+            "complex_code": "3FMO",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "0bb3fa8d1686c6a470baa07499e9e86de3d182aa4ed3cfc8daa65629c4ebe469"
+            ]
+          }
+        ]
+      },
+      "test_partner_train_partner": {
+        "comparison": "test partner versus Train335 partner",
+        "available_test_samples": 25,
+        "available_train_samples": 334,
+        "distinct_train_sequences": 433,
+        "affected_test_samples": 5,
+        "distinct_matched_sequences": 9,
+        "matching_test_chain_occurrences": 16,
+        "affected_samples": [
+          {
+            "index": 9,
+            "complex_code": "4HLU",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "01ac2e4797d0632de7129aa2209475744febf75afa972e37b4cc84674547dcb0",
+              "39e726bfb51428d7ad46bea3d9a59975cbd7fed699b78e94ab613e854d50ee5d"
+            ]
+          },
+          {
+            "index": 10,
+            "complex_code": "4E6N",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "3aafd7cab7a23dfa862972c4a8a23040bee3094184c04ff23f0f774a80864780",
+              "4e7fcd1b34dcfba5bcd1d77b283d368736354dd7b3dcb2a44bf6240edc401ac7"
+            ]
+          },
+          {
+            "index": 18,
+            "complex_code": "1JMO",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "0bdcc7d69b6a23dc7f5b53027a67c98291fffdab615b4bbc2eb05c5423f3f0bd",
+              "dd360b11c39fb70ea89d6d920c0be2fd78d3ffdace07593f6286130d7d845c87"
+            ]
+          },
+          {
+            "index": 19,
+            "complex_code": "1B6C",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "de9f93373c7a22b99699ccaa54e0525a0a5f2bfcc7f774f55377740fa14b3a3a",
+              "f7fcdd3bd9b5f75c7f53f5480cded3052d78444f6546fda7d2999e57d0564723"
+            ]
+          },
+          {
+            "index": 21,
+            "complex_code": "1EWY",
+            "pdb_chain": "C",
+            "matching_sequence_sha256": [
+              "85bb8768362d8ac6bb36e7c1edcf06cf2c06e10e6e11e92dd9439dfab445f969"
+            ]
+          }
+        ]
+      }
+    },
+    "TestUB25.pkl": {
+      "test_target_train_partner": {
+        "comparison": "test target versus Train335 partner",
+        "available_test_samples": 25,
+        "available_train_samples": 334,
+        "distinct_train_sequences": 433,
+        "affected_test_samples": 5,
+        "distinct_matched_sequences": 5,
+        "matching_test_chain_occurrences": 5,
+        "affected_samples": [
+          {
+            "index": 6,
+            "complex_code": "1LNI",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "a00bb1f028ba82555bdad2e3d6c96b2fd930db7588f192d076522258e4ea5269"
+            ]
+          },
+          {
+            "index": 8,
+            "complex_code": "1YSC",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "9cca863cf38d748414bb870dc99b0db1f60d8e51048511bd1b46c310e0e57fc5"
+            ]
+          },
+          {
+            "index": 13,
+            "complex_code": "4FH4",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "1050137ea1186552a1ab6fbe1415ac1c99257d7a0ee3c9891090880da628c87a"
+            ]
+          },
+          {
+            "index": 16,
+            "complex_code": "1OM0",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "66b9034c5bbef879f433a80692f409ed7877d40ad4287985269ce8f1ea3b5d31"
+            ]
+          },
+          {
+            "index": 21,
+            "complex_code": "1CZP",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "d502164165126c960fbe8778195b8574dd8268b2b2124b1ca6fcce62ce07619f"
+            ]
+          }
+        ]
+      },
+      "test_partner_train_target": {
+        "comparison": "test partner versus Train335 target",
+        "available_test_samples": 12,
+        "available_train_samples": 334,
+        "distinct_train_sequences": 334,
+        "affected_test_samples": 0,
+        "distinct_matched_sequences": 0,
+        "matching_test_chain_occurrences": 0,
+        "affected_samples": []
+      },
+      "test_partner_train_partner": {
+        "comparison": "test partner versus Train335 partner",
+        "available_test_samples": 12,
+        "available_train_samples": 334,
+        "distinct_train_sequences": 433,
+        "affected_test_samples": 2,
+        "distinct_matched_sequences": 2,
+        "matching_test_chain_occurrences": 2,
+        "affected_samples": [
+          {
+            "index": 6,
+            "complex_code": "1LNI",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "a00bb1f028ba82555bdad2e3d6c96b2fd930db7588f192d076522258e4ea5269"
+            ]
+          },
+          {
+            "index": 21,
+            "complex_code": "1CZP",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "d502164165126c960fbe8778195b8574dd8268b2b2124b1ca6fcce62ce07619f"
+            ]
+          }
+        ]
+      }
+    },
+    "Test70.pkl": {
+      "test_target_train_partner": {
+        "comparison": "test target versus Train335 partner",
+        "available_test_samples": 69,
+        "available_train_samples": 334,
+        "distinct_train_sequences": 433,
+        "affected_test_samples": 50,
+        "distinct_matched_sequences": 50,
+        "matching_test_chain_occurrences": 50,
+        "affected_samples": [
+          {
+            "index": 0,
+            "complex_code": "1F60_B",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "ce7e5ea788d60433240b1cfb9ef48aee465ad14b5f1afd7a35492ba799ff9ae4"
+            ]
+          },
+          {
+            "index": 2,
+            "complex_code": "1NRJ_A",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "2f63b85b7eb3673590fb3489ff97e2c5ec9a5b97dfc1b6cf05932b7bf5dc8cb7"
+            ]
+          },
+          {
+            "index": 3,
+            "complex_code": "1NRJ_B",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "d53c7d77bd47f516900e68c6fd5ce9c19a5a5cf31e092490a00c0e78feeb906d"
+            ]
+          },
+          {
+            "index": 4,
+            "complex_code": "1SVD_M",
+            "pdb_chain": "M",
+            "matching_sequence_sha256": [
+              "0c576437b2bbce7e96b7373fa20df32a60a000e1bd757efa83c7ede14c973de7"
+            ]
+          },
+          {
+            "index": 5,
+            "complex_code": "1U0S_A",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "4a9bf90f214608587bd175452a4414db2b318e5f763e8b89b7f13759a0a32cf1"
+            ]
+          },
+          {
+            "index": 8,
+            "complex_code": "2A9K_A",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "019961cc47d3d213ccc4810b9fc59df78a737352500b6be0edfe917a4b5e3c7c"
+            ]
+          },
+          {
+            "index": 10,
+            "complex_code": "2D5R_A",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "b4d389757fb1ea5603b533b5817b625b24d5d48aaed87f2ab05e66fb1c704968"
+            ]
+          },
+          {
+            "index": 13,
+            "complex_code": "2FP4_A",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "465d9268c30c32b2a6509ab474b2bc22cf7e68bdaaa09c662c79128510b9a5e4"
+            ]
+          },
+          {
+            "index": 15,
+            "complex_code": "2H0D_B",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "54d3df0ca57bfa65b224a004fdecce72eef3d20cfacf226eea225898dc26239b"
+            ]
+          },
+          {
+            "index": 16,
+            "complex_code": "2P7V_A",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "08d331f66e2351cb0a156a9690f42705fe8fceb8cbdc67bc7463d69a8b3305e0"
+            ]
+          },
+          {
+            "index": 18,
+            "complex_code": "2V8S_V",
+            "pdb_chain": "V",
+            "matching_sequence_sha256": [
+              "6b299195c130dff4366953c4c3c255a3c07a7696c72d5ad7c3ca29b7b64e75d5"
+            ]
+          },
+          {
+            "index": 20,
+            "complex_code": "3BEG_B",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "545de24cf4f3220ae35625b391fdf95e0d8117716c2fbf9d233b2efbfc87e5ee"
+            ]
+          },
+          {
+            "index": 23,
+            "complex_code": "3CX8_B",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "51c7d7d5dfe1da3700af38a3abe7940b8c5b6367c1057b1c6567833a10137d9b"
+            ]
+          },
+          {
+            "index": 24,
+            "complex_code": "3CZU_B",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "8f9e1b51bab01a814166df2d7b05e4b52fc7f8b4d0a99e5ab5fe7941d4982ebf"
+            ]
+          },
+          {
+            "index": 26,
+            "complex_code": "3DLQ_I",
+            "pdb_chain": "I",
+            "matching_sequence_sha256": [
+              "bd9a7055f9a73590c9b19c41f74be2def9645af171f720e049f97ccc483ea17f"
+            ]
+          },
+          {
+            "index": 29,
+            "complex_code": "3GNI_A",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "3e0bfaad283b63dc73aa7d48452598e645cd36e516edc113925a795acf11fca6"
+            ]
+          },
+          {
+            "index": 30,
+            "complex_code": "3ANW_B",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "bf7e36ac76cc9730d105c06c45a04deec2825232068c7754759646daf2212693"
+            ]
+          },
+          {
+            "index": 31,
+            "complex_code": "3AYH_B",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "123c1a31fbc93e99ee139ebba3b8a58e8632195aed4b71e6cd516a9ba157bbe4"
+            ]
+          },
+          {
+            "index": 32,
+            "complex_code": "3B08_B",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "401ad9e5b359c3c5a88eb79befe52a049f4069b3408a3e7d2941302fc0205b99"
+            ]
+          },
+          {
+            "index": 33,
+            "complex_code": "3MDB_C",
+            "pdb_chain": "C",
+            "matching_sequence_sha256": [
+              "7750c672dc777ff6b55193eb2a77b207e252d3431a8b3bc39d88546863da48d4"
+            ]
+          },
+          {
+            "index": 34,
+            "complex_code": "3MMY_A",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "a7f2b60a16f9c132b08e0defd44ec526873603ac3797177e9274d8fe66952aaf"
+            ]
+          },
+          {
+            "index": 35,
+            "complex_code": "3OUR_B",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "b495ea1a280147b32847d314fabf4cbf65b7aa562b0eecd6480d23b84ac20874"
+            ]
+          },
+          {
+            "index": 36,
+            "complex_code": "3PH0_A",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "e5c6dda741b1bff3f40d0f15a18029051c12f1281f17da1b2ef509c51abc5cf5"
+            ]
+          },
+          {
+            "index": 37,
+            "complex_code": "3PV6_A",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "54d2df045b702ad6fd42a88c81678ba860bd817c586e8cad9037cd423f1622ca"
+            ]
+          },
+          {
+            "index": 38,
+            "complex_code": "3SHG_A",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "0a924b68922162411911d84b2622e2c7ad0f0f8d4813d157d9bb65314ffd562c"
+            ]
+          },
+          {
+            "index": 39,
+            "complex_code": "3UVJ_A",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "8fee642681e5f0da3e20c5ab0631e88183d6ff6d5760a3a01cece042974f166a"
+            ]
+          },
+          {
+            "index": 40,
+            "complex_code": "3VDO_B",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "6e428bc4b56462ecff003ecd0b2e02d542cc8a2ac0c13d4b96d8adb7cd8c070e"
+            ]
+          },
+          {
+            "index": 41,
+            "complex_code": "3VU9_A",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "82ba7b7b7671dc6792c0a87073cba291729ed4b36cec0e970939c48954ca8527"
+            ]
+          },
+          {
+            "index": 42,
+            "complex_code": "3VZ9_D",
+            "pdb_chain": "D",
+            "matching_sequence_sha256": [
+              "7ef19e594efbd982d3e17dcb5b5a8f6987cade1214238c8deca8080828aefc81"
+            ]
+          },
+          {
+            "index": 43,
+            "complex_code": "3W2W_B",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "c7eb61c263ec83e2695fa3273c4539cf560a9993fc05143dbb31f3ad739d157b"
+            ]
+          },
+          {
+            "index": 44,
+            "complex_code": "3ZEU_D",
+            "pdb_chain": "D",
+            "matching_sequence_sha256": [
+              "3674a79b5d632ec1cb1c618c4eb28408195b8d3be9ad89b729626da76d510b64"
+            ]
+          },
+          {
+            "index": 46,
+            "complex_code": "4APX_A",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "d5640c203ba2ab8b3ef6371605092695e95397725bbe0a89fa000ff40f2037ee"
+            ]
+          },
+          {
+            "index": 47,
+            "complex_code": "4AWX_B",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "9a8607c0d80356ffa048cbdcafc73def57443236d26304f723aa9202f359243a"
+            ]
+          },
+          {
+            "index": 48,
+            "complex_code": "4BH6_D",
+            "pdb_chain": "D",
+            "matching_sequence_sha256": [
+              "f2d29bbac3ff0057374f569e45efeb0f750339832ef84b0a373ff0afaedacd1e"
+            ]
+          },
+          {
+            "index": 49,
+            "complex_code": "4BH6_L",
+            "pdb_chain": "L",
+            "matching_sequence_sha256": [
+              "8159d1961223df1203f063fe503cd0afbf2f962ec3b15de83fb428807ae8bcd8"
+            ]
+          },
+          {
+            "index": 50,
+            "complex_code": "4BI8_A",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "e6403fe6a3d217cdb495100b56a435ea0a4f358ea885432d417d668e6fd1be4c"
+            ]
+          },
+          {
+            "index": 51,
+            "complex_code": "4BI8_B",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "2e3386f21fc4fd36242ae11b2dac510ad294b44ce538f26064f6387088a53363"
+            ]
+          },
+          {
+            "index": 52,
+            "complex_code": "4BJJ_B",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "950adcbb0801acbc4b6fe1461a2f9a026e91682dd9837490b258ec4ffc4f69a4"
+            ]
+          },
+          {
+            "index": 53,
+            "complex_code": "4DFC_B",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "023ad7f24e0f2426f4c7b9696c4f2e598b361a44426d201e21c256cbc8692d1f"
+            ]
+          },
+          {
+            "index": 54,
+            "complex_code": "4FQ0_B",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "51d91caf978c93c87cd43755acd8595c7288e27b65ed97e2f4259518c87fec69"
+            ]
+          },
+          {
+            "index": 56,
+            "complex_code": "4H3K_B",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "39bcd76d625f5138f3d23cb59bfccd6e8680dd0f4e826ae638c07bdf920b857f"
+            ]
+          },
+          {
+            "index": 57,
+            "complex_code": "4IU2_A",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "5ecfd96681de82daf722e0baa67d1bcab607ca5ea940f3e53c60a29047f90b88"
+            ]
+          },
+          {
+            "index": 58,
+            "complex_code": "4JE3_B",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "6fb104d110f045236420513e512a18487fcf2e9391b661a652dcaa5359a6af40"
+            ]
+          },
+          {
+            "index": 60,
+            "complex_code": "4KT6_B",
+            "pdb_chain": "B",
+            "matching_sequence_sha256": [
+              "3070c4d1a7de8e463f469ef26684c522c54e704438d40ef9df0c20a99ed3ce34"
+            ]
+          },
+          {
+            "index": 61,
+            "complex_code": "1AK4_D",
+            "pdb_chain": "D",
+            "matching_sequence_sha256": [
+              "af0457660b9685e6633043c5e99178907d23267e4b76c10774d145541df0682f"
+            ]
+          },
+          {
+            "index": 62,
+            "complex_code": "1B6C_A",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "de9f93373c7a22b99699ccaa54e0525a0a5f2bfcc7f774f55377740fa14b3a3a"
+            ]
+          },
+          {
+            "index": 64,
+            "complex_code": "1KTZ_A",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "9e7913a956d86a6223ade1b8f7db841a06826ec966a9debba48e11381aeee78f"
+            ]
+          },
+          {
+            "index": 65,
+            "complex_code": "1MAH_F",
+            "pdb_chain": "F",
+            "matching_sequence_sha256": [
+              "296edde93f77a291bb895a1a3e115a499175003086dedcdd663abb90344246f8"
+            ]
+          },
+          {
+            "index": 66,
+            "complex_code": "1ML0_D",
+            "pdb_chain": "D",
+            "matching_sequence_sha256": [
+              "b0314f95f35f2c3d9a058e5f86db90d62824a357ae567e26f1243bb12d9ce169"
+            ]
+          },
+          {
+            "index": 67,
+            "complex_code": "1PXV_A",
+            "pdb_chain": "A",
+            "matching_sequence_sha256": [
+              "2a7bb822e23c19a2be16754530f304bbd0abaa7b1cf7f2cf482e7f2a4abc66c1"
+            ]
+          }
+        ]
+      },
+      "test_partner_train_target": {
+        "comparison": "test partner versus Train335 target",
+        "available_test_samples": 0,
+        "available_train_samples": 334,
+        "distinct_train_sequences": 334,
+        "affected_test_samples": 0,
+        "distinct_matched_sequences": 0,
+        "matching_test_chain_occurrences": 0,
+        "affected_samples": []
+      },
+      "test_partner_train_partner": {
+        "comparison": "test partner versus Train335 partner",
+        "available_test_samples": 0,
+        "available_train_samples": 334,
+        "distinct_train_sequences": 433,
+        "affected_test_samples": 0,
+        "distinct_matched_sequences": 0,
+        "matching_test_chain_occurrences": 0,
+        "affected_samples": []
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-name: Static checks
+name: Research integrity checks
 
 on:
   push:
@@ -35,3 +35,31 @@ jobs:
             }
           }
           if ($failed) { exit 1 }
+
+  regression:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install pinned dependencies
+        shell: pwsh
+        run: |
+          python -m venv .venv
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          .\.venv\Scripts\python.exe -m pip install -r requirements.txt
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Data-free scientific regression tests
+        run: .\.venv\Scripts\python.exe -m unittest discover -s tests -v
+      - name: Verify experiment launchers
+        shell: pwsh
+        run: .\tests\test_launchers.ps1
+      - name: Transport forward and backward smoke test
+        shell: pwsh
+        run: |
+          $env:PPI_PARTNER_LOGIT_MODE = "delta"
+          $env:PPI_DISABLE_PLM = "1"
+          .\.venv\Scripts\python.exe .\smoke_test_pcbind_ot.py
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

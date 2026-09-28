@@ -22,6 +22,22 @@ try {
     & $VenvPython (Join-Path $ProjectRoot "augment_with_pdb_coordinates.py") @Files
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
+    Write-Host "Extracting target ESM-2 35M embeddings..."
+    & $VenvPython `
+        (Join-Path $ProjectRoot "extract_plm_embeddings.py") `
+        --model "facebook/esm2_t12_35M_UR50D" `
+        @Files
+    if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+    Write-Host "Extracting target ESM-2 8M embeddings..."
+    & $VenvPython `
+        (Join-Path $ProjectRoot "extract_plm_embeddings.py") `
+        --model "facebook/esm2_t6_8M_UR50D" `
+        --feature-key "residue_plm_embedding_8m" `
+        --model-key "residue_plm_model_8m" `
+        @Files
+    if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
     Write-Host "Extracting partner ESM-2 35M embeddings..."
     & $VenvPython `
         (Join-Path $ProjectRoot "extract_plm_embeddings.py") `

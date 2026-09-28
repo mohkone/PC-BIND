@@ -31,6 +31,10 @@ checkpoints/
 *.tmp
 *.bak
 
+# Reviewed validation evidence is intentionally published with the code.
+!research_review/validation_tests.log
+!research_review/validation_smoke_tests.log
+
 # Manuscript source and downloaded articles are maintained separately
 *.docx
 *.pdf

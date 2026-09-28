@@ -20,6 +20,36 @@ def count_key(samples, key):
     return sum(key in sample for sample in samples)
 
 
+PLM_SPECS = {
+    "residue_plm_embedding": (480, "residue_plm_model", "facebook/esm2_t12_35M_UR50D"),
+    "residue_plm_embedding_8m": (320, "residue_plm_model_8m", "facebook/esm2_t6_8M_UR50D"),
+}
+
+
+def finite_matrix(value, shape):
+    array = np.asarray(value)
+    return (
+        array.shape == shape
+        and np.issubdtype(array.dtype, np.number)
+        and np.isfinite(array).all()
+    )
+
+
+def valid_plm(sample, key, rows, partner=False):
+    width, model_key, model_name = PLM_SPECS[key]
+    prefix = "partner_" if partner else ""
+    return (
+        rows > 0
+        and sample.get(prefix + model_key, model_name) == model_name
+        and finite_matrix(sample.get(prefix + key, []), (rows, width))
+    )
+
+
+def valid_target_plm(sample, key):
+    nodes = np.asarray(sample.get("residue_graph_node", []))
+    return nodes.ndim == 2 and valid_plm(sample, key, nodes.shape[0])
+
+
 def partner_residue_count(sample):
     surface = np.asarray(sample.get("partner_residue_surface_features", []))
     return int(surface.shape[0]) if surface.ndim == 2 else 0
@@ -35,14 +65,30 @@ def count_positive_pairs(samples):
     for sample in samples:
         if "partner_pair_contact_index" not in sample or partner_residue_count(sample) == 0:
             continue
-        labelled += 1
         pair_index = np.asarray(sample["partner_pair_contact_index"])
-        if pair_index.ndim == 2 and pair_index.shape[0] == 2:
+        nodes = np.asarray(sample.get("residue_graph_node", []))
+        if (
+            nodes.ndim == 2
+            and pair_index.ndim == 2
+            and pair_index.shape[0] == 2
+            and np.issubdtype(pair_index.dtype, np.integer)
+            and (
+                pair_index.size == 0
+                or (
+                    pair_index.min() >= 0
+                    and pair_index[0].max() < nodes.shape[0]
+                    and pair_index[1].max() < partner_residue_count(sample)
+                )
+            )
+        ):
+            labelled += 1
             total += int(pair_index.shape[1])
     return labelled, total
 
 
 def valid_partner_encoder_sample(sample):
+    if sample.get("pdb_augmentation_status") == "failed":
+        return False
     required = (
         "partner_residue_surface_features",
         "partner_residue_sequence_features",
@@ -63,22 +109,20 @@ def valid_partner_encoder_sample(sample):
     frames = np.asarray(sample["partner_residue_frames"])
     edges = np.asarray(sample["partner_residue_geo_edge"])
     slices = np.asarray(sample["partner_chain_slices"])
-    main_plm = np.asarray(sample["partner_residue_plm_embedding"])
-    aux_plm = np.asarray(sample["partner_residue_plm_embedding_8m"])
     if surface.ndim != 2:
         return False
     n_res = int(surface.shape[0])
     if n_res <= 0:
         return False
-    if sequence.ndim != 2 or sequence.shape[0] != n_res:
+    if not finite_matrix(surface, (n_res, 14)) or not finite_matrix(sequence, (n_res, 39)):
         return False
-    if coords.shape != (n_res, 3) or frames.shape != (n_res, 3, 3):
+    if not finite_matrix(coords, (n_res, 3)) or not finite_matrix(frames, (n_res, 3, 3)):
         return False
-    if edges.ndim != 2 or edges.shape[0] != 2:
+    if edges.ndim != 2 or edges.shape[0] != 2 or not np.issubdtype(edges.dtype, np.integer):
         return False
     if edges.size and (edges.min() < 0 or edges.max() >= n_res):
         return False
-    if slices.ndim != 2 or slices.shape[1] != 2 or slices.shape[0] == 0:
+    if slices.ndim != 2 or slices.shape[1] != 2 or slices.shape[0] == 0 or not np.issubdtype(slices.dtype, np.integer):
         return False
     if int(slices[0, 0]) != 0 or int(slices[-1, 1]) != n_res:
         return False
@@ -86,11 +130,12 @@ def valid_partner_encoder_sample(sample):
         return False
     if slices.shape[0] > 1 and np.any(slices[1:, 0] != slices[:-1, 1]):
         return False
-    if sum(len(str(seq)) for seq in sample["partner_residue_sequences"]) != n_res:
+    sequences = sample["partner_residue_sequences"]
+    if not isinstance(sequences, (list, tuple)) or len(sequences) != slices.shape[0]:
         return False
-    if main_plm.ndim != 2 or main_plm.shape[0] != n_res or main_plm.shape[1] == 0:
+    if any(not isinstance(seq, str) or len(seq) != end - start for seq, (start, end) in zip(sequences, slices)):
         return False
-    if aux_plm.ndim != 2 or aux_plm.shape[0] != n_res or aux_plm.shape[1] == 0:
+    if any(not valid_plm(sample, key, n_res, partner=True) for key in PLM_SPECS):
         return False
     return True
 
@@ -109,6 +154,8 @@ def main():
     parser.add_argument("--min-partner-encoder-coverage", type=float, default=0.98)
     parser.add_argument("files", nargs="*", default=PKL_FILES)
     args = parser.parse_args()
+    if not 0.0 <= args.min_partner_encoder_coverage <= 1.0:
+        parser.error("--min-partner-encoder-coverage must be between 0 and 1")
 
     data_dir = Path(args.data_dir)
     errors = []
@@ -121,8 +168,8 @@ def main():
         with path.open("rb") as handle:
             samples = pickle.load(handle)
         total = len(samples)
-        main_plm = count_key(samples, "residue_plm_embedding")
-        aux_plm = count_key(samples, "residue_plm_embedding_8m")
+        main_plm = sum(valid_target_plm(sample, "residue_plm_embedding") for sample in samples)
+        aux_plm = sum(valid_target_plm(sample, "residue_plm_embedding_8m") for sample in samples)
         partner_surface = count_nonempty_partner_key(
             samples, "partner_residue_surface_features"
         )
@@ -148,7 +195,9 @@ def main():
             partner_encoder,
         ))
 
-        if args.require_plm and (main_plm == 0 or aux_plm == 0):
+        if total == 0:
+            errors.append(f"{path}: empty dataset")
+        if args.require_plm and (main_plm != total or aux_plm != total):
             errors.append(
                 f"{path}: PLM coverage main={main_plm}/{total}, "
                 f"aux={aux_plm}/{total}"
@@ -158,8 +207,8 @@ def main():
                 f"{path}: partner coverage surface={partner_surface}/{total}, "
                 f"sequence={partner_sequence}/{total}"
             )
-        if args.require_pair and pair_labelled == 0:
-            errors.append(f"{path}: sparse pair-contact labels missing")
+        if args.require_pair and (pair_labelled == 0 or pair_labelled != partner_surface):
+            errors.append(f"{path}: valid sparse pair-contact labels={pair_labelled}/{partner_surface} nonempty partners")
         if args.require_partner_encoder:
             coverage = partner_encoder / max(total, 1)
             if coverage < args.min_partner_encoder_coverage:
