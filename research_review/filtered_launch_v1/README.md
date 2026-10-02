@@ -120,9 +120,20 @@ labels, and exact saved-fold membership. The earlier
 The saved development predictions reproduce the checkpoint's MCC of **0.3837**
 and trapezoidal PR-AUC of **0.4503**; AUROC is **0.7952**. These are results from
 one selected development fold: its labels selected both the checkpoint and
-threshold. Test287 was not evaluated, and the matched no-OT control has not yet
-been trained. These scores establish neither independent generalization nor an
-OT advantage.
+threshold. Test287 was not evaluated. The matched no-OT control subsequently
+completed with MCC **0.3890** and PR-AUC **0.4836**. The
+[paired audit](../matched_fold1_v1/RESULT.md) verifies matching provenance and
+records the differences. This one development fold provides no preliminary OT
+advantage and does not establish harm or independent generalization. The next
+stage uses the [frozen five-fold protocol](../frozen_5fold_dev_v1/README.md).
+
+That fresh five-fold pair has since completed and passed full OOF validation.
+Its [result](../frozen_5fold_dev_v1/complete_oof/RESULT.md) reports OT-minus-no-OT
+PR-AUC -0.0284 and MCC -0.0277, with both paired conditional intervals below
+zero. All 5,000 whole-complex draws were valid. This remains a selected
+development result with one training seed; Test287 was skipped, and the
+biological mapping, homology and parameter-count limitations remain. The
+Fold 1 artifacts above are preserved separately from the fresh five-fold pair.
 
 The local background process saved its completion status and logs under
 `outputs_pcbind_ot_filtered_seed2101_fold1_process_retry1/`. Read

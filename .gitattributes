@@ -7,3 +7,8 @@
 *.cff text eol=lf
 *.svg text eol=lf
 *.png binary
+
+# Preserve the exact bytes of hash-bound experiment records and source archives.
+research_review/matched_fold1_v1/** -text whitespace=blank-at-eol,space-before-tab,cr-at-eol
+research_review/frozen_5fold_dev_v1/** -text whitespace=blank-at-eol,space-before-tab,cr-at-eol
+research_review/multiseed_dev_v1/** -text whitespace=blank-at-eol,space-before-tab,cr-at-eol

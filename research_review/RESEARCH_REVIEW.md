@@ -1,23 +1,48 @@
 # PC-BIND research review and correction record
 
-Review dates: 27–28 September 2026. Scope: the code, launchers, saved predictions,
+Initial review: 27–28 September 2026. Completion update: 2 October 2026.
+Scope: the code, launchers, saved predictions,
 serialized run settings, and dataset files reachable through this workspace.
 No manuscript was supplied. Original checkpoints, predictions and datasets
 were not rewritten. This is an implementation and evidence review, not a new
-accuracy experiment.
+accuracy experiment at that stage. Subsequent experiments are recorded below.
 
 Subsequent data preparation created an explicitly labelled
 [filtered sensitivity cohort](data_repair_v1/RESULT.md), with 334 training and
 285 Test287 samples, new hashes and shared grouped folds. Its strict coverage
 gate passes; the original full-cohort failures and unverified biological
-mappings remain recorded. No OT-versus-no-OT accuracy experiment has yet been
-run on this cohort.
+mappings remain recorded.
 
 The subsequent [fixed-cohort OT Fold 1](filtered_launch_v1/README.md) completed
 after 11 epochs with external evaluation skipped. Its checkpoint and validation
 prediction identities passed the completion audit. This one selected
-development fold does not replace the required matched no-OT comparison or
-provide an independent external estimate.
+development fold was followed by a [matched control audit](matched_fold1_v1/RESULT.md)
+and a fresh complete five-fold pair; pilot predictions were not reused.
+
+The [frozen five-fold development comparison](frozen_5fold_dev_v1/complete_oof/RESULT.md)
+is now complete and validated: 334 samples, 209 complexes and 66,208 residues,
+with both arms using the fixed folds, seed 2101, matching code/data/runtime and
+selection recipe. Test287 was skipped. OT had lower pooled OOF trapezoidal
+PR-AUC (0.4109 versus 0.4393; difference -0.0284, paired 95% percentile interval
+[-0.0454, -0.0124]) and MCC (0.3369 versus 0.3645; difference -0.0277,
+interval [-0.0431, -0.0125]). AUROC was 0.7662 versus 0.7916 (difference
+-0.0254), reported descriptively. All 5,000 whole-complex bootstrap draws were
+valid, with no single-class exclusions. Thresholds were held fixed at 0.5360
+and 0.5870 for OT and no-OT respectively. The
+[JSON record](frozen_5fold_dev_v1/complete_oof/comparison.json) binds the freeze
+manifest and all twenty final artifact records, including ten checkpoints.
+
+This is a negative result for the tested development recipe. Checkpoints and
+thresholds were selected on these labels, and bootstrap intervals condition on
+the fitted predictions; seed variation and overlapping-fold fitting dependence
+remain unmeasured. The filtered cohort has unverified biological mappings and
+homology independence. Transport removal changes parameter count. No claim of
+universal OT harm, biological partner specificity or external generalization
+follows. The user selected a shared training-seed repeat with the folds held
+fixed. Its [prospective protocol](multiseed_dev_v1/PREREGISTRATION.md) specifies
+additional training seeds 2102, 2103 and 2104. No new training has been launched.
+A capacity-matched transport/no-projection comparison remains a separate future
+mechanistic experiment.
 
 ## Assessment
 
@@ -49,7 +74,7 @@ of partner conditioning itself. See the primary [BIPSPI paper](https://pmc.ncbi.
 Preserve attribution to the [GraphPPIS backbone](https://github.com/biomed-AI/GraphPPIS)
 and distinguish its published task/inputs from any new comparison.
 
-## What the existing results actually show
+## What the initial saved results showed
 
 The [artifact audit](artifact_audit.md) recalculates the probability-mean
 predictions at their saved thresholds. Its [JSON](artifact_audit.json) records
@@ -66,7 +91,8 @@ AUROC and MCC agree with the recorded values within `1e-6`.
 Both named comparison runs have partner conditioning enabled. Neither has
 transport enabled in its saved summary. They change more than one component,
 so their differences cannot identify the effect of transport or PLM features.
-The reference five-fold v5 and backbone-control directories are absent.
+The original reference five-fold v5 and backbone-control directories are absent;
+these are distinct from the later filtered-cohort transport comparison above.
 
 For completeness, their *descriptive*, confounded comparison is:
 
@@ -273,10 +299,14 @@ training-derived decision thresholds, component comparisons and fixed-model
 partner interventions. Its inputs and split groups require explicit provenance
 and coverage audits."
 
-**Current evidence:** "The retained artifacts are single-fold pilot runs.
-They do not contain a matched transport-on/off experiment, and therefore do
-not establish a transport advantage. Further matched, homology-controlled
-experiments are required to assess partner specificity and generalization."
+**Current evidence:** "In the frozen, single-seed, five-fold filtered-cohort
+development comparison, the capacity-constrained OT-inspired partner-transport
+branch did not improve performance over the matched no-OT control. OT had lower
+pooled OOF trapezoidal PR-AUC by 0.0284 and MCC by 0.0277; paired whole-complex
+percentile intervals were below zero for both. These intervals condition on
+development-selected models and thresholds. Additional training-seed and
+capacity-matched studies, verified biological mappings and homology-aware
+evaluation are needed before stronger mechanistic or generalization claims."
 
 Avoid claims of state-of-the-art accuracy, statistical significance across
 independent seeds, biological contact recovery, validated unbalanced-OT
@@ -284,9 +314,12 @@ optimization, or universal partner availability on the basis of these artifacts.
 
 ## Verification record
 
-**53 regression tests pass**, along with the launcher checks and OT, v5 and v9
-smoke checks. See the [validation record](VALIDATION.md) for commands, scope and
-the existing input-prerequisite failure.
+The initial review passed **53 regression tests**, launcher checks and OT, v5
+and v9 smoke checks; its [validation record](VALIDATION.md) retains the original
+input-prerequisite failure. The later frozen-comparison
+[validation record](frozen_5fold_dev_v1/validation.json) records **114 tests run,
+113 passed and one host-limited symlink test skipped**, including complete-OOF
+guards, paired complex resampling and queue failure stops.
 
 The [README](../README.md) gives repeatable commands. Regression checks cover
 threshold ties, group leakage guards, sparse-plan mass/gradient constraints,
@@ -303,6 +336,8 @@ fold index. Indices are zero-based source positions, not verified PDB residue
 numbers. Provenance records trace an experiment; they do not themselves prove
 biological label correctness or remove overlap.
 
-The strict prerequisite failure is a finding, not a passing training run.
-No full five-fold training, homology-filtered rerun, biological assembly audit,
-or final test of a revised model was performed as part of this review.
+The original strict prerequisite failure remains a finding for the full cohort.
+The explicitly filtered cohort subsequently passed the strict gate and completed
+the frozen matched five-fold development comparison. No homology-filtered rerun,
+biological assembly audit or external test of the revised transport model has
+been performed.

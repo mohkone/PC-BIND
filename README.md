@@ -25,10 +25,39 @@ The [fixed-cohort launch protocol](research_review/filtered_launch_v1/README.md)
 provides dedicated OT/no-OT wrappers, an explicit Python data-directory argument,
 hash verification at each stage, and consumption of the saved grouped-fold
 manifest. Use these wrappers for the filtered sensitivity analysis.
-The requested OT Fold 1 has completed with external evaluation skipped; its
-[completion audit](research_review/filtered_launch_v1/fold1_completion_audit.json)
-checks the saved checkpoint, predictions and provenance. A matched no-OT result
-is still needed before estimating an OT effect.
+The frozen, single-seed OT/no-OT five-fold development comparison is complete.
+Its [result](research_review/frozen_5fold_dev_v1/complete_oof/RESULT.md) and
+[machine-readable record](research_review/frozen_5fold_dev_v1/complete_oof/comparison.json)
+cover 334 samples, 209 complexes and 66,208 residues. Source, data, runtime,
+fixed-fold membership, residue identities and ten checkpoints passed validation.
+The earlier [Fold 1 audit](research_review/matched_fold1_v1/RESULT.md) is preserved
+separately; pilot predictions were not pooled with this fresh five-fold pair.
+
+| Pooled OOF development metric | OT | no-OT | OT minus no-OT | Paired 95% percentile interval |
+| --- | ---: | ---: | ---: | --- |
+| Trapezoidal PR-AUC | 0.4109 | 0.4393 | -0.0284 | [-0.0454, -0.0124] |
+| MCC | 0.3369 | 0.3645 | -0.0277 | [-0.0431, -0.0125] |
+| AUROC | 0.7662 | 0.7916 | -0.0254 | Descriptive only |
+
+The capacity-constrained OT-inspired branch did not improve performance under
+this frozen recipe. All 5,000 paired whole-complex draws were valid; none were
+excluded. Thresholds were held fixed at 0.5360 for OT and 0.5870 for no-OT.
+PR-AUC is trapezoidal precision-recall area, not average precision.
+
+These are selection-optimistic development results: checkpoint and threshold
+selection used the same labels. Intervals condition on fitted predictions and
+thresholds, and do not measure training-seed variability or eliminate dependence
+from overlapping fold training populations. Biological mappings and homology
+independence remain unverified, and removing transport changes parameter count.
+Test287 evaluation was skipped in both arms. This result does not establish
+universal OT harm, biological partner specificity or external generalization.
+See the [frozen protocol](research_review/frozen_5fold_dev_v1/README.md) for the
+full scope and provenance requirements.
+
+The [prospective shared-seed protocol](research_review/multiseed_dev_v1/PREREGISTRATION.md)
+specifies training seeds 2102, 2103 and 2104 with the same seed-2101 folds.
+It is registered but has not been launched; the completed seed-2101 result
+is excluded from its primary new-seed estimate.
 
 Read the [research review](research_review/RESEARCH_REVIEW.md) before interpreting
 the results. The [saved artifact audit](research_review/artifact_audit.md)
@@ -39,7 +68,8 @@ The three pre-correction runs inspected in the original review each contain
 record `partner_transport=false`. In particular,
 `outputs_ot_stable_seed2101` and `outputs_no_ot_matched_seed2101` differ in PLM
 features and auxiliary supervision. Their difference cannot estimate an OT
-effect. The documented five-fold v5/control result directories are absent.
+effect. The original v5/target-only-backbone reference directories are absent;
+they are distinct from the completed filtered-cohort OT/no-OT experiment above.
 No improved predictive accuracy is claimed by this code revision.
 
 The target-only backbone control removes the shared target encoder introduced
@@ -66,6 +96,10 @@ target sequences therefore misses input overlap in this partner-conditioned task
 - `prepare_pcbind_v5_data.ps1`: partner-coordinate and ESM-2 augmentation of
   authorized base benchmark files.
 - `compare_pcbind_primary.py`: paired per-complex bootstrap comparison.
+- `compare_oof_development.py`: complete frozen OOF identity/checkpoint
+  validation and paired whole-complex development comparison.
+- `run_frozen_development.py`: serial execution of a frozen OT/control pair,
+  with failure stops and comparison only after both runs complete.
 - `audit_saved_artifacts.py`: input-data-free metric and run-provenance audit.
 - `audit_input_integrity.py`: read-only input coverage and exact-overlap audit.
 - `audit_sequence_homology.py`: best-HSP BLASTP train-test overlap audit.

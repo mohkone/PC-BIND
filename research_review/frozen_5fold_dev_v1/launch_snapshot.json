@@ -1,0 +1,115 @@
+{
+  "status": "OT training running; control queued",
+  "captured_utc": "2026-09-30T22:28:27.831649+00:00",
+  "freeze_manifest": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\frozen_5fold_dev_v1\\freeze_manifest.json",
+    "sha256": "7f8f5f642cff676c8ef3438554dbf8b5ee8b6f5529b0e8deff58248277909265",
+    "size_bytes": 105463
+  },
+  "queue_state_at_startup": {
+    "schema_version": 1,
+    "status": "training",
+    "created_utc": "2026-09-30T22:26:25.980772+00:00",
+    "worker_pid": 24808,
+    "freeze_manifest": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\frozen_5fold_dev_v1\\freeze_manifest.json",
+      "sha256": "7f8f5f642cff676c8ef3438554dbf8b5ee8b6f5529b0e8deff58248277909265",
+      "size_bytes": 105463
+    },
+    "mode": "serial, fresh five-fold development runs; no checkpoint reuse",
+    "external_evaluation": "skipped in both arms",
+    "jobs": [
+      {
+        "role": "ot",
+        "partner_transport": true,
+        "wrapper": "run_pcbind_ot_filtered_v1_pilot.ps1",
+        "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_filtered_v1_ot_seed2101_5fold_dev",
+        "status": "running",
+        "started_utc": "2026-09-30T22:26:37.421927+00:00",
+        "command": [
+          "C:\\Users\\Mohamed KONE\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+          "-NoProfile",
+          "-NonInteractive",
+          "-File",
+          "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_pcbind_ot_filtered_v1_pilot.ps1",
+          "-Seed",
+          "2101",
+          "-MaxFolds",
+          "5",
+          "-SkipTestEval",
+          "1",
+          "-OutputDir",
+          "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_filtered_v1_ot_seed2101_5fold_dev"
+        ],
+        "stdout_log": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_frozen_5fold_dev_v1_process\\ot_stdout.log",
+        "stderr_log": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_frozen_5fold_dev_v1_process\\ot_stderr.log",
+        "launcher_pid": 7796
+      },
+      {
+        "role": "control",
+        "partner_transport": false,
+        "wrapper": "run_pcbind_noot_filtered_v1_control.ps1",
+        "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_filtered_v1_noot_seed2101_5fold_dev",
+        "status": "queued"
+      }
+    ],
+    "comparison": {
+      "status": "waiting_for_both_complete",
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\frozen_5fold_dev_v1\\complete_oof"
+    },
+    "updated_utc": "2026-09-30T22:26:38.111720+00:00",
+    "current_arm": "ot"
+  },
+  "strict_gate_passed": true,
+  "train_feature_coverage": "334/334",
+  "external_feature_coverage": "285/285",
+  "external_metrics_loaded": [],
+  "actual_training_fold": 0,
+  "scheduled_folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "runtime": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "python_executable": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\.venv\\Scripts\\python.exe",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "numpy": "2.4.6",
+      "torch": "2.12.0",
+      "scikit-learn": "1.8.0",
+      "tqdm": "4.67.3",
+      "transformers": "5.9.0"
+    },
+    "device": "cpu",
+    "cuda_runtime": null,
+    "cuda_available": false,
+    "deterministic_algorithms": false,
+    "cudnn_deterministic": false,
+    "cudnn_benchmark": false,
+    "torch_num_threads": 12
+  },
+  "training_sources_match_frozen_recipe": true,
+  "first_epoch_observed": true,
+  "startup_artifacts": {
+    "run_provenance.json": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\frozen_5fold_dev_v1\\ot_startup_run_provenance.json",
+      "sha256": "209ef48b48a1cce474ac47cc0aaba77b2d967fd6d85d1e47033e40e4f7499777",
+      "size_bytes": 85978
+    },
+    "launcher_provenance.json": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\frozen_5fold_dev_v1\\ot_startup_launcher_provenance.json",
+      "sha256": "3bf46a823039195b462fde3b534b76ce61e835516936995595cc58149fe583d1",
+      "size_bytes": 1709
+    },
+    "prerequisite_provenance.json": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\frozen_5fold_dev_v1\\ot_startup_prerequisite_provenance.json",
+      "sha256": "1ffbac81b3c061fa0a369c6caeae54becc15c3811926100e78e838d93173e612",
+      "size_bytes": 3033
+    }
+  },
+  "execution_remains_in_progress": true,
+  "complete_oof_comparison_available": false
+}

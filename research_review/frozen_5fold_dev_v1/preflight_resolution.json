@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "rejected_candidates": [
+    {
+      "record": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\frozen_5fold_dev_v1\\freeze_manifest_preflight_rejected.json",
+        "sha256": "ab3eddf7cf2e5236825fbe222b3f4fe862c6d08e9b96cde0914bb2c9630984cc",
+        "size_bytes": 105305
+      },
+      "reason": "Training includes selection_mode=explicit; shared cohort and prerequisite records omit this training-specific field.",
+      "resolution": "Comparison separately requires explicit selection and compares all shared cohort fields exactly."
+    },
+    {
+      "record": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\frozen_5fold_dev_v1\\freeze_manifest_runtime_rejected.json",
+        "sha256": "dabe0816b5cb48d1a9cb3cad369184e19ecc3f725f550f0b97ba17e2d893ebb2",
+        "size_bytes": 105305
+      },
+      "reason": "Windows build updated after the matched Fold 1 runs.",
+      "resolution": "Bind both fresh five-fold arms to the same current runtime; do not reuse or pool earlier pilot predictions."
+    }
+  ],
+  "runtime_delta_from_fold1": {
+    "platform": {
+      "fold1": "Windows-11-10.0.26200-SP0",
+      "five_fold": "Windows-11-10.0.26300-SP0"
+    }
+  },
+  "training_launched_before_resolution": false,
+  "training_sources_modified": false,
+  "verified_freeze": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\frozen_5fold_dev_v1\\freeze_manifest.json",
+    "sha256": "7f8f5f642cff676c8ef3438554dbf8b5ee8b6f5529b0e8deff58248277909265",
+    "size_bytes": 105463
+  },
+  "source_file_count": 14
+}

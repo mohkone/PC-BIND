@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "created_utc": "2026-09-30T22:26:25.980772+00:00",
+  "worker_pid": 24808,
+  "freeze_manifest": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\frozen_5fold_dev_v1\\freeze_manifest.json",
+    "sha256": "7f8f5f642cff676c8ef3438554dbf8b5ee8b6f5529b0e8deff58248277909265",
+    "size_bytes": 105463
+  },
+  "mode": "serial, fresh five-fold development runs; no checkpoint reuse",
+  "external_evaluation": "skipped in both arms",
+  "jobs": [
+    {
+      "role": "ot",
+      "partner_transport": true,
+      "wrapper": "run_pcbind_ot_filtered_v1_pilot.ps1",
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_filtered_v1_ot_seed2101_5fold_dev",
+      "status": "complete",
+      "started_utc": "2026-09-30T22:26:37.421927+00:00",
+      "command": [
+        "C:\\Users\\Mohamed KONE\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-NoProfile",
+        "-NonInteractive",
+        "-File",
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_pcbind_ot_filtered_v1_pilot.ps1",
+        "-Seed",
+        "2101",
+        "-MaxFolds",
+        "5",
+        "-SkipTestEval",
+        "1",
+        "-OutputDir",
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_filtered_v1_ot_seed2101_5fold_dev"
+      ],
+      "stdout_log": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_frozen_5fold_dev_v1_process\\ot_stdout.log",
+      "stderr_log": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_frozen_5fold_dev_v1_process\\ot_stderr.log",
+      "launcher_pid": 7796,
+      "exit_code": 0,
+      "ended_utc": "2026-10-01T11:36:56.679236+00:00"
+    },
+    {
+      "role": "control",
+      "partner_transport": false,
+      "wrapper": "run_pcbind_noot_filtered_v1_control.ps1",
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_filtered_v1_noot_seed2101_5fold_dev",
+      "status": "complete",
+      "started_utc": "2026-10-01T11:37:03.119313+00:00",
+      "command": [
+        "C:\\Users\\Mohamed KONE\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-NoProfile",
+        "-NonInteractive",
+        "-File",
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_pcbind_noot_filtered_v1_control.ps1",
+        "-Seed",
+        "2101",
+        "-MaxFolds",
+        "5",
+        "-SkipTestEval",
+        "1",
+        "-OutputDir",
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_filtered_v1_noot_seed2101_5fold_dev"
+      ],
+      "stdout_log": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_frozen_5fold_dev_v1_process\\control_stdout.log",
+      "stderr_log": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_frozen_5fold_dev_v1_process\\control_stderr.log",
+      "launcher_pid": 12312,
+      "exit_code": 0,
+      "ended_utc": "2026-10-01T23:15:29.954223+00:00"
+    }
+  ],
+  "comparison": {
+    "status": "complete",
+    "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\frozen_5fold_dev_v1\\complete_oof",
+    "exit_code": 0
+  },
+  "updated_utc": "2026-10-01T23:23:26.877944+00:00",
+  "current_arm": null,
+  "ended_utc": "2026-10-01T23:23:26.871060+00:00"
+}

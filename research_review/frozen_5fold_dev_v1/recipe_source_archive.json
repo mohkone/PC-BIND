@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "purpose": "Exact bytes used by the completed frozen experiment, including original line endings.",
+  "frozen_live_sources_modified": false,
+  "sources": [
+    {
+      "original": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\CROSS5FOLD_multi_test.py",
+        "sha256": "341d7fef45792b716946a8fe0ad5e7b290d38e40a9c99f60c05e6ad33e93dad8",
+        "size_bytes": 225713
+      },
+      "archive": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\frozen_5fold_dev_v1\\recipe_sources\\CROSS5FOLD_multi_test.py",
+        "sha256": "341d7fef45792b716946a8fe0ad5e7b290d38e40a9c99f60c05e6ad33e93dad8",
+        "size_bytes": 225713
+      }
+    },
+    {
+      "original": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\metrics.py",
+        "sha256": "9be8906c73b658039032ad720dfe91bcac4d3059f177f109eaa848b21bc91d23",
+        "size_bytes": 3128
+      },
+      "archive": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\frozen_5fold_dev_v1\\recipe_sources\\metrics.py",
+        "sha256": "9be8906c73b658039032ad720dfe91bcac4d3059f177f109eaa848b21bc91d23",
+        "size_bytes": 3128
+      }
+    },
+    {
+      "original": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_provenance.py",
+        "sha256": "b2ade05798ce250cd08b6188ae1a20a8725bae5d6d890419a8c4c5b5b3c04ddd",
+        "size_bytes": 5566
+      },
+      "archive": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\frozen_5fold_dev_v1\\recipe_sources\\research_provenance.py",
+        "sha256": "b2ade05798ce250cd08b6188ae1a20a8725bae5d6d890419a8c4c5b5b3c04ddd",
+        "size_bytes": 5566
+      }
+    },
+    {
+      "original": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_seed.ps1",
+        "sha256": "e276fea78922ff2f334b03993307f7a969b50e98577171dea86c262f3c0482ff",
+        "size_bytes": 17078
+      },
+      "archive": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\frozen_5fold_dev_v1\\recipe_sources\\run_seed.ps1",
+        "sha256": "e276fea78922ff2f334b03993307f7a969b50e98577171dea86c262f3c0482ff",
+        "size_bytes": 17078
+      }
+    },
+    {
+      "original": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\requirements.txt",
+        "sha256": "e3399ebcebe53aac5ea9cd8c181f3734c29343c068a1126870e94b906c3e662b",
+        "size_bytes": 80
+      },
+      "archive": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\frozen_5fold_dev_v1\\recipe_sources\\requirements.txt",
+        "sha256": "e3399ebcebe53aac5ea9cd8c181f3734c29343c068a1126870e94b906c3e662b",
+        "size_bytes": 80
+      }
+    },
+    {
+      "original": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\filtered_cohort_protocol.py",
+        "sha256": "3a5f5d78b2d28b024029eb3b15be710ac85fb4a5f77609f24ea4997ccde3c4d6",
+        "size_bytes": 8835
+      },
+      "archive": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\frozen_5fold_dev_v1\\recipe_sources\\filtered_cohort_protocol.py",
+        "sha256": "3a5f5d78b2d28b024029eb3b15be710ac85fb4a5f77609f24ea4997ccde3c4d6",
+        "size_bytes": 8835
+      }
+    },
+    {
+      "original": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\invoke_filtered_v1.ps1",
+        "sha256": "a2fa7d956e2b02488c8c044e9dea591c99652d43540b63f25ba686c9475de44a",
+        "size_bytes": 11316
+      },
+      "archive": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\frozen_5fold_dev_v1\\recipe_sources\\invoke_filtered_v1.ps1",
+        "sha256": "a2fa7d956e2b02488c8c044e9dea591c99652d43540b63f25ba686c9475de44a",
+        "size_bytes": 11316
+      }
+    },
+    {
+      "original": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_pcbind_noot_filtered_v1_control.ps1",
+        "sha256": "a9b8279c8590129db762ab042712a09f9340af3d821081733f795b65101a7c23",
+        "size_bytes": 472
+      },
+      "archive": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\frozen_5fold_dev_v1\\recipe_sources\\run_pcbind_noot_filtered_v1_control.ps1",
+        "sha256": "a9b8279c8590129db762ab042712a09f9340af3d821081733f795b65101a7c23",
+        "size_bytes": 472
+      }
+    },
+    {
+      "original": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_pcbind_ot_filtered_v1_pilot.ps1",
+        "sha256": "eb053a71ca624a1e5533536efbf14e28d8f1421b15723375d6388b7d7caa3e8b",
+        "size_bytes": 472
+      },
+      "archive": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\frozen_5fold_dev_v1\\recipe_sources\\run_pcbind_ot_filtered_v1_pilot.ps1",
+        "sha256": "eb053a71ca624a1e5533536efbf14e28d8f1421b15723375d6388b7d7caa3e8b",
+        "size_bytes": 472
+      }
+    },
+    {
+      "original": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\check_pcbind_prereqs.py",
+        "sha256": "92ca5c2d5813c62f57f49e3caa51706f449fdf46a2a7b4dc27e9f8439ae49547",
+        "size_bytes": 12859
+      },
+      "archive": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\frozen_5fold_dev_v1\\recipe_sources\\check_pcbind_prereqs.py",
+        "sha256": "92ca5c2d5813c62f57f49e3caa51706f449fdf46a2a7b4dc27e9f8439ae49547",
+        "size_bytes": 12859
+      }
+    },
+    {
+      "original": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\compare_pcbind_primary.py",
+        "sha256": "4f3d52111151d7dfd5ec59fe7c87239cedc9220238a355375e4c4dfc5c4ce583",
+        "size_bytes": 24886
+      },
+      "archive": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\frozen_5fold_dev_v1\\recipe_sources\\compare_pcbind_primary.py",
+        "sha256": "4f3d52111151d7dfd5ec59fe7c87239cedc9220238a355375e4c4dfc5c4ce583",
+        "size_bytes": 24886
+      }
+    },
+    {
+      "original": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\frozen_development_protocol.py",
+        "sha256": "ef26075cf9aeeab7fe37d96d1e32243697add4db564559b6a72b7fb923ab9551",
+        "size_bytes": 8137
+      },
+      "archive": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\frozen_5fold_dev_v1\\recipe_sources\\frozen_development_protocol.py",
+        "sha256": "ef26075cf9aeeab7fe37d96d1e32243697add4db564559b6a72b7fb923ab9551",
+        "size_bytes": 8137
+      }
+    },
+    {
+      "original": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\compare_oof_development.py",
+        "sha256": "35c73f34f5145e97aedacae6e1269f105ca760f87b63846993c3af508df2a43d",
+        "size_bytes": 14230
+      },
+      "archive": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\frozen_5fold_dev_v1\\recipe_sources\\compare_oof_development.py",
+        "sha256": "35c73f34f5145e97aedacae6e1269f105ca760f87b63846993c3af508df2a43d",
+        "size_bytes": 14230
+      }
+    },
+    {
+      "original": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_frozen_development.py",
+        "sha256": "c29cc2763ef0a5b7ce7790d298601d45dc15ba10436b5acf7da27d590c25b588",
+        "size_bytes": 6287
+      },
+      "archive": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\frozen_5fold_dev_v1\\recipe_sources\\run_frozen_development.py",
+        "sha256": "c29cc2763ef0a5b7ce7790d298601d45dc15ba10436b5acf7da27d590c25b588",
+        "size_bytes": 6287
+      }
+    }
+  ]
+}

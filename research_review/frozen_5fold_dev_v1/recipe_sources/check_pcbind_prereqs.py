@@ -1,0 +1,302 @@
+import argparse
+import json
+import sys
+from datetime import datetime, timezone
+from pathlib import Path
+
+import numpy as np
+
+from filtered_cohort_protocol import verify_filtered_cohort, validate_fixed_folds, resolve_cohort_file
+from research_provenance import file_record, load_dataset_with_provenance
+
+
+PKL_FILES = [
+    "Train335.pkl",
+    "Test60.pkl",
+    "Test287.pkl",
+    "Test70.pkl",
+    "TestB25.pkl",
+    "TestUB25.pkl",
+]
+
+
+def count_key(samples, key):
+    return sum(key in sample for sample in samples)
+
+
+PLM_SPECS = {
+    "residue_plm_embedding": (480, "residue_plm_model", "facebook/esm2_t12_35M_UR50D"),
+    "residue_plm_embedding_8m": (320, "residue_plm_model_8m", "facebook/esm2_t6_8M_UR50D"),
+}
+
+
+def finite_matrix(value, shape):
+    array = np.asarray(value)
+    return (
+        array.shape == shape
+        and np.issubdtype(array.dtype, np.number)
+        and np.isfinite(array).all()
+    )
+
+
+def valid_plm(sample, key, rows, partner=False):
+    width, model_key, model_name = PLM_SPECS[key]
+    prefix = "partner_" if partner else ""
+    return (
+        rows > 0
+        and sample.get(prefix + model_key, model_name) == model_name
+        and finite_matrix(sample.get(prefix + key, []), (rows, width))
+    )
+
+
+def valid_target_plm(sample, key):
+    nodes = np.asarray(sample.get("residue_graph_node", []))
+    return nodes.ndim == 2 and valid_plm(sample, key, nodes.shape[0])
+
+
+def partner_residue_count(sample):
+    surface = np.asarray(sample.get("partner_residue_surface_features", []))
+    return int(surface.shape[0]) if surface.ndim == 2 else 0
+
+
+def count_nonempty_partner_key(samples, key):
+    return sum(key in sample and partner_residue_count(sample) > 0 for sample in samples)
+
+
+def count_positive_pairs(samples):
+    total = 0
+    labelled = 0
+    for sample in samples:
+        if "partner_pair_contact_index" not in sample or partner_residue_count(sample) == 0:
+            continue
+        pair_index = np.asarray(sample["partner_pair_contact_index"])
+        nodes = np.asarray(sample.get("residue_graph_node", []))
+        if (
+            nodes.ndim == 2
+            and pair_index.ndim == 2
+            and pair_index.shape[0] == 2
+            and np.issubdtype(pair_index.dtype, np.integer)
+            and (
+                pair_index.size == 0
+                or (
+                    pair_index.min() >= 0
+                    and pair_index[0].max() < nodes.shape[0]
+                    and pair_index[1].max() < partner_residue_count(sample)
+                )
+            )
+        ):
+            labelled += 1
+            total += int(pair_index.shape[1])
+    return labelled, total
+
+
+def valid_partner_encoder_sample(sample):
+    if sample.get("pdb_augmentation_status") == "failed":
+        return False
+    required = (
+        "partner_residue_surface_features",
+        "partner_residue_sequence_features",
+        "partner_residue_coords",
+        "partner_residue_frames",
+        "partner_residue_geo_edge",
+        "partner_residue_sequences",
+        "partner_chain_slices",
+        "partner_residue_plm_embedding",
+        "partner_residue_plm_embedding_8m",
+    )
+    if any(key not in sample for key in required):
+        return False
+
+    surface = np.asarray(sample["partner_residue_surface_features"])
+    sequence = np.asarray(sample["partner_residue_sequence_features"])
+    coords = np.asarray(sample["partner_residue_coords"])
+    frames = np.asarray(sample["partner_residue_frames"])
+    edges = np.asarray(sample["partner_residue_geo_edge"])
+    slices = np.asarray(sample["partner_chain_slices"])
+    if surface.ndim != 2:
+        return False
+    n_res = int(surface.shape[0])
+    if n_res <= 0:
+        return False
+    if not finite_matrix(surface, (n_res, 14)) or not finite_matrix(sequence, (n_res, 39)):
+        return False
+    if not finite_matrix(coords, (n_res, 3)) or not finite_matrix(frames, (n_res, 3, 3)):
+        return False
+    if edges.ndim != 2 or edges.shape[0] != 2 or not np.issubdtype(edges.dtype, np.integer):
+        return False
+    if edges.size and (edges.min() < 0 or edges.max() >= n_res):
+        return False
+    if slices.ndim != 2 or slices.shape[1] != 2 or slices.shape[0] == 0 or not np.issubdtype(slices.dtype, np.integer):
+        return False
+    if int(slices[0, 0]) != 0 or int(slices[-1, 1]) != n_res:
+        return False
+    if np.any(slices[:, 0] < 0) or np.any(slices[:, 1] <= slices[:, 0]):
+        return False
+    if slices.shape[0] > 1 and np.any(slices[1:, 0] != slices[:-1, 1]):
+        return False
+    sequences = sample["partner_residue_sequences"]
+    if not isinstance(sequences, (list, tuple)) or len(sequences) != slices.shape[0]:
+        return False
+    if any(not isinstance(seq, str) or len(seq) != end - start for seq, (start, end) in zip(sequences, slices)):
+        return False
+    if any(not valid_plm(sample, key, n_res, partner=True) for key in PLM_SPECS):
+        return False
+    return True
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Check PC-BIND input prerequisites.")
+    parser.add_argument("--data-dir", default="data/geo", help="Directory containing geo pickle files.")
+    parser.add_argument("--cohort-manifest", help="Filtered cohort manifest to verify before loading data.")
+    parser.add_argument("--fold-manifest", help="Fixed grouped-fold manifest to verify and consume.")
+    parser.add_argument("--seed", type=int, default=2101)
+    parser.add_argument("--provenance-output", help="Write this gate's resolved paths, hashes and results to a new JSON file.")
+    parser.add_argument("--require-plm", action="store_true", help="Require both ESM-2 PLM feature fields.")
+    parser.add_argument("--require-partner", action="store_true", help="Require partner descriptor fields.")
+    parser.add_argument("--require-pair", action="store_true", help="Require sparse residue-pair contact labels.")
+    parser.add_argument(
+        "--require-partner-encoder",
+        action="store_true",
+        help="Require chain-aware partner geometry and both partner ESM embeddings.",
+    )
+    parser.add_argument("--min-partner-encoder-coverage", type=float, default=0.98)
+    parser.add_argument("files", nargs="*", default=PKL_FILES)
+    args = parser.parse_args()
+    if not 0.0 <= args.min_partner_encoder_coverage <= 1.0:
+        parser.error("--min-partner-encoder-coverage must be between 0 and 1")
+
+    data_dir = Path(args.data_dir).resolve(strict=True)
+    if bool(args.cohort_manifest) != bool(args.fold_manifest):
+        parser.error("--cohort-manifest and --fold-manifest must be supplied together")
+    selection = {"resolved_data_dir": str(data_dir)}
+    fixed_folds = None
+    if args.cohort_manifest:
+        selection, _, fixed_folds = verify_filtered_cohort(
+            data_dir, args.cohort_manifest, args.fold_manifest, args.seed,
+        )
+        if len(args.files) != 2 or set(args.files) != set(selection["declared_files"]):
+            parser.error("Filtered prerequisites require exactly Train335.pkl and Test287.pkl")
+        if not (args.require_plm and args.require_partner and args.require_pair
+                and args.require_partner_encoder and args.min_partner_encoder_coverage == 1.0):
+            parser.error("Filtered prerequisites require all feature flags and partner-encoder coverage 1.0")
+    print(f"Resolved data directory: {data_dir}", flush=True)
+    print("Declared files: " + ", ".join(args.files), flush=True)
+    errors = []
+    rows = []
+    loaded_records = {}
+    for filename in args.files:
+        if (Path(filename).name != filename or any(char in filename for char in '/\\:')
+                or Path(filename).suffix.lower() != ".pkl"):
+            parser.error(f"Invalid cohort pickle name: {filename}")
+        path = data_dir / filename
+        if not path.exists():
+            errors.append(f"{path}: missing")
+            continue
+        path = resolve_cohort_file(data_dir, filename)
+        samples, loaded_records[filename] = load_dataset_with_provenance(path)
+        total = len(samples)
+        if fixed_folds is not None:
+            if loaded_records[filename] != selection["datasets"][filename]:
+                raise RuntimeError(f"Dataset changed since cohort verification: {filename}")
+            if filename == "Train335.pkl":
+                validate_fixed_folds(samples, fixed_folds, args.seed, loaded_records[filename]["sha256"])
+        main_plm = sum(valid_target_plm(sample, "residue_plm_embedding") for sample in samples)
+        aux_plm = sum(valid_target_plm(sample, "residue_plm_embedding_8m") for sample in samples)
+        partner_surface = count_nonempty_partner_key(
+            samples, "partner_residue_surface_features"
+        )
+        partner_sequence = count_nonempty_partner_key(
+            samples, "partner_residue_sequence_features"
+        )
+        pair_labelled, positive_pairs = count_positive_pairs(samples)
+        partner_encoder = sum(valid_partner_encoder_sample(sample) for sample in samples)
+        invalid_partner_samples = [
+            f"{idx}:{sample.get('complex_code', '?')}"
+            for idx, sample in enumerate(samples)
+            if not valid_partner_encoder_sample(sample)
+        ]
+        rows.append((
+            filename,
+            total,
+            main_plm,
+            aux_plm,
+            partner_surface,
+            partner_sequence,
+            pair_labelled,
+            positive_pairs,
+            partner_encoder,
+        ))
+
+        if total == 0:
+            errors.append(f"{path}: empty dataset")
+        if args.require_plm and (main_plm != total or aux_plm != total):
+            errors.append(
+                f"{path}: PLM coverage main={main_plm}/{total}, "
+                f"aux={aux_plm}/{total}"
+            )
+        if args.require_partner and (partner_surface == 0 or partner_sequence == 0):
+            errors.append(
+                f"{path}: partner coverage surface={partner_surface}/{total}, "
+                f"sequence={partner_sequence}/{total}"
+            )
+        if args.require_pair and (pair_labelled == 0 or pair_labelled != partner_surface):
+            errors.append(f"{path}: valid sparse pair-contact labels={pair_labelled}/{partner_surface} nonempty partners")
+        if args.require_partner_encoder:
+            coverage = partner_encoder / max(total, 1)
+            if coverage < args.min_partner_encoder_coverage:
+                errors.append(
+                    f"{path}: partner encoder coverage={partner_encoder}/{total} "
+                    f"({coverage:.1%}) below {args.min_partner_encoder_coverage:.1%}; "
+                    f"invalid samples={', '.join(invalid_partner_samples[:20])}"
+                )
+
+    for (
+        filename,
+        total,
+        main_plm,
+        aux_plm,
+        partner_surface,
+        partner_sequence,
+        pair_labelled,
+        positive_pairs,
+        partner_encoder,
+    ) in rows:
+        print(
+            f"{filename}: main_plm={main_plm}/{total} aux_plm={aux_plm}/{total} "
+            f"partner_surface={partner_surface}/{total} partner_sequence={partner_sequence}/{total} "
+            f"pair_labels={pair_labelled}/{total} positive_pairs={positive_pairs}"
+            f" partner_encoder={partner_encoder}/{total}"
+        )
+
+    if args.provenance_output:
+        output = Path(args.provenance_output).resolve()
+        if data_dir == output or data_dir in output.parents:
+            parser.error("Prerequisite provenance must be written outside the data directory")
+        output.parent.mkdir(parents=True, exist_ok=True)
+        report = {
+            "component": "check_pcbind_prereqs.py", "created_utc": datetime.now(timezone.utc).isoformat(),
+            "status": "failed" if errors else "passed", "dataset_selection": selection,
+            "loaded_datasets": loaded_records, "require_plm": args.require_plm,
+            "require_partner": args.require_partner, "require_pair": args.require_pair,
+            "require_partner_encoder": args.require_partner_encoder,
+            "min_partner_encoder_coverage": args.min_partner_encoder_coverage,
+            "fixed_folds_validated": fixed_folds is not None,
+            "code_files": [file_record(__file__), file_record(Path(__file__).with_name("filtered_cohort_protocol.py"))],
+            "coverage_rows": [[row[0], *(int(value) for value in row[1:])] for row in rows],
+            "errors": errors,
+        }
+        serialized = json.dumps(report, indent=2) + "\n"
+        with output.open("x", encoding="utf-8", newline="\n") as handle:
+            handle.write(serialized)
+    if errors:
+        print("\nPC-BIND prerequisites are not satisfied:", file=sys.stderr)
+        for error in errors:
+            print(f"- {error}", file=sys.stderr)
+        return 1
+
+    print("\nPC-BIND prerequisites OK.")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

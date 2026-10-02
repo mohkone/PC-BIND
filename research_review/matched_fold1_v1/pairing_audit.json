@@ -1,0 +1,122 @@
+{
+  "matched": true,
+  "scope": "Paired one-fold development description; no bootstrap or external evaluation performed.",
+  "allowed_configuration_difference": "partner_transport",
+  "natural_run_identity_differences": [
+    "created_utc",
+    "provenance_id",
+    "output_dir"
+  ],
+  "selection_outcomes_are_not_configuration_differences": [
+    "ensemble_threshold",
+    "rank_threshold",
+    "selected_checkpoint_metrics"
+  ],
+  "matched_conditions": [
+    "dataset_selection",
+    "datasets",
+    "cv_splits",
+    "runtime",
+    "code_files",
+    "seed",
+    "grouped_cv",
+    "cv_group_key",
+    "transport_implementation",
+    "requested_test_sets",
+    "loaded_test_sets",
+    "skip_test_eval",
+    "scheduled_fold_indices",
+    "completed_fold_indices"
+  ],
+  "frozen_recipe_code_revision": "d8ff88dc155e0d775f64ef023e9e4ccbe82f07bf",
+  "metrics": {
+    "ot": {
+      "mcc": 0.3836525773110876,
+      "auc_pr_trapezoidal": 0.4502731995405344,
+      "auroc": 0.7951739745814965,
+      "threshold": 0.5389999747276306,
+      "validation_samples": 68,
+      "validation_residues": 13407
+    },
+    "control": {
+      "mcc": 0.3890302508532769,
+      "auc_pr_trapezoidal": 0.48357733347782134,
+      "auroc": 0.7973902927428713,
+      "threshold": 0.5690000057220459,
+      "validation_samples": 68,
+      "validation_residues": 13407
+    }
+  },
+  "ot_minus_control": {
+    "mcc": -0.005377673542189321,
+    "auc_pr_trapezoidal": -0.03330413393728693,
+    "auroc": -0.0022163181613747973
+  },
+  "artifacts": {
+    "ot": {
+      "ensemble_summary.json": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_pcbind_ot_filtered_seed2101_fold1\\ensemble_summary.json",
+        "sha256": "a10a3f02bba503a42f59020a128f89aaa73ecc5ab710c599a8ff5d0cd2322219",
+        "size_bytes": 99550
+      },
+      "fold1_best.pt": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_pcbind_ot_filtered_seed2101_fold1\\fold1_best.pt",
+        "sha256": "04c0fa34f1cc992374e5a433f9a7fe3d67cf03bb11ee40761642ec85b8dbd830",
+        "size_bytes": 22940614
+      },
+      "launcher_provenance.json": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_pcbind_ot_filtered_seed2101_fold1\\launcher_provenance.json",
+        "sha256": "2e69a5cdb8338dc31c8ac78c319463ab7e28c3a67040144e3c498dac9263a881",
+        "size_bytes": 1709
+      },
+      "oof_predictions.npz": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_pcbind_ot_filtered_seed2101_fold1\\oof_predictions.npz",
+        "sha256": "cf9a38a1c9a38d8dd4da0a1a501b8dfba05a9f27c8175559e144ab941f93945c",
+        "size_bytes": 55979
+      },
+      "prerequisite_provenance.json": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_pcbind_ot_filtered_seed2101_fold1\\prerequisite_provenance.json",
+        "sha256": "c444f58dec41c3d07aa56ba89038a531f6fceec28a146634545d15e033b6ae0c",
+        "size_bytes": 3033
+      },
+      "run_provenance.json": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_pcbind_ot_filtered_seed2101_fold1\\run_provenance.json",
+        "sha256": "988037ace8d3e7dd48c54b7b4e055145637f1c02f31f3505e41aa9e68e22cdd5",
+        "size_bytes": 85958
+      }
+    },
+    "control": {
+      "ensemble_summary.json": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_filtered_v1_noot_seed2101_fold1_dev\\ensemble_summary.json",
+        "sha256": "c8c6d6294a8edb32d0f15ff3b6c08803b3c43301c958088a9fbc422028ba6c67",
+        "size_bytes": 99552
+      },
+      "fold1_best.pt": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_filtered_v1_noot_seed2101_fold1_dev\\fold1_best.pt",
+        "sha256": "ccd82ca3a383427a3025d4d68fd4620aa645335709cd30afe21348c44c8655f0",
+        "size_bytes": 19648952
+      },
+      "launcher_provenance.json": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_filtered_v1_noot_seed2101_fold1_dev\\launcher_provenance.json",
+        "sha256": "861b2c1b018727c6a4714e7b65a2c17f1462826027c49d79021c32ac4e21230f",
+        "size_bytes": 2478
+      },
+      "oof_predictions.npz": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_filtered_v1_noot_seed2101_fold1_dev\\oof_predictions.npz",
+        "sha256": "9ab9010b223196147039ec09630edc0169a182ccc3f628a7d2c49b191a27eb1b",
+        "size_bytes": 55942
+      },
+      "prerequisite_provenance.json": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_filtered_v1_noot_seed2101_fold1_dev\\prerequisite_provenance.json",
+        "sha256": "411c90ca3eff340cf9396401edb8162c71be97684696c5a538559fd86a0af746",
+        "size_bytes": 3033
+      },
+      "run_provenance.json": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_filtered_v1_noot_seed2101_fold1_dev\\run_provenance.json",
+        "sha256": "2b4f499e8406a8d6ccf2ed7244b3796eedeff8cb9d14702ee2747bbbda38eb32",
+        "size_bytes": 85959
+      }
+    }
+  },
+  "interpretation": "No preliminary Fold1 transport advantage. One selected development fold and seed cannot establish harm, benefit, external generalization, or statistical significance."
+}

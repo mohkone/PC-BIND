@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "command": [
+    "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\.venv\\Scripts\\python.exe",
+    "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\compare_oof_development.py",
+    "--model-dir",
+    "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_pcbind_ot_filtered_seed2101_fold1",
+    "--control-dir",
+    "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_filtered_v1_noot_seed2101_fold1_dev",
+    "--freeze-manifest",
+    "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\frozen_5fold_dev_v1\\freeze_manifest.json",
+    "--output-dir",
+    "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\frozen_5fold_dev_v1\\partial_result_must_not_exist"
+  ],
+  "exit_code": 1,
+  "expected_rejection": "The real one-fold artifacts cannot pass the new frozen complete-five-fold gate.",
+  "comparative_result_written": false,
+  "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\compare_oof_development.py\", line 255, in <module>\n    main()\n  File \"C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\compare_oof_development.py\", line 249, in main\n    result = compare(args.model_dir, args.control_dir, args.freeze_manifest, args.output_dir, args.validate_only)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\compare_oof_development.py\", line 178, in compare\n    arrays, identity, artifacts = validate_pair(model_dir, control_dir, freeze)\n                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\compare_oof_development.py\", line 143, in validate_pair\n    runs[role], summaries[role] = validate_completed_run(directory, freeze, transport)\n                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\frozen_development_protocol.py\", line 147, in validate_completed_run\n    validate_run_metadata(run, summary, freeze, transport)\n  File \"C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\frozen_development_protocol.py\", line 92, in validate_run_metadata\n    require_equal(run_configuration(run), freeze[\"run_configuration\"], \"run configuration\")\n  File \"C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\frozen_development_protocol.py\", line 31, in require_equal\n    raise ValueError(f\"Frozen protocol mismatch: {label}\")\nValueError: Frozen protocol mismatch: run configuration\n",
+  "freeze_manifest": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\frozen_5fold_dev_v1\\freeze_manifest.json",
+    "sha256": "7f8f5f642cff676c8ef3438554dbf8b5ee8b6f5529b0e8deff58248277909265",
+    "size_bytes": 105463
+  }
+}

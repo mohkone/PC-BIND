@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "command": ".\\.venv\\Scripts\\python.exe -m unittest discover -s tests -v",
+  "tests_run": 114,
+  "tests_passed": 113,
+  "tests_skipped": 1,
+  "errors": 0,
+  "failures": 0,
+  "skip_reason": "Host cannot create the symlink required by one existing path-integrity test.",
+  "log": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\frozen_5fold_dev_v1\\validation_tests.txt",
+    "sha256": "84d7e8ebe3a9ec399520107d7ee645307bcd7504f76cbfe603b16ce11745b12f",
+    "size_bytes": 18822
+  },
+  "dry_run_check": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\frozen_5fold_dev_v1\\dry_run_validation.json",
+    "sha256": "dc2c7b2ad2a95791ea3ba61a7a102a25f0fe18613a87057c4b93b4bdad3d04f1",
+    "size_bytes": 14267
+  },
+  "complete_cohort_guard": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\frozen_5fold_dev_v1\\partial_run_rejection.json",
+    "sha256": "6f265ad3d52809493ba54863123e93a298a7c82e0a34f55cee3adec8aa35dae6",
+    "size_bytes": 2863
+  },
+  "training_code_changed": false,
+  "validation_harness_note": "An earlier direct-module invocation used obsolete root paths for two existing tests; discovery uses the actual tests/ directory."
+}

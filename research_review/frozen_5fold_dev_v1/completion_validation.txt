@@ -1,0 +1,13 @@
+{
+  "status": "validated",
+  "sample_count": 334,
+  "residue_count": 66208,
+  "complex_count": 209,
+  "fold_indices": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ]
+}
