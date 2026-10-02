@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "execution_manifest": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_manifest_v2.json",
+    "sha256": "ca69112d633de00ee80d23a7c7913a939d780cf2561f403393588f95a5eb0519",
+    "size_bytes": 87551
+  },
+  "jobs_validated": 6,
+  "training_started": false,
+  "external_evaluation": "skipped",
+  "paired_recipe_and_fold_identity": "passed",
+  "cross_seed_differences": "training seed and run identities/paths only",
+  "dry_run_records": [
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v2\\all_six\\ot_2102\\dry_run.json",
+      "sha256": "e0576168e04b6aca76e881be4ba80c74395bf7e684525d24ebdad2473d8a0d2f",
+      "size_bytes": 181197
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v2\\all_six\\noot_2102\\dry_run.json",
+      "sha256": "32970e3141070d3875cab058673f1e1e40ce47c4fb66e8c3dd28e338bfe91a5e",
+      "size_bytes": 181203
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v2\\all_six\\ot_2103\\dry_run.json",
+      "sha256": "a38e46cef43ff3a166456dbd3a76c89ae5e76c69d906dacb12140ad5797b46f8",
+      "size_bytes": 181197
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v2\\all_six\\noot_2103\\dry_run.json",
+      "sha256": "462024c9c85253f845f8c5dd76df5a058b27ddd9aff3b4361ee47cc9c021c0d1",
+      "size_bytes": 181203
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v2\\all_six\\ot_2104\\dry_run.json",
+      "sha256": "f262e3cb454dd7d1dd4cb91e8b89d8d42f26e5dc7fc579dc5d35a3855340661a",
+      "size_bytes": 181197
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v2\\all_six\\noot_2104\\dry_run.json",
+      "sha256": "d415b95aea6e129acfe013a1e6b9a219c64a43255a66adc9dbd877593b76b488",
+      "size_bytes": 181203
+    }
+  ]
+}

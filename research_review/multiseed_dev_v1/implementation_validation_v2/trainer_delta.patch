@@ -1,0 +1,145 @@
+--- CROSS5FOLD_multi_test.py
++++ CROSS5FOLD_multiseed_dev_v1.py
+@@ -19,6 +19,10 @@
+ if ANOMALY_DETECT:
+     torch.autograd.set_detect_anomaly(True)
+ 
++from multiseed_protocol_v1 import (
++    prepare_execution, validate_training_namespace, attach_execution,
++    verify_execution_context, require_launch_validation,
++)
+ from metrics import *   # compute_auc_roc, compute_auc_pr, compute_acc, compute_performance
+ from research_provenance import (
+     build_run_provenance, cv_split_manifest, file_record, load_dataset_with_provenance,
+@@ -31,6 +35,7 @@
+ 
+ 
+ SEED = int(os.environ.get("PPI_SEED", "1234"))
++FOLD_SEED = 2101
+ MODEL_MODE = "innovative_triview"  # "innovative_triview" or "checkpoint_finetune"
+ CHECKPOINT_PATH = os.path.join("data", "bib_triview_best.pt")
+ ADD_REVERSE_EDGES = MODEL_MODE != "checkpoint_finetune"
+@@ -3146,14 +3151,14 @@
+         from filtered_cohort_protocol import verify_filtered_cohort
+ 
+         selection, _cohort_json, folds_json = verify_filtered_cohort(
+-            selected, cohort_manifest_path, fold_manifest_path, SEED,
++            selected, cohort_manifest_path, fold_manifest_path, FOLD_SEED,
+         )
+         selection = dict(selection, selection_mode="explicit")
+         # The saved grouped split is the effective protocol, even if a legacy
+         # environment default had sample-level CV disabled/enabled differently.
+         GROUPED_CV = True
+         return selection, folds_json
+-    return dataset_selection_provenance(selected / "Train335.pkl"), None
++    raise ValueError("multiseed_dev_v1 requires the original cohort and fixed-fold manifests")
+ 
+ 
+ def verify_loaded_cohort_sources(data_sources, dataset_selection):
+@@ -3177,11 +3182,9 @@
+         from filtered_cohort_protocol import validate_fixed_folds
+ 
+         return validate_fixed_folds(
+-            proteins, fixed_folds_json, SEED, train_source["sha256"], CV_GROUP_KEY,
+-        )
+-    generated = make_cv_folds(proteins, seed=SEED, num_folds=5,
+-                              grouped=GROUPED_CV, group_key=CV_GROUP_KEY)
+-    return cv_split_manifest(proteins, generated, group_key=CV_GROUP_KEY)
++            proteins, fixed_folds_json, FOLD_SEED, train_source["sha256"], CV_GROUP_KEY,
++        )
++    raise ValueError("Fixed-fold manifest is mandatory; fold regeneration is forbidden")
+ 
+ 
+ def training_split_indices(split):
+@@ -4400,16 +4403,24 @@
+     import argparse
+ 
+     parser = argparse.ArgumentParser(description="Train PC-BIND using an explicit dataset directory.")
+-    parser.add_argument("--data-dir", default=os.path.join("data", "geo"))
+-    parser.add_argument("--cohort-manifest", help="Verified filtered-cohort manifest JSON.")
+-    parser.add_argument("--fold-manifest", help="Fixed grouped-fold manifest JSON; never regenerated.")
++    parser.add_argument("--training-seed", required=True, type=int, choices=(2102, 2103, 2104))
++    parser.add_argument("--fold-seed", required=True, type=int, choices=(2101,))
++    parser.add_argument("--execution-manifest", required=True)
++    parser.add_argument("--arm", required=True, choices=("ot", "noot"))
++    parser.add_argument("--dry-run", action="store_true")
++    parser.add_argument("--data-dir", required=True)
++    parser.add_argument("--cohort-manifest", required=True, help="Verified filtered-cohort manifest JSON.")
++    parser.add_argument("--fold-manifest", required=True, help="Fixed grouped-fold manifest JSON; never regenerated.")
+     parser.add_argument("--validate-only", action="store_true",
+                         help="Verify dataset bytes and fold identities, print JSON, then exit before training.")
+     cli_args = parser.parse_args()
++    SEED, FOLD_SEED = cli_args.training_seed, cli_args.fold_seed
++    execution_context = prepare_execution(cli_args.execution_manifest, SEED, FOLD_SEED,
++                                          cli_args.arm, OUTPUT_DIR)
+     dataset_selection, fixed_folds_json = configure_training_data(
+         cli_args.data_dir, cli_args.cohort_manifest, cli_args.fold_manifest,
+     )
+-    seed_everything()
++    seed_everything(SEED)
+     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+     print("Device:", device)
+     print("Model mode:", MODEL_MODE)
+@@ -4466,14 +4477,6 @@
+ 
+     verify_loaded_cohort_sources(data_sources, dataset_selection)
+     training_splits = prepare_training_splits(train_list, train_source, fixed_folds_json)
+-    if cli_args.validate_only:
+-        print(json.dumps({"validation_only": True, "dataset_selection": dataset_selection,
+-                          "datasets": data_sources, "cv_splits": training_splits,
+-                          "seed": SEED, "grouped_cv": GROUPED_CV,
+-                          "partner_transport": PARTNER_TRANSPORT,
+-                          "skip_test_eval": SKIP_TEST_EVAL}, indent=2))
+-        raise SystemExit(0)
+-    os.makedirs(OUTPUT_DIR, exist_ok=True)
+ 
+     N = len(train_list)
+     print("Total train complexes:", N)
+@@ -4625,6 +4628,23 @@
+         "dataset_selection": dataset_selection,
+         "analysis_label": dataset_selection["analysis_label"],
+     })
++    model_recipe = validate_training_namespace(globals(), execution_context)
++    attach_execution(run_provenance, execution_context)
++    run_provenance["code_files"] = (execution_context["manifest"]["source_files"]
++                                    + execution_context["manifest"]["reference_source_files"])
++    if cli_args.dry_run or cli_args.validate_only:
++        run_provenance["status"] = "validated_before_training"
++        print("MULTISEED_DRY_RUN_JSON")
++        print(json.dumps({"dry_run": True, "training_started": False, "arm": cli_args.arm,
++                          "training_seed": SEED, "fold_seed": FOLD_SEED,
++                          "output_dir": str(Path(OUTPUT_DIR).resolve()),
++                          "dataset_selection": dataset_selection, "cv_splits": training_splits,
++                          "partner_transport": PARTNER_TRANSPORT, "skip_test_eval": SKIP_TEST_EVAL,
++                          "model_recipe": model_recipe, "run_provenance": run_provenance}, indent=2))
++        raise SystemExit(0)
++    require_launch_validation(execution_context)
++    verify_execution_context(execution_context)
++    os.makedirs(OUTPUT_DIR, exist_ok=True)
+     provenance_path = os.path.join(OUTPUT_DIR, "run_provenance.json")
+     save_json(provenance_path, run_provenance)
+     if folds_to_run < num_folds:
+@@ -4934,7 +4954,11 @@
+         })
+         fold_path = os.path.join(OUTPUT_DIR, f"fold{fold+1}_best.pt")
+         run_provenance["completed_fold_indices"].append(fold)
++        verify_execution_context(execution_context)
+         torch.save({
++            "training_seed": SEED, "fold_seed": FOLD_SEED,
++            "fold_manifest": run_provenance["fold_manifest"],
++            "execution_binding": run_provenance["execution_binding"],
+             "run_provenance": run_provenance,
+             "fold_index": fold,
+             "cv_split": run_provenance["cv_splits"][fold],
+@@ -5211,7 +5235,11 @@
+     write_metrics_csv(os.path.join(OUTPUT_DIR, "metrics_summary.csv"), csv_rows)
+     run_provenance["status"] = "complete"
+     save_json(provenance_path, run_provenance)
++    verify_execution_context(execution_context)
+     save_json(os.path.join(OUTPUT_DIR, "ensemble_summary.json"), {
++        "training_seed": SEED, "fold_seed": FOLD_SEED,
++        "fold_manifest": run_provenance["fold_manifest"],
++        "execution_binding": run_provenance["execution_binding"],
+         "run_provenance": run_provenance,
+         "model_mode": MODEL_MODE,
+         "seed": SEED,

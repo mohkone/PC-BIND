@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "execution_manifest": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_manifest_v1.json",
+    "sha256": "5a91a1029c3d97ca74092b6946d15979498d2767d0b5142ff5a31e3c73670f87",
+    "size_bytes": 87093
+  },
+  "jobs_validated": 2,
+  "training_started": false,
+  "external_evaluation": "skipped",
+  "paired_recipe_and_fold_identity": "passed",
+  "cross_seed_differences": "training seed and run identities/paths only",
+  "dry_run_records": [
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v1\\representative_seed2102\\ot_2102\\dry_run.json",
+      "sha256": "12db8cfa623fa0eb5a425a02715d44715296ca01b3f937fef40c6ab5af9547c4",
+      "size_bytes": 181197
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v1\\representative_seed2102\\noot_2102\\dry_run.json",
+      "sha256": "a8387e361e17316e43e7656f1b3eeb1779a64c12f00cf67fa672f1abe365f346",
+      "size_bytes": 181203
+    }
+  ]
+}

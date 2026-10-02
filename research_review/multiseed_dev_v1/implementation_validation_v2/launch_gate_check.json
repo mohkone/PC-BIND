@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "acceptance": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_manifest_v2.acceptance.json",
+    "sha256": "9a73bf853bf7dd88ca603bbede02789d57a2654e15246d2b0d2118f199ff171b",
+    "size_bytes": 5172
+  },
+  "execution_manifest": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_manifest_v2.json",
+    "sha256": "ca69112d633de00ee80d23a7c7913a939d780cf2561f403393588f95a5eb0519",
+    "size_bytes": 87551
+  },
+  "validation_gate_exercised_read_only": true,
+  "models_trained": 0,
+  "training_output_directories_created": 0,
+  "serial_training_queue_started": false
+}

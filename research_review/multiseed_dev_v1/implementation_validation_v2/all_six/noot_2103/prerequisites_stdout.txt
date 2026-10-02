@@ -1,0 +1,6 @@
+Resolved data directory: C:\Users\Mohamed KONE\Desktop\PC-BIND-OT\data\geo_filtered_v1
+Declared files: Train335.pkl, Test287.pkl
+Train335.pkl: main_plm=334/334 aux_plm=334/334 partner_surface=334/334 partner_sequence=334/334 pair_labels=334/334 positive_pairs=28778 partner_encoder=334/334
+Test287.pkl: main_plm=285/285 aux_plm=285/285 partner_surface=285/285 partner_sequence=285/285 pair_labels=285/285 positive_pairs=22520 partner_encoder=285/285
+
+PC-BIND prerequisites OK.

@@ -1,0 +1,97 @@
+{
+  "component": "check_pcbind_prereqs.py",
+  "created_utc": "2026-10-02T15:23:11.057888+00:00",
+  "status": "passed",
+  "dataset_selection": {
+    "resolved_data_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1",
+    "analysis_label": "filtered-cohort analysis",
+    "cohort_version": "geo_filtered_v1",
+    "cohort_manifest": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\cohort_manifest.json",
+      "sha256": "a9c19e57dde847406a078e24142c0ef6c310a482008b38f22d60b35539905fcd",
+      "size_bytes": 143920
+    },
+    "declared_files": [
+      "Train335.pkl",
+      "Test287.pkl"
+    ],
+    "datasets": {
+      "Train335.pkl": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\Train335.pkl",
+        "sha256": "edc851f17baeba49efd937f6ab3bb4534abeeb64c43d1774c219726dd970cdfe",
+        "size_bytes": 1468833049,
+        "sample_count": 334
+      },
+      "Test287.pkl": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\Test287.pkl",
+        "sha256": "13d02398c730d1a4c90666807dc2c621ced0838d03affd93e0effeeeed4d8581",
+        "size_bytes": 1091571976,
+        "sample_count": 285
+      }
+    },
+    "grouped_fold_manifest": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\grouped_folds_seed2101.json",
+      "sha256": "5ce6af3a724de3b2b1b7cb08f2cc93452372d2ae01cb3a0aaefe5fe7cc18d1a0",
+      "size_bytes": 76421
+    },
+    "seed": 2101,
+    "hashes_verified": true
+  },
+  "loaded_datasets": {
+    "Train335.pkl": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\Train335.pkl",
+      "sha256": "edc851f17baeba49efd937f6ab3bb4534abeeb64c43d1774c219726dd970cdfe",
+      "size_bytes": 1468833049,
+      "sample_count": 334
+    },
+    "Test287.pkl": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\Test287.pkl",
+      "sha256": "13d02398c730d1a4c90666807dc2c621ced0838d03affd93e0effeeeed4d8581",
+      "size_bytes": 1091571976,
+      "sample_count": 285
+    }
+  },
+  "require_plm": true,
+  "require_partner": true,
+  "require_pair": true,
+  "require_partner_encoder": true,
+  "min_partner_encoder_coverage": 1.0,
+  "fixed_folds_validated": true,
+  "code_files": [
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\check_pcbind_prereqs.py",
+      "sha256": "92ca5c2d5813c62f57f49e3caa51706f449fdf46a2a7b4dc27e9f8439ae49547",
+      "size_bytes": 12859
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\filtered_cohort_protocol.py",
+      "sha256": "3a5f5d78b2d28b024029eb3b15be710ac85fb4a5f77609f24ea4997ccde3c4d6",
+      "size_bytes": 8835
+    }
+  ],
+  "coverage_rows": [
+    [
+      "Train335.pkl",
+      334,
+      334,
+      334,
+      334,
+      334,
+      334,
+      28778,
+      334
+    ],
+    [
+      "Test287.pkl",
+      285,
+      285,
+      285,
+      285,
+      285,
+      285,
+      22520,
+      285
+    ]
+  ],
+  "errors": []
+}

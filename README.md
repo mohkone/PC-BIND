@@ -58,6 +58,10 @@ The [prospective shared-seed protocol](research_review/multiseed_dev_v1/PREREGIS
 specifies training seeds 2102, 2103 and 2104 with the same seed-2101 folds.
 It is registered but has not been launched; the completed seed-2101 result
 is excluded from its primary new-seed estimate.
+The separate [seed-routing implementation](research_review/multiseed_dev_v1/IMPLEMENTATION.md)
+has passed the full suite (133 passed, one host-limited skip) and all six
+real-data dry runs against a versioned source freeze. No training queue or new
+model fitting has started.
 
 Read the [research review](research_review/RESEARCH_REVIEW.md) before interpreting
 the results. The [saved artifact audit](research_review/artifact_audit.md)
