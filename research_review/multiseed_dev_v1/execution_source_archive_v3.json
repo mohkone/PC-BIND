@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "accepted_v2": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_manifest_v2.json",
+    "sha256": "ca69112d633de00ee80d23a7c7913a939d780cf2561f403393588f95a5eb0519",
+    "size_bytes": 87551
+  },
+  "sources": [
+    {
+      "original": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\multiseed_infrastructure_v3.py",
+        "sha256": "91712825166fc533365d177e9cbcb1c584d38e34a078d9cacdac2a91d78d075c",
+        "size_bytes": 11817
+      },
+      "archive": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_sources_v3\\multiseed_infrastructure_v3.py",
+        "sha256": "91712825166fc533365d177e9cbcb1c584d38e34a078d9cacdac2a91d78d075c",
+        "size_bytes": 11817
+      }
+    },
+    {
+      "original": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_multiseed_dev_v3.py",
+        "sha256": "930cc44349cd9c1976c0997f862bd63f18324256ef110233e31f67a560836cb7",
+        "size_bytes": 13018
+      },
+      "archive": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_sources_v3\\run_multiseed_dev_v3.py",
+        "sha256": "930cc44349cd9c1976c0997f862bd63f18324256ef110233e31f67a560836cb7",
+        "size_bytes": 13018
+      }
+    },
+    {
+      "original": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\validate_multiseed_dev_v3.py",
+        "sha256": "ec35dc63b8a895257cdd9fc9744cc6e9c11906ecf25f2d94ac5863768f16e299",
+        "size_bytes": 11658
+      },
+      "archive": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_sources_v3\\validate_multiseed_dev_v3.py",
+        "sha256": "ec35dc63b8a895257cdd9fc9744cc6e9c11906ecf25f2d94ac5863768f16e299",
+        "size_bytes": 11658
+      }
+    },
+    {
+      "original": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\compare_multiseed_dev_v3.py",
+        "sha256": "fa25d08574de6261a65e2eac7a16e89b92e0ac02bab02c45b142154862e92eea",
+        "size_bytes": 19124
+      },
+      "archive": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_sources_v3\\compare_multiseed_dev_v3.py",
+        "sha256": "fa25d08574de6261a65e2eac7a16e89b92e0ac02bab02c45b142154862e92eea",
+        "size_bytes": 19124
+      }
+    },
+    {
+      "original": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_multiseed_worker_v3.py",
+        "sha256": "604a5c37d2e98ec1c6acdcf5be3774590e9d6cf7b85449276d5e4fff05f2ccee",
+        "size_bytes": 4792
+      },
+      "archive": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_sources_v3\\tests\\test_multiseed_worker_v3.py",
+        "sha256": "604a5c37d2e98ec1c6acdcf5be3774590e9d6cf7b85449276d5e4fff05f2ccee",
+        "size_bytes": 4792
+      }
+    },
+    {
+      "original": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_multiseed_validation_v3.py",
+        "sha256": "04fc66f27f8871fffaa0bbfa4c6ddd801322da05fd43a36854cf4e5685b39b0f",
+        "size_bytes": 12112
+      },
+      "archive": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_sources_v3\\tests\\test_multiseed_validation_v3.py",
+        "sha256": "04fc66f27f8871fffaa0bbfa4c6ddd801322da05fd43a36854cf4e5685b39b0f",
+        "size_bytes": 12112
+      }
+    },
+    {
+      "original": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_multiseed_analysis_v3.py",
+        "sha256": "c304511084f41ddb7a3b4d3f4b1e02d63599a9ec01870379497b48fd12c1b4bb",
+        "size_bytes": 6916
+      },
+      "archive": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_sources_v3\\tests\\test_multiseed_analysis_v3.py",
+        "sha256": "c304511084f41ddb7a3b4d3f4b1e02d63599a9ec01870379497b48fd12c1b4bb",
+        "size_bytes": 6916
+      }
+    }
+  ]
+}

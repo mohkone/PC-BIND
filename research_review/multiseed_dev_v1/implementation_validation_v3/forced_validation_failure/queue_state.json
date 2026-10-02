@@ -1,0 +1,69 @@
+{
+  "status": "failed",
+  "jobs": [
+    {
+      "training_seed": 2102,
+      "arm": "ot",
+      "partner_transport": true,
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2102_cvseed2101",
+      "status": "failed_validation",
+      "started_utc": "2026-10-02T23:20:48.427742+00:00",
+      "simulation_command": [
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\.venv\\Scripts\\python.exe",
+        "-c",
+        "import sys; sys.exit(0)"
+      ],
+      "exit_code": 0,
+      "ended_utc": "2026-10-02T23:20:48.511210+00:00"
+    },
+    {
+      "training_seed": 2102,
+      "arm": "noot",
+      "partner_transport": false,
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2102_cvseed2101",
+      "status": "queued"
+    },
+    {
+      "training_seed": 2103,
+      "arm": "ot",
+      "partner_transport": true,
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2103_cvseed2101",
+      "status": "queued"
+    },
+    {
+      "training_seed": 2103,
+      "arm": "noot",
+      "partner_transport": false,
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2103_cvseed2101",
+      "status": "queued"
+    },
+    {
+      "training_seed": 2104,
+      "arm": "ot",
+      "partner_transport": true,
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2104_cvseed2101",
+      "status": "queued"
+    },
+    {
+      "training_seed": 2104,
+      "arm": "noot",
+      "partner_transport": false,
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2104_cvseed2101",
+      "status": "queued"
+    }
+  ],
+  "comparison": {
+    "status": "waiting_for_all_six_complete"
+  },
+  "created_utc": "2026-10-02T23:20:44.545611+00:00",
+  "current_job_index": 0,
+  "error": "Deliberately injected post-run artifact-validation failure",
+  "ended_utc": "2026-10-02T23:20:48.512234+00:00",
+  "simulation": true,
+  "training_started": false,
+  "execution_manifest_v3": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_manifest_v3.json",
+    "sha256": "c181e3206996c5674ed33e7d0c0e91a83d42a3cc870a839c1b4819a470ddc73a",
+    "size_bytes": 84694
+  }
+}

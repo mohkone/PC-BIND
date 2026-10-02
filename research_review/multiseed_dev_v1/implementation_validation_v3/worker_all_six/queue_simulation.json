@@ -1,0 +1,106 @@
+{
+  "status": "complete",
+  "jobs": [
+    {
+      "training_seed": 2102,
+      "arm": "ot",
+      "partner_transport": true,
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2102_cvseed2101",
+      "status": "complete",
+      "started_utc": "2026-10-02T23:22:43.666217+00:00",
+      "exit_code": 0,
+      "ended_utc": "2026-10-02T23:22:43.666217+00:00",
+      "validation": {
+        "status": "passed",
+        "training_started": false
+      }
+    },
+    {
+      "training_seed": 2102,
+      "arm": "noot",
+      "partner_transport": false,
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2102_cvseed2101",
+      "status": "complete",
+      "started_utc": "2026-10-02T23:22:47.435575+00:00",
+      "exit_code": 0,
+      "ended_utc": "2026-10-02T23:22:47.435575+00:00",
+      "validation": {
+        "status": "passed",
+        "training_started": false
+      }
+    },
+    {
+      "training_seed": 2103,
+      "arm": "ot",
+      "partner_transport": true,
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2103_cvseed2101",
+      "status": "complete",
+      "started_utc": "2026-10-02T23:22:51.196848+00:00",
+      "exit_code": 0,
+      "ended_utc": "2026-10-02T23:22:51.197846+00:00",
+      "validation": {
+        "status": "passed",
+        "training_started": false
+      }
+    },
+    {
+      "training_seed": 2103,
+      "arm": "noot",
+      "partner_transport": false,
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2103_cvseed2101",
+      "status": "complete",
+      "started_utc": "2026-10-02T23:22:55.172997+00:00",
+      "exit_code": 0,
+      "ended_utc": "2026-10-02T23:22:55.172997+00:00",
+      "validation": {
+        "status": "passed",
+        "training_started": false
+      }
+    },
+    {
+      "training_seed": 2104,
+      "arm": "ot",
+      "partner_transport": true,
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2104_cvseed2101",
+      "status": "complete",
+      "started_utc": "2026-10-02T23:22:58.461988+00:00",
+      "exit_code": 0,
+      "ended_utc": "2026-10-02T23:22:58.461988+00:00",
+      "validation": {
+        "status": "passed",
+        "training_started": false
+      }
+    },
+    {
+      "training_seed": 2104,
+      "arm": "noot",
+      "partner_transport": false,
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2104_cvseed2101",
+      "status": "complete",
+      "started_utc": "2026-10-02T23:23:01.662263+00:00",
+      "exit_code": 0,
+      "ended_utc": "2026-10-02T23:23:01.662263+00:00",
+      "validation": {
+        "status": "passed",
+        "training_started": false
+      }
+    }
+  ],
+  "comparison": {
+    "status": "complete",
+    "artifacts": {
+      "status": "simulation_only",
+      "bootstrap_run": false
+    }
+  },
+  "created_utc": "2026-10-02T23:22:40.004951+00:00",
+  "current_job_index": null,
+  "ended_utc": "2026-10-02T23:23:01.662263+00:00",
+  "simulation": true,
+  "training_started": false,
+  "execution_manifest_v3": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_manifest_v3.json",
+    "sha256": "c181e3206996c5674ed33e7d0c0e91a83d42a3cc870a839c1b4819a470ddc73a",
+    "size_bytes": 84694
+  }
+}
