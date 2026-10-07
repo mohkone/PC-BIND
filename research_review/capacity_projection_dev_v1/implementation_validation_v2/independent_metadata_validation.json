@@ -1,0 +1,391 @@
+{
+  "status": "passed",
+  "execution_manifest": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\execution_manifest_v2.json",
+    "sha256": "fd31de86c6f959ed674f6912d1c3fac021ade3fc7ce9b54803fbed08376eb682",
+    "size_bytes": 114105
+  },
+  "jobs_validated": 6,
+  "training_started": false,
+  "launch_authorized": false,
+  "external_evaluation": "skipped",
+  "preserved_model_training_definitions": 79,
+  "reference_state_schema": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_filtered_v1_ot_seed2101_5fold_dev\\fold1_best.pt",
+    "sha256": "5a586d3d673cfa3eee46c5ce478e26f4efcafc6af60445d64377907b3ea1f6ca",
+    "size_bytes": 22940614
+  },
+  "arms": [
+    {
+      "job": {
+        "training_seed": 2102,
+        "fold_seed": 2101,
+        "arm": "projected",
+        "partner_transport": true,
+        "transport_sinkhorn_iters": 5,
+        "max_folds": 5,
+        "skip_test_eval": true,
+        "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_capacity_projection_dev_v1_projected_trainseed2102_cvseed2101"
+      },
+      "dry_run": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\projected_2102\\dry_run.json",
+        "sha256": "ca4a24acfa971cdaa0fc1cb97e5d6db58607b82bc87ec5a4eab350830e3e230a",
+        "size_bytes": 596979
+      },
+      "accepted_recipe_reference": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v2\\all_six\\ot_2102\\dry_run.json",
+        "sha256": "e0576168e04b6aca76e881be4ba80c74395bf7e684525d24ebdad2473d8a0d2f",
+        "size_bytes": 181197
+      },
+      "parameter_count": 5700243,
+      "trainable_parameter_count": 5700243,
+      "optimizer_groups": 1,
+      "first_fold_parameter_sha256": "1a97df300e4b5b4bd3d350299c6240639c3b4d374d4cb9100ae31750d3b7f541",
+      "first_fold_state_sha256": "1a97df300e4b5b4bd3d350299c6240639c3b4d374d4cb9100ae31750d3b7f541",
+      "first_fold_rng_before": {
+        "python_sha256": "e471523d846665bc61fbc5b90d471dd57941551ced4893dcc09c906815930355",
+        "numpy_sha256": "a0a4baa6654d5d84bfc76c8c462c22253d55fcb9f1654456bb9fad4afc39bea1",
+        "torch_cpu_sha256": "c7563c27a7bf8dd47b9c259d28a5c8e4f443bd2fe5d854a7fd5717ee33aabf9b"
+      },
+      "first_fold_rng_after": {
+        "python_sha256": "e471523d846665bc61fbc5b90d471dd57941551ced4893dcc09c906815930355",
+        "numpy_sha256": "a0a4baa6654d5d84bfc76c8c462c22253d55fcb9f1654456bb9fad4afc39bea1",
+        "torch_cpu_sha256": "88a992cf947f759c356aa2d608cfb73b879cb58a4d548bb06db20f816e51a069"
+      },
+      "schema_and_recipe_validated": true
+    },
+    {
+      "job": {
+        "training_seed": 2102,
+        "fold_seed": 2101,
+        "arm": "rowsoftmax",
+        "partner_transport": true,
+        "transport_sinkhorn_iters": 0,
+        "max_folds": 5,
+        "skip_test_eval": true,
+        "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_capacity_projection_dev_v1_rowsoftmax_trainseed2102_cvseed2101"
+      },
+      "dry_run": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\rowsoftmax_2102\\dry_run.json",
+        "sha256": "2faa10c06de141a2f5445d3900f82c9cc0dd67752be09517f2f115207c5ce495",
+        "size_bytes": 596987
+      },
+      "accepted_recipe_reference": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v2\\all_six\\ot_2102\\dry_run.json",
+        "sha256": "e0576168e04b6aca76e881be4ba80c74395bf7e684525d24ebdad2473d8a0d2f",
+        "size_bytes": 181197
+      },
+      "parameter_count": 5700243,
+      "trainable_parameter_count": 5700243,
+      "optimizer_groups": 1,
+      "first_fold_parameter_sha256": "1a97df300e4b5b4bd3d350299c6240639c3b4d374d4cb9100ae31750d3b7f541",
+      "first_fold_state_sha256": "1a97df300e4b5b4bd3d350299c6240639c3b4d374d4cb9100ae31750d3b7f541",
+      "first_fold_rng_before": {
+        "python_sha256": "e471523d846665bc61fbc5b90d471dd57941551ced4893dcc09c906815930355",
+        "numpy_sha256": "a0a4baa6654d5d84bfc76c8c462c22253d55fcb9f1654456bb9fad4afc39bea1",
+        "torch_cpu_sha256": "c7563c27a7bf8dd47b9c259d28a5c8e4f443bd2fe5d854a7fd5717ee33aabf9b"
+      },
+      "first_fold_rng_after": {
+        "python_sha256": "e471523d846665bc61fbc5b90d471dd57941551ced4893dcc09c906815930355",
+        "numpy_sha256": "a0a4baa6654d5d84bfc76c8c462c22253d55fcb9f1654456bb9fad4afc39bea1",
+        "torch_cpu_sha256": "88a992cf947f759c356aa2d608cfb73b879cb58a4d548bb06db20f816e51a069"
+      },
+      "schema_and_recipe_validated": true
+    },
+    {
+      "job": {
+        "training_seed": 2103,
+        "fold_seed": 2101,
+        "arm": "projected",
+        "partner_transport": true,
+        "transport_sinkhorn_iters": 5,
+        "max_folds": 5,
+        "skip_test_eval": true,
+        "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_capacity_projection_dev_v1_projected_trainseed2103_cvseed2101"
+      },
+      "dry_run": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\projected_2103\\dry_run.json",
+        "sha256": "2c0044873a9afad74c39522d054dc4e93c003eaa053c97dba076964d0443552d",
+        "size_bytes": 596979
+      },
+      "accepted_recipe_reference": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v2\\all_six\\ot_2103\\dry_run.json",
+        "sha256": "a38e46cef43ff3a166456dbd3a76c89ae5e76c69d906dacb12140ad5797b46f8",
+        "size_bytes": 181197
+      },
+      "parameter_count": 5700243,
+      "trainable_parameter_count": 5700243,
+      "optimizer_groups": 1,
+      "first_fold_parameter_sha256": "22546ef31628630bdd1c1264189460192aac3acfd032a60ef849a2286aff1fc2",
+      "first_fold_state_sha256": "22546ef31628630bdd1c1264189460192aac3acfd032a60ef849a2286aff1fc2",
+      "first_fold_rng_before": {
+        "python_sha256": "9caad697753d900b59ef0cf71ae9c7ea942b3ede577dab4e90a95d764626be24",
+        "numpy_sha256": "878bcea0caeb4bcff3f5fa92a3be9847470163d4f4db9d1eee6a0065d1861878",
+        "torch_cpu_sha256": "8e1aa993c215d45be379f6ee35fb785467a5092b472632de04409d5cf8bc32d0"
+      },
+      "first_fold_rng_after": {
+        "python_sha256": "9caad697753d900b59ef0cf71ae9c7ea942b3ede577dab4e90a95d764626be24",
+        "numpy_sha256": "878bcea0caeb4bcff3f5fa92a3be9847470163d4f4db9d1eee6a0065d1861878",
+        "torch_cpu_sha256": "153f28dfc430d57e7995b59f263991523de8a7e9676ec05c730246aa0bb88a9a"
+      },
+      "schema_and_recipe_validated": true
+    },
+    {
+      "job": {
+        "training_seed": 2103,
+        "fold_seed": 2101,
+        "arm": "rowsoftmax",
+        "partner_transport": true,
+        "transport_sinkhorn_iters": 0,
+        "max_folds": 5,
+        "skip_test_eval": true,
+        "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_capacity_projection_dev_v1_rowsoftmax_trainseed2103_cvseed2101"
+      },
+      "dry_run": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\rowsoftmax_2103\\dry_run.json",
+        "sha256": "8367b01f5354b2c67e1c651c98106d64006b17661718d038abc4d214c6f3aed6",
+        "size_bytes": 596987
+      },
+      "accepted_recipe_reference": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v2\\all_six\\ot_2103\\dry_run.json",
+        "sha256": "a38e46cef43ff3a166456dbd3a76c89ae5e76c69d906dacb12140ad5797b46f8",
+        "size_bytes": 181197
+      },
+      "parameter_count": 5700243,
+      "trainable_parameter_count": 5700243,
+      "optimizer_groups": 1,
+      "first_fold_parameter_sha256": "22546ef31628630bdd1c1264189460192aac3acfd032a60ef849a2286aff1fc2",
+      "first_fold_state_sha256": "22546ef31628630bdd1c1264189460192aac3acfd032a60ef849a2286aff1fc2",
+      "first_fold_rng_before": {
+        "python_sha256": "9caad697753d900b59ef0cf71ae9c7ea942b3ede577dab4e90a95d764626be24",
+        "numpy_sha256": "878bcea0caeb4bcff3f5fa92a3be9847470163d4f4db9d1eee6a0065d1861878",
+        "torch_cpu_sha256": "8e1aa993c215d45be379f6ee35fb785467a5092b472632de04409d5cf8bc32d0"
+      },
+      "first_fold_rng_after": {
+        "python_sha256": "9caad697753d900b59ef0cf71ae9c7ea942b3ede577dab4e90a95d764626be24",
+        "numpy_sha256": "878bcea0caeb4bcff3f5fa92a3be9847470163d4f4db9d1eee6a0065d1861878",
+        "torch_cpu_sha256": "153f28dfc430d57e7995b59f263991523de8a7e9676ec05c730246aa0bb88a9a"
+      },
+      "schema_and_recipe_validated": true
+    },
+    {
+      "job": {
+        "training_seed": 2104,
+        "fold_seed": 2101,
+        "arm": "projected",
+        "partner_transport": true,
+        "transport_sinkhorn_iters": 5,
+        "max_folds": 5,
+        "skip_test_eval": true,
+        "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_capacity_projection_dev_v1_projected_trainseed2104_cvseed2101"
+      },
+      "dry_run": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\projected_2104\\dry_run.json",
+        "sha256": "711e06d7c6e35cc9f6553798ed127ff8f029e03a4a4ee6d7d4eb4404fb736d5b",
+        "size_bytes": 596979
+      },
+      "accepted_recipe_reference": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v2\\all_six\\ot_2104\\dry_run.json",
+        "sha256": "f262e3cb454dd7d1dd4cb91e8b89d8d42f26e5dc7fc579dc5d35a3855340661a",
+        "size_bytes": 181197
+      },
+      "parameter_count": 5700243,
+      "trainable_parameter_count": 5700243,
+      "optimizer_groups": 1,
+      "first_fold_parameter_sha256": "729616c3e0bdbc326addc2e0f4e6db531a72f0a8eb89638d811ef5c2897505d8",
+      "first_fold_state_sha256": "729616c3e0bdbc326addc2e0f4e6db531a72f0a8eb89638d811ef5c2897505d8",
+      "first_fold_rng_before": {
+        "python_sha256": "9c8e444d49e4914745a6f7170eca996f06d89bf61eb55a0f163cea8772f0a1f2",
+        "numpy_sha256": "ad2e18910a913e52ef303444f15fe3718e77389971c0b5a475bede2ad08b0cbf",
+        "torch_cpu_sha256": "5764ca992f2a81984cf3850dd256d30f0d18576c28a05da41d8a6a3c6a104881"
+      },
+      "first_fold_rng_after": {
+        "python_sha256": "9c8e444d49e4914745a6f7170eca996f06d89bf61eb55a0f163cea8772f0a1f2",
+        "numpy_sha256": "ad2e18910a913e52ef303444f15fe3718e77389971c0b5a475bede2ad08b0cbf",
+        "torch_cpu_sha256": "7b4b091f530dd37459527207561240097a13c76df5f9e5e524e86bf51a9f62b3"
+      },
+      "schema_and_recipe_validated": true
+    },
+    {
+      "job": {
+        "training_seed": 2104,
+        "fold_seed": 2101,
+        "arm": "rowsoftmax",
+        "partner_transport": true,
+        "transport_sinkhorn_iters": 0,
+        "max_folds": 5,
+        "skip_test_eval": true,
+        "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_capacity_projection_dev_v1_rowsoftmax_trainseed2104_cvseed2101"
+      },
+      "dry_run": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\rowsoftmax_2104\\dry_run.json",
+        "sha256": "cf7eeec606bce0c3d0ce6d7bf1793ff01bbca5f87661340d4ce8566a1ad1ed48",
+        "size_bytes": 596987
+      },
+      "accepted_recipe_reference": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v2\\all_six\\ot_2104\\dry_run.json",
+        "sha256": "f262e3cb454dd7d1dd4cb91e8b89d8d42f26e5dc7fc579dc5d35a3855340661a",
+        "size_bytes": 181197
+      },
+      "parameter_count": 5700243,
+      "trainable_parameter_count": 5700243,
+      "optimizer_groups": 1,
+      "first_fold_parameter_sha256": "729616c3e0bdbc326addc2e0f4e6db531a72f0a8eb89638d811ef5c2897505d8",
+      "first_fold_state_sha256": "729616c3e0bdbc326addc2e0f4e6db531a72f0a8eb89638d811ef5c2897505d8",
+      "first_fold_rng_before": {
+        "python_sha256": "9c8e444d49e4914745a6f7170eca996f06d89bf61eb55a0f163cea8772f0a1f2",
+        "numpy_sha256": "ad2e18910a913e52ef303444f15fe3718e77389971c0b5a475bede2ad08b0cbf",
+        "torch_cpu_sha256": "5764ca992f2a81984cf3850dd256d30f0d18576c28a05da41d8a6a3c6a104881"
+      },
+      "first_fold_rng_after": {
+        "python_sha256": "9c8e444d49e4914745a6f7170eca996f06d89bf61eb55a0f163cea8772f0a1f2",
+        "numpy_sha256": "ad2e18910a913e52ef303444f15fe3718e77389971c0b5a475bede2ad08b0cbf",
+        "torch_cpu_sha256": "7b4b091f530dd37459527207561240097a13c76df5f9e5e524e86bf51a9f62b3"
+      },
+      "schema_and_recipe_validated": true
+    }
+  ],
+  "initialization_matching": [
+    [
+      {
+        "fold_index": 0,
+        "training_seed": 2102,
+        "schema_trainability_counts_optimizer_equal": true,
+        "initial_values_equal": true,
+        "rng_fingerprints_equal": true,
+        "initial_value_equality_required": true
+      },
+      {
+        "fold_index": 1,
+        "training_seed": 2102,
+        "schema_trainability_counts_optimizer_equal": true,
+        "initial_values_equal": true,
+        "rng_fingerprints_equal": true,
+        "initial_value_equality_required": false
+      },
+      {
+        "fold_index": 2,
+        "training_seed": 2102,
+        "schema_trainability_counts_optimizer_equal": true,
+        "initial_values_equal": true,
+        "rng_fingerprints_equal": true,
+        "initial_value_equality_required": false
+      },
+      {
+        "fold_index": 3,
+        "training_seed": 2102,
+        "schema_trainability_counts_optimizer_equal": true,
+        "initial_values_equal": true,
+        "rng_fingerprints_equal": true,
+        "initial_value_equality_required": false
+      },
+      {
+        "fold_index": 4,
+        "training_seed": 2102,
+        "schema_trainability_counts_optimizer_equal": true,
+        "initial_values_equal": true,
+        "rng_fingerprints_equal": true,
+        "initial_value_equality_required": false
+      }
+    ],
+    [
+      {
+        "fold_index": 0,
+        "training_seed": 2103,
+        "schema_trainability_counts_optimizer_equal": true,
+        "initial_values_equal": true,
+        "rng_fingerprints_equal": true,
+        "initial_value_equality_required": true
+      },
+      {
+        "fold_index": 1,
+        "training_seed": 2103,
+        "schema_trainability_counts_optimizer_equal": true,
+        "initial_values_equal": true,
+        "rng_fingerprints_equal": true,
+        "initial_value_equality_required": false
+      },
+      {
+        "fold_index": 2,
+        "training_seed": 2103,
+        "schema_trainability_counts_optimizer_equal": true,
+        "initial_values_equal": true,
+        "rng_fingerprints_equal": true,
+        "initial_value_equality_required": false
+      },
+      {
+        "fold_index": 3,
+        "training_seed": 2103,
+        "schema_trainability_counts_optimizer_equal": true,
+        "initial_values_equal": true,
+        "rng_fingerprints_equal": true,
+        "initial_value_equality_required": false
+      },
+      {
+        "fold_index": 4,
+        "training_seed": 2103,
+        "schema_trainability_counts_optimizer_equal": true,
+        "initial_values_equal": true,
+        "rng_fingerprints_equal": true,
+        "initial_value_equality_required": false
+      }
+    ],
+    [
+      {
+        "fold_index": 0,
+        "training_seed": 2104,
+        "schema_trainability_counts_optimizer_equal": true,
+        "initial_values_equal": true,
+        "rng_fingerprints_equal": true,
+        "initial_value_equality_required": true
+      },
+      {
+        "fold_index": 1,
+        "training_seed": 2104,
+        "schema_trainability_counts_optimizer_equal": true,
+        "initial_values_equal": true,
+        "rng_fingerprints_equal": true,
+        "initial_value_equality_required": false
+      },
+      {
+        "fold_index": 2,
+        "training_seed": 2104,
+        "schema_trainability_counts_optimizer_equal": true,
+        "initial_values_equal": true,
+        "rng_fingerprints_equal": true,
+        "initial_value_equality_required": false
+      },
+      {
+        "fold_index": 3,
+        "training_seed": 2104,
+        "schema_trainability_counts_optimizer_equal": true,
+        "initial_values_equal": true,
+        "rng_fingerprints_equal": true,
+        "initial_value_equality_required": false
+      },
+      {
+        "fold_index": 4,
+        "training_seed": 2104,
+        "schema_trainability_counts_optimizer_equal": true,
+        "initial_values_equal": true,
+        "rng_fingerprints_equal": true,
+        "initial_value_equality_required": false
+      }
+    ]
+  ],
+  "distinct_first_fold_parameter_fingerprints_across_seeds": 3,
+  "dry_run_later_fold_fingerprints_are_initialization_only": true,
+  "future_later_fold_equality_is_not_required_and_no_reseeding_is_added": true,
+  "declared_destinations_absent": [
+    "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_capacity_projection_dev_v1_projected_trainseed2102_cvseed2101",
+    "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_capacity_projection_dev_v1_rowsoftmax_trainseed2102_cvseed2101",
+    "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_capacity_projection_dev_v1_projected_trainseed2103_cvseed2101",
+    "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_capacity_projection_dev_v1_rowsoftmax_trainseed2103_cvseed2101",
+    "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_capacity_projection_dev_v1_projected_trainseed2104_cvseed2101",
+    "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_capacity_projection_dev_v1_rowsoftmax_trainseed2104_cvseed2101",
+    "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\complete_oof",
+    "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_capacity_projection_dev_v1_process"
+  ],
+  "launch_authorization_file_absent": true,
+  "bootstrap_run": false
+}

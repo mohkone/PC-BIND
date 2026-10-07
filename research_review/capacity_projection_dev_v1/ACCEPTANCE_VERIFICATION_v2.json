@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "execution_manifest": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\execution_manifest_v2.json",
+    "sha256": "fd31de86c6f959ed674f6912d1c3fac021ade3fc7ce9b54803fbed08376eb682",
+    "size_bytes": 114105
+  },
+  "acceptance": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\execution_manifest_v2.acceptance.json",
+    "sha256": "fd3dcd976a361fadbdddff2b50726e33f81adee5b904a3740b7280a3bc41b661",
+    "size_bytes": 120381
+  },
+  "training_started": false,
+  "launch_authorized": false,
+  "launch_gate_refusal": "Training is unstarted: explicit user launch authorization has not been recorded",
+  "worker_or_trainer_launch_attempted": false,
+  "all_declared_destinations_absent": true,
+  "source_ancestry_cohort_fold_runtime_and_evidence_hashes_verified": true,
+  "bootstrap_run": false,
+  "external_evaluation": "skipped"
+}

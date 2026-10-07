@@ -1,0 +1,93 @@
+{
+  "status": "failed",
+  "jobs": [
+    {
+      "training_seed": 2102,
+      "fold_seed": 2101,
+      "arm": "projected",
+      "partner_transport": true,
+      "transport_sinkhorn_iters": 5,
+      "max_folds": 5,
+      "skip_test_eval": true,
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_capacity_projection_dev_v1_projected_trainseed2102_cvseed2101",
+      "status": "failed_validation",
+      "started_utc": "2026-10-07T12:17:06.029043+00:00",
+      "simulation_command": [
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\.venv\\Scripts\\python.exe",
+        "-c",
+        "import sys; sys.exit(0)"
+      ],
+      "exit_code": 0,
+      "ended_utc": "2026-10-07T12:17:06.131292+00:00"
+    },
+    {
+      "training_seed": 2102,
+      "fold_seed": 2101,
+      "arm": "rowsoftmax",
+      "partner_transport": true,
+      "transport_sinkhorn_iters": 0,
+      "max_folds": 5,
+      "skip_test_eval": true,
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_capacity_projection_dev_v1_rowsoftmax_trainseed2102_cvseed2101",
+      "status": "queued"
+    },
+    {
+      "training_seed": 2103,
+      "fold_seed": 2101,
+      "arm": "projected",
+      "partner_transport": true,
+      "transport_sinkhorn_iters": 5,
+      "max_folds": 5,
+      "skip_test_eval": true,
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_capacity_projection_dev_v1_projected_trainseed2103_cvseed2101",
+      "status": "queued"
+    },
+    {
+      "training_seed": 2103,
+      "fold_seed": 2101,
+      "arm": "rowsoftmax",
+      "partner_transport": true,
+      "transport_sinkhorn_iters": 0,
+      "max_folds": 5,
+      "skip_test_eval": true,
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_capacity_projection_dev_v1_rowsoftmax_trainseed2103_cvseed2101",
+      "status": "queued"
+    },
+    {
+      "training_seed": 2104,
+      "fold_seed": 2101,
+      "arm": "projected",
+      "partner_transport": true,
+      "transport_sinkhorn_iters": 5,
+      "max_folds": 5,
+      "skip_test_eval": true,
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_capacity_projection_dev_v1_projected_trainseed2104_cvseed2101",
+      "status": "queued"
+    },
+    {
+      "training_seed": 2104,
+      "fold_seed": 2101,
+      "arm": "rowsoftmax",
+      "partner_transport": true,
+      "transport_sinkhorn_iters": 0,
+      "max_folds": 5,
+      "skip_test_eval": true,
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_capacity_projection_dev_v1_rowsoftmax_trainseed2104_cvseed2101",
+      "status": "queued"
+    }
+  ],
+  "comparison": {
+    "status": "waiting_for_all_six_complete"
+  },
+  "created_utc": "2026-10-07T12:16:57.628207+00:00",
+  "current_job_index": 0,
+  "error": "Deliberately injected artifact-validation failure",
+  "ended_utc": "2026-10-07T12:17:06.131292+00:00",
+  "simulation": true,
+  "training_started": false,
+  "execution_manifest": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\execution_manifest_v1.json",
+    "sha256": "878b849058d85eb4899c24003e5f1ad2d6050383c1ac3753a3897b07e47b069a",
+    "size_bytes": 96262
+  }
+}

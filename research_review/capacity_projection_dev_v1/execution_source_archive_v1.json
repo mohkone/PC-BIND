@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "protocol": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\protocol.json",
+    "sha256": "3cc6a2e58f331928d36849eddef80af40606505186a6e5d28eb6ada9f4079a3c",
+    "size_bytes": 32012
+  },
+  "sources": [
+    {
+      "original": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\projection_protocol_v1.py",
+        "sha256": "730c980683e9b88f91095ad9dfa38978263ff3dbda79d9f6d35f89b8d106d4b0",
+        "size_bytes": 25510
+      },
+      "archive": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\execution_sources_v1\\projection_protocol_v1.py",
+        "sha256": "730c980683e9b88f91095ad9dfa38978263ff3dbda79d9f6d35f89b8d106d4b0",
+        "size_bytes": 25510
+      }
+    },
+    {
+      "original": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\projection_initialization_v1.py",
+        "sha256": "48ae254eef1bd0f354706c5b961e6453b5ef155c083ce88028184292e88da2b3",
+        "size_bytes": 17287
+      },
+      "archive": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\execution_sources_v1\\projection_initialization_v1.py",
+        "sha256": "48ae254eef1bd0f354706c5b961e6453b5ef155c083ce88028184292e88da2b3",
+        "size_bytes": 17287
+      }
+    },
+    {
+      "original": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\CROSS5FOLD_projection_dev_v1.py",
+        "sha256": "168316b6c3fadcf8cd57d0448ba2a32513ee681fa027e0be00adb02cf90d379b",
+        "size_bytes": 228388
+      },
+      "archive": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\execution_sources_v1\\CROSS5FOLD_projection_dev_v1.py",
+        "sha256": "168316b6c3fadcf8cd57d0448ba2a32513ee681fa027e0be00adb02cf90d379b",
+        "size_bytes": 228388
+      }
+    },
+    {
+      "original": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_projection_dev_v1.py",
+        "sha256": "86a97339b7a698ee0550dbd239c3da90a866f861b0de75ab81cf8eb8848a2be0",
+        "size_bytes": 14662
+      },
+      "archive": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\execution_sources_v1\\run_projection_dev_v1.py",
+        "sha256": "86a97339b7a698ee0550dbd239c3da90a866f861b0de75ab81cf8eb8848a2be0",
+        "size_bytes": 14662
+      }
+    },
+    {
+      "original": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\validate_projection_dev_v1.py",
+        "sha256": "4c803b80a30915de08c50a772328ba77796ca7a827eb9a28dfdf267b9d8acab2",
+        "size_bytes": 21286
+      },
+      "archive": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\execution_sources_v1\\validate_projection_dev_v1.py",
+        "sha256": "4c803b80a30915de08c50a772328ba77796ca7a827eb9a28dfdf267b9d8acab2",
+        "size_bytes": 21286
+      }
+    },
+    {
+      "original": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\compare_projection_dev_v1.py",
+        "sha256": "da81ff37594f8ccce06e9e01b2231ca4a19cec691059b39be7dc97be46985ad0",
+        "size_bytes": 16218
+      },
+      "archive": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\execution_sources_v1\\compare_projection_dev_v1.py",
+        "sha256": "da81ff37594f8ccce06e9e01b2231ca4a19cec691059b39be7dc97be46985ad0",
+        "size_bytes": 16218
+      }
+    },
+    {
+      "original": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_projection_protocol_v1.py",
+        "sha256": "1d71f462675029bc290ddf09ee21e0abae6ed125b1360a842b7710d0fe4cc763",
+        "size_bytes": 14564
+      },
+      "archive": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\execution_sources_v1\\tests\\test_projection_protocol_v1.py",
+        "sha256": "1d71f462675029bc290ddf09ee21e0abae6ed125b1360a842b7710d0fe4cc763",
+        "size_bytes": 14564
+      }
+    },
+    {
+      "original": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_projection_training_v1.py",
+        "sha256": "e16f4307127ebe440879a9be7423493b779bbe2b0be793d98e596640028f7124",
+        "size_bytes": 13899
+      },
+      "archive": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\execution_sources_v1\\tests\\test_projection_training_v1.py",
+        "sha256": "e16f4307127ebe440879a9be7423493b779bbe2b0be793d98e596640028f7124",
+        "size_bytes": 13899
+      }
+    },
+    {
+      "original": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_projection_validation_v1.py",
+        "sha256": "85d92995185f06b866ffc22381d079410061885004cbad5da1a2b8427c222558",
+        "size_bytes": 19079
+      },
+      "archive": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\execution_sources_v1\\tests\\test_projection_validation_v1.py",
+        "sha256": "85d92995185f06b866ffc22381d079410061885004cbad5da1a2b8427c222558",
+        "size_bytes": 19079
+      }
+    },
+    {
+      "original": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_projection_analysis_v1.py",
+        "sha256": "b8262f30426406802cd8163ddb0fc57cff7479016df6398be884a3f95b8765ff",
+        "size_bytes": 17670
+      },
+      "archive": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\execution_sources_v1\\tests\\test_projection_analysis_v1.py",
+        "sha256": "b8262f30426406802cd8163ddb0fc57cff7479016df6398be884a3f95b8765ff",
+        "size_bytes": 17670
+      }
+    }
+  ]
+}

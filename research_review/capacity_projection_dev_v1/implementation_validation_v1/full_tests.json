@@ -1,0 +1,172 @@
+{
+  "status": "passed",
+  "tests_run": 211,
+  "failures": 0,
+  "errors": 0,
+  "skipped": [
+    {
+      "test": "test_dataset_symlink_to_outside_is_rejected (test_filtered_protocol.CohortVerificationTests.test_dataset_symlink_to_outside_is_rejected)",
+      "reason": "Creating symlinks is unavailable on this host: OSError"
+    }
+  ],
+  "execution_manifest": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\execution_manifest_v1.json",
+    "sha256": "878b849058d85eb4899c24003e5f1ad2d6050383c1ac3753a3897b07e47b069a",
+    "size_bytes": 96262
+  },
+  "source_files": [
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\projection_protocol_v1.py",
+      "sha256": "730c980683e9b88f91095ad9dfa38978263ff3dbda79d9f6d35f89b8d106d4b0",
+      "size_bytes": 25510
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\projection_initialization_v1.py",
+      "sha256": "48ae254eef1bd0f354706c5b961e6453b5ef155c083ce88028184292e88da2b3",
+      "size_bytes": 17287
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\CROSS5FOLD_projection_dev_v1.py",
+      "sha256": "168316b6c3fadcf8cd57d0448ba2a32513ee681fa027e0be00adb02cf90d379b",
+      "size_bytes": 228388
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_projection_dev_v1.py",
+      "sha256": "86a97339b7a698ee0550dbd239c3da90a866f861b0de75ab81cf8eb8848a2be0",
+      "size_bytes": 14662
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\validate_projection_dev_v1.py",
+      "sha256": "4c803b80a30915de08c50a772328ba77796ca7a827eb9a28dfdf267b9d8acab2",
+      "size_bytes": 21286
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\compare_projection_dev_v1.py",
+      "sha256": "da81ff37594f8ccce06e9e01b2231ca4a19cec691059b39be7dc97be46985ad0",
+      "size_bytes": 16218
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_projection_protocol_v1.py",
+      "sha256": "1d71f462675029bc290ddf09ee21e0abae6ed125b1360a842b7710d0fe4cc763",
+      "size_bytes": 14564
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_projection_training_v1.py",
+      "sha256": "e16f4307127ebe440879a9be7423493b779bbe2b0be793d98e596640028f7124",
+      "size_bytes": 13899
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_projection_validation_v1.py",
+      "sha256": "85d92995185f06b866ffc22381d079410061885004cbad5da1a2b8427c222558",
+      "size_bytes": 19079
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_projection_analysis_v1.py",
+      "sha256": "b8262f30426406802cd8163ddb0fc57cff7479016df6398be884a3f95b8765ff",
+      "size_bytes": 17670
+    }
+  ],
+  "test_source_files": [
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_data_integrity.py",
+      "sha256": "e9cc98a1137ed34f4687e375cb272b3bb58217a712c4c10be4a02df41c44435a",
+      "size_bytes": 9842
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_dataset_selection.py",
+      "sha256": "a2d2b1ba0647efacf6f62ebf509a9985819021c9e8d62ef9fb905d4e76227544",
+      "size_bytes": 5996
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_evaluation_integrity.py",
+      "sha256": "cf5a2f05a27d8ac7769460c4eb43a38fb7cf4a93c78bd94cc98850cd1696c8ea",
+      "size_bytes": 14173
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_filtered_cohort.py",
+      "sha256": "77e7c06003399527dd281a85a41c4302a18777043742b7f27c9b0d67ce00af4e",
+      "size_bytes": 2996
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_filtered_protocol.py",
+      "sha256": "c75894ec0b91be435198e7a5facef8b5d32b00337dc977316bf42fda689c3e48",
+      "size_bytes": 12774
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_fixed_fold_training.py",
+      "sha256": "8d40db0c9a53142b817a1714ec63e5b37a3d760c9a2ca19ff2a6c0dab809b420",
+      "size_bytes": 7378
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_model_integrity.py",
+      "sha256": "700c7475b2de72f8d9666f140ca75ec70dfd7f7e5e9fa092a60294921013b604",
+      "size_bytes": 10443
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_multiseed_analysis_v3.py",
+      "sha256": "c304511084f41ddb7a3b4d3f4b1e02d63599a9ec01870379497b48fd12c1b4bb",
+      "size_bytes": 6916
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_multiseed_protocol_v1.py",
+      "sha256": "06118ddb71a481bba34d7b3d054e270455d3f2809294979421571b35329d9290",
+      "size_bytes": 14809
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_multiseed_validation_v3.py",
+      "sha256": "04fc66f27f8871fffaa0bbfa4c6ddd801322da05fd43a36854cf4e5685b39b0f",
+      "size_bytes": 12112
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_multiseed_worker_v3.py",
+      "sha256": "604a5c37d2e98ec1c6acdcf5be3774590e9d6cf7b85449276d5e4fff05f2ccee",
+      "size_bytes": 4792
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_oof_development.py",
+      "sha256": "275013efecb80f8de2cc119f89b414c0f7348a169850bc6c664ef35777b9336f",
+      "size_bytes": 11751
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_prerequisite_provenance.py",
+      "sha256": "14c3e24a48aa8f60417311d73a3b077fbbc4c7f104272800e714a24d2ef234c3",
+      "size_bytes": 1806
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_projection_analysis_v1.py",
+      "sha256": "b8262f30426406802cd8163ddb0fc57cff7479016df6398be884a3f95b8765ff",
+      "size_bytes": 17670
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_projection_protocol_v1.py",
+      "sha256": "1d71f462675029bc290ddf09ee21e0abae6ed125b1360a842b7710d0fe4cc763",
+      "size_bytes": 14564
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_projection_training_v1.py",
+      "sha256": "e16f4307127ebe440879a9be7423493b779bbe2b0be793d98e596640028f7124",
+      "size_bytes": 13899
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_projection_validation_v1.py",
+      "sha256": "85d92995185f06b866ffc22381d079410061885004cbad5da1a2b8427c222558",
+      "size_bytes": 19079
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_research_provenance.py",
+      "sha256": "94691a6495b31042af430742fd2dfe691fb3bc32be24069761cce968967047ca",
+      "size_bytes": 3809
+    }
+  ],
+  "test_log": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v1\\full_tests.log",
+    "sha256": "cfd08b3318e2526b20a2218d46cb3d8de6ef74ae8ffca3b8140c31b7025a29ff",
+    "size_bytes": 36104
+  },
+  "runner": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v1\\run_full_suite.py",
+    "sha256": "5a71ccc598be3e85bdb253db48c488836cd7c510ad27535e763e7337b5abebe2",
+    "size_bytes": 1811
+  },
+  "training_started": false
+}

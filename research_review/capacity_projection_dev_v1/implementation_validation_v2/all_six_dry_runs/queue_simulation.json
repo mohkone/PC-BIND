@@ -1,0 +1,154 @@
+{
+  "status": "complete",
+  "jobs": [
+    {
+      "training_seed": 2102,
+      "fold_seed": 2101,
+      "arm": "projected",
+      "partner_transport": true,
+      "transport_sinkhorn_iters": 5,
+      "max_folds": 5,
+      "skip_test_eval": true,
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_capacity_projection_dev_v1_projected_trainseed2102_cvseed2101",
+      "status": "complete",
+      "started_utc": "2026-10-07T12:33:17.163376+00:00",
+      "exit_code": 0,
+      "ended_utc": "2026-10-07T12:33:17.163376+00:00",
+      "validation": {
+        "status": "passed",
+        "dry_run": {
+          "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\projected_2102\\dry_run.json",
+          "sha256": "ca4a24acfa971cdaa0fc1cb97e5d6db58607b82bc87ec5a4eab350830e3e230a",
+          "size_bytes": 596979
+        }
+      }
+    },
+    {
+      "training_seed": 2102,
+      "fold_seed": 2101,
+      "arm": "rowsoftmax",
+      "partner_transport": true,
+      "transport_sinkhorn_iters": 0,
+      "max_folds": 5,
+      "skip_test_eval": true,
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_capacity_projection_dev_v1_rowsoftmax_trainseed2102_cvseed2101",
+      "status": "complete",
+      "started_utc": "2026-10-07T12:33:17.163376+00:00",
+      "exit_code": 0,
+      "ended_utc": "2026-10-07T12:33:17.163376+00:00",
+      "validation": {
+        "status": "passed",
+        "dry_run": {
+          "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\rowsoftmax_2102\\dry_run.json",
+          "sha256": "2faa10c06de141a2f5445d3900f82c9cc0dd67752be09517f2f115207c5ce495",
+          "size_bytes": 596987
+        }
+      }
+    },
+    {
+      "training_seed": 2103,
+      "fold_seed": 2101,
+      "arm": "projected",
+      "partner_transport": true,
+      "transport_sinkhorn_iters": 5,
+      "max_folds": 5,
+      "skip_test_eval": true,
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_capacity_projection_dev_v1_projected_trainseed2103_cvseed2101",
+      "status": "complete",
+      "started_utc": "2026-10-07T12:33:17.163376+00:00",
+      "exit_code": 0,
+      "ended_utc": "2026-10-07T12:33:17.163376+00:00",
+      "validation": {
+        "status": "passed",
+        "dry_run": {
+          "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\projected_2103\\dry_run.json",
+          "sha256": "2c0044873a9afad74c39522d054dc4e93c003eaa053c97dba076964d0443552d",
+          "size_bytes": 596979
+        }
+      }
+    },
+    {
+      "training_seed": 2103,
+      "fold_seed": 2101,
+      "arm": "rowsoftmax",
+      "partner_transport": true,
+      "transport_sinkhorn_iters": 0,
+      "max_folds": 5,
+      "skip_test_eval": true,
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_capacity_projection_dev_v1_rowsoftmax_trainseed2103_cvseed2101",
+      "status": "complete",
+      "started_utc": "2026-10-07T12:33:17.163376+00:00",
+      "exit_code": 0,
+      "ended_utc": "2026-10-07T12:33:17.163376+00:00",
+      "validation": {
+        "status": "passed",
+        "dry_run": {
+          "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\rowsoftmax_2103\\dry_run.json",
+          "sha256": "8367b01f5354b2c67e1c651c98106d64006b17661718d038abc4d214c6f3aed6",
+          "size_bytes": 596987
+        }
+      }
+    },
+    {
+      "training_seed": 2104,
+      "fold_seed": 2101,
+      "arm": "projected",
+      "partner_transport": true,
+      "transport_sinkhorn_iters": 5,
+      "max_folds": 5,
+      "skip_test_eval": true,
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_capacity_projection_dev_v1_projected_trainseed2104_cvseed2101",
+      "status": "complete",
+      "started_utc": "2026-10-07T12:33:17.163376+00:00",
+      "exit_code": 0,
+      "ended_utc": "2026-10-07T12:33:17.163376+00:00",
+      "validation": {
+        "status": "passed",
+        "dry_run": {
+          "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\projected_2104\\dry_run.json",
+          "sha256": "711e06d7c6e35cc9f6553798ed127ff8f029e03a4a4ee6d7d4eb4404fb736d5b",
+          "size_bytes": 596979
+        }
+      }
+    },
+    {
+      "training_seed": 2104,
+      "fold_seed": 2101,
+      "arm": "rowsoftmax",
+      "partner_transport": true,
+      "transport_sinkhorn_iters": 0,
+      "max_folds": 5,
+      "skip_test_eval": true,
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_capacity_projection_dev_v1_rowsoftmax_trainseed2104_cvseed2101",
+      "status": "complete",
+      "started_utc": "2026-10-07T12:33:17.163376+00:00",
+      "exit_code": 0,
+      "ended_utc": "2026-10-07T12:33:17.163376+00:00",
+      "validation": {
+        "status": "passed",
+        "dry_run": {
+          "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\rowsoftmax_2104\\dry_run.json",
+          "sha256": "cf7eeec606bce0c3d0ce6d7bf1793ff01bbca5f87661340d4ce8566a1ad1ed48",
+          "size_bytes": 596987
+        }
+      }
+    }
+  ],
+  "comparison": {
+    "status": "complete",
+    "artifacts": {
+      "status": "simulation_only",
+      "bootstrap_run": false
+    }
+  },
+  "created_utc": "2026-10-07T12:33:17.163376+00:00",
+  "current_job_index": null,
+  "ended_utc": "2026-10-07T12:33:17.163376+00:00",
+  "simulation": true,
+  "training_started": false,
+  "execution_manifest": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\execution_manifest_v2.json",
+    "sha256": "fd31de86c6f959ed674f6912d1c3fac021ade3fc7ce9b54803fbed08376eb682",
+    "size_bytes": 114105
+  }
+}

@@ -1,0 +1,393 @@
+{
+  "status": "passed",
+  "jobs_validated": 6,
+  "training_started": false,
+  "external_evaluation": "skipped",
+  "execution_manifest": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\execution_manifest_v2.json",
+    "sha256": "fd31de86c6f959ed674f6912d1c3fac021ade3fc7ce9b54803fbed08376eb682",
+    "size_bytes": 114105
+  },
+  "actual_gate_and_trainer_dry_runs": 6,
+  "dry_run_records": [
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\projected_2102\\dry_run.json",
+      "sha256": "ca4a24acfa971cdaa0fc1cb97e5d6db58607b82bc87ec5a4eab350830e3e230a",
+      "size_bytes": 596979
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\rowsoftmax_2102\\dry_run.json",
+      "sha256": "2faa10c06de141a2f5445d3900f82c9cc0dd67752be09517f2f115207c5ce495",
+      "size_bytes": 596987
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\projected_2103\\dry_run.json",
+      "sha256": "2c0044873a9afad74c39522d054dc4e93c003eaa053c97dba076964d0443552d",
+      "size_bytes": 596979
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\rowsoftmax_2103\\dry_run.json",
+      "sha256": "8367b01f5354b2c67e1c651c98106d64006b17661718d038abc4d214c6f3aed6",
+      "size_bytes": 596987
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\projected_2104\\dry_run.json",
+      "sha256": "711e06d7c6e35cc9f6553798ed127ff8f029e03a4a4ee6d7d4eb4404fb736d5b",
+      "size_bytes": 596979
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\rowsoftmax_2104\\dry_run.json",
+      "sha256": "cf7eeec606bce0c3d0ce6d7bf1793ff01bbca5f87661340d4ce8566a1ad1ed48",
+      "size_bytes": 596987
+    }
+  ],
+  "initialization_matching": [
+    [
+      {
+        "fold_index": 0,
+        "training_seed": 2102,
+        "schema_trainability_counts_optimizer_equal": true,
+        "initial_values_equal": true,
+        "rng_fingerprints_equal": true,
+        "initial_value_equality_required": true
+      },
+      {
+        "fold_index": 1,
+        "training_seed": 2102,
+        "schema_trainability_counts_optimizer_equal": true,
+        "initial_values_equal": true,
+        "rng_fingerprints_equal": true,
+        "initial_value_equality_required": false
+      },
+      {
+        "fold_index": 2,
+        "training_seed": 2102,
+        "schema_trainability_counts_optimizer_equal": true,
+        "initial_values_equal": true,
+        "rng_fingerprints_equal": true,
+        "initial_value_equality_required": false
+      },
+      {
+        "fold_index": 3,
+        "training_seed": 2102,
+        "schema_trainability_counts_optimizer_equal": true,
+        "initial_values_equal": true,
+        "rng_fingerprints_equal": true,
+        "initial_value_equality_required": false
+      },
+      {
+        "fold_index": 4,
+        "training_seed": 2102,
+        "schema_trainability_counts_optimizer_equal": true,
+        "initial_values_equal": true,
+        "rng_fingerprints_equal": true,
+        "initial_value_equality_required": false
+      }
+    ],
+    [
+      {
+        "fold_index": 0,
+        "training_seed": 2103,
+        "schema_trainability_counts_optimizer_equal": true,
+        "initial_values_equal": true,
+        "rng_fingerprints_equal": true,
+        "initial_value_equality_required": true
+      },
+      {
+        "fold_index": 1,
+        "training_seed": 2103,
+        "schema_trainability_counts_optimizer_equal": true,
+        "initial_values_equal": true,
+        "rng_fingerprints_equal": true,
+        "initial_value_equality_required": false
+      },
+      {
+        "fold_index": 2,
+        "training_seed": 2103,
+        "schema_trainability_counts_optimizer_equal": true,
+        "initial_values_equal": true,
+        "rng_fingerprints_equal": true,
+        "initial_value_equality_required": false
+      },
+      {
+        "fold_index": 3,
+        "training_seed": 2103,
+        "schema_trainability_counts_optimizer_equal": true,
+        "initial_values_equal": true,
+        "rng_fingerprints_equal": true,
+        "initial_value_equality_required": false
+      },
+      {
+        "fold_index": 4,
+        "training_seed": 2103,
+        "schema_trainability_counts_optimizer_equal": true,
+        "initial_values_equal": true,
+        "rng_fingerprints_equal": true,
+        "initial_value_equality_required": false
+      }
+    ],
+    [
+      {
+        "fold_index": 0,
+        "training_seed": 2104,
+        "schema_trainability_counts_optimizer_equal": true,
+        "initial_values_equal": true,
+        "rng_fingerprints_equal": true,
+        "initial_value_equality_required": true
+      },
+      {
+        "fold_index": 1,
+        "training_seed": 2104,
+        "schema_trainability_counts_optimizer_equal": true,
+        "initial_values_equal": true,
+        "rng_fingerprints_equal": true,
+        "initial_value_equality_required": false
+      },
+      {
+        "fold_index": 2,
+        "training_seed": 2104,
+        "schema_trainability_counts_optimizer_equal": true,
+        "initial_values_equal": true,
+        "rng_fingerprints_equal": true,
+        "initial_value_equality_required": false
+      },
+      {
+        "fold_index": 3,
+        "training_seed": 2104,
+        "schema_trainability_counts_optimizer_equal": true,
+        "initial_values_equal": true,
+        "rng_fingerprints_equal": true,
+        "initial_value_equality_required": false
+      },
+      {
+        "fold_index": 4,
+        "training_seed": 2104,
+        "schema_trainability_counts_optimizer_equal": true,
+        "initial_values_equal": true,
+        "rng_fingerprints_equal": true,
+        "initial_value_equality_required": false
+      }
+    ]
+  ],
+  "declared_training_outputs_absent": true,
+  "cross_seed_differences": "training RNG seed, initialization outcomes and run identities/paths only",
+  "bootstrap_run": false,
+  "serial_worker_routing_simulation": "passed",
+  "evidence_files": [
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\projected_2102\\commands.json",
+      "sha256": "b840e347e0bd81037eb6b55c2879f45ee5f78c572f97470f0a55cb79e4905436",
+      "size_bytes": 4526
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\projected_2102\\dry_run.json",
+      "sha256": "ca4a24acfa971cdaa0fc1cb97e5d6db58607b82bc87ec5a4eab350830e3e230a",
+      "size_bytes": 596979
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\projected_2102\\prerequisite_provenance.json",
+      "sha256": "a0a4eea8aaf6f8ac60a8aed0e6cecfc2737407a46f8467b8670da933106f323f",
+      "size_bytes": 3033
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\projected_2102\\prerequisites_stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\projected_2102\\prerequisites_stdout.log",
+      "sha256": "6e9edc14126bfdd894d17c343d630d30ebf3e262d111c3dc6263ca81c2515d73",
+      "size_bytes": 483
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\projected_2102\\trainer_stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\projected_2102\\trainer_stdout.log",
+      "sha256": "0d3ee52d168eaa9f20fc1867129f7f68f926b96589ab9bdcfffffd575f394fdc",
+      "size_bytes": 626788
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\projected_2103\\commands.json",
+      "sha256": "517aefcddee344b243ca739eee95d4d14e9567b27c30446b77237c1a732bd35d",
+      "size_bytes": 4526
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\projected_2103\\dry_run.json",
+      "sha256": "2c0044873a9afad74c39522d054dc4e93c003eaa053c97dba076964d0443552d",
+      "size_bytes": 596979
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\projected_2103\\prerequisite_provenance.json",
+      "sha256": "7ea17626d3b97c3a2d4f69492ef9c5b609420d207dcf2e28c9501020d7351efe",
+      "size_bytes": 3033
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\projected_2103\\prerequisites_stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\projected_2103\\prerequisites_stdout.log",
+      "sha256": "6e9edc14126bfdd894d17c343d630d30ebf3e262d111c3dc6263ca81c2515d73",
+      "size_bytes": 483
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\projected_2103\\trainer_stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\projected_2103\\trainer_stdout.log",
+      "sha256": "58bc28c8fcfe3c7f1a5029688a9a8c08ef80c9d14917344bb40440ebcd4a9624",
+      "size_bytes": 626788
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\projected_2104\\commands.json",
+      "sha256": "78e8f9826d80e88283cd8de9baa9ea96c97147946fb0d399f8b9641bdb747773",
+      "size_bytes": 4526
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\projected_2104\\dry_run.json",
+      "sha256": "711e06d7c6e35cc9f6553798ed127ff8f029e03a4a4ee6d7d4eb4404fb736d5b",
+      "size_bytes": 596979
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\projected_2104\\prerequisite_provenance.json",
+      "sha256": "d10ddfa5bbae16c44000db75a312f070b8a7cee78b1c157e98af33edc72525c7",
+      "size_bytes": 3033
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\projected_2104\\prerequisites_stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\projected_2104\\prerequisites_stdout.log",
+      "sha256": "6e9edc14126bfdd894d17c343d630d30ebf3e262d111c3dc6263ca81c2515d73",
+      "size_bytes": 483
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\projected_2104\\trainer_stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\projected_2104\\trainer_stdout.log",
+      "sha256": "3a3b3657ce390880ad8513d101a9bde160ae1280515791cf84ae04f305c947db",
+      "size_bytes": 626788
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\queue_simulation.json",
+      "sha256": "5385f40daed0a987b48142f9187fb86199ef052d4f84657ff123ea32178bf636",
+      "size_bytes": 6123
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\rowsoftmax_2102\\commands.json",
+      "sha256": "2b31f5b7299ce6052da4136db38972626a64cda559e5c3e7f2356b7d52d12fd3",
+      "size_bytes": 4529
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\rowsoftmax_2102\\dry_run.json",
+      "sha256": "2faa10c06de141a2f5445d3900f82c9cc0dd67752be09517f2f115207c5ce495",
+      "size_bytes": 596987
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\rowsoftmax_2102\\prerequisite_provenance.json",
+      "sha256": "d7f226f8a907a484cf03667c5ed2992d8164d56991b003dd49e67dc8daffc47b",
+      "size_bytes": 3033
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\rowsoftmax_2102\\prerequisites_stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\rowsoftmax_2102\\prerequisites_stdout.log",
+      "sha256": "6e9edc14126bfdd894d17c343d630d30ebf3e262d111c3dc6263ca81c2515d73",
+      "size_bytes": 483
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\rowsoftmax_2102\\trainer_stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\rowsoftmax_2102\\trainer_stdout.log",
+      "sha256": "20f8c3dd18642e79a6e2cfa43293f3a43c4937ae7db26b6a7f6f38a79a234c46",
+      "size_bytes": 626797
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\rowsoftmax_2103\\commands.json",
+      "sha256": "8bc82b4ee9c139aa3f2d8158683f28b0651515047c89b2b6ada3e37570e02c91",
+      "size_bytes": 4529
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\rowsoftmax_2103\\dry_run.json",
+      "sha256": "8367b01f5354b2c67e1c651c98106d64006b17661718d038abc4d214c6f3aed6",
+      "size_bytes": 596987
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\rowsoftmax_2103\\prerequisite_provenance.json",
+      "sha256": "2a91a5f932b33536bca5334a0974b59a1ce97c1b7d35381f898b08eae7d7b361",
+      "size_bytes": 3033
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\rowsoftmax_2103\\prerequisites_stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\rowsoftmax_2103\\prerequisites_stdout.log",
+      "sha256": "6e9edc14126bfdd894d17c343d630d30ebf3e262d111c3dc6263ca81c2515d73",
+      "size_bytes": 483
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\rowsoftmax_2103\\trainer_stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\rowsoftmax_2103\\trainer_stdout.log",
+      "sha256": "8073eed96f5f1c12dfb04f3aeff56341d8af62d1f00ba23b8d06baf9da2a65a9",
+      "size_bytes": 626797
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\rowsoftmax_2104\\commands.json",
+      "sha256": "c88324951a0b0ec788e0b0f9692980a040a07f0a8694d1ecce021497f3cad563",
+      "size_bytes": 4529
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\rowsoftmax_2104\\dry_run.json",
+      "sha256": "cf7eeec606bce0c3d0ce6d7bf1793ff01bbca5f87661340d4ce8566a1ad1ed48",
+      "size_bytes": 596987
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\rowsoftmax_2104\\prerequisite_provenance.json",
+      "sha256": "e3f6ba3dbb2d33a6636f70268d2703bd2bc459f33590534b2bfb46de65b9d047",
+      "size_bytes": 3033
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\rowsoftmax_2104\\prerequisites_stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\rowsoftmax_2104\\prerequisites_stdout.log",
+      "sha256": "6e9edc14126bfdd894d17c343d630d30ebf3e262d111c3dc6263ca81c2515d73",
+      "size_bytes": 483
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\rowsoftmax_2104\\trainer_stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\implementation_validation_v2\\all_six_dry_runs\\rowsoftmax_2104\\trainer_stdout.log",
+      "sha256": "bbaa0d3344ef080f69bc1ce4d8737d2b40813a222ab59db93cf816639250c256",
+      "size_bytes": 626797
+    }
+  ]
+}

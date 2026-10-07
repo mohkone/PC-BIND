@@ -12,5 +12,6 @@
 research_review/matched_fold1_v1/** -text whitespace=blank-at-eol,space-before-tab,cr-at-eol
 research_review/frozen_5fold_dev_v1/** -text whitespace=blank-at-eol,space-before-tab,cr-at-eol
 research_review/multiseed_dev_v1/** -text whitespace=blank-at-eol,space-before-tab,cr-at-eol
+research_review/capacity_projection_dev_v1/** -text whitespace=blank-at-eol,space-before-tab,cr-at-eol
 # Empty unified-diff context lines contain a required space prefix.
 research_review/multiseed_dev_v1/implementation_validation_v2/trainer_delta.patch -whitespace
