@@ -1,0 +1,91 @@
+{
+  "status": "passed",
+  "created_utc": "2026-10-07T10:53:27.245434+00:00",
+  "verification_source": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\completion_verification_v1\\verify_artifact_records.py",
+    "sha256": "51fd6550aef1d38e8a5e235f5ef989f2b7df888416659c550dd8015765bc36b9",
+    "size_bytes": 2569
+  },
+  "full_validation_evidence": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\completion_verification_v1\\verification.json",
+    "sha256": "ef6c456784aa3dfd600c4a9c5b8187203f79fdd08015af244707d573b2666857",
+    "size_bytes": 38459
+  },
+  "arms": [
+    {
+      "training_seed": 2102,
+      "arm": "ot",
+      "validation": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\ot_2102_validated.json",
+        "sha256": "a6bb976a3088893c2f44e994754fa0bec995523ead13fa0a717faa80563fb553",
+        "size_bytes": 4140
+      },
+      "saved_final_artifact_dictionary_equals_completed_validation": true,
+      "saved_final_run_dictionary_equals_current_run_json": true,
+      "runtime_fold_and_dataset_selection_equal_final_binding": true
+    },
+    {
+      "training_seed": 2102,
+      "arm": "noot",
+      "validation": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\noot_2102_validated.json",
+        "sha256": "7f6803132e7d1c0c46e578c03f962c534f279afd96a5fdf8835220374196e430",
+        "size_bytes": 4169
+      },
+      "saved_final_artifact_dictionary_equals_completed_validation": true,
+      "saved_final_run_dictionary_equals_current_run_json": true,
+      "runtime_fold_and_dataset_selection_equal_final_binding": true
+    },
+    {
+      "training_seed": 2103,
+      "arm": "ot",
+      "validation": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\ot_2103_validated.json",
+        "sha256": "1157cad55cd4e3ef83c334e98d7a475367f45487cfb49d540a87358d5ea995ae",
+        "size_bytes": 4140
+      },
+      "saved_final_artifact_dictionary_equals_completed_validation": true,
+      "saved_final_run_dictionary_equals_current_run_json": true,
+      "runtime_fold_and_dataset_selection_equal_final_binding": true
+    },
+    {
+      "training_seed": 2103,
+      "arm": "noot",
+      "validation": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\noot_2103_validated.json",
+        "sha256": "74bd5eac8a02d346d2d425770512425b6a9b9d4ea2334efbcb6f14c237f94c42",
+        "size_bytes": 4169
+      },
+      "saved_final_artifact_dictionary_equals_completed_validation": true,
+      "saved_final_run_dictionary_equals_current_run_json": true,
+      "runtime_fold_and_dataset_selection_equal_final_binding": true
+    },
+    {
+      "training_seed": 2104,
+      "arm": "ot",
+      "validation": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\ot_2104_validated.json",
+        "sha256": "170f94848fe52798c734d19b8f0e533bc6ab33579f578e3ee31da6f6e16f1bbf",
+        "size_bytes": 4140
+      },
+      "saved_final_artifact_dictionary_equals_completed_validation": true,
+      "saved_final_run_dictionary_equals_current_run_json": true,
+      "runtime_fold_and_dataset_selection_equal_final_binding": true
+    },
+    {
+      "training_seed": 2104,
+      "arm": "noot",
+      "validation": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\noot_2104_validated.json",
+        "sha256": "eaa981bf73d99ef0e9465e72992f55f892f7aea15ad37c5157d5bc6148cd0ff1",
+        "size_bytes": 4169
+      },
+      "saved_final_artifact_dictionary_equals_completed_validation": true,
+      "saved_final_run_dictionary_equals_current_run_json": true,
+      "runtime_fold_and_dataset_selection_equal_final_binding": true
+    }
+  ],
+  "bootstrap_recomputed": false,
+  "training": false,
+  "output_originals_modified": false
+}

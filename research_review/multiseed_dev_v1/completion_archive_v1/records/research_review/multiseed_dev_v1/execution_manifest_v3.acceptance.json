@@ -1,0 +1,425 @@
+{
+  "schema_version": 1,
+  "status": "accepted_before_training",
+  "created_utc": "2026-10-02T23:24:42.369210+00:00",
+  "amendment_scope": "missing queue, validation and preregistered analysis machinery only; no protocol/model/data/runtime change",
+  "execution_manifest": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_manifest_v3.json",
+    "sha256": "c181e3206996c5674ed33e7d0c0e91a83d42a3cc870a839c1b4819a470ddc73a",
+    "size_bytes": 84694
+  },
+  "accepted_v2": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_manifest_v2.json",
+    "sha256": "ca69112d633de00ee80d23a7c7913a939d780cf2561f403393588f95a5eb0519",
+    "size_bytes": 87551
+  },
+  "source_files": [
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\multiseed_infrastructure_v3.py",
+      "sha256": "91712825166fc533365d177e9cbcb1c584d38e34a078d9cacdac2a91d78d075c",
+      "size_bytes": 11817
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_multiseed_dev_v3.py",
+      "sha256": "930cc44349cd9c1976c0997f862bd63f18324256ef110233e31f67a560836cb7",
+      "size_bytes": 13018
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\validate_multiseed_dev_v3.py",
+      "sha256": "ec35dc63b8a895257cdd9fc9744cc6e9c11906ecf25f2d94ac5863768f16e299",
+      "size_bytes": 11658
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\compare_multiseed_dev_v3.py",
+      "sha256": "fa25d08574de6261a65e2eac7a16e89b92e0ac02bab02c45b142154862e92eea",
+      "size_bytes": 19124
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_multiseed_worker_v3.py",
+      "sha256": "604a5c37d2e98ec1c6acdcf5be3774590e9d6cf7b85449276d5e4fff05f2ccee",
+      "size_bytes": 4792
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_multiseed_validation_v3.py",
+      "sha256": "04fc66f27f8871fffaa0bbfa4c6ddd801322da05fd43a36854cf4e5685b39b0f",
+      "size_bytes": 12112
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_multiseed_analysis_v3.py",
+      "sha256": "c304511084f41ddb7a3b4d3f4b1e02d63599a9ec01870379497b48fd12c1b4bb",
+      "size_bytes": 6916
+    }
+  ],
+  "source_archive": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_source_archive_v3.json",
+    "sha256": "e9b0fed106be563fddd5d5042a74d59c5049aa9d1f5216f7146f3f039a2d0cb3",
+    "size_bytes": 4128
+  },
+  "jobs_validated": 6,
+  "training_started": false,
+  "serial_training_queue_started": false,
+  "external_evaluation": "skipped",
+  "full_tests": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\full_test_validation.json",
+    "sha256": "e6d382415e71ebf851ca9bdefa40f270967a3360fb9006d93b44557238631287",
+    "size_bytes": 2366
+  },
+  "all_six_dry_runs": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\validation.json",
+    "sha256": "83d588f4746d24e225d25385fb25921c08144064a14eae3943c89b7437ecb7be",
+    "size_bytes": 13966
+  },
+  "forced_process_failure": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\forced_process_failure\\queue_state.json",
+    "sha256": "98634c896228f59c852c0e03457ead8e287d352a56f34bdeac43b4fe8685ee12",
+    "size_bytes": 2387
+  },
+  "forced_validation_failure": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\forced_validation_failure\\queue_state.json",
+    "sha256": "71b64bef1294476fe392eb1f2630988f09c14af7a8058a85030990b09806b370",
+    "size_bytes": 2403
+  },
+  "metadata_compatibility_replay": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\metadata_compatibility_replay.json",
+    "sha256": "b3d2fbb0980742a9fc9c611ea88446659229deccff2b82a77a8e8ea2247c6360",
+    "size_bytes": 22544
+  },
+  "evidence_files": [
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\forced_process_failure\\forced_failure_stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\forced_process_failure\\forced_failure_stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\forced_process_failure\\queue_state.json",
+      "sha256": "98634c896228f59c852c0e03457ead8e287d352a56f34bdeac43b4fe8685ee12",
+      "size_bytes": 2387
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\forced_validation_failure\\forced_failure_stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\forced_validation_failure\\forced_failure_stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\forced_validation_failure\\queue_state.json",
+      "sha256": "71b64bef1294476fe392eb1f2630988f09c14af7a8058a85030990b09806b370",
+      "size_bytes": 2403
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\full_test_validation.json",
+      "sha256": "e6d382415e71ebf851ca9bdefa40f270967a3360fb9006d93b44557238631287",
+      "size_bytes": 2366
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\full_tests.txt",
+      "sha256": "6d1f165e2fad438c8de8b50295f5eb5f896c0cb523d7c74200b66f1113de625a",
+      "size_bytes": 25942
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\metadata_compatibility_replay.json",
+      "sha256": "b3d2fbb0980742a9fc9c611ea88446659229deccff2b82a77a8e8ea2247c6360",
+      "size_bytes": 22544
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\noot_2102\\dry_run.json",
+      "sha256": "9a7d0a1441bbbf0e56c3817be5c020788530b54ba6ee376c471c437595d2f40a",
+      "size_bytes": 181203
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\noot_2102\\launch_validation.json",
+      "sha256": "fd61983585a194e3d1657a9e33066fa4f70575807610e448933a76e30e57766f",
+      "size_bytes": 5912
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\noot_2102\\prerequisite_provenance.json",
+      "sha256": "5f85940a33f88f2966034509f84add7fdfefca784dcd965c83018094c0f37eb0",
+      "size_bytes": 3033
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\noot_2102\\prerequisites_stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\noot_2102\\prerequisites_stdout.txt",
+      "sha256": "6e9edc14126bfdd894d17c343d630d30ebf3e262d111c3dc6263ca81c2515d73",
+      "size_bytes": 483
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\noot_2102\\trainer_stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\noot_2102\\trainer_stdout.txt",
+      "sha256": "184e2fd86888ef5b4774d422b6468699949a6d9c22cc850cb2eca527164c931d",
+      "size_bytes": 193459
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\noot_2103\\dry_run.json",
+      "sha256": "484cf7d6f4118659e937d1c25e6e44fc13f01912bdecaee55def298d3c0f1c52",
+      "size_bytes": 181203
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\noot_2103\\launch_validation.json",
+      "sha256": "243702e9526b14ccbfd35f7fa3f6b77d59a9cb67453163bd1985e672a03edcd0",
+      "size_bytes": 5912
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\noot_2103\\prerequisite_provenance.json",
+      "sha256": "8d92fb3c8d2c360c222f6a93cc491a0674fadbf30c0d864383bf26c767939450",
+      "size_bytes": 3033
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\noot_2103\\prerequisites_stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\noot_2103\\prerequisites_stdout.txt",
+      "sha256": "6e9edc14126bfdd894d17c343d630d30ebf3e262d111c3dc6263ca81c2515d73",
+      "size_bytes": 483
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\noot_2103\\trainer_stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\noot_2103\\trainer_stdout.txt",
+      "sha256": "a9074dc606912c93df1b3272efe035e3f8f2cf034e753448de103ad66c50054e",
+      "size_bytes": 193459
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\noot_2104\\dry_run.json",
+      "sha256": "7c9db61521f24bd941a90306de8462e7ed42726191b846c14a696410126b23a4",
+      "size_bytes": 181203
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\noot_2104\\launch_validation.json",
+      "sha256": "ff979cc2312cbe4400e88ffe408b92dd379387baffafa28ede420cd2401e6e85",
+      "size_bytes": 5912
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\noot_2104\\prerequisite_provenance.json",
+      "sha256": "96f254ae0a5a349ef53d2c22767d53f0780bffb0970f4186f8e59a9603e0972d",
+      "size_bytes": 3033
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\noot_2104\\prerequisites_stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\noot_2104\\prerequisites_stdout.txt",
+      "sha256": "6e9edc14126bfdd894d17c343d630d30ebf3e262d111c3dc6263ca81c2515d73",
+      "size_bytes": 483
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\noot_2104\\trainer_stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\noot_2104\\trainer_stdout.txt",
+      "sha256": "bff6036660767b2d638d5e4ee97a7c45c80036151555d62621f7d9b0e6311067",
+      "size_bytes": 193459
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\ot_2102\\dry_run.json",
+      "sha256": "6013a649d1c00eae4d2d2ff1cbc8905f34789a82cfe803c090c9403298c70a7d",
+      "size_bytes": 181197
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\ot_2102\\launch_validation.json",
+      "sha256": "18cd4a5e171a78351b5436fb88131d4010bab9172ca81de121823326e4f36f59",
+      "size_bytes": 5897
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\ot_2102\\prerequisite_provenance.json",
+      "sha256": "ce9c42ac845500106c6d34dc092c8035c09e98fc9de06567d01309849bf316c5",
+      "size_bytes": 3033
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\ot_2102\\prerequisites_stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\ot_2102\\prerequisites_stdout.txt",
+      "sha256": "6e9edc14126bfdd894d17c343d630d30ebf3e262d111c3dc6263ca81c2515d73",
+      "size_bytes": 483
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\ot_2102\\trainer_stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\ot_2102\\trainer_stdout.txt",
+      "sha256": "ba1ce1a1032bbe30dade3ec08f90bafd06260bcae4e1a60f204e00f8cc750860",
+      "size_bytes": 193588
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\ot_2103\\dry_run.json",
+      "sha256": "08cccaef5afb587816f570a9aeb4905bfd72f7444fc3def33774555c6a498e29",
+      "size_bytes": 181197
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\ot_2103\\launch_validation.json",
+      "sha256": "9892a5fd3b3bfba589c930f27e72cbe1b979f967aacad19f9d61a6267333194d",
+      "size_bytes": 5897
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\ot_2103\\prerequisite_provenance.json",
+      "sha256": "57f0beb3a787d6e54a7adcecc7b78928076708f58cc8ab09f80688bc8c640214",
+      "size_bytes": 3033
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\ot_2103\\prerequisites_stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\ot_2103\\prerequisites_stdout.txt",
+      "sha256": "6e9edc14126bfdd894d17c343d630d30ebf3e262d111c3dc6263ca81c2515d73",
+      "size_bytes": 483
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\ot_2103\\trainer_stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\ot_2103\\trainer_stdout.txt",
+      "sha256": "9733f09f553d7532fc54a303f4cce10b302d23ae5037d856969e43859320c5c1",
+      "size_bytes": 193588
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\ot_2104\\dry_run.json",
+      "sha256": "c3ac93525bec70c8aba2affd7b333364efb069fcd23779e4fcc9b4315a468796",
+      "size_bytes": 181197
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\ot_2104\\launch_validation.json",
+      "sha256": "14c7dd02fabdc3b1c3e12c817612f3a2edb6e20ea129939e6481f3a1af32c36c",
+      "size_bytes": 5897
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\ot_2104\\prerequisite_provenance.json",
+      "sha256": "74d364a1a6b874ed1a31233d089b549efab6024a4c09c1227d19ee44194f9562",
+      "size_bytes": 3033
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\ot_2104\\prerequisites_stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\ot_2104\\prerequisites_stdout.txt",
+      "sha256": "6e9edc14126bfdd894d17c343d630d30ebf3e262d111c3dc6263ca81c2515d73",
+      "size_bytes": 483
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\ot_2104\\trainer_stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\ot_2104\\trainer_stdout.txt",
+      "sha256": "7610ed304166563b687b53a94b9c2a57d810dbcd46183166a5fc4efe74d895d9",
+      "size_bytes": 193588
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\all_six\\validation.json",
+      "sha256": "15c9a2c571094f7901f95d32abf9c9291872c91d8727154525416f2c5e9cf82b",
+      "size_bytes": 2322
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\queue_simulation.json",
+      "sha256": "1807b541788ae5e80daa454145daecc127632135732e58ef3f8a00852cef3987",
+      "size_bytes": 3463
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v3\\worker_all_six\\validation.json",
+      "sha256": "83d588f4746d24e225d25385fb25921c08144064a14eae3943c89b7437ecb7be",
+      "size_bytes": 13966
+    }
+  ],
+  "training_destinations_before_launch": [
+    {
+      "job": {
+        "training_seed": 2102,
+        "arm": "ot",
+        "partner_transport": true,
+        "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2102_cvseed2101"
+      },
+      "exists": false
+    },
+    {
+      "job": {
+        "training_seed": 2102,
+        "arm": "noot",
+        "partner_transport": false,
+        "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2102_cvseed2101"
+      },
+      "exists": false
+    },
+    {
+      "job": {
+        "training_seed": 2103,
+        "arm": "ot",
+        "partner_transport": true,
+        "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2103_cvseed2101"
+      },
+      "exists": false
+    },
+    {
+      "job": {
+        "training_seed": 2103,
+        "arm": "noot",
+        "partner_transport": false,
+        "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2103_cvseed2101"
+      },
+      "exists": false
+    },
+    {
+      "job": {
+        "training_seed": 2104,
+        "arm": "ot",
+        "partner_transport": true,
+        "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2104_cvseed2101"
+      },
+      "exists": false
+    },
+    {
+      "job": {
+        "training_seed": 2104,
+        "arm": "noot",
+        "partner_transport": false,
+        "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2104_cvseed2101"
+      },
+      "exists": false
+    }
+  ],
+  "aggregate_destination_before_launch": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\complete_oof_v3",
+    "exists": false
+  },
+  "tests_run": 158,
+  "tests_passed": 157,
+  "tests_skipped": 1,
+  "skip_reason": "Existing Windows host-limited symlink creation test.",
+  "failure_injections": "Nonzero process exit7 and zero-exit invalid-artifact rejection each halted after first arm with remaining five queued and no aggregate.",
+  "fixed_analysis": "Three new-seed deltas averaged; 5000 attempted shared whole-complex PCG64(2101) draws; fixed six saved thresholds; single-class-only exclusions; historical2101 excluded from primary."
+}

@@ -25,7 +25,34 @@ The [fixed-cohort launch protocol](research_review/filtered_launch_v1/README.md)
 provides dedicated OT/no-OT wrappers, an explicit Python data-directory argument,
 hash verification at each stage, and consumption of the saved grouped-fold
 manifest. Use these wrappers for the filtered sensitivity analysis.
-The frozen, single-seed OT/no-OT five-fold development comparison is complete.
+The prospective [three-seed development comparison](research_review/multiseed_dev_v1/complete_oof_v3/RESULT.md)
+completed on 6 October 2026 and passed a fresh
+[independent verification](research_review/multiseed_dev_v1/completion_verification_v1/verification.json)
+on 7 October. All six OT/no-OT arms completed five fixed grouped folds on the
+same 334 samples, 209 complexes and 66,208 residues; 30 checkpoints and six
+OOF archives passed validation. Training seeds were 2102, 2103 and 2104;
+fold assignment stayed fixed at seed 2101. Test287 was not evaluated.
+
+| OT minus no-OT across the three new seeds | Mean difference | Sample SD (ddof=1) | Conditional paired 95% interval | Positive / zero / negative |
+| --- | ---: | ---: | --- | --- |
+| Trapezoidal PR-AUC | -0.030940 | 0.003339 | [-0.043168, -0.017972] | 0 / 0 / 3 |
+| MCC | -0.021680 | 0.002563 | [-0.032904, -0.010421] | 0 / 0 / 3 |
+| AUROC | -0.026884 | 0.016370 | Descriptive only | 0 / 0 / 3 |
+
+The tested transport branch consistently underperformed no-OT on this filtered
+development cohort. The registered analysis averaged three separately formed
+per-seed OT-minus-no-OT differences; repeated-seed residue predictions were not
+concatenated as independent observations. All 5,000 shared whole-complex
+bootstrap attempts were valid, with zero single-class exclusions. All six saved
+thresholds stayed fixed. These intervals condition on fitted predictions and
+selected thresholds; they are not intervals over training-seed uncertainty.
+Per-seed scores, differences and ranges are in the final report and
+[JSON](research_review/multiseed_dev_v1/complete_oof_v3/comparison.json).
+The [completion archive](research_review/multiseed_dev_v1/completion_archive_v1/archive_manifest.json)
+preserves the final reports, queue, six validation records, manifests and hashes.
+
+The earlier frozen, single-seed comparison remains a separately labelled
+historical reference, excluded from the prospective primary mean and intervals.
 Its [result](research_review/frozen_5fold_dev_v1/complete_oof/RESULT.md) and
 [machine-readable record](research_review/frozen_5fold_dev_v1/complete_oof/comparison.json)
 cover 334 samples, 209 complexes and 66,208 residues. Source, data, runtime,
@@ -54,14 +81,20 @@ universal OT harm, biological partner specificity or external generalization.
 See the [frozen protocol](research_review/frozen_5fold_dev_v1/README.md) for the
 full scope and provenance requirements.
 
-The [prospective shared-seed protocol](research_review/multiseed_dev_v1/PREREGISTRATION.md)
-specifies training seeds 2102, 2103 and 2104 with the same seed-2101 folds.
-It is registered but has not been launched; the completed seed-2101 result
-is excluded from its primary new-seed estimate.
-The separate [seed-routing implementation](research_review/multiseed_dev_v1/IMPLEMENTATION.md)
-has passed the full suite (133 passed, one host-limited skip) and all six
-real-data dry runs against a versioned source freeze. No training queue or new
-model fitting has started.
+The [shared-seed protocol](research_review/multiseed_dev_v1/PREREGISTRATION.md)
+and accepted v2 seed-routing files remain unchanged. The separate
+[v3 infrastructure acceptance](research_review/multiseed_dev_v1/execution_manifest_v3.acceptance.json)
+records 157 passing tests, one existing host-limited skip, six real-data dry
+runs and forced process/validation failure-stop checks before fitting began.
+The completed reports and bootstrap are preserved without regeneration.
+
+The next [capacity-matched projection protocol](research_review/capacity_projection_dev_v1/PREREGISTRATION.md)
+compares five projection iterations with zero using fresh fits, active
+transport parameters in both arms, the same training seeds and fixed folds,
+and unchanged features, losses, temperature and fusion. This contrasts the
+projection/dustbin postprocessing policy within the transport architecture;
+it does not by itself compare uncapped transport with no-OT. No new ablation
+training has started; a new execution source freeze and acceptance are required.
 
 Read the [research review](research_review/RESEARCH_REVIEW.md) before interpreting
 the results. The [saved artifact audit](research_review/artifact_audit.md)

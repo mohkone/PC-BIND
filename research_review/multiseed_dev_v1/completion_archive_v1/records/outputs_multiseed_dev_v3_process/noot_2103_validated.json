@@ -1,0 +1,84 @@
+{
+  "status": "complete",
+  "job": {
+    "training_seed": 2103,
+    "arm": "noot",
+    "partner_transport": false,
+    "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2103_cvseed2101"
+  },
+  "external_evaluation": "skipped",
+  "execution_manifest_v3": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_manifest_v3.json",
+    "sha256": "c181e3206996c5674ed33e7d0c0e91a83d42a3cc870a839c1b4819a470ddc73a",
+    "size_bytes": 84694
+  },
+  "artifacts": {
+    "launch": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\noot_2103_launch.json",
+      "sha256": "afb422f7a2d98207312f786c28e0e4d309ce144992c1135f8218620c1ff59ff0",
+      "size_bytes": 4902
+    },
+    "prerequisite_provenance": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\noot_2103_prerequisite_provenance.json",
+      "sha256": "1f42dd5c7c87295d728a4e8e5162c3a048eef346bd08c0d0231e1a94917e0923",
+      "size_bytes": 3033
+    },
+    "run_provenance": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2103_cvseed2101\\run_provenance.json",
+      "sha256": "a79d34a16e2bfb6e6f591b436ab592fb57231dfdbad0a640e82b150b0323f456",
+      "size_bytes": 95274
+    },
+    "ensemble_summary": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2103_cvseed2101\\ensemble_summary.json",
+      "sha256": "96648037117752344f756cd1964acf6ec45d97bee3c2ffef068ca9239d690a97",
+      "size_bytes": 116831
+    },
+    "accepted_dry_run": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v2\\all_six\\noot_2103\\dry_run.json",
+      "sha256": "462024c9c85253f845f8c5dd76df5a058b27ddd9aff3b4361ee47cc9c021c0d1",
+      "size_bytes": 181203
+    },
+    "execution_manifest_v3": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_manifest_v3.json",
+      "sha256": "c181e3206996c5674ed33e7d0c0e91a83d42a3cc870a839c1b4819a470ddc73a",
+      "size_bytes": 84694
+    },
+    "oof_predictions": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2103_cvseed2101\\oof_predictions.npz",
+      "sha256": "b2a54eb6c46a90807ea056801cffa809fd70392ee375e8f02db910c8419431fe",
+      "size_bytes": 263525
+    },
+    "reference_state_schema": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_filtered_v1_noot_seed2101_5fold_dev\\fold1_best.pt",
+      "sha256": "012ed4c3bb5485bfae7cd1aa98c86e724c0a37302b50937f80de5c46e2c5c552",
+      "size_bytes": 19648952
+    },
+    "checkpoints": [
+      {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2103_cvseed2101\\fold1_best.pt",
+        "sha256": "38194a09d736f1e2fdb0e26fad56d94ce8db6662f57095ff7a7202425fca1484",
+        "size_bytes": 19653176
+      },
+      {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2103_cvseed2101\\fold2_best.pt",
+        "sha256": "27183a858d3b3674c69f05a006ebbb696de8bd86f0c84424ffa94822a61d4381",
+        "size_bytes": 19653176
+      },
+      {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2103_cvseed2101\\fold3_best.pt",
+        "sha256": "26898b7b37e90b0f5fbd287d2494c7d9334ef8230fbf40c922b6d9e945f14005",
+        "size_bytes": 19653112
+      },
+      {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2103_cvseed2101\\fold4_best.pt",
+        "sha256": "0f0de94af4976f1bb0cf42024de4b9009c11fd647c2712990a19f32fff45ff24",
+        "size_bytes": 19653240
+      },
+      {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2103_cvseed2101\\fold5_best.pt",
+        "sha256": "2ed417a8763aed772f91f7f59041f0286f3984bc7003d25ff2949f36a5878df7",
+        "size_bytes": 19653176
+      }
+    ]
+  }
+}

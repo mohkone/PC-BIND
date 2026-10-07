@@ -1,0 +1,84 @@
+{
+  "status": "complete",
+  "job": {
+    "training_seed": 2102,
+    "arm": "ot",
+    "partner_transport": true,
+    "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2102_cvseed2101"
+  },
+  "external_evaluation": "skipped",
+  "execution_manifest_v3": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_manifest_v3.json",
+    "sha256": "c181e3206996c5674ed33e7d0c0e91a83d42a3cc870a839c1b4819a470ddc73a",
+    "size_bytes": 84694
+  },
+  "artifacts": {
+    "launch": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\ot_2102_launch.json",
+      "sha256": "80b0f6181d37e110d00c8764b378f856be7742e726035a9a7a63dd15b5f6749a",
+      "size_bytes": 4891
+    },
+    "prerequisite_provenance": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\ot_2102_prerequisite_provenance.json",
+      "sha256": "69cfd73b6ed0e37624d67b69d69e07c015ab8ca5401be4febef2ff22ef3f7f36",
+      "size_bytes": 3033
+    },
+    "run_provenance": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2102_cvseed2101\\run_provenance.json",
+      "sha256": "4e248105db0e0a9899d48ccfd28a4daac1a8fc2689b7966b2698da1bd0aefdf7",
+      "size_bytes": 95273
+    },
+    "ensemble_summary": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2102_cvseed2101\\ensemble_summary.json",
+      "sha256": "09347078e1a7778b0cac20b88ab9df3d38246e4557243272b8d4bd3a55aa11ff",
+      "size_bytes": 116828
+    },
+    "accepted_dry_run": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v2\\all_six\\ot_2102\\dry_run.json",
+      "sha256": "e0576168e04b6aca76e881be4ba80c74395bf7e684525d24ebdad2473d8a0d2f",
+      "size_bytes": 181197
+    },
+    "execution_manifest_v3": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_manifest_v3.json",
+      "sha256": "c181e3206996c5674ed33e7d0c0e91a83d42a3cc870a839c1b4819a470ddc73a",
+      "size_bytes": 84694
+    },
+    "oof_predictions": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2102_cvseed2101\\oof_predictions.npz",
+      "sha256": "6122f59447f196296c6418c819b32729fb74967df324f19f7d7f8f97c82801e9",
+      "size_bytes": 265081
+    },
+    "reference_state_schema": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_filtered_v1_ot_seed2101_5fold_dev\\fold1_best.pt",
+      "sha256": "5a586d3d673cfa3eee46c5ce478e26f4efcafc6af60445d64377907b3ea1f6ca",
+      "size_bytes": 22940614
+    },
+    "checkpoints": [
+      {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2102_cvseed2101\\fold1_best.pt",
+        "sha256": "bedb8ab787f13d6ae58fa0a355e7decb5dc0592ff0748443710563b62724a049",
+        "size_bytes": 22944838
+      },
+      {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2102_cvseed2101\\fold2_best.pt",
+        "sha256": "d51caab4a92f04906e1e60ce12e7229341803723bb211f47b34070b2e41c2484",
+        "size_bytes": 22944774
+      },
+      {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2102_cvseed2101\\fold3_best.pt",
+        "sha256": "3911c498030358325b4aa21bc2dab103e0f5da697663c32c2f6c770395d95b14",
+        "size_bytes": 22944774
+      },
+      {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2102_cvseed2101\\fold4_best.pt",
+        "sha256": "85c3ec5784d7c80a7f1d7d692f44c05f9715e2262cf3c49270319fb920fab13f",
+        "size_bytes": 22944902
+      },
+      {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2102_cvseed2101\\fold5_best.pt",
+        "sha256": "3f84482b9f7587549177aee7ef0b7b8dd021576411467361701144fa38d71e3d",
+        "size_bytes": 22944838
+      }
+    ]
+  }
+}

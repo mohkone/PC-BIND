@@ -1,0 +1,681 @@
+{
+  "schema_version": 1,
+  "protocol_version": "capacity_projection_dev_v1",
+  "registered_client_date": "2026-10-07",
+  "client_timezone": "Asia/Shanghai",
+  "status": "prospective_protocol_recorded; execution_not_launched",
+  "registration_scope": "Internal prospective protocol; no independent public-registration timestamp claimed.",
+  "user_selected_design": "Parameter-count-matched comparison of the existing five-iteration projection policy versus zero-iteration row-softmax policy within the same learned transport architecture.",
+  "primary_question": "What development performance difference follows from the five-iteration projection/postprocessing policy versus zero-iteration row-softmax when both fresh arms retain transport?",
+  "contrast_scope": "Complete existing projection/postprocessing training-policy contrast, including dustbin mass and gradient effects; not column-capping alone and not uncapped transport versus no-OT.",
+  "training_seeds": [
+    2102,
+    2103,
+    2104
+  ],
+  "fixed_fold_seed": 2101,
+  "folds_per_arm": 5,
+  "group_key": "complex_code",
+  "sample_count": 334,
+  "complex_count": 209,
+  "residue_count": 66208,
+  "validation_sample_counts": [
+    68,
+    67,
+    66,
+    66,
+    67
+  ],
+  "analysis_label": "filtered-cohort analysis",
+  "external_evaluation": "skipped in every arm; Test287 feature/hash prerequisite gate only",
+  "prior_observation_status": "The cohort, recipe and training seeds 2102/2103/2104 have been used in the observed negative OT/no-OT experiment. This follow-up question was chosen after those results. All six fits for the new contrast are fresh and unlaunched.",
+  "observed_references": {
+    "completed_multiseed_comparison": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\complete_oof_v3\\comparison.json",
+      "sha256": "be714db11c49a27e7a98a3a7a3f061145842ca077a68b3da253ae1b22998aca0",
+      "size_bytes": 854257
+    },
+    "completed_multiseed_result": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\complete_oof_v3\\RESULT.md",
+      "sha256": "0dd3b8e74e50b2066f8391ec5eff34fd666ecd3efe31a862ea362e5fe3b76fb7",
+      "size_bytes": 2764
+    },
+    "completed_multiseed_queue": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\queue_state.json",
+      "sha256": "8f565a086715e557b7a7a9a3ce468658ec38760fb0e991c1db95c2d610af98c9",
+      "size_bytes": 12306
+    },
+    "historical_seed2101_freeze": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\frozen_5fold_dev_v1\\freeze_manifest.json",
+      "sha256": "7f8f5f642cff676c8ef3438554dbf8b5ee8b6f5529b0e8deff58248277909265",
+      "size_bytes": 105463
+    },
+    "historical_seed2101_comparison": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\frozen_5fold_dev_v1\\complete_oof\\comparison.json",
+      "sha256": "ade9c955c232bcf0115421d20806a0f9dbfe4807c8778081eae0b2b4f29b442a",
+      "size_bytes": 8096
+    },
+    "in_prospective_primary_or_bootstrap": false,
+    "old_noot_comparisons": "Separately labeled descriptive context only; cannot establish a new uncapped-transport-versus-no-OT contrast."
+  },
+  "accepted_ancestry": {
+    "prior_protocol": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\protocol.json",
+      "sha256": "a4423ed6beb128a916ce301a5056338a37973625b993de60c8a4b1ed57de82d7",
+      "size_bytes": 13315
+    },
+    "accepted_v2": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_manifest_v2.json",
+      "sha256": "ca69112d633de00ee80d23a7c7913a939d780cf2561f403393588f95a5eb0519",
+      "size_bytes": 87551
+    },
+    "accepted_v2_acceptance": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_manifest_v2.acceptance.json",
+      "sha256": "9a73bf853bf7dd88ca603bbede02789d57a2654e15246d2b0d2118f199ff171b",
+      "size_bytes": 5172
+    },
+    "accepted_v3": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_manifest_v3.json",
+      "sha256": "c181e3206996c5674ed33e7d0c0e91a83d42a3cc870a839c1b4819a470ddc73a",
+      "size_bytes": 84694
+    },
+    "accepted_v3_acceptance": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_manifest_v3.acceptance.json",
+      "sha256": "0584c98faac5d04b366936bac50540dfdead288d84920322cec88d6b8cfb5925",
+      "size_bytes": 22931
+    },
+    "exact_original_recipe_source_archive": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\frozen_5fold_dev_v1\\recipe_source_archive.json",
+      "sha256": "0c2ce5a2f545560408e631131adccbe58c6472b985ecede111acbf30b1e42954",
+      "size_bytes": 7775
+    },
+    "accepted_execution_source_archives": [
+      {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_source_archive_v2.json",
+        "sha256": "2ccd8ddb001c121ed7e476e12344a66cda95ab7547a081296ad6e2f640284214",
+        "size_bytes": 2529
+      },
+      {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_source_archive_v3.json",
+        "sha256": "e9b0fed106be563fddd5d5042a74d59c5049aa9d1f5216f7146f3f039a2d0cb3",
+        "size_bytes": 4128
+      }
+    ],
+    "unchanged_source_files": [
+      {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\multiseed_protocol_v1.py",
+        "sha256": "b3258bacfbe7d74c51795fbe80765d4c722b26e9d759c999c4c525d6b704e8fe",
+        "size_bytes": 18914
+      },
+      {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_multiseed_dev_v1.py",
+        "sha256": "28f1196fa9a2b39316d275fd10a62e840ddb43dae0a82bd7f0ce8a66e20ed975",
+        "size_bytes": 9639
+      },
+      {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\CROSS5FOLD_multiseed_dev_v1.py",
+        "sha256": "93de0890f172dc34a727e016c7e989fb344c9dc781826ce493f8068294c645f4",
+        "size_bytes": 227565
+      },
+      {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_multiseed_protocol_v1.py",
+        "sha256": "06118ddb71a481bba34d7b3d054e270455d3f2809294979421571b35329d9290",
+        "size_bytes": 14809
+      },
+      {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\CROSS5FOLD_multi_test.py",
+        "sha256": "341d7fef45792b716946a8fe0ad5e7b290d38e40a9c99f60c05e6ad33e93dad8",
+        "size_bytes": 225713
+      },
+      {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\metrics.py",
+        "sha256": "9be8906c73b658039032ad720dfe91bcac4d3059f177f109eaa848b21bc91d23",
+        "size_bytes": 3128
+      },
+      {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_provenance.py",
+        "sha256": "b2ade05798ce250cd08b6188ae1a20a8725bae5d6d890419a8c4c5b5b3c04ddd",
+        "size_bytes": 5566
+      },
+      {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_seed.ps1",
+        "sha256": "e276fea78922ff2f334b03993307f7a969b50e98577171dea86c262f3c0482ff",
+        "size_bytes": 17078
+      },
+      {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\requirements.txt",
+        "sha256": "e3399ebcebe53aac5ea9cd8c181f3734c29343c068a1126870e94b906c3e662b",
+        "size_bytes": 80
+      },
+      {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\filtered_cohort_protocol.py",
+        "sha256": "3a5f5d78b2d28b024029eb3b15be710ac85fb4a5f77609f24ea4997ccde3c4d6",
+        "size_bytes": 8835
+      },
+      {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\invoke_filtered_v1.ps1",
+        "sha256": "a2fa7d956e2b02488c8c044e9dea591c99652d43540b63f25ba686c9475de44a",
+        "size_bytes": 11316
+      },
+      {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_pcbind_noot_filtered_v1_control.ps1",
+        "sha256": "a9b8279c8590129db762ab042712a09f9340af3d821081733f795b65101a7c23",
+        "size_bytes": 472
+      },
+      {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_pcbind_ot_filtered_v1_pilot.ps1",
+        "sha256": "eb053a71ca624a1e5533536efbf14e28d8f1421b15723375d6388b7d7caa3e8b",
+        "size_bytes": 472
+      },
+      {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\check_pcbind_prereqs.py",
+        "sha256": "92ca5c2d5813c62f57f49e3caa51706f449fdf46a2a7b4dc27e9f8439ae49547",
+        "size_bytes": 12859
+      },
+      {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\compare_pcbind_primary.py",
+        "sha256": "4f3d52111151d7dfd5ec59fe7c87239cedc9220238a355375e4c4dfc5c4ce583",
+        "size_bytes": 24886
+      },
+      {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\frozen_development_protocol.py",
+        "sha256": "ef26075cf9aeeab7fe37d96d1e32243697add4db564559b6a72b7fb923ab9551",
+        "size_bytes": 8137
+      },
+      {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\compare_oof_development.py",
+        "sha256": "35c73f34f5145e97aedacae6e1269f105ca760f87b63846993c3af508df2a43d",
+        "size_bytes": 14230
+      },
+      {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_frozen_development.py",
+        "sha256": "c29cc2763ef0a5b7ce7790d298601d45dc15ba10436b5acf7da27d590c25b588",
+        "size_bytes": 6287
+      },
+      {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\multiseed_infrastructure_v3.py",
+        "sha256": "91712825166fc533365d177e9cbcb1c584d38e34a078d9cacdac2a91d78d075c",
+        "size_bytes": 11817
+      },
+      {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_multiseed_dev_v3.py",
+        "sha256": "930cc44349cd9c1976c0997f862bd63f18324256ef110233e31f67a560836cb7",
+        "size_bytes": 13018
+      },
+      {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\validate_multiseed_dev_v3.py",
+        "sha256": "ec35dc63b8a895257cdd9fc9744cc6e9c11906ecf25f2d94ac5863768f16e299",
+        "size_bytes": 11658
+      },
+      {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\compare_multiseed_dev_v3.py",
+        "sha256": "fa25d08574de6261a65e2eac7a16e89b92e0ac02bab02c45b142154862e92eea",
+        "size_bytes": 19124
+      },
+      {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_multiseed_worker_v3.py",
+        "sha256": "604a5c37d2e98ec1c6acdcf5be3774590e9d6cf7b85449276d5e4fff05f2ccee",
+        "size_bytes": 4792
+      },
+      {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_multiseed_validation_v3.py",
+        "sha256": "04fc66f27f8871fffaa0bbfa4c6ddd801322da05fd43a36854cf4e5685b39b0f",
+        "size_bytes": 12112
+      },
+      {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_multiseed_analysis_v3.py",
+        "sha256": "c304511084f41ddb7a3b4d3f4b1e02d63599a9ec01870379497b48fd12c1b4bb",
+        "size_bytes": 6916
+      }
+    ],
+    "preservation_policy": "Never edit accepted v2/v3 sources, archives, protocols, manifests, completed artifacts, data or fixed folds; new versioned execution source freeze required."
+  },
+  "dataset_selection": {
+    "resolved_data_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1",
+    "analysis_label": "filtered-cohort analysis",
+    "cohort_version": "geo_filtered_v1",
+    "cohort_manifest": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\cohort_manifest.json",
+      "sha256": "a9c19e57dde847406a078e24142c0ef6c310a482008b38f22d60b35539905fcd",
+      "size_bytes": 143920
+    },
+    "declared_files": [
+      "Train335.pkl",
+      "Test287.pkl"
+    ],
+    "datasets": {
+      "Train335.pkl": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\Train335.pkl",
+        "sha256": "edc851f17baeba49efd937f6ab3bb4534abeeb64c43d1774c219726dd970cdfe",
+        "size_bytes": 1468833049,
+        "sample_count": 334
+      },
+      "Test287.pkl": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\Test287.pkl",
+        "sha256": "13d02398c730d1a4c90666807dc2c621ced0838d03affd93e0effeeeed4d8581",
+        "size_bytes": 1091571976,
+        "sample_count": 285
+      }
+    },
+    "grouped_fold_manifest": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\grouped_folds_seed2101.json",
+      "sha256": "5ce6af3a724de3b2b1b7cb08f2cc93452372d2ae01cb3a0aaefe5fe7cc18d1a0",
+      "size_bytes": 76421
+    },
+    "seed": 2101,
+    "hashes_verified": true,
+    "selection_mode": "explicit"
+  },
+  "fixed_fold_identity": {
+    "manifest": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\grouped_folds_seed2101.json",
+      "sha256": "5ce6af3a724de3b2b1b7cb08f2cc93452372d2ae01cb3a0aaefe5fe7cc18d1a0",
+      "size_bytes": 76421
+    },
+    "consume_indices_groups_and_order_verbatim": true,
+    "regenerate_folds": false,
+    "canonical_existing_cv_splits_sha256": "ab128cab0b282a500c4dff15513eceb575a10b0ae70420c74d0bfe9124d8abfd",
+    "canonical_serialization": "JSON sort_keys=True separators=(comma,colon) encoded UTF-8; supplements exact fold-manifest byte hash."
+  },
+  "reference_model_recipe": {
+    "model_mode": "innovative_triview",
+    "seed": 2101,
+    "geometry_feature_mode": "residue_local_frame_rbf_v1",
+    "surface_feature_mode": "surface_exposure_v1",
+    "sequence_feature_mode": "residue_biochemical_v1",
+    "plm_feature_mode": "esm2_t12_35M_UR50D_v1",
+    "plm_feature_dim": 480,
+    "aux_plm_feature_mode": "esm2_t6_8M_UR50D_v1",
+    "aux_plm_feature_dim": 320,
+    "patch_label_distribution": false,
+    "patch_label_steps": 2,
+    "patch_label_alpha": 0.45,
+    "patch_label_max_unlabeled": 0.45,
+    "partner_contact_aux": true,
+    "partner_contact_aux_weight": 0.12,
+    "partner_conditioning": true,
+    "partner_top_k": 16,
+    "partner_direct_fusion": false,
+    "partner_logit_mode": "standard",
+    "partner_delta_scale": 1.0,
+    "partner_residue_encoder": true,
+    "partner_encoder_layers": 1,
+    "partner_target_fusion": 0.25,
+    "transport_implementation": "capacity_capped_dustbin_v2",
+    "transport_sinkhorn_iters": 5,
+    "transport_tau": 0.1,
+    "transport_dustbin": true,
+    "transport_top_k": 32,
+    "transport_entropy_weight": 0.01,
+    "transport_sparsity_weight": 0.005,
+    "transport_logit_fusion": 0.3,
+    "partner_contrast": false,
+    "partner_contrast_weight": 0.03,
+    "partner_contrast_margin": 0.05,
+    "partner_contrast_warmup_epochs": 0,
+    "batch_size": 1,
+    "pair_contact_loss": false,
+    "pair_contact_loss_weight": 0.06,
+    "pair_contact_pos_weight": 8.0,
+    "pair_contact_head": "attention",
+    "pair_contact_warmup_epochs": 0,
+    "pair_marginal_consistency": false,
+    "pair_marginal_consistency_weight": 0.02,
+    "pair_marginal_consistency_warmup_epochs": 5,
+    "pair_marginal_contrast": false,
+    "pair_marginal_contrast_weight": 0.02,
+    "pair_marginal_contrast_margin": 0.03,
+    "pair_marginal_contrast_warmup_epochs": 5,
+    "pair_contact_contrast": false,
+    "pair_contact_contrast_weight": 0.005,
+    "pair_contact_contrast_margin": 0.03,
+    "pair_contact_contrast_hard_k": 10,
+    "pair_contact_contrast_warmup_epochs": 5,
+    "pair_contact_contrast_mismatch_policy": "in_batch_nearest_length",
+    "pair_contact_contrast_coverage": {
+      "positive_interface_residues": 10336,
+      "contact_contrast_eligible_residues": 9378,
+      "contact_contrast_coverage": 0.9073142414860681,
+      "samples_with_eligible_contacts": 332,
+      "total_samples": 334
+    },
+    "max_folds": 5,
+    "skip_test_eval": true,
+    "two_head_binding": true,
+    "two_head_rank_loss_weight": 0.55,
+    "two_head_consistency_weight": 0.04,
+    "two_head_rank_fusion": 0.35,
+    "two_head_rank_warmup_epochs": 3,
+    "view_logit_fusion": 0.0,
+    "model_dropout": 0.25,
+    "model_edge_dropout": 0.06,
+    "weight_decay": 0.0003,
+    "checkpoint_selection_metric": "mcc",
+    "checkpoint_selection_aupr_weight": 0.35,
+    "grouped_cv": true,
+    "cv_group_key": "complex_code",
+    "test_sets": [
+      "Test287.pkl"
+    ]
+  },
+  "arm_settings": [
+    {
+      "arm": "projected",
+      "partner_transport": true,
+      "transport_implementation": "capacity_capped_dustbin_v2",
+      "transport_sinkhorn_iters": 5
+    },
+    {
+      "arm": "rowsoftmax",
+      "partner_transport": true,
+      "transport_implementation": "capacity_capped_dustbin_v2",
+      "transport_sinkhorn_iters": 0
+    }
+  ],
+  "projection_semantics": {
+    "source": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\CROSS5FOLD_multiseed_dev_v1.py",
+      "sha256": "93de0890f172dc34a727e016c7e989fb344c9dc781826ce493f8068294c645f4",
+      "size_bytes": 227565
+    },
+    "function": "SparseTransportLayer.sparse_sinkhorn",
+    "verified_line_start": 1397,
+    "verified_line_end": 1436,
+    "zero_iterations": "Row softmax over affinity/tau and learned dustbin logits/tau; no real-column cap.",
+    "five_iterations": "Five row-normalization/upper-real-column-cap projections; real plan exponentiated and final row deficit assigned to dustbin without renormalizing real columns.",
+    "upper_column_capacity": "max(1.0, n_target / max(n_partner, 1)); not an equality marginal",
+    "interpretation": "Iterations change projection/postprocessing, dustbin mass, gradients and resulting training trajectories. This does not isolate column cap alone.",
+    "modify_mathematical_implementation": false
+  },
+  "parameter_matching": {
+    "partner_transport_true_both_arms": true,
+    "all_folds_exact_required_fields": [
+      "parameter names",
+      "shapes",
+      "dtypes",
+      "trainability",
+      "total parameter count",
+      "trainable parameter count",
+      "optimizer parameter-group membership and settings"
+    ],
+    "before_optimization_per_fold_evidence": [
+      "canonical model parameter/state schema",
+      "initial parameter tensor SHA-256 fingerprint",
+      "Python/NumPy/Torch RNG-state fingerprints",
+      "optimizer parameter-group membership/settings"
+    ],
+    "first_fold_initial_parameter_equality_per_seed": true,
+    "later_fold_initial_parameter_equality_required": false,
+    "seed_procedure": "Preserve existing once-per-run seed_everything(training_seed), with no fold reseeding.",
+    "later_fold_divergence_policy": "Record initial tensor/RNG fingerprints for every fold. Later-fold divergence from preceding training trajectories/early-stopping RNG consumption is permitted and reported as a limitation; never hide it.",
+    "parameter_add_remove_or_freeze": "forbidden",
+    "force_rng_synchronization_or_fold_reseeding": "forbidden absent separately authorized prospective amendment",
+    "learned_final_values_expected_equal": false
+  },
+  "permitted_changes_from_accepted_recipe": [
+    "transport_sinkhorn_iters zero in the rowsoftmax arm only",
+    "new versioned arm routing, provenance, validation and analysis infrastructure",
+    "run identities, timestamps and fresh destination paths"
+  ],
+  "permitted_difference_within_seed_pair": [
+    "transport_sinkhorn_iters (5 versus 0)",
+    "run identity, timestamps and output path",
+    "learned outcomes including selected checkpoints, thresholds, metrics, optimization trajectories and later-fold initialization/RNG state"
+  ],
+  "prohibited_changes": [
+    "training seed list or fixed fold seed",
+    "model architecture/parameter inventory/trainability",
+    "features/PLMs/partner conditioning/encoder",
+    "dustbin/temperature/top-k/fusion/transport regularization weights",
+    "optimizer/learning-rate behavior/losses/batch size/regularization",
+    "once-per-run seeding or checkpoint/threshold-selection procedure",
+    "runtime requirements",
+    "cohort/data/fold bytes",
+    "prior completed artifacts or accepted execution files"
+  ],
+  "required_common_runtime": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "python_executable": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\.venv\\Scripts\\python.exe",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "numpy": "2.4.6",
+      "torch": "2.12.0",
+      "scikit-learn": "1.8.0",
+      "tqdm": "4.67.3",
+      "transformers": "5.9.0"
+    },
+    "device": "cpu",
+    "cuda_runtime": null,
+    "cuda_available": false,
+    "deterministic_algorithms": false,
+    "cudnn_deterministic": false,
+    "cudnn_benchmark": false,
+    "torch_num_threads": 12
+  },
+  "unchanged_training_policy": {
+    "max_epochs": 30,
+    "early_stopping_patience": 8,
+    "checkpoint_selection_metric": "mcc",
+    "top_checkpoint_average_candidates": 3,
+    "choose_average_when_selection_score_at_least_best": true,
+    "policy_binding": "unchanged CROSS5FOLD_multi_test.py SHA-256 above"
+  },
+  "seed_and_arm_order": [
+    {
+      "training_seed": 2102,
+      "fold_seed": 2101,
+      "arm": "projected",
+      "partner_transport": true,
+      "transport_sinkhorn_iters": 5,
+      "max_folds": 5,
+      "skip_test_eval": true,
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_capacity_projection_dev_v1_projected_trainseed2102_cvseed2101"
+    },
+    {
+      "training_seed": 2102,
+      "fold_seed": 2101,
+      "arm": "rowsoftmax",
+      "partner_transport": true,
+      "transport_sinkhorn_iters": 0,
+      "max_folds": 5,
+      "skip_test_eval": true,
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_capacity_projection_dev_v1_rowsoftmax_trainseed2102_cvseed2101"
+    },
+    {
+      "training_seed": 2103,
+      "fold_seed": 2101,
+      "arm": "projected",
+      "partner_transport": true,
+      "transport_sinkhorn_iters": 5,
+      "max_folds": 5,
+      "skip_test_eval": true,
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_capacity_projection_dev_v1_projected_trainseed2103_cvseed2101"
+    },
+    {
+      "training_seed": 2103,
+      "fold_seed": 2101,
+      "arm": "rowsoftmax",
+      "partner_transport": true,
+      "transport_sinkhorn_iters": 0,
+      "max_folds": 5,
+      "skip_test_eval": true,
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_capacity_projection_dev_v1_rowsoftmax_trainseed2103_cvseed2101"
+    },
+    {
+      "training_seed": 2104,
+      "fold_seed": 2101,
+      "arm": "projected",
+      "partner_transport": true,
+      "transport_sinkhorn_iters": 5,
+      "max_folds": 5,
+      "skip_test_eval": true,
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_capacity_projection_dev_v1_projected_trainseed2104_cvseed2101"
+    },
+    {
+      "training_seed": 2104,
+      "fold_seed": 2101,
+      "arm": "rowsoftmax",
+      "partner_transport": true,
+      "transport_sinkhorn_iters": 0,
+      "max_folds": 5,
+      "skip_test_eval": true,
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_capacity_projection_dev_v1_rowsoftmax_trainseed2104_cvseed2101"
+    }
+  ],
+  "aggregate_output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\complete_oof",
+  "process_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_capacity_projection_dev_v1_process",
+  "execution_policy": {
+    "mode": "serial",
+    "exclusive_lock_required": true,
+    "new_process_for_each_seed_arm": true,
+    "clear_inherited_ppi_variables": true,
+    "reverify_before_every_arm": [
+      "protocol",
+      "new accepted execution freeze",
+      "accepted ancestry",
+      "source",
+      "data",
+      "cohort",
+      "fixed folds",
+      "runtime"
+    ],
+    "reuse_historical_checkpoints_or_predictions": false,
+    "require_complete_all_five_folds_per_arm": true,
+    "require_all_three_complete_validated_seed_pairs_before_aggregate": true,
+    "existing_training_output_policy": "refuse even if empty",
+    "existing_aggregate_destination_policy": "refuse",
+    "failure_policy": "Stop at first nonzero training return or failed artifact validation; preserve logs/state/outputs; launch no later arm or aggregate.",
+    "silent_seed_replacement": false,
+    "adaptive_seed_extension": false,
+    "adaptive_tuning": false,
+    "restart_or_overwrite_failed_arm": false,
+    "unreviewed_individual_arm_launch": false,
+    "launch_authorized_by_this_record": false,
+    "implementation_requirement": "New versioned runner/routing, parameter-initialization evidence, strict artifact validator and analyzer; accepted v2 verifier rejects zero-iteration recipe and must remain unchanged.",
+    "launch_readiness": "No execution implementation or training launched; later explicit launch instruction requires completed new source freeze and acceptance evidence."
+  },
+  "prelaunch_acceptance": {
+    "source_freeze_required_before_training": true,
+    "new_manifest_binds": [
+      "this protocol",
+      "accepted ancestry",
+      "exact source/archive hashes",
+      "data/cohort/fold hashes and identities",
+      "runtime",
+      "six-run order",
+      "output and process/aggregate destinations",
+      "tests and analysis source"
+    ],
+    "required_evidence": [
+      "full relevant suite new passing log with explained pre-existing skips",
+      "six declared real-data strict-feature/hash dry runs with no training",
+      "all five exact fixed fold identities/order per arm",
+      "training/fold seed and projection routing checks",
+      "all-fold schema/count/trainability/optimizer-group equality",
+      "first-fold initialization equality and all-fold initialization/RNG fingerprints",
+      "forced process and validation failure-stop proofs",
+      "output collision and concurrent-worker refusal",
+      "validator rejection of wrong seed/folds/source/data/cohort/runtime/external outputs",
+      "validator rejection of partial/corrupt/nonfinite OOF and checkpoint evidence",
+      "validator rejection of unequal schema/count/optimizer settings or first-fold initial state",
+      "analysis identity/pairing/RNG/threshold/exclusion/aggregate tests",
+      "six training and aggregate directories remain absent"
+    ],
+    "acceptance_record_contains_all_source_and_evidence_sha256": true,
+    "dryruns_or_simulations_fit_research_models": false,
+    "execute_before_acceptance": false,
+    "subsequent_explicit_launch_instruction_required": true
+  },
+  "completed_arm_validation": {
+    "five_completed_folds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "must_match": [
+      "training seed",
+      "fixed fold seed",
+      "exact fold indices/groups/order",
+      "data/cohort/fold/source/runtime hashes",
+      "frozen recipe except declared iterations and permitted outcomes/provenance",
+      "strict feature coverage",
+      "complete OOF sample/residue/complex/fold identity and labels",
+      "finite bounded OOF predictions",
+      "five finite selected checkpoints and provenance",
+      "saved thresholds and reproducible saved metrics",
+      "correct transport/projection state",
+      "parameter/count/trainability/optimizer matching",
+      "first-fold initialization matching plus all-fold initialization/RNG evidence"
+    ],
+    "any_Test287_prediction_metric_or_external_summary": "reject",
+    "partial_aggregate": "reject"
+  },
+  "analysis": {
+    "primary_metric": "trapezoidal PR-AUC",
+    "metric_definitions": {
+      "trapezoidal_pr_auc": "sklearn.metrics.auc(recall, precision) from precision_recall_curve",
+      "mcc": "sklearn.metrics.matthews_corrcoef(labels, probabilities >= saved_threshold)",
+      "auroc": "sklearn.metrics.roc_auc_score(labels, probabilities)"
+    },
+    "primary_estimand": "Arithmetic mean of three per-training-seed complete pooled-OOF projected-minus-rowsoftmax trapezoidal PR-AUC differences.",
+    "secondary_metric": "MCC at each fitted projected/rowsoftmax arm seed own saved pooled-OOF development-selected threshold.",
+    "descriptive_metric": "AUROC",
+    "seed_variability": [
+      "all individual seed-pair deltas",
+      "mean",
+      "sample standard deviation with ddof=1",
+      "range",
+      "count of positive, zero and negative deltas"
+    ],
+    "do_not_treat_folds_as_independent_replicates": true,
+    "seed_hypothesis_test": null,
+    "do_not_pool_seed_predictions_as_extra_independent_residues": true,
+    "bootstrap": {
+      "replicates": 5000,
+      "seed": 2101,
+      "unit": "complex_code",
+      "replicates_are_attempts": true,
+      "replenish_excluded_draws": false,
+      "complex_draws_per_attempt": 209,
+      "complex_sampling": "with replacement; include all sample/residue rows and each drawn complex multiplicity",
+      "rng": "numpy.random.Generator(numpy.random.PCG64(2101))",
+      "group_order": "sorted unique complex codes after stripping whitespace and uppercasing",
+      "draw_operation": "rng.integers(209, size=209)",
+      "paired_draws_shared_across_both_arms_and_all_training_seeds": true,
+      "statistic": "Compute each seed projected-minus-rowsoftmax metric difference on the common sampled complexes, then average those three differences.",
+      "thresholds": "hold every fitted arm/seed saved threshold fixed",
+      "interval": "percentile 95%",
+      "quantile_method": "numpy.quantile(values, [0.025, 0.975], method='linear')",
+      "single_class_draws": "exclude and count",
+      "missing_or_nonfinite_predictions": "fail validation; never exclude as bootstrap draws",
+      "no_valid_draws": "refuse interval",
+      "scope": "conditional on all fitted predictions; does not include training-seed uncertainty",
+      "interval_metrics": [
+        "trapezoidal PR-AUC mean difference",
+        "MCC mean difference"
+      ],
+      "bootstrap_rerun_policy": "Refuse rerun or overwrite of a completed aggregate."
+    },
+    "delta_direction": "projected (five iterations) minus rowsoftmax (zero iterations)",
+    "secondary_estimand": "Arithmetic mean of the three projected-minus-rowsoftmax MCC differences.",
+    "descriptive_estimand": "AUROC projected-minus-rowsoftmax per seed and its mean, ddof=1 sample SD, range and sign counts; no AUROC interval.",
+    "historical_reference_reporting": "Observed seed-2101 and three-seed OT/no-OT results separately labeled descriptive context; no historical predictions, checkpoints, scores or thresholds enter the prospective aggregate or bootstrap.",
+    "analysis_source_freeze_before_training": true,
+    "p_value": null
+  },
+  "limitations": [
+    "Development labels select checkpoints and thresholds; OOF scores remain selection-optimistic.",
+    "Complex-bootstrap intervals condition on all six fitted predictions and saved thresholds; not training-seed uncertainty.",
+    "Three selected seeds are limited stability repetitions; they have already appeared in the observed prior OT/no-OT experiment.",
+    "The cohort, recipe and follow-up question were selected with previous negative results known; this is an internal prospective follow-up, not independent replication.",
+    "Fold training populations overlap; complex resampling and repeated seeds do not remove fitting dependence.",
+    "The filtered sensitivity cohort has unverified biological residue/atom mappings and unestablished homology independence.",
+    "Fixed folds do not measure split uncertainty.",
+    "Once-per-run seeding allows later-fold initial weights and stochastic histories to differ as prior fold training/early stopping differs; record this rather than impose a new RNG recipe.",
+    "Parameter matching narrows the architectural contrast but the changed policy includes dustbin/postprocessing and gradient effects, not column cap alone or a frozen-weight causal intervention.",
+    "No new rowsoftmax-versus-no-OT contrast is estimated; prior no-OT comparisons are descriptive only.",
+    "Test287 remains unevaluated; no external-generalization, universal transport benefit/harm, biological-specificity or p-value claim follows."
+  ]
+}

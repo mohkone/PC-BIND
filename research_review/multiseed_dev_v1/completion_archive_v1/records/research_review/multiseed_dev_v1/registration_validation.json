@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "verified_utc": "2026-10-02T00:10:42.038091+00:00",
+  "protocol": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\protocol.json",
+    "sha256": "a4423ed6beb128a916ce301a5056338a37973625b993de60c8a4b1ed57de82d7",
+    "size_bytes": 13315
+  },
+  "preregistration": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\PREREGISTRATION.md",
+    "sha256": "bc853630cfe402834437346e50927efe81c88aa366d9d3fc8d13e6ecc0957705",
+    "size_bytes": 8824
+  },
+  "training_seeds": [
+    2102,
+    2103,
+    2104
+  ],
+  "fixed_fold_seed": 2101,
+  "reference_seed_excluded_from_primary_new_seed_estimate": true,
+  "new_output_directories_absent": 6,
+  "frozen_source_and_exact_archive_pairs_verified": 14,
+  "original_complete_oof_artifacts_unchanged": true,
+  "documentation_metrics_match_saved_results": true,
+  "methods_review": "Read-only independent cross-check found no design/documentation blockers.",
+  "training_launched": false,
+  "execution_path_ready": false,
+  "remaining_launch_gate": "Implement, validate and freeze a separate training-seed/fold-seed execution path before any new training."
+}

@@ -1,0 +1,253 @@
+{
+  "status": "complete",
+  "jobs": [
+    {
+      "training_seed": 2102,
+      "arm": "ot",
+      "partner_transport": true,
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2102_cvseed2101",
+      "status": "complete",
+      "started_utc": "2026-10-02T23:26:14.331108+00:00",
+      "training_pid": 43748,
+      "stdout_log": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\ot_2102_stdout.log",
+      "stderr_log": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\ot_2102_stderr.log",
+      "command": [
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\CROSS5FOLD_multiseed_dev_v1.py",
+        "--training-seed",
+        "2102",
+        "--fold-seed",
+        "2101",
+        "--arm",
+        "ot",
+        "--execution-manifest",
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_manifest_v2.json",
+        "--data-dir",
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1",
+        "--cohort-manifest",
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\cohort_manifest.json",
+        "--fold-manifest",
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\grouped_folds_seed2101.json"
+      ],
+      "exit_code": 0,
+      "ended_utc": "2026-10-03T11:07:56.242606+00:00",
+      "validation": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\ot_2102_validated.json",
+        "sha256": "a6bb976a3088893c2f44e994754fa0bec995523ead13fa0a717faa80563fb553",
+        "size_bytes": 4140
+      }
+    },
+    {
+      "training_seed": 2102,
+      "arm": "noot",
+      "partner_transport": false,
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2102_cvseed2101",
+      "status": "complete",
+      "started_utc": "2026-10-03T11:08:23.762188+00:00",
+      "training_pid": 33028,
+      "stdout_log": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\noot_2102_stdout.log",
+      "stderr_log": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\noot_2102_stderr.log",
+      "command": [
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\CROSS5FOLD_multiseed_dev_v1.py",
+        "--training-seed",
+        "2102",
+        "--fold-seed",
+        "2101",
+        "--arm",
+        "noot",
+        "--execution-manifest",
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_manifest_v2.json",
+        "--data-dir",
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1",
+        "--cohort-manifest",
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\cohort_manifest.json",
+        "--fold-manifest",
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\grouped_folds_seed2101.json"
+      ],
+      "exit_code": 0,
+      "ended_utc": "2026-10-03T22:21:19.575147+00:00",
+      "validation": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\noot_2102_validated.json",
+        "sha256": "7f6803132e7d1c0c46e578c03f962c534f279afd96a5fdf8835220374196e430",
+        "size_bytes": 4169
+      }
+    },
+    {
+      "training_seed": 2103,
+      "arm": "ot",
+      "partner_transport": true,
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2103_cvseed2101",
+      "status": "complete",
+      "started_utc": "2026-10-03T22:21:36.997475+00:00",
+      "training_pid": 32920,
+      "stdout_log": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\ot_2103_stdout.log",
+      "stderr_log": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\ot_2103_stderr.log",
+      "command": [
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\CROSS5FOLD_multiseed_dev_v1.py",
+        "--training-seed",
+        "2103",
+        "--fold-seed",
+        "2101",
+        "--arm",
+        "ot",
+        "--execution-manifest",
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_manifest_v2.json",
+        "--data-dir",
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1",
+        "--cohort-manifest",
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\cohort_manifest.json",
+        "--fold-manifest",
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\grouped_folds_seed2101.json"
+      ],
+      "exit_code": 0,
+      "ended_utc": "2026-10-04T18:00:48.893491+00:00",
+      "validation": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\ot_2103_validated.json",
+        "sha256": "1157cad55cd4e3ef83c334e98d7a475367f45487cfb49d540a87358d5ea995ae",
+        "size_bytes": 4140
+      }
+    },
+    {
+      "training_seed": 2103,
+      "arm": "noot",
+      "partner_transport": false,
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2103_cvseed2101",
+      "status": "complete",
+      "started_utc": "2026-10-04T18:01:01.886072+00:00",
+      "training_pid": 39200,
+      "stdout_log": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\noot_2103_stdout.log",
+      "stderr_log": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\noot_2103_stderr.log",
+      "command": [
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\CROSS5FOLD_multiseed_dev_v1.py",
+        "--training-seed",
+        "2103",
+        "--fold-seed",
+        "2101",
+        "--arm",
+        "noot",
+        "--execution-manifest",
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_manifest_v2.json",
+        "--data-dir",
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1",
+        "--cohort-manifest",
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\cohort_manifest.json",
+        "--fold-manifest",
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\grouped_folds_seed2101.json"
+      ],
+      "exit_code": 0,
+      "ended_utc": "2026-10-05T09:05:38.694550+00:00",
+      "validation": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\noot_2103_validated.json",
+        "sha256": "74bd5eac8a02d346d2d425770512425b6a9b9d4ea2334efbcb6f14c237f94c42",
+        "size_bytes": 4169
+      }
+    },
+    {
+      "training_seed": 2104,
+      "arm": "ot",
+      "partner_transport": true,
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2104_cvseed2101",
+      "status": "complete",
+      "started_utc": "2026-10-05T09:05:52.740233+00:00",
+      "training_pid": 18064,
+      "stdout_log": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\ot_2104_stdout.log",
+      "stderr_log": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\ot_2104_stderr.log",
+      "command": [
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\CROSS5FOLD_multiseed_dev_v1.py",
+        "--training-seed",
+        "2104",
+        "--fold-seed",
+        "2101",
+        "--arm",
+        "ot",
+        "--execution-manifest",
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_manifest_v2.json",
+        "--data-dir",
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1",
+        "--cohort-manifest",
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\cohort_manifest.json",
+        "--fold-manifest",
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\grouped_folds_seed2101.json"
+      ],
+      "exit_code": 0,
+      "ended_utc": "2026-10-06T02:34:33.543299+00:00",
+      "validation": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\ot_2104_validated.json",
+        "sha256": "170f94848fe52798c734d19b8f0e533bc6ab33579f578e3ee31da6f6e16f1bbf",
+        "size_bytes": 4140
+      }
+    },
+    {
+      "training_seed": 2104,
+      "arm": "noot",
+      "partner_transport": false,
+      "output_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2104_cvseed2101",
+      "status": "complete",
+      "started_utc": "2026-10-06T02:34:54.148810+00:00",
+      "training_pid": 34408,
+      "stdout_log": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\noot_2104_stdout.log",
+      "stderr_log": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\noot_2104_stderr.log",
+      "command": [
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\CROSS5FOLD_multiseed_dev_v1.py",
+        "--training-seed",
+        "2104",
+        "--fold-seed",
+        "2101",
+        "--arm",
+        "noot",
+        "--execution-manifest",
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_manifest_v2.json",
+        "--data-dir",
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1",
+        "--cohort-manifest",
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\cohort_manifest.json",
+        "--fold-manifest",
+        "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\grouped_folds_seed2101.json"
+      ],
+      "exit_code": 0,
+      "ended_utc": "2026-10-06T13:14:35.918220+00:00",
+      "validation": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\noot_2104_validated.json",
+        "sha256": "eaa981bf73d99ef0e9465e72992f55f892f7aea15ad37c5157d5bc6148cd0ff1",
+        "size_bytes": 4169
+      }
+    }
+  ],
+  "comparison": {
+    "status": "complete",
+    "artifacts": {
+      "comparison": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\complete_oof_v3\\comparison.json",
+        "sha256": "be714db11c49a27e7a98a3a7a3f061145842ca077a68b3da253ae1b22998aca0",
+        "size_bytes": 854257
+      },
+      "result_markdown": {
+        "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\complete_oof_v3\\RESULT.md",
+        "sha256": "0dd3b8e74e50b2066f8391ec5eff34fd666ecd3efe31a862ea362e5fe3b76fb7",
+        "size_bytes": 2764
+      }
+    }
+  },
+  "created_utc": "2026-10-02T23:26:11.410187+00:00",
+  "worker_pid": 43560,
+  "execution_manifest_v3": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_manifest_v3.json",
+    "sha256": "c181e3206996c5674ed33e7d0c0e91a83d42a3cc870a839c1b4819a470ddc73a",
+    "size_bytes": 84694
+  },
+  "accepted_v2": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_manifest_v2.json",
+    "sha256": "ca69112d633de00ee80d23a7c7913a939d780cf2561f403393588f95a5eb0519",
+    "size_bytes": 87551
+  },
+  "external_evaluation": "skipped in every arm",
+  "process_dir": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process",
+  "updated_utc": "2026-10-06T13:36:40.710078+00:00",
+  "current_job_index": null,
+  "ended_utc": "2026-10-06T13:36:40.710078+00:00"
+}

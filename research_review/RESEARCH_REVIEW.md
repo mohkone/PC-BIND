@@ -1,6 +1,6 @@
 # PC-BIND research review and correction record
 
-Initial review: 27–28 September 2026. Completion update: 2 October 2026.
+Initial review: 27–28 September 2026. Completion verification update: 7 October 2026.
 Scope: the code, launchers, saved predictions,
 serialized run settings, and dataset files reachable through this workspace.
 No manuscript was supplied. Original checkpoints, predictions and datasets
@@ -32,17 +32,50 @@ and 0.5870 for OT and no-OT respectively. The
 [JSON record](frozen_5fold_dev_v1/complete_oof/comparison.json) binds the freeze
 manifest and all twenty final artifact records, including ten checkpoints.
 
-This is a negative result for the tested development recipe. Checkpoints and
-thresholds were selected on these labels, and bootstrap intervals condition on
-the fitted predictions; seed variation and overlapping-fold fitting dependence
-remain unmeasured. The filtered cohort has unverified biological mappings and
-homology independence. Transport removal changes parameter count. No claim of
-universal OT harm, biological partner specificity or external generalization
-follows. The user selected a shared training-seed repeat with the folds held
-fixed. Its [prospective protocol](multiseed_dev_v1/PREREGISTRATION.md) specifies
-additional training seeds 2102, 2103 and 2104. No new training has been launched.
-A capacity-matched transport/no-projection comparison remains a separate future
-mechanistic experiment.
+This seed-2101 result is an earlier, separately reported reference. It is
+excluded from the prospective three-seed primary mean and bootstrap intervals.
+
+The subsequent [preregistered three-seed comparison](multiseed_dev_v1/complete_oof_v3/RESULT.md)
+completed on 6 October 2026. All six fresh arms used training seeds 2102, 2103
+and 2104 with the original fixed seed-2101 folds and matching data, source,
+runtime, feature recipe and selection procedure. Test287 was skipped in every
+arm. A [fresh independent audit](multiseed_dev_v1/completion_verification_v1/verification.json)
+on 7 October verified all six runs, 30 checkpoints, six OOF archives and 114
+recorded hashes, and reproduced saved-population metrics and aggregate
+summaries within `1e-12`. It did not rerun the bootstrap or replace reports.
+
+| OT minus no-OT across new seeds | Mean | Sample SD (ddof=1) | Range | Conditional paired 95% interval | Positive / zero / negative |
+| --- | ---: | ---: | --- | --- | --- |
+| Trapezoidal PR-AUC | -0.030940 | 0.003339 | [-0.033514, -0.027167] | [-0.043168, -0.017972] | 0 / 0 / 3 |
+| MCC | -0.021680 | 0.002563 | [-0.024638, -0.020117] | [-0.032904, -0.010421] | 0 / 0 / 3 |
+| AUROC | -0.026884 | 0.016370 | [-0.042496, -0.009848] | Descriptive only | 0 / 0 / 3 |
+
+The tested OT-inspired branch underperformed the matched no-OT control in all
+three prospective seed pairs for all three metrics. The registered mean is
+the arithmetic mean of three per-seed pooled OOF differences, not a metric
+on concatenated repeated-seed predictions. All 5,000 shared whole-complex
+bootstrap attempts were valid; zero single-class draws were excluded. All six
+saved thresholds stayed fixed. The [JSON](multiseed_dev_v1/complete_oof_v3/comparison.json)
+and [completion archive](multiseed_dev_v1/completion_archive_v1/archive_manifest.json)
+preserve the results and complete provenance chain.
+
+This is a negative development finding for the tested recipe. Checkpoint and
+threshold selection used these labels, so scores remain selection-optimistic.
+The intervals condition on fitted models and selected thresholds; the observed
+three-seed SD and range describe only these repetitions and do not provide a
+confidence interval over training randomness. Fold training sets overlap.
+The filtered sensitivity cohort has unverified biological mappings and
+unestablished homology independence. Transport removal changes parameter count.
+No universal OT-harm, biological-specificity or external-generalization claim
+follows from these results.
+
+The separately [preregistered capacity-matched ablation](capacity_projection_dev_v1/PREREGISTRATION.md)
+will retain transport in both arms and compare five projection iterations with
+zero using six fresh fits. It targets the projection and dustbin postprocessing
+policy within the same parameterized branch. It does not directly estimate
+uncapped transport versus no-OT, or isolate column capping from the associated
+normalization and dustbin changes. No ablation implementation or training has
+been launched.
 
 ## Assessment
 
@@ -299,14 +332,19 @@ training-derived decision thresholds, component comparisons and fixed-model
 partner interventions. Its inputs and split groups require explicit provenance
 and coverage audits."
 
-**Current evidence:** "In the frozen, single-seed, five-fold filtered-cohort
-development comparison, the capacity-constrained OT-inspired partner-transport
-branch did not improve performance over the matched no-OT control. OT had lower
-pooled OOF trapezoidal PR-AUC by 0.0284 and MCC by 0.0277; paired whole-complex
-percentile intervals were below zero for both. These intervals condition on
-development-selected models and thresholds. Additional training-seed and
-capacity-matched studies, verified biological mappings and homology-aware
-evaluation are needed before stronger mechanistic or generalization claims."
+**Current evidence:** "Across three prospectively specified training seeds
+with fixed grouped folds, the tested OT-inspired transport branch consistently
+underperformed the matched no-OT control on the filtered development cohort.
+Mean OT-minus-control differences were -0.03094 in trapezoidal PR-AUC and
+-0.02168 in MCC; conditional paired whole-complex percentile intervals were
+[-0.043168, -0.017972] and [-0.032904, -0.010421], respectively. The earlier
+seed-2101 result was excluded from these prospective estimates. Checkpoints
+and thresholds were development-selected, folds share training samples, and
+the intervals do not measure training-seed uncertainty. Biological mappings
+and homology independence remain unverified, parameter counts differ between
+arms, and Test287 was not evaluated. A capacity-matched ablation and verified
+biological and homology-aware evaluation remain necessary for stronger
+mechanistic or generalization claims."
 
 Avoid claims of state-of-the-art accuracy, statistical significance across
 independent seeds, biological contact recovery, validated unbalanced-OT
@@ -320,6 +358,16 @@ input-prerequisite failure. The later frozen-comparison
 [validation record](frozen_5fold_dev_v1/validation.json) records **114 tests run,
 113 passed and one host-limited symlink test skipped**, including complete-OOF
 guards, paired complex resampling and queue failure stops.
+
+The prospective multi-seed study adds the immutable
+[v3 acceptance](multiseed_dev_v1/execution_manifest_v3.acceptance.json): **158
+tests run, 157 passed, one existing host-limited skip**, six real-data dry runs
+and forced failure-stop simulations. Its
+[completion verification](multiseed_dev_v1/completion_verification_v1/verification.json)
+rehashes and validates the six complete arms and independently reproduces the
+saved metrics. The bootstrap was inspected as stored, not recomputed. The
+final reports, accepted manifests, queue and run validation records are
+preserved in a separate hash-recorded archive.
 
 The [README](../README.md) gives repeatable commands. Regression checks cover
 threshold ties, group leakage guards, sparse-plan mass/gradient constraints,

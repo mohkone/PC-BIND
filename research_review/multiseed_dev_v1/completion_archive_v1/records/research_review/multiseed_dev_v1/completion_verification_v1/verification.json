@@ -1,0 +1,1007 @@
+{
+  "schema_version": 1,
+  "audit_version": "completion_verification_v1",
+  "status": "passed",
+  "created_utc": "2026-10-07T10:51:34.635389+00:00",
+  "client_date": "2026-10-07",
+  "client_timezone": "Asia/Shanghai",
+  "verification_source": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\completion_verification_v1\\verify_completion.py",
+    "sha256": "bba01737f72e3e4c6a0eb7bd725d4648c61e314b497c5e6b5346f85ccc247f0b",
+    "size_bytes": 13181
+  },
+  "bootstrap_recomputed": false,
+  "training": false,
+  "output_originals_modified": false,
+  "queue": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\queue_state.json",
+    "sha256": "8f565a086715e557b7a7a9a3ce468658ec38760fb0e991c1db95c2d610af98c9",
+    "size_bytes": 12306
+  },
+  "execution_manifest_v3": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_manifest_v3.json",
+    "sha256": "c181e3206996c5674ed33e7d0c0e91a83d42a3cc870a839c1b4819a470ddc73a",
+    "size_bytes": 84694
+  },
+  "accepted_v2": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_manifest_v2.json",
+    "sha256": "ca69112d633de00ee80d23a7c7913a939d780cf2561f403393588f95a5eb0519",
+    "size_bytes": 87551
+  },
+  "final_artifacts": {
+    "comparison": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\complete_oof_v3\\comparison.json",
+      "sha256": "be714db11c49a27e7a98a3a7a3f061145842ca077a68b3da253ae1b22998aca0",
+      "size_bytes": 854257
+    },
+    "result_markdown": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\complete_oof_v3\\RESULT.md",
+      "sha256": "0dd3b8e74e50b2066f8391ec5eff34fd666ecd3efe31a862ea362e5fe3b76fb7",
+      "size_bytes": 2764
+    }
+  },
+  "validate_only": {
+    "command": [
+      "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\.venv\\Scripts\\python.exe",
+      "-B",
+      "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\compare_multiseed_dev_v3.py",
+      "--manifest",
+      "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_manifest_v3.json",
+      "--validate-only"
+    ],
+    "exit_code": 0,
+    "stdout": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\completion_verification_v1\\validate_only_stdout.txt",
+      "sha256": "062079198d3d3ac8625f44176290a9a8c1dd34bb059bd066f3cc798a74795d21",
+      "size_bytes": 494
+    },
+    "stderr": {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\completion_verification_v1\\validate_only_stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    }
+  },
+  "completion_checks": {
+    "six_arms_completed_exit_zero": true,
+    "recorded_artifact_hashes_verified": 114,
+    "selected_checkpoints_validated": 30,
+    "oof_archives_validated": 6,
+    "samples_per_arm": 334,
+    "complexes_per_arm": 209,
+    "residues_per_arm": 66208,
+    "fold_indices": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "external_evaluation": "skipped",
+    "historical_seed2101_excluded": true
+  },
+  "recomputed_per_seed_metrics": [
+    {
+      "training_seed": 2102,
+      "metrics": {
+        "ot": {
+          "auc_pr_trapezoidal": 0.4197836857703394,
+          "mcc": 0.34657212467363957,
+          "auroc": 0.7838933048039483,
+          "threshold": 0.5590000152587891
+        },
+        "control": {
+          "auc_pr_trapezoidal": 0.44695029177352985,
+          "mcc": 0.3666888926844312,
+          "auroc": 0.7937413056953597,
+          "threshold": 0.574999988079071
+        }
+      },
+      "ot_minus_control": {
+        "auc_pr_trapezoidal": -0.02716660600319043,
+        "mcc": -0.020116768010791652,
+        "auroc": -0.009848000891411468
+      }
+    },
+    {
+      "training_seed": 2103,
+      "metrics": {
+        "ot": {
+          "auc_pr_trapezoidal": 0.4090081300504418,
+          "mcc": 0.3408041172693863,
+          "auroc": 0.7561707969609439,
+          "threshold": 0.609000027179718
+        },
+        "control": {
+          "auc_pr_trapezoidal": 0.44252189543252457,
+          "mcc": 0.3654417379787972,
+          "auroc": 0.7986664217390191,
+          "threshold": 0.5640000104904175
+        }
+      },
+      "ot_minus_control": {
+        "auc_pr_trapezoidal": -0.03351376538208278,
+        "mcc": -0.02463762070941089,
+        "auroc": -0.042495624778075225
+      }
+    },
+    {
+      "training_seed": 2104,
+      "metrics": {
+        "ot": {
+          "auc_pr_trapezoidal": 0.4167211643590902,
+          "mcc": 0.3471370126317252,
+          "auroc": 0.7721615849495885,
+          "threshold": 0.593999981880188
+        },
+        "control": {
+          "auc_pr_trapezoidal": 0.44886172004311364,
+          "mcc": 0.36742217909586633,
+          "auroc": 0.8004686271586824,
+          "threshold": 0.5649999976158142
+        }
+      },
+      "ot_minus_control": {
+        "auc_pr_trapezoidal": -0.032140555684023464,
+        "mcc": -0.020285166464141136,
+        "auroc": -0.028307042209093858
+      }
+    }
+  ],
+  "recomputed_seed_difference_summary": {
+    "auc_pr_trapezoidal": {
+      "mean": -0.030940309023098893,
+      "sample_standard_deviation": 0.0033394688320990103,
+      "standard_deviation_ddof": 1,
+      "range": [
+        -0.03351376538208278,
+        -0.02716660600319043
+      ],
+      "sign_counts": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 3
+      }
+    },
+    "mcc": {
+      "mean": -0.021679851728114558,
+      "sample_standard_deviation": 0.0025628865600747287,
+      "standard_deviation_ddof": 1,
+      "range": [
+        -0.02463762070941089,
+        -0.020116768010791652
+      ],
+      "sign_counts": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 3
+      }
+    },
+    "auroc": {
+      "mean": -0.02688355595952685,
+      "sample_standard_deviation": 0.01637029539099079,
+      "standard_deviation_ddof": 1,
+      "range": [
+        -0.042495624778075225,
+        -0.009848000891411468
+      ],
+      "sign_counts": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 3
+      }
+    }
+  },
+  "recorded_bootstrap": {
+    "resampling_unit": "complex_code",
+    "complex_count": 209,
+    "sorted_normalized_complex_ids": [
+      "1ACB",
+      "1AK4",
+      "1AY7",
+      "1B6C",
+      "1C1Y",
+      "1DFJ",
+      "1E4K",
+      "1E6E",
+      "1EER",
+      "1EFN",
+      "1EUV",
+      "1EWY",
+      "1F34",
+      "1F60",
+      "1FC2",
+      "1GCQ",
+      "1GGP",
+      "1GHQ",
+      "1GL4",
+      "1GLA",
+      "1H32",
+      "1HX1",
+      "1IB1",
+      "1ITB",
+      "1JIW",
+      "1JMO",
+      "1JMT",
+      "1JTD",
+      "1K5D",
+      "1K74",
+      "1KA9",
+      "1KAC",
+      "1KKL",
+      "1KSH",
+      "1KTZ",
+      "1MAH",
+      "1MG9",
+      "1ML0",
+      "1N2C",
+      "1NRJ",
+      "1NW9",
+      "1PQ1",
+      "1PXV",
+      "1RLB",
+      "1SVD",
+      "1T6B",
+      "1TA3",
+      "1TDQ",
+      "1TE1",
+      "1TNR",
+      "1U0S",
+      "1UDI",
+      "1V74",
+      "1WKW",
+      "1WPX",
+      "1XG2",
+      "1XQS",
+      "1YVB",
+      "1Z0J",
+      "1Z3E",
+      "1Z5Y",
+      "1ZBD",
+      "1ZBX",
+      "2A9K",
+      "2AJF",
+      "2APO",
+      "2B59",
+      "2C5K",
+      "2C9X",
+      "2CG5",
+      "2D5R",
+      "2D74",
+      "2DOH",
+      "2DVW",
+      "2EHB",
+      "2FCW",
+      "2FHZ",
+      "2FP4",
+      "2G2U",
+      "2G77",
+      "2H0D",
+      "2HQS",
+      "2HRK",
+      "2J3R",
+      "2MTA",
+      "2O2V",
+      "2O3B",
+      "2O8V",
+      "2OMZ",
+      "2OZN",
+      "2P7V",
+      "2QC1",
+      "2QKL",
+      "2QXV",
+      "2R25",
+      "2RD7",
+      "2V1Y",
+      "2V6X",
+      "2V8S",
+      "2VOH",
+      "2WD5",
+      "2WUS",
+      "2XQR",
+      "2Y9W",
+      "2YAJ",
+      "2YC2",
+      "2YCL",
+      "2Z0E",
+      "3ANW",
+      "3AQB",
+      "3AXJ",
+      "3AYH",
+      "3B08",
+      "3BEG",
+      "3BH7",
+      "3BP6",
+      "3BS5",
+      "3C5T",
+      "3CBJ",
+      "3CF4",
+      "3CKI",
+      "3CPJ",
+      "3CQC",
+      "3CX8",
+      "3CZU",
+      "3D48",
+      "3D4U",
+      "3D7V",
+      "3DGP",
+      "3DI3",
+      "3DLQ",
+      "3F1S",
+      "3F6Q",
+      "3FII",
+      "3FJU",
+      "3FMO",
+      "3FQD",
+      "3GNI",
+      "3H4S",
+      "3M7F",
+      "3MCB",
+      "3MDB",
+      "3MJ7",
+      "3MMY",
+      "3MP7",
+      "3NYB",
+      "3O3M",
+      "3OG6",
+      "3ONA",
+      "3OUR",
+      "3P8B",
+      "3PH0",
+      "3PV6",
+      "3Q87",
+      "3Q9N",
+      "3R07",
+      "3S97",
+      "3SHG",
+      "3TGX",
+      "3TU3",
+      "3UVJ",
+      "3VIQ",
+      "3VPJ",
+      "3VRD",
+      "3VU9",
+      "3VZ9",
+      "3W0L",
+      "3W2W",
+      "3ZEU",
+      "3ZHE",
+      "3ZKQ",
+      "3ZR4",
+      "3ZYI",
+      "4A5U",
+      "4APX",
+      "4AWX",
+      "4BH6",
+      "4BI8",
+      "4BJJ",
+      "4CDG",
+      "4DFC",
+      "4E4W",
+      "4E6N",
+      "4EMJ",
+      "4EQA",
+      "4ETP",
+      "4EUK",
+      "4F6U",
+      "4FOU",
+      "4FQ0",
+      "4G6T",
+      "4G7X",
+      "4GED",
+      "4GN4",
+      "4H3K",
+      "4HFF",
+      "4HLU",
+      "4HOP",
+      "4IU2",
+      "4JE3",
+      "4JOI",
+      "4KBM",
+      "4KT3",
+      "4KT6",
+      "4M69",
+      "4M70",
+      "4NQW",
+      "5WY5",
+      "7CEI"
+    ],
+    "draws_per_attempt": 209,
+    "requested_attempts": 5000,
+    "valid_draws": 5000,
+    "single_class_draws_excluded": 0,
+    "replenish_excluded_draws": false,
+    "seed": 2101,
+    "rng": "numpy.random.Generator(numpy.random.PCG64)",
+    "draw_operation": "rng.integers(209, size=209)",
+    "same_draw_for_all_six_runs": true,
+    "whole_complex_rows_and_multiplicity_preserved": true,
+    "all_six_thresholds_held_fixed": true,
+    "statistic": "arithmetic mean of three per-seed metric differences on the same draw",
+    "quantile_method": "linear",
+    "paired_percentile_95_ci": {
+      "auc_pr_trapezoidal": [
+        -0.0431684509154469,
+        -0.017971609692331098
+      ],
+      "mcc": [
+        -0.03290433871348125,
+        -0.01042062458221682
+      ]
+    },
+    "scope": "conditional on fitted predictions and selected thresholds; excludes training-seed uncertainty"
+  },
+  "metric_absolute_tolerance": 1e-12,
+  "bound_original_artifacts": [
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\queue_state.json",
+      "sha256": "8f565a086715e557b7a7a9a3ce468658ec38760fb0e991c1db95c2d610af98c9",
+      "size_bytes": 12306
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\ot_2102_validated.json",
+      "sha256": "a6bb976a3088893c2f44e994754fa0bec995523ead13fa0a717faa80563fb553",
+      "size_bytes": 4140
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\noot_2102_validated.json",
+      "sha256": "7f6803132e7d1c0c46e578c03f962c534f279afd96a5fdf8835220374196e430",
+      "size_bytes": 4169
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\ot_2103_validated.json",
+      "sha256": "1157cad55cd4e3ef83c334e98d7a475367f45487cfb49d540a87358d5ea995ae",
+      "size_bytes": 4140
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\noot_2103_validated.json",
+      "sha256": "74bd5eac8a02d346d2d425770512425b6a9b9d4ea2334efbcb6f14c237f94c42",
+      "size_bytes": 4169
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\ot_2104_validated.json",
+      "sha256": "170f94848fe52798c734d19b8f0e533bc6ab33579f578e3ee31da6f6e16f1bbf",
+      "size_bytes": 4140
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\noot_2104_validated.json",
+      "sha256": "eaa981bf73d99ef0e9465e72992f55f892f7aea15ad37c5157d5bc6148cd0ff1",
+      "size_bytes": 4169
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\complete_oof_v3\\comparison.json",
+      "sha256": "be714db11c49a27e7a98a3a7a3f061145842ca077a68b3da253ae1b22998aca0",
+      "size_bytes": 854257
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\complete_oof_v3\\RESULT.md",
+      "sha256": "0dd3b8e74e50b2066f8391ec5eff34fd666ecd3efe31a862ea362e5fe3b76fb7",
+      "size_bytes": 2764
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_manifest_v3.json",
+      "sha256": "c181e3206996c5674ed33e7d0c0e91a83d42a3cc870a839c1b4819a470ddc73a",
+      "size_bytes": 84694
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_manifest_v2.json",
+      "sha256": "ca69112d633de00ee80d23a7c7913a939d780cf2561f403393588f95a5eb0519",
+      "size_bytes": 87551
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\protocol.json",
+      "sha256": "a4423ed6beb128a916ce301a5056338a37973625b993de60c8a4b1ed57de82d7",
+      "size_bytes": 13315
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_manifest_v2.acceptance.json",
+      "sha256": "9a73bf853bf7dd88ca603bbede02789d57a2654e15246d2b0d2118f199ff171b",
+      "size_bytes": 5172
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\multiseed_protocol_v1.py",
+      "sha256": "b3258bacfbe7d74c51795fbe80765d4c722b26e9d759c999c4c525d6b704e8fe",
+      "size_bytes": 18914
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_multiseed_dev_v1.py",
+      "sha256": "28f1196fa9a2b39316d275fd10a62e840ddb43dae0a82bd7f0ce8a66e20ed975",
+      "size_bytes": 9639
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\CROSS5FOLD_multiseed_dev_v1.py",
+      "sha256": "93de0890f172dc34a727e016c7e989fb344c9dc781826ce493f8068294c645f4",
+      "size_bytes": 227565
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_multiseed_protocol_v1.py",
+      "sha256": "06118ddb71a481bba34d7b3d054e270455d3f2809294979421571b35329d9290",
+      "size_bytes": 14809
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\multiseed_infrastructure_v3.py",
+      "sha256": "91712825166fc533365d177e9cbcb1c584d38e34a078d9cacdac2a91d78d075c",
+      "size_bytes": 11817
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_multiseed_dev_v3.py",
+      "sha256": "930cc44349cd9c1976c0997f862bd63f18324256ef110233e31f67a560836cb7",
+      "size_bytes": 13018
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\validate_multiseed_dev_v3.py",
+      "sha256": "ec35dc63b8a895257cdd9fc9744cc6e9c11906ecf25f2d94ac5863768f16e299",
+      "size_bytes": 11658
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\compare_multiseed_dev_v3.py",
+      "sha256": "fa25d08574de6261a65e2eac7a16e89b92e0ac02bab02c45b142154862e92eea",
+      "size_bytes": 19124
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_multiseed_worker_v3.py",
+      "sha256": "604a5c37d2e98ec1c6acdcf5be3774590e9d6cf7b85449276d5e4fff05f2ccee",
+      "size_bytes": 4792
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_multiseed_validation_v3.py",
+      "sha256": "04fc66f27f8871fffaa0bbfa4c6ddd801322da05fd43a36854cf4e5685b39b0f",
+      "size_bytes": 12112
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\tests\\test_multiseed_analysis_v3.py",
+      "sha256": "c304511084f41ddb7a3b4d3f4b1e02d63599a9ec01870379497b48fd12c1b4bb",
+      "size_bytes": 6916
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_source_archive_v3.json",
+      "sha256": "e9b0fed106be563fddd5d5042a74d59c5049aa9d1f5216f7146f3f039a2d0cb3",
+      "size_bytes": 4128
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\PREREGISTRATION.md",
+      "sha256": "bc853630cfe402834437346e50927efe81c88aa366d9d3fc8d13e6ecc0957705",
+      "size_bytes": 8824
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_source_archive_v2.json",
+      "sha256": "2ccd8ddb001c121ed7e476e12344a66cda95ab7547a081296ad6e2f640284214",
+      "size_bytes": 2529
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\cohort_manifest.json",
+      "sha256": "a9c19e57dde847406a078e24142c0ef6c310a482008b38f22d60b35539905fcd",
+      "size_bytes": 143920
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\Train335.pkl",
+      "sha256": "edc851f17baeba49efd937f6ab3bb4534abeeb64c43d1774c219726dd970cdfe",
+      "size_bytes": 1468833049
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\Test287.pkl",
+      "sha256": "13d02398c730d1a4c90666807dc2c621ced0838d03affd93e0effeeeed4d8581",
+      "size_bytes": 1091571976
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\data\\geo_filtered_v1\\grouped_folds_seed2101.json",
+      "sha256": "5ce6af3a724de3b2b1b7cb08f2cc93452372d2ae01cb3a0aaefe5fe7cc18d1a0",
+      "size_bytes": 76421
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\CROSS5FOLD_multi_test.py",
+      "sha256": "341d7fef45792b716946a8fe0ad5e7b290d38e40a9c99f60c05e6ad33e93dad8",
+      "size_bytes": 225713
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\metrics.py",
+      "sha256": "9be8906c73b658039032ad720dfe91bcac4d3059f177f109eaa848b21bc91d23",
+      "size_bytes": 3128
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_provenance.py",
+      "sha256": "b2ade05798ce250cd08b6188ae1a20a8725bae5d6d890419a8c4c5b5b3c04ddd",
+      "size_bytes": 5566
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_seed.ps1",
+      "sha256": "e276fea78922ff2f334b03993307f7a969b50e98577171dea86c262f3c0482ff",
+      "size_bytes": 17078
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\requirements.txt",
+      "sha256": "e3399ebcebe53aac5ea9cd8c181f3734c29343c068a1126870e94b906c3e662b",
+      "size_bytes": 80
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\filtered_cohort_protocol.py",
+      "sha256": "3a5f5d78b2d28b024029eb3b15be710ac85fb4a5f77609f24ea4997ccde3c4d6",
+      "size_bytes": 8835
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\invoke_filtered_v1.ps1",
+      "sha256": "a2fa7d956e2b02488c8c044e9dea591c99652d43540b63f25ba686c9475de44a",
+      "size_bytes": 11316
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_pcbind_noot_filtered_v1_control.ps1",
+      "sha256": "a9b8279c8590129db762ab042712a09f9340af3d821081733f795b65101a7c23",
+      "size_bytes": 472
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_pcbind_ot_filtered_v1_pilot.ps1",
+      "sha256": "eb053a71ca624a1e5533536efbf14e28d8f1421b15723375d6388b7d7caa3e8b",
+      "size_bytes": 472
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\check_pcbind_prereqs.py",
+      "sha256": "92ca5c2d5813c62f57f49e3caa51706f449fdf46a2a7b4dc27e9f8439ae49547",
+      "size_bytes": 12859
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\compare_pcbind_primary.py",
+      "sha256": "4f3d52111151d7dfd5ec59fe7c87239cedc9220238a355375e4c4dfc5c4ce583",
+      "size_bytes": 24886
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\frozen_development_protocol.py",
+      "sha256": "ef26075cf9aeeab7fe37d96d1e32243697add4db564559b6a72b7fb923ab9551",
+      "size_bytes": 8137
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\compare_oof_development.py",
+      "sha256": "35c73f34f5145e97aedacae6e1269f105ca760f87b63846993c3af508df2a43d",
+      "size_bytes": 14230
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\run_frozen_development.py",
+      "sha256": "c29cc2763ef0a5b7ce7790d298601d45dc15ba10436b5acf7da27d590c25b588",
+      "size_bytes": 6287
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\ot_2102_launch.json",
+      "sha256": "80b0f6181d37e110d00c8764b378f856be7742e726035a9a7a63dd15b5f6749a",
+      "size_bytes": 4891
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\ot_2102_prerequisite_provenance.json",
+      "sha256": "69cfd73b6ed0e37624d67b69d69e07c015ab8ca5401be4febef2ff22ef3f7f36",
+      "size_bytes": 3033
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2102_cvseed2101\\run_provenance.json",
+      "sha256": "4e248105db0e0a9899d48ccfd28a4daac1a8fc2689b7966b2698da1bd0aefdf7",
+      "size_bytes": 95273
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2102_cvseed2101\\ensemble_summary.json",
+      "sha256": "09347078e1a7778b0cac20b88ab9df3d38246e4557243272b8d4bd3a55aa11ff",
+      "size_bytes": 116828
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v2\\all_six\\ot_2102\\dry_run.json",
+      "sha256": "e0576168e04b6aca76e881be4ba80c74395bf7e684525d24ebdad2473d8a0d2f",
+      "size_bytes": 181197
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2102_cvseed2101\\oof_predictions.npz",
+      "sha256": "6122f59447f196296c6418c819b32729fb74967df324f19f7d7f8f97c82801e9",
+      "size_bytes": 265081
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_filtered_v1_ot_seed2101_5fold_dev\\fold1_best.pt",
+      "sha256": "5a586d3d673cfa3eee46c5ce478e26f4efcafc6af60445d64377907b3ea1f6ca",
+      "size_bytes": 22940614
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2102_cvseed2101\\fold1_best.pt",
+      "sha256": "bedb8ab787f13d6ae58fa0a355e7decb5dc0592ff0748443710563b62724a049",
+      "size_bytes": 22944838
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2102_cvseed2101\\fold2_best.pt",
+      "sha256": "d51caab4a92f04906e1e60ce12e7229341803723bb211f47b34070b2e41c2484",
+      "size_bytes": 22944774
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2102_cvseed2101\\fold3_best.pt",
+      "sha256": "3911c498030358325b4aa21bc2dab103e0f5da697663c32c2f6c770395d95b14",
+      "size_bytes": 22944774
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2102_cvseed2101\\fold4_best.pt",
+      "sha256": "85c3ec5784d7c80a7f1d7d692f44c05f9715e2262cf3c49270319fb920fab13f",
+      "size_bytes": 22944902
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2102_cvseed2101\\fold5_best.pt",
+      "sha256": "3f84482b9f7587549177aee7ef0b7b8dd021576411467361701144fa38d71e3d",
+      "size_bytes": 22944838
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\noot_2102_launch.json",
+      "sha256": "781228587f3d129736fd72e5533dd71d9c92b3f397d60a4e33263fcabdc18b3b",
+      "size_bytes": 4902
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\noot_2102_prerequisite_provenance.json",
+      "sha256": "ff5fda181873cf94e0bb1e22882a9101df8664372032adc184aa8934ea3f02dc",
+      "size_bytes": 3033
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2102_cvseed2101\\run_provenance.json",
+      "sha256": "1ae34ad4981b157a89faef899e76c7c90b2ba2586a83402c3f1bb6c719ce49c4",
+      "size_bytes": 95274
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2102_cvseed2101\\ensemble_summary.json",
+      "sha256": "a483b3359e35652c8f59cfae849451b90427a68f4035b79b3c4434fd29b9b69c",
+      "size_bytes": 116832
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v2\\all_six\\noot_2102\\dry_run.json",
+      "sha256": "32970e3141070d3875cab058673f1e1e40ce47c4fb66e8c3dd28e338bfe91a5e",
+      "size_bytes": 181203
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2102_cvseed2101\\oof_predictions.npz",
+      "sha256": "80f52cd63041b07621e7123cc657bb22054861306eedab61a118e3f81061578b",
+      "size_bytes": 262736
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_filtered_v1_noot_seed2101_5fold_dev\\fold1_best.pt",
+      "sha256": "012ed4c3bb5485bfae7cd1aa98c86e724c0a37302b50937f80de5c46e2c5c552",
+      "size_bytes": 19648952
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2102_cvseed2101\\fold1_best.pt",
+      "sha256": "e8e6faa5bf94405aa22f723f564b2c69814a808970153f40faaff04d957af0e3",
+      "size_bytes": 19653176
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2102_cvseed2101\\fold2_best.pt",
+      "sha256": "06090ec98a2d4e1de656b048f36745b6b64d1adc301de736c73c48e462634069",
+      "size_bytes": 19653176
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2102_cvseed2101\\fold3_best.pt",
+      "sha256": "4fe44b2ce453b66939bc587251916970bed1a431745bf27d24fe9ad5ebeb2251",
+      "size_bytes": 19653112
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2102_cvseed2101\\fold4_best.pt",
+      "sha256": "8dd48943a8c8e49d24bfd7f99b7e9f2e7a4c0e1eef92d275ee04b9b4f6bf87bf",
+      "size_bytes": 19653240
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2102_cvseed2101\\fold5_best.pt",
+      "sha256": "6c672a93f7b2f8b201ccb62eeef29f9c6633682ba6fce85e7462e6c042d7f897",
+      "size_bytes": 19653176
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\ot_2103_launch.json",
+      "sha256": "394e5073a7f62eecc5a9440c0e5305e21f29dbe75a6d20bc6c3f2e0fc8b83f93",
+      "size_bytes": 4891
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\ot_2103_prerequisite_provenance.json",
+      "sha256": "ba651e63ac632dd74314d8586efbb5a807694f808a7116dd27a24d6cef8a3a3b",
+      "size_bytes": 3033
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2103_cvseed2101\\run_provenance.json",
+      "sha256": "363864d99a465cc6b9afabf4dd1221078caa1ea2f079d6aa1bd12a66a2603350",
+      "size_bytes": 95273
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2103_cvseed2101\\ensemble_summary.json",
+      "sha256": "d42dcff52ad07999eecb99fbe0c1148149b66e8612ed425d7cfd0e370f832fe2",
+      "size_bytes": 116830
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v2\\all_six\\ot_2103\\dry_run.json",
+      "sha256": "a38e46cef43ff3a166456dbd3a76c89ae5e76c69d906dacb12140ad5797b46f8",
+      "size_bytes": 181197
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2103_cvseed2101\\oof_predictions.npz",
+      "sha256": "d343d7bab4d04149507198d7e4915fa8a23e505f259e5102c7a9c14fe64a9b1c",
+      "size_bytes": 267758
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2103_cvseed2101\\fold1_best.pt",
+      "sha256": "795c9938a46362f2d7f2fe8d5de77500af1d1855240351dc9306a92f33a91ad1",
+      "size_bytes": 22944838
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2103_cvseed2101\\fold2_best.pt",
+      "sha256": "bedaa7b3e160f264fbe89338f424a662dbaa9f6796c0492b715072fe369560dc",
+      "size_bytes": 22944774
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2103_cvseed2101\\fold3_best.pt",
+      "sha256": "9e47aab7c66efe196d610782f0becf56a2a9edb8a882fa37366dde6b70b0b03c",
+      "size_bytes": 22944774
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2103_cvseed2101\\fold4_best.pt",
+      "sha256": "e76a991c8b581e580b1b461ac879761e2d9eba6ce3820e91fda605eba7490cf6",
+      "size_bytes": 22944902
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2103_cvseed2101\\fold5_best.pt",
+      "sha256": "956d3862f30dc546f33a51f7da3c177a4ee9ee08412aba2da213a808485509ec",
+      "size_bytes": 22944838
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\noot_2103_launch.json",
+      "sha256": "afb422f7a2d98207312f786c28e0e4d309ce144992c1135f8218620c1ff59ff0",
+      "size_bytes": 4902
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\noot_2103_prerequisite_provenance.json",
+      "sha256": "1f42dd5c7c87295d728a4e8e5162c3a048eef346bd08c0d0231e1a94917e0923",
+      "size_bytes": 3033
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2103_cvseed2101\\run_provenance.json",
+      "sha256": "a79d34a16e2bfb6e6f591b436ab592fb57231dfdbad0a640e82b150b0323f456",
+      "size_bytes": 95274
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2103_cvseed2101\\ensemble_summary.json",
+      "sha256": "96648037117752344f756cd1964acf6ec45d97bee3c2ffef068ca9239d690a97",
+      "size_bytes": 116831
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v2\\all_six\\noot_2103\\dry_run.json",
+      "sha256": "462024c9c85253f845f8c5dd76df5a058b27ddd9aff3b4361ee47cc9c021c0d1",
+      "size_bytes": 181203
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2103_cvseed2101\\oof_predictions.npz",
+      "sha256": "b2a54eb6c46a90807ea056801cffa809fd70392ee375e8f02db910c8419431fe",
+      "size_bytes": 263525
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2103_cvseed2101\\fold1_best.pt",
+      "sha256": "38194a09d736f1e2fdb0e26fad56d94ce8db6662f57095ff7a7202425fca1484",
+      "size_bytes": 19653176
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2103_cvseed2101\\fold2_best.pt",
+      "sha256": "27183a858d3b3674c69f05a006ebbb696de8bd86f0c84424ffa94822a61d4381",
+      "size_bytes": 19653176
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2103_cvseed2101\\fold3_best.pt",
+      "sha256": "26898b7b37e90b0f5fbd287d2494c7d9334ef8230fbf40c922b6d9e945f14005",
+      "size_bytes": 19653112
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2103_cvseed2101\\fold4_best.pt",
+      "sha256": "0f0de94af4976f1bb0cf42024de4b9009c11fd647c2712990a19f32fff45ff24",
+      "size_bytes": 19653240
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2103_cvseed2101\\fold5_best.pt",
+      "sha256": "2ed417a8763aed772f91f7f59041f0286f3984bc7003d25ff2949f36a5878df7",
+      "size_bytes": 19653176
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\ot_2104_launch.json",
+      "sha256": "1192977122943272c93c945c9509773ab6d09cb9d86bbe1c379aba9b5cc28dd7",
+      "size_bytes": 4891
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\ot_2104_prerequisite_provenance.json",
+      "sha256": "3b96570c1cfed8ab64a2f29b2a8e6b605987b295fd042fe2f0ed4e4ad1a4ac23",
+      "size_bytes": 3033
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2104_cvseed2101\\run_provenance.json",
+      "sha256": "d596ccf86ce18e02c9bf917009b7870538924495f455a64459decb7bd4f6f513",
+      "size_bytes": 95273
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2104_cvseed2101\\ensemble_summary.json",
+      "sha256": "9a92caf902eda034f17953ce01bbd985b8d5d1f05a3216bf6e0d8fd999ed51fc",
+      "size_bytes": 116829
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v2\\all_six\\ot_2104\\dry_run.json",
+      "sha256": "f262e3cb454dd7d1dd4cb91e8b89d8d42f26e5dc7fc579dc5d35a3855340661a",
+      "size_bytes": 181197
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2104_cvseed2101\\oof_predictions.npz",
+      "sha256": "0fb9aee630de2dd3e680d601eb3be43763a2b1e95288234eda4b84f605e92843",
+      "size_bytes": 267092
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2104_cvseed2101\\fold1_best.pt",
+      "sha256": "1fe08370bf7d25c8aa10c7f52e031f9664060808aa01df8d119b7302478a2e29",
+      "size_bytes": 22944838
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2104_cvseed2101\\fold2_best.pt",
+      "sha256": "4acb6ab0389f3dce74e799be1c306acb4061ec416e52f80af2f894ebbb4931cd",
+      "size_bytes": 22944774
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2104_cvseed2101\\fold3_best.pt",
+      "sha256": "681c42333612e414a12a0af0af59345f91c78717755e3012efdb087da30f9fca",
+      "size_bytes": 22944774
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2104_cvseed2101\\fold4_best.pt",
+      "sha256": "dd0cd7f13de9d16dca9f1fb0ea40b72716ccd7f3b0578df80f2c5351856ede2b",
+      "size_bytes": 22944902
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_ot_trainseed2104_cvseed2101\\fold5_best.pt",
+      "sha256": "aef03698a7b74e333052477e51c78b3c095417c51985f9e429aaee18a280c874",
+      "size_bytes": 22944838
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\noot_2104_launch.json",
+      "sha256": "dd5fa374f6393e853898f2d5ae277979e33734a4135f88fa9f04779a3eba503b",
+      "size_bytes": 4902
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v3_process\\noot_2104_prerequisite_provenance.json",
+      "sha256": "142a8ca268fea7950f5b7de82547463e6c596378da8991330acd12a41c7a9978",
+      "size_bytes": 3033
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2104_cvseed2101\\run_provenance.json",
+      "sha256": "491ea94b2c601702451399bb30ef89801514b2ef2c475cd4cf049b4e26f05f48",
+      "size_bytes": 95274
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2104_cvseed2101\\ensemble_summary.json",
+      "sha256": "dfca9b183ba53e1e4da3a003acfc12894cbbc9f00c8bca4a3a26ca1cdb5c6df2",
+      "size_bytes": 116833
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\implementation_validation_v2\\all_six\\noot_2104\\dry_run.json",
+      "sha256": "d415b95aea6e129acfe013a1e6b9a219c64a43255a66adc9dbd877593b76b488",
+      "size_bytes": 181203
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2104_cvseed2101\\oof_predictions.npz",
+      "sha256": "f8bdedc1d37e1a965a1ffddbd23d39f33ee930b56d846b27773098f8190e5299",
+      "size_bytes": 262649
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2104_cvseed2101\\fold1_best.pt",
+      "sha256": "51ca7f0990bebac5f7e18a1baa445d1ef79bc56e19a8d9d4a6aa8a8de08ab087",
+      "size_bytes": 19653176
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2104_cvseed2101\\fold2_best.pt",
+      "sha256": "1b7388849d32f0273d76345325db6b3151680440d2ebaebb6cc3df0d9c450aa1",
+      "size_bytes": 19653176
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2104_cvseed2101\\fold3_best.pt",
+      "sha256": "ba6aa9f90f2c0237d0d50d5b0aaf5813a79a746e0ebf22aac9e95f341d83b823",
+      "size_bytes": 19653112
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2104_cvseed2101\\fold4_best.pt",
+      "sha256": "218226fae26ba5956bd00fa81248aa97066195a0d052d8de860c0bfcec4f0846",
+      "size_bytes": 19653240
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\outputs_multiseed_dev_v1_noot_trainseed2104_cvseed2101\\fold5_best.pt",
+      "sha256": "ccf8741418bbb557d760f37965f75b5283f008370664b25fa0c9f8e120ab86de",
+      "size_bytes": 19653176
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\frozen_5fold_dev_v1\\complete_oof\\comparison.json",
+      "sha256": "ade9c955c232bcf0115421d20806a0f9dbfe4807c8778081eae0b2b4f29b442a",
+      "size_bytes": 8096
+    }
+  ],
+  "ended_utc": "2026-10-07T10:52:52.966506+00:00"
+}

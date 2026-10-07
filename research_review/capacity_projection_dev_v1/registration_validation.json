@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "validation_scope": "Prospective registration structure, ancestry/source/archive and declared input byte-hash checks only; execution acceptance is not performed or asserted.",
+  "verified_utc": "2026-10-07T10:55:37.186194+00:00",
+  "registered_client_date": "2026-10-07",
+  "client_timezone": "Asia/Shanghai",
+  "protocol": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\protocol.json",
+    "sha256": "3cc6a2e58f331928d36849eddef80af40606505186a6e5d28eb6ada9f4079a3c",
+    "size_bytes": 32012
+  },
+  "preregistration": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\capacity_projection_dev_v1\\PREREGISTRATION.md",
+    "sha256": "4be756fe0d94dcd5f48c13d3ecdec8cf76e12f102a20174684a93cca1e191156",
+    "size_bytes": 15109
+  },
+  "accepted_v2": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_manifest_v2.json",
+    "sha256": "ca69112d633de00ee80d23a7c7913a939d780cf2561f403393588f95a5eb0519",
+    "size_bytes": 87551
+  },
+  "accepted_v3": {
+    "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\execution_manifest_v3.json",
+    "sha256": "c181e3206996c5674ed33e7d0c0e91a83d42a3cc870a839c1b4819a470ddc73a",
+    "size_bytes": 84694
+  },
+  "completed_reference_artifact_records": [
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\complete_oof_v3\\comparison.json",
+      "sha256": "be714db11c49a27e7a98a3a7a3f061145842ca077a68b3da253ae1b22998aca0",
+      "size_bytes": 854257
+    },
+    {
+      "path": "C:\\Users\\Mohamed KONE\\Desktop\\PC-BIND-OT\\research_review\\multiseed_dev_v1\\complete_oof_v3\\RESULT.md",
+      "sha256": "0dd3b8e74e50b2066f8391ec5eff34fd666ecd3efe31a862ea362e5fe3b76fb7",
+      "size_bytes": 2764
+    }
+  ],
+  "completed_reference_queue_reports_six_exit_zero_validated_arms": true,
+  "completed_reference_fresh_checkpoint_identity_validation_in_this_record": false,
+  "source_inventory_hashes_verified": 25,
+  "accepted_archive_pairs_verified": 11,
+  "dataset_cohort_fold_bytes_match_declared_hashes": true,
+  "dataset_selection_exactly_preserved": true,
+  "runtime_requirements_exactly_preserved": true,
+  "projection_function_source_and_lines_verified": true,
+  "seeding_source_read_only_check": "Exactly one seed_everything(SEED) call in accepted trainer; no proposed fold reseeding.",
+  "transport_true_in_both_arms": true,
+  "iteration_order": [
+    5,
+    0,
+    5,
+    0,
+    5,
+    0
+  ],
+  "training_seeds": [
+    2102,
+    2103,
+    2104
+  ],
+  "fixed_fold_seed": 2101,
+  "new_training_output_directories_absent": 6,
+  "new_process_and_aggregate_directories_absent": true,
+  "historical_artifacts_excluded_from_primary_analysis": true,
+  "training_launched": false,
+  "new_execution_path_ready": false,
+  "subsequent_explicit_launch_instruction_required": true,
+  "remaining_launch_gate": "Implement and freeze new versioned execution, validators, initialization/RNG evidence and preregistered analysis; complete tests and all six dry runs, then record hash-bound acceptance before an explicitly authorized launch."
+}
